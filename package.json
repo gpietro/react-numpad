@@ -30,6 +30,7 @@
     "styled-components": "^2.2.0"
   },
   "dependencies": {
+    "react-addons-css-transition-group": "^15.6.2",
     "react-onclickoutside": "^6.6.0"
   }
 }

@@ -2,9 +2,10 @@
   "name": "numpad",
   "version": "1.0.0",
   "description": "Numpad react component, as number input or time input",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "build": "babel lib -d build",
+    "build:watch": "babel lib -w -d build",
     "lint": "eslint lib/**; exit 0",
     "lint:watch": "esw -w lib/**",
     "prepublish": "npm run build"
@@ -27,5 +28,8 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "styled-components": "^2.2.0"
+  },
+  "dependencies": {
+    "react-onclickoutside": "^6.6.0"
   }
 }

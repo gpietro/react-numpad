@@ -8,7 +8,9 @@
     "build:watch": "babel lib -w -d build",
     "lint": "eslint lib/**; exit 0",
     "lint:watch": "esw -w lib/**",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "Pietro Ghezzi",
   "license": "ISC",
@@ -27,7 +29,10 @@
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "styled-components": "^2.2.0"
+    "styled-components": "^2.2.0",
+    "@storybook/react": "^3.2.12",
+    "@storybook/addon-actions": "^3.2.12",
+    "@storybook/addon-links": "^3.2.12"
   },
   "dependencies": {
     "react-addons-css-transition-group": "^15.6.2",

@@ -14,6 +14,9 @@ storiesOf('Button', module)
   .add('with some emoji', () => <Button onClick={action('clicked')}>😀 😎 👍 💯</Button>);
 
 storiesOf('NumPad', module)
-  .add('with number', () => <NumPad.Number />)
-  .add('with time', () => <NumPad.Time />)
+  .add('with number', () => 
+    <NumPad.Number 
+      onChange={(value) => { console.log('value', value)}} 
+      label={'Totale'} />)
+  .add('with time', () => ([<NumPad.Time key='1' label={'Sveglia'}/>,<NumPad.Time key='2'/>]))
   .add('test', () => <NumPad.Test />)

@@ -35,6 +35,7 @@
     "@storybook/addon-links": "^3.2.12"
   },
   "dependencies": {
+    "moment": "^2.18.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-onclickoutside": "^6.6.0"
   }

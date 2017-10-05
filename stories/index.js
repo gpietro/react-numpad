@@ -19,4 +19,4 @@ storiesOf('NumPad', module)
       onChange={(value) => { console.log('value', value)}} 
       label={'Totale'} />)
   .add('with time', () => ([<NumPad.Time key='1' label={'Sveglia'}/>,<NumPad.Time key='2'/>]))
-  .add('test', () => <NumPad.Test />)
+  .add('with date', () => <NumPad.Date onChange={(value) => console.log('changed', value)} label={'Data di nascita'} />)

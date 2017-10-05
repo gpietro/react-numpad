@@ -15,8 +15,9 @@ storiesOf('Button', module)
 
 storiesOf('NumPad', module)
   .add('with number', () => 
-    <NumPad.Number 
-      onChange={(value) => { console.log('value', value)}} 
-      label={'Totale'} />)
-  .add('with time', () => ([<NumPad.Time key='1' label={'Sveglia'}/>,<NumPad.Time key='2'/>]))
+    <NumPad.Number key='number-1' onChange={(value) => { console.log('value', value)}} label={'Totale'} />)
+  .add('with time', () => ([
+    <NumPad.Time key='time-1' label={'Sveglia'} onChange={(value) => console.log('changed', value)}/>,
+    <NumPad.Time key='time-2' onChange={(value) => console.log('changed', value)}/>
+  ]))
   .add('with date', () => <NumPad.Date onChange={(value) => console.log('changed', value)} label={'Data di nascita'} />)

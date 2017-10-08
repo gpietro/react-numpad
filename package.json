@@ -35,7 +35,6 @@
     "@storybook/addon-links": "^3.2.12"
   },
   "dependencies": {
-    "lodash.debounce": "^4.0.8",
     "moment": "^2.18.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-onclickoutside": "^6.6.0"

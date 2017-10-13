@@ -7,6 +7,7 @@ import { linkTo } from '@storybook/addon-links'
 import { Button, Welcome } from '@storybook/react/demo'
 
 import NumPad from '../lib'
+import Calendar from '../lib/elements/Calendar'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
 
@@ -24,17 +25,7 @@ storiesOf('Components', module)
   .add('Date', () => <NumPad.Date onChange={(value) => console.log('changed', value)} label={'Data di nascita'} />)
   
 storiesOf('Elements', module)
-  .add('Calendar', () => <NumPad.Calendar locale='it' onChangeMonth={date => console.log(date)}
-        onPickDate={date => console.log(date)}
-        renderDay={date => (
-          <span
-            style={{
-              fontWeight: date.isSame(moment(), 'day') ? 700 : 400
-            }}
-          >
-            {date.format('D')}
-          </span>
-        )} />
-  )
+  .add('Calendar', () => <Calendar locale='it' onChange={date => console.log(date)} />
+)
 
 

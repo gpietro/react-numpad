@@ -7634,7 +7634,7 @@ var Calendar = function (_Component) {
         _this.state = { date: props.date };
         _this.handleNextMonth = _this.handleNextMonth.bind(_this);
         _this.handlePrevMonth = _this.handlePrevMonth.bind(_this);
-        _this.onPickDate = _this.onPickDate.bind(_this);
+        _this.onChange = _this.onChange.bind(_this);
         return _this;
     }
 
@@ -7653,14 +7653,18 @@ var Calendar = function (_Component) {
             });
         }
     }, {
-        key: 'onPickDate',
-        value: function onPickDate(day) {
-            this.setState({ date: (0, _moment2.default)(day) });
+        key: 'onChange',
+        value: function onChange(day) {
+            var _this2 = this;
+
+            this.setState({ date: (0, _moment2.default)(day) }, function () {
+                return _this2.props.onChange(_this2.state.date);
+            });
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             var _props = this.props,
                 locale = _props.locale,
@@ -7709,7 +7713,7 @@ var Calendar = function (_Component) {
                                 key: 'day-' + i,
                                 className: 'Calendar-grid-item ' + (day.classNames || '') + ' ' + (day.day.isSame(date, 'day') ? 'active' : ''),
                                 onClick: function onClick() {
-                                    return _this2.onPickDate(day.day);
+                                    return _this3.onChange(day.day);
                                 } },
                             day.day.format('D')
                         );
@@ -7728,7 +7732,7 @@ Calendar.propTypes = {
     /** The current date as a moment objecct */
     date: _propTypes2.default.object.isRequired,
     /** Called when a date is clicked */
-    onPickDate: _propTypes2.default.func
+    onChange: _propTypes2.default.func
 };
 
 Calendar.defaultProps = {
@@ -18838,9 +18842,9 @@ var _Date = __webpack_require__(193);
 
 var _Date2 = _interopRequireDefault(_Date);
 
-var _Calendar = __webpack_require__(20);
+var _DatePicker = __webpack_require__(194);
 
-var _Calendar2 = _interopRequireDefault(_Calendar);
+var _DatePicker2 = _interopRequireDefault(_DatePicker);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18848,7 +18852,7 @@ module.exports = {
   Number: _Number2.default,
   Time: _Time2.default,
   Date: _Date2.default,
-  Calendar: _Calendar2.default
+  DatePicker: _DatePicker2.default
 };
 
 /***/ }),
@@ -22804,7 +22808,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.KeyPadWrapper = exports.KeyPadButton = exports.KeyPad = exports.InputField = exports.Input = exports.Display = exports.Button = undefined;
+exports.Calendar = exports.KeyPadWrapper = exports.KeyPadButton = exports.KeyPad = exports.InputField = exports.Input = exports.Display = exports.Button = undefined;
 
 var _Button = __webpack_require__(5);
 
@@ -22847,6 +22851,7 @@ exports.InputField = _InputField2.default;
 exports.KeyPad = _KeyPad2.default;
 exports.KeyPadButton = _KeyPadButton2.default;
 exports.KeyPadWrapper = _KeyPadWrapper2.default;
+exports.Calendar = _Calendar2.default;
 
 /***/ }),
 /* 146 */
@@ -41849,7 +41854,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _templateObject = _taggedTemplateLiteral(['\n    position:fixed;\n    padding:0;\n    margin:0;\n    top:0;\n    left:0;\n    width: 100%;\n    height: 100%;\n'], ['\n    position:fixed;\n    padding:0;\n    margin:0;\n    top:0;\n    left:0;\n    width: 100%;\n    height: 100%;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    display: flex;\n    height: 100vh;\n    justify-content: flex-end;\n    flex-direction: column;    \n'], ['\n    display: flex;\n    height: 100vh;\n    justify-content: flex-end;\n    flex-direction: column;    \n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 240px;\n    background-color: #e3e3e3;\n    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n    transition: all 0.3s cubic-bezier(.25,.8,.25,1);\n'], ['\n    width: 100%;\n    height: 240px;\n    background-color: #e3e3e3;\n    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);\n    transition: all 0.3s cubic-bezier(.25,.8,.25,1);\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 250px;\n    background-color: #e3e3e3;\n'], ['\n    width: 100%;\n    height: 250px;\n    background-color: #e3e3e3;\n']);
 
 var _react = __webpack_require__(1);
 
@@ -43232,7 +43237,7 @@ webpackContext.id = 190;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = "\n    html {\n        touch-action: manipulation;\n    }\n    * {\n        font-family: Open sans, sans-serif;\n        font-size: 1em;\n    }\n    .keypad-appear {\n        transform: translate(0, 300px);\n    }    \n    .keypad-appear.keypad-appear-active {\n        transform: translate(0);\n        transition: transform 500ms ease-in-out;\n    }    \n\n\n    * {\n        box-sizing: border-box;\n        -webkit-box-sizing: border-box;\n        -webkit-font-smoothing: antialiased;\n        margin: 0;\n        padding: 0;\n      }      \n      \n      #calendar {\n        width: 640px;\n        height: 480px;\n        margin: 100px auto;\n      }\n      \n      .Calendar-grid {\n        display: flex;\n        flex-wrap: wrap;\n        width: 100%;\n        cursor: pointer;\n      }\n      \n      .Calendar-header {\n        font-size: 1.2em;\n        height: 50px;\n        background: #333;\n        color: #fff;\n        text-align: center;\n        line-height: 50px;\n        display: flex;\n        justify-content: space-between;\n        text-transform: capitalize;        \n        cursor: pointer;\n      }\n      \n      .Calendar-header button {\n        width: 50px;        \n        border: 0;\n        background: transparent;\n        color: #ddd;\n        cursor: pointer;\n        outline: none;\n      }\n      \n      .Calendar-grid-item {\n        &:nth-child(-n+7) {\n          background: #efefef;\n        }\n        &.active {\n          font-weight: 700;\n          color: white;\n          background: #333;\n        }\n        flex: 0 14.28571%;\n        text-align: center;\n        border-right: 1px solid #ddd;\n        border-bottom: 1px solid #ddd;\n        padding: 1rem;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        text-transform: capitalize;\n      }\n      \n      .Calendar-grid-item.nextMonth,\n      .Calendar-grid-item.prevMonth {\n        color: #999;\n      }\n      \n      .Calendar-grid-item:nth-child(7n+1) {\n        border-left: 1px solid #ddd;\n      }\n      \n      .Calendar-grid-item:nth-child(-n+7) {\n        border-top: 1px solid #ddd;\n      }\n";
+exports.default = "\n  html {\n      touch-action: manipulation;\n  }\n  * {\n      font-family: Open sans, sans-serif;\n      font-size: 1em;\n\n      box-sizing: border-box;\n      -webkit-box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      margin: 0;\n      padding: 0;\n  }\n  .keypad-appear {\n      transform: translate(0, 250px);\n  }    \n  .keypad-appear.keypad-appear-active {\n      transform: translate(0);\n      transition: transform 500ms ease-in-out;\n  }    \n\n  #calendar {\n    width: 640px;\n    height: 480px;\n    margin: 100px auto;\n  }\n  \n  .Calendar-grid {\n    display: flex;\n    flex-wrap: wrap;\n    width: 100%;\n    cursor: pointer;\n  }\n  \n  .Calendar-header {\n    font-size: 1.2em;\n    height: 50px;\n    background: #333;\n    color: #fff;\n    text-align: center;\n    line-height: 50px;\n    display: flex;\n    justify-content: space-between;\n    text-transform: capitalize;        \n    cursor: pointer;\n  }\n  \n  .Calendar-header button {\n    width: 50px;        \n    border: 0;\n    background: transparent;\n    color: #ddd;\n    cursor: pointer;\n    outline: none;\n  }\n  \n  .Calendar-grid-item {\n    &:nth-child(-n+7) {\n      background: #efefef;\n    }\n    &.active {\n      font-weight: 700;\n      color: white;\n      background: #333;\n    }\n    flex: 0 14.28571%;\n    text-align: center;\n    border-right: 1px solid #ddd;\n    border-bottom: 1px solid #ddd;\n    padding: 1rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    text-transform: capitalize;\n  }\n  \n  .Calendar-grid-item.nextMonth,\n  .Calendar-grid-item.prevMonth {\n    color: #999;\n  }\n  \n  .Calendar-grid-item:nth-child(7n+1) {\n    border-left: 1px solid #ddd;\n  }\n  \n  .Calendar-grid-item:nth-child(-n+7) {\n    border-top: 1px solid #ddd;\n  }\n";
 
 /***/ }),
 /* 192 */
@@ -43278,9 +43283,9 @@ var _moment = __webpack_require__(0);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _NumPad = __webpack_require__(9);
+var _DatePicker = __webpack_require__(194);
 
-var _NumPad2 = _interopRequireDefault(_NumPad);
+var _DatePicker2 = _interopRequireDefault(_DatePicker);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43296,7 +43301,114 @@ var displayRule = function displayRule(value) {
 
 var numberOfDigits = 8;
 
-exports.default = (0, _NumPad2.default)({ validation: validation, displayRule: displayRule, numberOfDigits: numberOfDigits });
+exports.default = (0, _DatePicker2.default)({ validation: validation, displayRule: displayRule, numberOfDigits: numberOfDigits });
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _templateObject = _taggedTemplateLiteral(['', ''], ['', '']);
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _propTypes = __webpack_require__(2);
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
+var _styledComponents = __webpack_require__(3);
+
+var _elements = __webpack_require__(145);
+
+var _global = __webpack_require__(191);
+
+var _global2 = _interopRequireDefault(_global);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+(0, _styledComponents.injectGlobal)(_templateObject, _global2.default);
+
+exports.default = function (_ref) {
+    var validation = _ref.validation,
+        displayRule = _ref.displayRule,
+        numberOfDigits = _ref.numberOfDigits,
+        specialKeys = _ref.specialKeys;
+    return function (_Component) {
+        _inherits(DatePicker, _Component);
+
+        function DatePicker(props) {
+            _classCallCheck(this, DatePicker);
+
+            var _this = _possibleConstructorReturn(this, (DatePicker.__proto__ || Object.getPrototypeOf(DatePicker)).call(this, props));
+
+            _this.state = { show: false, value: '' };
+            _this.toggleKeyPad = _this.toggleKeyPad.bind(_this);
+            return _this;
+        }
+
+        _createClass(DatePicker, [{
+            key: 'toggleKeyPad',
+            value: function toggleKeyPad(value) {
+                var _this2 = this;
+
+                var updateValue = this.state.show && validation(value) ? { value: value } : {};
+                this.setState(function (prevState) {
+                    return Object.assign({}, { show: !prevState.show }, updateValue);
+                }, function () {
+                    return _this2.props.onChange(value);
+                });
+            }
+        }, {
+            key: 'render',
+            value: function render() {
+                var _state = this.state,
+                    show = _state.show,
+                    value = _state.value;
+                var _props = this.props,
+                    placeholder = _props.placeholder,
+                    label = _props.label;
+
+
+                return [_react2.default.createElement(_elements.InputField, {
+                    key: 'input-field',
+                    placeholder: placeholder,
+                    showKeyPad: this.toggleKeyPad,
+                    value: displayRule(value),
+                    label: label,
+                    disabled: this.state.show }), show && _react2.default.createElement(
+                    _elements.KeyPadWrapper,
+                    { key: 'key-pad-wrapper' },
+                    _react2.default.createElement(_elements.Calendar, {
+                        locale: 'it',
+                        onChange: function onChange(date) {
+                            return console.log(date);
+                        }
+                    })
+                )];
+            }
+        }]);
+
+        return DatePicker;
+    }(_react.Component);
+};
 
 /***/ })
 /******/ ]);

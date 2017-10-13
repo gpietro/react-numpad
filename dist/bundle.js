@@ -6970,9 +6970,9 @@ var _styledComponents = __webpack_require__(3);
 
 var _elements = __webpack_require__(145);
 
-var _global = __webpack_require__(191);
+var _globalCss = __webpack_require__(197);
 
-var _global2 = _interopRequireDefault(_global);
+var _globalCss2 = _interopRequireDefault(_globalCss);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -6984,7 +6984,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-(0, _styledComponents.injectGlobal)(_templateObject, _global2.default);
+(0, _styledComponents.injectGlobal)(_templateObject, _globalCss2.default);
 
 exports.default = function (_ref) {
     var validation = _ref.validation,
@@ -7009,6 +7009,7 @@ exports.default = function (_ref) {
             value: function toggleKeyPad(value) {
                 var _this2 = this;
 
+                console.log('date', value, validation(value));
                 var updateValue = this.state.show && validation(value) ? { value: value } : {};
                 this.setState(function (prevState) {
                     return Object.assign({}, { show: !prevState.show }, updateValue);
@@ -7572,6 +7573,10 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
+var _reactOnclickoutside = __webpack_require__(159);
+
+var _reactOnclickoutside2 = _interopRequireDefault(_reactOnclickoutside);
+
 var _moment = __webpack_require__(0);
 
 var _moment2 = _interopRequireDefault(_moment);
@@ -7639,6 +7644,13 @@ var Calendar = function (_Component) {
     }
 
     _createClass(Calendar, [{
+        key: 'handleClickOutside',
+        value: function handleClickOutside(evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+            this.props.hideCalendar(this.state.date.format('DD.MM.YYYY'));
+        }
+    }, {
         key: 'handleNextMonth',
         value: function handleNextMonth() {
             this.setState(function (oldState) {
@@ -7655,16 +7667,12 @@ var Calendar = function (_Component) {
     }, {
         key: 'onChange',
         value: function onChange(day) {
-            var _this2 = this;
-
-            this.setState({ date: (0, _moment2.default)(day) }, function () {
-                return _this2.props.onChange(_this2.state.date);
-            });
+            this.setState({ date: (0, _moment2.default)(day) });
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this3 = this;
+            var _this2 = this;
 
             var _props = this.props,
                 locale = _props.locale,
@@ -7681,7 +7689,7 @@ var Calendar = function (_Component) {
                     _react2.default.createElement(
                         'button',
                         { onClick: this.handlePrevMonth },
-                        '\xAB'
+                        _react2.default.createElement('span', { className: 'fa fa-arrow-left' })
                     ),
                     _react2.default.createElement(
                         'div',
@@ -7691,7 +7699,7 @@ var Calendar = function (_Component) {
                     _react2.default.createElement(
                         'button',
                         { onClick: this.handleNextMonth },
-                        '\xBB'
+                        _react2.default.createElement('span', { className: 'fa fa-arrow-right' })
                     )
                 ),
                 _react2.default.createElement(
@@ -7713,7 +7721,7 @@ var Calendar = function (_Component) {
                                 key: 'day-' + i,
                                 className: 'Calendar-grid-item ' + (day.classNames || '') + ' ' + (day.day.isSame(date, 'day') ? 'active' : ''),
                                 onClick: function onClick() {
-                                    return _this3.onChange(day.day);
+                                    return _this2.onChange(day.day);
                                 } },
                             day.day.format('D')
                         );
@@ -7727,12 +7735,10 @@ var Calendar = function (_Component) {
 }(_react.Component);
 
 Calendar.propTypes = {
-    /** Week offset*/
     weekOffset: _propTypes2.default.number.isRequired,
-    /** The current date as a moment objecct */
     date: _propTypes2.default.object.isRequired,
-    /** Called when a date is clicked */
-    onChange: _propTypes2.default.func
+    hideCalendar: _propTypes2.default.func.isRequired,
+    locale: _propTypes2.default.string
 };
 
 Calendar.defaultProps = {
@@ -7741,7 +7747,7 @@ Calendar.defaultProps = {
     locale: 'en'
 };
 
-exports.default = Calendar;
+exports.default = (0, _reactOnclickoutside2.default)(Calendar);
 
 /***/ }),
 /* 21 */
@@ -43228,18 +43234,7 @@ module.exports = webpackContext;
 webpackContext.id = 190;
 
 /***/ }),
-/* 191 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = "\n  html {\n      touch-action: manipulation;\n  }\n  * {\n      font-family: Open sans, sans-serif;\n      font-size: 1em;\n\n      box-sizing: border-box;\n      -webkit-box-sizing: border-box;\n      -webkit-font-smoothing: antialiased;\n      margin: 0;\n      padding: 0;\n  }\n  .keypad-appear {\n      transform: translate(0, 250px);\n  }    \n  .keypad-appear.keypad-appear-active {\n      transform: translate(0);\n      transition: transform 500ms ease-in-out;\n  }    \n\n  #calendar {\n    width: 640px;\n    height: 480px;\n    margin: 100px auto;\n  }\n  \n  .Calendar-grid {\n    display: flex;\n    flex-wrap: wrap;\n    width: 100%;\n    cursor: pointer;\n  }\n  \n  .Calendar-header {\n    font-size: 1.2em;\n    height: 50px;\n    background: #333;\n    color: #fff;\n    text-align: center;\n    line-height: 50px;\n    display: flex;\n    justify-content: space-between;\n    text-transform: capitalize;        \n    cursor: pointer;\n  }\n  \n  .Calendar-header button {\n    width: 50px;        \n    border: 0;\n    background: transparent;\n    color: #ddd;\n    cursor: pointer;\n    outline: none;\n  }\n  \n  .Calendar-grid-item {\n    &:nth-child(-n+7) {\n      background: #efefef;\n    }\n    &.active {\n      font-weight: 700;\n      color: white;\n      background: #333;\n    }\n    flex: 0 14.28571%;\n    text-align: center;\n    border-right: 1px solid #ddd;\n    border-bottom: 1px solid #ddd;\n    padding: 1rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    text-transform: capitalize;\n  }\n  \n  .Calendar-grid-item.nextMonth,\n  .Calendar-grid-item.prevMonth {\n    color: #999;\n  }\n  \n  .Calendar-grid-item:nth-child(7n+1) {\n    border-left: 1px solid #ddd;\n  }\n  \n  .Calendar-grid-item:nth-child(-n+7) {\n    border-top: 1px solid #ddd;\n  }\n";
-
-/***/ }),
+/* 191 */,
 /* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43292,11 +43287,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var validation = function validation() {
     var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
-    return value.length === 8 && (0, _moment2.default)(value, 'DD.MM.YYYY').isValid();
+    return value.length === 10 && (0, _moment2.default)(value, 'DD.MM.YYYY').isValid();
 };
 
 var displayRule = function displayRule(value) {
-    return value ? value.substr(0, 2) + '.' + value.substr(2, 2) + '.' + value.substr(4, 4) : '';
+    return value;
 };
 
 var numberOfDigits = 8;
@@ -43330,9 +43325,13 @@ var _styledComponents = __webpack_require__(3);
 
 var _elements = __webpack_require__(145);
 
-var _global = __webpack_require__(191);
+var _globalCss = __webpack_require__(197);
 
-var _global2 = _interopRequireDefault(_global);
+var _globalCss2 = _interopRequireDefault(_globalCss);
+
+var _calendarCss = __webpack_require__(196);
+
+var _calendarCss2 = _interopRequireDefault(_calendarCss);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43344,7 +43343,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-(0, _styledComponents.injectGlobal)(_templateObject, _global2.default);
+(0, _styledComponents.injectGlobal)(_templateObject, (_globalCss2.default, _calendarCss2.default));
 
 exports.default = function (_ref) {
     var validation = _ref.validation,
@@ -43360,13 +43359,13 @@ exports.default = function (_ref) {
             var _this = _possibleConstructorReturn(this, (DatePicker.__proto__ || Object.getPrototypeOf(DatePicker)).call(this, props));
 
             _this.state = { show: false, value: '' };
-            _this.toggleKeyPad = _this.toggleKeyPad.bind(_this);
+            _this.toggleCalendar = _this.toggleCalendar.bind(_this);
             return _this;
         }
 
         _createClass(DatePicker, [{
-            key: 'toggleKeyPad',
-            value: function toggleKeyPad(value) {
+            key: 'toggleCalendar',
+            value: function toggleCalendar(value) {
                 var _this2 = this;
 
                 var updateValue = this.state.show && validation(value) ? { value: value } : {};
@@ -43390,7 +43389,7 @@ exports.default = function (_ref) {
                 return [_react2.default.createElement(_elements.InputField, {
                     key: 'input-field',
                     placeholder: placeholder,
-                    showKeyPad: this.toggleKeyPad,
+                    showKeyPad: this.toggleCalendar,
                     value: displayRule(value),
                     label: label,
                     disabled: this.state.show }), show && _react2.default.createElement(
@@ -43398,9 +43397,7 @@ exports.default = function (_ref) {
                     { key: 'key-pad-wrapper' },
                     _react2.default.createElement(_elements.Calendar, {
                         locale: 'it',
-                        onChange: function onChange(date) {
-                            return console.log(date);
-                        }
+                        hideCalendar: this.toggleCalendar
                     })
                 )];
             }
@@ -43409,6 +43406,31 @@ exports.default = function (_ref) {
         return DatePicker;
     }(_react.Component);
 };
+
+/***/ }),
+/* 195 */,
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = "\n* {\n    box-sizing: border-box;\n    -webkit-box-sizing: border-box;\n    -webkit-font-smoothing: antialiased;\n    margin: 0 auto;\n    padding: 0;\n}\n\n.Calendar {\n    min-width: 350px;\n    max-width: 600px;\n}\n\n.Calendar-grid {\n    display: flex;\n    flex-wrap: wrap;\n    width: 100%;\n    cursor: pointer;\n}\n\n.Calendar-header {\n    font-size: 1.1em;    \n    height: 34px;\n    background: #333;\n    color: #fff;\n    line-height: 40px;\n    display: flex;\n    justify-content: space-between;\n    text-transform: capitalize;        \n    cursor: pointer;\n    align-items: center;\n}\n\n.Calendar-header button {\n    width: 50px;\n    border: 0;\n    background: transparent;\n    color: white;\n    cursor: pointer;\n    outline: none;\n}\n\n.Calendar-grid-item {\n    &:nth-child(-n+7) {\n        padding: 0.2em;\n        font-size: 0.9em;\n        background: #efefef;\n    }\n    &.active {\n        font-weight: 700;\n        color: white;\n        background: #333;\n    }\n    flex: 0 14.28571%;\n    text-align: center;\n    border-right: 1px solid #ddd;\n    border-bottom: 1px solid #ddd;\n    padding: 0.4rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    text-transform: capitalize;\n}\n\n.Calendar-grid-item.nextMonth,\n.Calendar-grid-item.prevMonth {\n    color: #999;\n}\n\n.Calendar-grid-item:nth-child(7n+1) {\n    border-left: 1px solid #ddd;\n}\n\n.Calendar-grid-item:nth-child(-n+7) {\n    border-top: 1px solid #ddd;\n}\n";
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = "\n  html {\n      touch-action: manipulation;\n  }\n  * {\n      font-family: Open sans, sans-serif;\n      font-size: 1em;\n  }\n  .keypad-appear {\n      transform: translate(0, 250px);\n  }    \n  .keypad-appear.keypad-appear-active {\n      transform: translate(0);\n      transition: transform 500ms ease-in-out;\n  }    \n";
 
 /***/ })
 /******/ ]);

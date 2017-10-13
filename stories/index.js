@@ -24,8 +24,7 @@ storiesOf('Components', module)
   .add('Date', () => <NumPad.Date onChange={(value) => console.log('changed', value)} label={'Data di nascita'} />)
   
 storiesOf('Elements', module)
-  .add('Calendar', () => <NumPad.Calendar onChangeMonth={date => console.log(date)}
-        date={moment()}
+  .add('Calendar', () => <NumPad.Calendar locale='it' onChangeMonth={date => console.log(date)}
         onPickDate={date => console.log(date)}
         renderDay={date => (
           <span

@@ -6777,7 +6777,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  background: #fff;    \n  border: none;\n  color: #3a3a3a;\n  cursor: pointer;\n  display: inline-block;\n  font-size: 16px;\n  line-height: 40px;\n  font-weight: 200;\n  margin: 3px 0;\n  outline: none;\n  padding: 0 12px;\n  border-radius: 2px;\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n'], ['\n  background: #fff;    \n  border: none;\n  color: #3a3a3a;\n  cursor: pointer;\n  display: inline-block;\n  font-size: 16px;\n  line-height: 40px;\n  font-weight: 200;\n  margin: 3px 0;\n  outline: none;\n  padding: 0 12px;\n  border-radius: 2px;\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  background: #fff;    \n  border: none;\n  color: #3a3a3a;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 40px;\n  font-weight: 200;\n  margin: 3px 0;\n  outline: none;\n  padding: 0 12px;\n  border-radius: 2px;\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n'], ['\n  background: #fff;    \n  border: none;\n  color: #3a3a3a;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 40px;\n  font-weight: 200;\n  margin: 3px 0;\n  outline: none;\n  padding: 0 12px;\n  border-radius: 2px;\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n']);
 
 var _styledComponents = __webpack_require__(3);
 
@@ -7267,7 +7267,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n    display: flex;\n    align-items: center;\n    width: 100%;\n    margin: 5px auto;\n    padding: 0 10px;\n    background: ', ';\n    border: none;\n    color: #3a3a3a;\n    \n    .NumPad-display {\n        flex-grow: 1;\n\n        .NumPad-display-label {\n            font-size: 12px;\n            width: 100%;\n            font-weight: 400;\n        }\n    \n        .NumPad-display-value {\n            width: 100%;\n            alignSelf: right;\n            height: 24px;\n        }\n    }\n\n    .NumPad-display-icon {\n        width: 40px;\n        padding: 9px;\n        background: none;\n        border: none;\n        outline: none;\n    }\n'], ['\n    display: flex;\n    align-items: center;\n    width: 100%;\n    margin: 5px auto;\n    padding: 0 10px;\n    background: ', ';\n    border: none;\n    color: #3a3a3a;\n    \n    .NumPad-display {\n        flex-grow: 1;\n\n        .NumPad-display-label {\n            font-size: 12px;\n            width: 100%;\n            font-weight: 400;\n        }\n    \n        .NumPad-display-value {\n            width: 100%;\n            alignSelf: right;\n            height: 24px;\n        }\n    }\n\n    .NumPad-display-icon {\n        width: 40px;\n        padding: 9px;\n        background: none;\n        border: none;\n        outline: none;\n    }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    display: flex;\n    align-items: center;\n    width: 100%;\n    margin: 5px auto;\n    padding: 0 10px;\n    background: ', ';\n    border: none;\n    color: #3a3a3a;\n    \n    .NumPad-display {\n        flex-grow: 1;\n\n        .NumPad-display-label {\n            font-size: 0.8em;\n            width: 100%;\n        }\n    \n        .NumPad-display-value {\n            width: 100%;\n            alignSelf: right;\n            height: 24px;\n        }\n    }\n\n    .NumPad-display-icon {\n        width: 40px;\n        padding: 9px;\n        background: none;\n        border: none;\n        outline: none;\n    }\n'], ['\n    display: flex;\n    align-items: center;\n    width: 100%;\n    margin: 5px auto;\n    padding: 0 10px;\n    background: ', ';\n    border: none;\n    color: #3a3a3a;\n    \n    .NumPad-display {\n        flex-grow: 1;\n\n        .NumPad-display-label {\n            font-size: 0.8em;\n            width: 100%;\n        }\n    \n        .NumPad-display-value {\n            width: 100%;\n            alignSelf: right;\n            height: 24px;\n        }\n    }\n\n    .NumPad-display-icon {\n        width: 40px;\n        padding: 9px;\n        background: none;\n        border: none;\n        outline: none;\n    }\n']);
 
 var _react = __webpack_require__(1);
 
@@ -7631,40 +7631,41 @@ var Calendar = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).call(this, props));
 
+        _this.state = { date: props.date };
         _this.handleNextMonth = _this.handleNextMonth.bind(_this);
         _this.handlePrevMonth = _this.handlePrevMonth.bind(_this);
+        _this.onPickDate = _this.onPickDate.bind(_this);
         return _this;
     }
 
     _createClass(Calendar, [{
         key: 'handleNextMonth',
         value: function handleNextMonth() {
-            if (this.props.onNextMonth) {
-                return this.props.onNextMonth();
-            }
-
-            this.props.onChangeMonth(this.props.date.clone().add(1, 'months'));
+            this.setState(function (oldState) {
+                return { date: oldState.date.add(1, 'months') };
+            });
         }
     }, {
         key: 'handlePrevMonth',
         value: function handlePrevMonth() {
-            if (this.props.onPrevMonth) {
-                return this.props.onPrevMonth();
-            }
-
-            this.props.onChangeMonth(this.props.date.clone().subtract(1, 'months'));
+            this.setState(function (oldState) {
+                return { date: oldState.date.subtract(1, 'months') };
+            });
+        }
+    }, {
+        key: 'onPickDate',
+        value: function onPickDate(day) {
+            this.setState({ date: (0, _moment2.default)(day) });
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var _props = this.props,
-                date = _props.date,
-                weekOffset = _props.weekOffset,
-                renderDay = _props.renderDay,
-                onNextMonth = _props.onNextMonth,
-                onPrevMonth = _props.onPrevMonth,
-                onPickDate = _props.onPickDate,
-                onChange = _props.onChange;
+                locale = _props.locale,
+                weekOffset = _props.weekOffset;
+            var date = this.state.date;
 
 
             return _react2.default.createElement(
@@ -7681,7 +7682,7 @@ var Calendar = function (_Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'Calendar-header-currentDate' },
-                        date.format('MM/YYYY')
+                        date.locale(locale).format('MMMM YYYY')
                     ),
                     _react2.default.createElement(
                         'button',
@@ -7692,17 +7693,25 @@ var Calendar = function (_Component) {
                 _react2.default.createElement(
                     'div',
                     { className: 'Calendar-grid' },
-                    createDateObjects(date, weekOffset).map(function (day, i) {
+                    Array(7).fill().map(function (_, i) {
+                        return i + 1 + weekOffset;
+                    }).map(function (weekDay) {
+                        return _react2.default.createElement(
+                            'div',
+                            { key: 'week-day-' + weekDay, className: 'Calendar-grid-item' },
+                            (0, _moment2.default)().isoWeekday(weekDay).locale(locale).format('dd')
+                        );
+                    }),
+                    createDateObjects((0, _moment2.default)(date), weekOffset).map(function (day, i) {
                         return _react2.default.createElement(
                             'div',
                             {
                                 key: 'day-' + i,
-                                className: 'Calendar-grid-item ' + (day.classNames || ''),
-                                onClick: function onClick(e) {
-                                    return onPickDate(day.day);
-                                }
-                            },
-                            renderDay(day.day)
+                                className: 'Calendar-grid-item ' + (day.classNames || '') + ' ' + (day.day.isSame(date, 'day') ? 'active' : ''),
+                                onClick: function onClick() {
+                                    return _this2.onPickDate(day.day);
+                                } },
+                            day.day.format('D')
                         );
                     })
                 )
@@ -7718,23 +7727,14 @@ Calendar.propTypes = {
     weekOffset: _propTypes2.default.number.isRequired,
     /** The current date as a moment objecct */
     date: _propTypes2.default.object.isRequired,
-    /** Function to render a day cell */
-    renderDay: _propTypes2.default.func,
-    /** Called on next month click */
-    onNextMonth: _propTypes2.default.func,
-    /** Called on prev month click */
-    onPrevMonth: _propTypes2.default.func,
-    /** Called when some of the navigation controls are clicked */
-    onChangeMonth: _propTypes2.default.func,
     /** Called when a date is clicked */
     onPickDate: _propTypes2.default.func
 };
 
 Calendar.defaultProps = {
     weekOffset: 0,
-    renderDay: function renderDay(day) {
-        return day.format('YYYY-MM-D');
-    }
+    date: (0, _moment2.default)(),
+    locale: 'en'
 };
 
 exports.default = Calendar;
@@ -23729,7 +23729,7 @@ var KeyPad = function (_Component) {
                                 click: _this2.numericKeyClick });
                         })
                     ),
-                    _react2.default.createElement(
+                    specialKeys && _react2.default.createElement(
                         SpecialKeys,
                         null,
                         specialKeys.map(function (val) {
@@ -43232,7 +43232,7 @@ webpackContext.id = 190;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = "\n    html {\n        touch-action: manipulation;\n    }\n    * {\n        font-family: Open sans, sans-serif;\n        font-size: 14px;\n    }\n    .keypad-appear {\n        transform: translate(0, 300px);\n    }    \n    .keypad-appear.keypad-appear-active {\n        transform: translate(0);\n        transition: transform 500ms ease-in-out;\n    }    \n\n\n    * {\n        box-sizing: border-box;\n        -webkit-box-sizing: border-box;\n        -webkit-font-smoothing: antialiased;\n        margin: 0;\n        padding: 0;\n      }      \n      \n      #calendar {\n        width: 640px;\n        height: 480px;\n        margin: 100px auto;\n      }\n      \n      .Calendar-grid {\n        display: flex;\n        flex-wrap: wrap;\n        width: 100%;\n      }\n      \n      .Calendar-header {\n          font-size: 1.2em;\n        height: 50px;\n        background: #333;\n        color: #fff;\n        text-align: center;\n        line-height: 50px;\n        display: flex;\n        font-size: 20px;\n        justify-content: space-between;\n      }\n      \n      .Calendar-header button {\n        width: 50px;\n        font-size: 20px;\n        border: 0;\n        background: transparent;\n        color: #ddd;\n        cursor: pointer;\n      }\n      \n      .Calendar-grid-item {\n        flex: 0 14.28571%;\n        text-align: center;\n        border-right: 1px solid #ddd;\n        border-bottom: 1px solid #ddd;\n        padding: 1rem;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n      }\n      \n      .Calendar-grid-item.nextMonth,\n      .Calendar-grid-item.prevMonth {\n        color: #999;\n      }\n      \n      .Calendar-grid-item:nth-child(7n+1) {\n        border-left: 1px solid #ddd;\n      }\n      \n      .Calendar-grid-item:nth-child(-n+7) {\n        border-top: 1px solid #ddd;\n      }\n";
+exports.default = "\n    html {\n        touch-action: manipulation;\n    }\n    * {\n        font-family: Open sans, sans-serif;\n        font-size: 1em;\n    }\n    .keypad-appear {\n        transform: translate(0, 300px);\n    }    \n    .keypad-appear.keypad-appear-active {\n        transform: translate(0);\n        transition: transform 500ms ease-in-out;\n    }    \n\n\n    * {\n        box-sizing: border-box;\n        -webkit-box-sizing: border-box;\n        -webkit-font-smoothing: antialiased;\n        margin: 0;\n        padding: 0;\n      }      \n      \n      #calendar {\n        width: 640px;\n        height: 480px;\n        margin: 100px auto;\n      }\n      \n      .Calendar-grid {\n        display: flex;\n        flex-wrap: wrap;\n        width: 100%;\n        cursor: pointer;\n      }\n      \n      .Calendar-header {\n        font-size: 1.2em;\n        height: 50px;\n        background: #333;\n        color: #fff;\n        text-align: center;\n        line-height: 50px;\n        display: flex;\n        justify-content: space-between;\n        text-transform: capitalize;        \n        cursor: pointer;\n      }\n      \n      .Calendar-header button {\n        width: 50px;        \n        border: 0;\n        background: transparent;\n        color: #ddd;\n        cursor: pointer;\n        outline: none;\n      }\n      \n      .Calendar-grid-item {\n        &:nth-child(-n+7) {\n          background: #efefef;\n        }\n        &.active {\n          font-weight: 700;\n          color: white;\n          background: #333;\n        }\n        flex: 0 14.28571%;\n        text-align: center;\n        border-right: 1px solid #ddd;\n        border-bottom: 1px solid #ddd;\n        padding: 1rem;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        text-transform: capitalize;\n      }\n      \n      .Calendar-grid-item.nextMonth,\n      .Calendar-grid-item.prevMonth {\n        color: #999;\n      }\n      \n      .Calendar-grid-item:nth-child(7n+1) {\n        border-left: 1px solid #ddd;\n      }\n      \n      .Calendar-grid-item:nth-child(-n+7) {\n        border-top: 1px solid #ddd;\n      }\n";
 
 /***/ }),
 /* 192 */

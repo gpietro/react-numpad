@@ -6937,14 +6937,15 @@ var Button = _styledComponents2.default.button(_templateObject, function (props)
 });
 
 var ButtonWrapper = function ButtonWrapper(_ref) {
-  var theme = _ref.theme;
+  var theme = _ref.theme,
+      value = _ref.value;
   return _react2.default.createElement(
     _styledComponents.ThemeProvider,
     { theme: _styles2.default[theme].button.primary },
     _react2.default.createElement(
       Button,
       null,
-      'Ciao'
+      value
     )
   );
 };
@@ -7934,7 +7935,10 @@ var KeyPadButton = function KeyPadButton(props) {
 
     return _react2.default.createElement(
         _Button2.default,
-        { theme: theme, className: 'NumPad-keypad-button', style: style, onClick: function onClick() {
+        {
+            theme: theme,
+            className: 'NumPad-keypad-button',
+            style: style, onClick: function onClick() {
                 return click(value);
             } },
         value
@@ -24301,7 +24305,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _templateObject = _taggedTemplateLiteral(['\n    display: flex;\n    flex-direction: column;\n    margin: auto;\n    width: 300px;\n    height: 100%;\n'], ['\n    display: flex;\n    flex-direction: column;\n    margin: auto;\n    width: 300px;\n    height: 100%;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    display: flex;\n    flex: 4;    \n'], ['\n    display: flex;\n    flex: 4;    \n']),
     _templateObject3 = _taggedTemplateLiteral(['\n    display: flex;\n    flex: 3;\n    flex-wrap: wrap;\n'], ['\n    display: flex;\n    flex: 3;\n    flex-wrap: wrap;\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n'], ['\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n']);
+    _templateObject4 = _taggedTemplateLiteral(['\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n'], ['\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n']),
+    _templateObject5 = _taggedTemplateLiteral(['\n    width: 72px;\n'], ['\n    width: 72px;\n']);
 
 var _react = __webpack_require__(1);
 
@@ -24323,10 +24328,6 @@ var _Button = __webpack_require__(6);
 
 var _Button2 = _interopRequireDefault(_Button);
 
-var _KeyPadButton = __webpack_require__(32);
-
-var _KeyPadButton2 = _interopRequireDefault(_KeyPadButton);
-
 var _Display = __webpack_require__(28);
 
 var _Display2 = _interopRequireDefault(_Display);
@@ -24340,6 +24341,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+// import KeyPadButton from './KeyPadButton'
+
 
 var Container = _styledComponents2.default.div(_templateObject);
 
@@ -24460,7 +24463,7 @@ var KeyPad = function (_Component) {
                         NumericKeys,
                         null,
                         this.numericKeys.map(function (val) {
-                            return _react2.default.createElement(_KeyPadButton2.default, _extends({
+                            return _react2.default.createElement(StyledKeyPadButton, _extends({
                                 style: { width: '70px' },
                                 key: 'button-' + val,
                                 value: val,
@@ -24472,7 +24475,7 @@ var KeyPad = function (_Component) {
                         SpecialKeys,
                         null,
                         specialKeys.map(function (val) {
-                            return _react2.default.createElement(_KeyPadButton2.default, _extends({
+                            return _react2.default.createElement(StyledKeyPadButton, _extends({
                                 key: 'button-' + val,
                                 value: val,
                                 click: _this2.specialKeyClick
@@ -24506,6 +24509,22 @@ KeyPad.defaultProps = {
 };
 
 exports.default = (0, _reactOnclickoutside2.default)(KeyPad);
+
+
+var KeyPadButton = function KeyPadButton(_ref) {
+    var value = _ref.value,
+        click = _ref.click,
+        theme = _ref.theme;
+    return _react2.default.createElement(_Button2.default, {
+        theme: theme,
+        className: 'NumPad-keypad-button',
+        onClick: function onClick() {
+            return click(value);
+        },
+        value: value });
+};
+
+var StyledKeyPadButton = (0, _styledComponents2.default)(KeyPadButton)(_templateObject5);
 
 /***/ }),
 /* 221 */
@@ -44084,7 +44103,7 @@ exports.default = {
     },
     button: {
         primary: {
-            color: 'pink',
+            color: '#333',
             background: '#dfdfdf',
             padding: '10px',
             border: 'none',

@@ -24383,7 +24383,7 @@ var KeyPad = function (_Component) {
         value: function handleClickOutside(evt) {
             evt.preventDefault();
             evt.stopPropagation();
-            this.props.confirm(this.state.input);
+            this.props.cancel();
         }
     }, {
         key: 'cancelLastInsert',

@@ -8,6 +8,8 @@ import { linkTo } from '@storybook/addon-links'
 import NumPad from '../lib'
 import Calendar from '../lib/elements/Calendar'
 
+import Button from '../lib/elements/Button'
+
 storiesOf('Components', module)
   .add('Number', () => 
     <NumPad.Number key='number-1' onChange={(value) => { console.log('value', value)}} label={'Totale'} />)    
@@ -30,5 +32,5 @@ storiesOf('Elements', module)
   .add('Calendar', () => <Calendar 
     locale='it' 
     dateFormat='MM/DD/YYYY'
-    onChange={date => console.log(date)} />
-)
+    onChange={date => console.log(date)} />)
+  .add('Button', () => <Button />)

@@ -7153,7 +7153,8 @@ exports.default = function (_ref) {
     var validation = _ref.validation,
         displayRule = _ref.displayRule,
         numberOfDigits = _ref.numberOfDigits,
-        specialKeys = _ref.specialKeys,
+        negative = _ref.negative,
+        float = _ref.float,
         inputButtonContent = _ref.inputButtonContent;
     return function (_Component) {
         _inherits(NumPad, _Component);
@@ -7204,7 +7205,8 @@ exports.default = function (_ref) {
                     _react2.default.createElement(_elements.KeyPad, {
                         hideKeyPad: this.toggleKeyPad,
                         numberOfDigits: numberOfDigits,
-                        specialKeys: specialKeys,
+                        negative: negative,
+                        float: float,
                         displayRule: displayRule,
                         validation: validation,
                         label: label })
@@ -19114,7 +19116,11 @@ var numberOfDigits = 4;
 
 var inputButtonContent = _react2.default.createElement('span', { className: 'fa fa-clock-o' });
 
-exports.default = (0, _NumPad2.default)({ validation: validation, displayRule: displayRule, numberOfDigits: numberOfDigits, inputButtonContent: inputButtonContent });
+var float = false;
+
+var negative = false;
+
+exports.default = (0, _NumPad2.default)({ validation: validation, displayRule: displayRule, numberOfDigits: numberOfDigits, inputButtonContent: inputButtonContent, float: float, negative: negative });
 
 /***/ }),
 /* 141 */
@@ -23757,6 +23763,10 @@ var _Display = __webpack_require__(15);
 
 var _Display2 = _interopRequireDefault(_Display);
 
+var _specialKeys = __webpack_require__(198);
+
+var _specialKeys2 = _interopRequireDefault(_specialKeys);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -23820,14 +23830,20 @@ var KeyPad = function (_Component) {
         key: 'keyDown',
         value: function keyDown(event) {
             event.preventDefault();
+            var _props = this.props,
+                float = _props.float,
+                negative = _props.negative,
+                hideKeyPad = _props.hideKeyPad;
+
             var key = event.key;
+
             if (key === 'Backspace') {
                 this.cancelLastInsert();
             } else if (['Enter', 'Escape'].includes(key)) {
-                this.props.hideKeyPad(this.state.input);
+                hideKeyPad(this.state.input);
             } else if (this.numericKeys.includes(parseFloat(key))) {
                 this.numericKeyClick(key);
-            } else if (this.props.specialKeys.includes(key)) {
+            } else if ((0, _specialKeys2.default)({ float: float, negative: negative }).keys.includes(key)) {
                 this.specialKeyClick(key);
             }
         }
@@ -23863,12 +23879,14 @@ var KeyPad = function (_Component) {
         value: function render() {
             var _this2 = this;
 
-            var _props = this.props,
-                specialKeys = _props.specialKeys,
-                displayRule = _props.displayRule,
-                validation = _props.validation,
-                label = _props.label;
+            var _props2 = this.props,
+                float = _props2.float,
+                negative = _props2.negative,
+                displayRule = _props2.displayRule,
+                validation = _props2.validation,
+                label = _props2.label;
 
+            var specialKeyLabels = (0, _specialKeys2.default)({ float: float, negative: negative }).values;
 
             return _react2.default.createElement(
                 Container,
@@ -23893,12 +23911,12 @@ var KeyPad = function (_Component) {
                                 click: _this2.numericKeyClick });
                         })
                     ),
-                    specialKeys && _react2.default.createElement(
+                    _react2.default.createElement(
                         SpecialKeys,
                         null,
-                        specialKeys.map(function (val) {
+                        specialKeyLabels.map(function (val, i) {
                             return _react2.default.createElement(_KeyPadButton2.default, {
-                                key: 'button-' + val,
+                                key: 'button-sk-' + i,
                                 value: val,
                                 click: _this2.specialKeyClick });
                         })
@@ -23913,7 +23931,8 @@ var KeyPad = function (_Component) {
 
 KeyPad.propTypes = {
     hideKeyPad: _propTypes2.default.func.isRequired,
-    specialKeys: _propTypes2.default.array,
+    negative: _propTypes2.default.bool,
+    float: _propTypes2.default.bool,
     numberOfDigits: _propTypes2.default.number,
     displayRule: _propTypes2.default.func,
     validation: _propTypes2.default.func
@@ -23926,7 +23945,8 @@ KeyPad.defaultProps = {
     validation: function validation() {
         return true;
     },
-    specialKeys: []
+    negative: true,
+    float: true
 };
 
 exports.default = (0, _reactOnclickoutside2.default)(KeyPad);
@@ -43397,9 +43417,7 @@ var displayRule = function displayRule(value) {
   return value;
 };
 
-var specialKeys = ['-', '.', '<-'];
-
-exports.default = (0, _NumPad2.default)({ validation: validation, displayRule: displayRule, specialKeys: specialKeys });
+exports.default = (0, _NumPad2.default)({ validation: validation, displayRule: displayRule });
 
 /***/ }),
 /* 194 */
@@ -43453,6 +43471,55 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = "\n* {\n    box-sizing: border-box;\n    -webkit-box-sizing: border-box;\n    -webkit-font-smoothing: antialiased;\n    padding: 0;\n}\n\n.Calendar {\n    margin: auto;\n    min-width: 320px;\n    max-width: 600px;\n}\n\n.Calendar-grid {\n    display: flex;\n    flex-wrap: wrap;\n    width: 100%;\n    cursor: pointer;\n}\n\n.Calendar-header {\n    font-size: 1.1em;    \n    height: 34px;\n    background: #333;\n    color: #fff;\n    display: flex;\n    justify-content: space-between;\n    text-transform: capitalize;        \n    cursor: pointer;\n    align-items: center;\n}\n\n.Calendar-header button {\n    width: 50px;\n    border: 0;\n    background: transparent;\n    color: white;\n    cursor: pointer;\n    outline: none;\n}\n\n.Calendar-grid-item {\n    &:nth-child(-n+7) {\n        padding: 0.2em;\n        font-size: 0.8em;\n        background: #efefef;\n    }\n    &.active {\n        font-weight: 700;\n        color: white;\n        background: #333;\n    }\n    flex: 0 14.28571%;\n    text-align: center;\n    border-right: 1px solid #ddd;\n    border-bottom: 1px solid #ddd;\n    padding: 0.25rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    text-transform: capitalize;\n    background: white;\n}\n\n.Calendar-grid-item.nextMonth,\n.Calendar-grid-item.prevMonth {\n    color: #999;\n}\n\n.Calendar-grid-item:nth-child(7n+1) {\n    border-left: 1px solid #ddd;\n}\n\n.Calendar-grid-item:nth-child(-n+7) {\n    border-top: 1px solid #ddd;\n}\n";
+
+/***/ }),
+/* 196 */,
+/* 197 */,
+/* 198 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (_ref) {
+    var negative = _ref.negative,
+        float = _ref.float;
+
+    var specialKeys = [];
+    if (negative) {
+        specialKeys.push({
+            key: '-',
+            value: _react2.default.createElement('span', { className: 'fa fa-minus' })
+        });
+    }
+    if (float) {
+        specialKeys.push({
+            key: '.',
+            value: _react2.default.createElement('span', { className: 'fa fa-circle' })
+        });
+    }
+
+    console.log('n', negative, float);
+
+    return {
+        keys: specialKeys.map(function (sk) {
+            return sk.key;
+        }),
+        values: specialKeys.map(function (sk) {
+            return sk.value;
+        })
+    };
+};
 
 /***/ })
 /******/ ]);

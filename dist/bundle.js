@@ -7389,14 +7389,23 @@ exports.default = function (_ref) {
 
             _this.state = { show: false, value: '' };
             _this.toggleKeyPad = _this.toggleKeyPad.bind(_this);
+            _this.confirm = _this.confirm.bind(_this);
             return _this;
         }
 
         _createClass(NumPad, [{
             key: 'toggleKeyPad',
             value: function toggleKeyPad(value) {
+                this.setState(function (prevState) {
+                    return { show: !prevState.show };
+                });
+            }
+        }, {
+            key: 'confirm',
+            value: function confirm(value) {
                 var updateValue = {};
                 if (this.state.show && validation(value)) {
+                    console.log('update value');
                     updateValue = { value: value };
                     this.props.onChange(value);
                 }
@@ -7426,7 +7435,8 @@ exports.default = function (_ref) {
                     _elements.KeyPadWrapper,
                     { key: 'key-pad-wrapper' },
                     _react2.default.createElement(_elements.KeyPad, _extends({
-                        hideKeyPad: this.toggleKeyPad,
+                        cancel: this.toggleKeyPad,
+                        confirm: this.confirm,
                         numberOfDigits: numberOfDigits,
                         negative: negative,
                         float: float,
@@ -7562,7 +7572,7 @@ var Display = function Display(_ref) {
         _react2.default.createElement(
             'button',
             { className: 'NumPad-display-icon', onClick: cancel },
-            _react2.default.createElement('span', { className: 'fa fa-long-arrow-left' })
+            _react2.default.createElement('i', { className: 'fa fa-long-arrow-left' })
         )
     );
 };
@@ -24373,7 +24383,7 @@ var KeyPad = function (_Component) {
         value: function handleClickOutside(evt) {
             evt.preventDefault();
             evt.stopPropagation();
-            this.props.hideKeyPad(this.state.input);
+            this.props.confirm(this.state.input);
         }
     }, {
         key: 'cancelLastInsert',
@@ -24389,14 +24399,17 @@ var KeyPad = function (_Component) {
             var _props = this.props,
                 float = _props.float,
                 negative = _props.negative,
-                hideKeyPad = _props.hideKeyPad;
+                confirm = _props.confirm,
+                cancel = _props.cancel;
 
             var key = event.key;
 
             if (key === 'Backspace') {
                 this.cancelLastInsert();
-            } else if (['Enter', 'Escape'].includes(key)) {
-                hideKeyPad(this.state.input);
+            } else if (key === 'Enter') {
+                confirm(this.state.input);
+            } else if (key === 'Escape') {
+                cancel();
             } else if (this.numericKeys.includes(parseFloat(key))) {
                 this.numericKeyClick(key);
             } else if ((0, _specialKeys2.default)({ float: float, negative: negative }).keys.includes(key)) {
@@ -24441,12 +24454,26 @@ var KeyPad = function (_Component) {
                 negative = _props2.negative,
                 displayRule = _props2.displayRule,
                 validation = _props2.validation,
-                label = _props2.label;
+                label = _props2.label,
+                confirm = _props2.confirm,
+                cancel = _props2.cancel;
             // let specialKeyLabels = specialKeys({float, negative}).values    
 
             return _react2.default.createElement(
                 Container,
                 null,
+                _react2.default.createElement(
+                    'div',
+                    { style: { display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #333', paddingBottom: '10px' } },
+                    _react2.default.createElement('i', { style: { cursor: 'pointer' },
+                        onClick: cancel,
+                        className: 'fa fa-remove' }),
+                    _react2.default.createElement('i', { style: { cursor: 'pointer' },
+                        onClick: function onClick() {
+                            return confirm(_this2.state.input);
+                        },
+                        className: 'fa fa-check' })
+                ),
                 _react2.default.createElement(_Display2.default, {
                     value: this.state.input,
                     displayRule: displayRule,
@@ -24478,7 +24505,8 @@ var KeyPad = function (_Component) {
 }(_react.Component);
 
 KeyPad.propTypes = {
-    hideKeyPad: _propTypes2.default.func.isRequired,
+    confirm: _propTypes2.default.func.isRequired,
+    cancel: _propTypes2.default.func.isRequired,
     negative: _propTypes2.default.bool,
     float: _propTypes2.default.bool,
     numberOfDigits: _propTypes2.default.number,

@@ -6907,7 +6907,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  background: ', '; \n  border: ', ';\n  color: ', ';\n  cursor: pointer;\n  display: inline-block;\n  line-height: 40px;\n  min-height: 49px;\n  font-weight: ', ';\n  margin: \'3px 0\';\n  outline: none;\n  padding: 0 12px;\n  border-radius: ', ';\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n'], ['\n  background: ', '; \n  border: ', ';\n  color: ', ';\n  cursor: pointer;\n  display: inline-block;\n  line-height: 40px;\n  min-height: 49px;\n  font-weight: ', ';\n  margin: \'3px 0\';\n  outline: none;\n  padding: 0 12px;\n  border-radius: ', ';\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  background: ', '; \n  border: ', ';\n  color: ', ';\n  cursor: pointer;\n  display: inline-block;\n  line-height: 40px;\n  min-height: 49px;\n  font-size: ', ';\n  font-weight: ', ';\n  margin: \'3px 0\';\n  outline: none;\n  padding: 0 12px;\n  border-radius: ', ';\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n'], ['\n  background: ', '; \n  border: ', ';\n  color: ', ';\n  cursor: pointer;\n  display: inline-block;\n  line-height: 40px;\n  min-height: 49px;\n  font-size: ', ';\n  font-weight: ', ';\n  margin: \'3px 0\';\n  outline: none;\n  padding: 0 12px;\n  border-radius: ', ';\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n']);
 
 var _react = __webpack_require__(1);
 
@@ -6936,6 +6936,8 @@ var Button = _styledComponents2.default.button(_templateObject, function (props)
 }, function (props) {
   return props.theme.color;
 }, function (props) {
+  return props.theme.fontSize;
+}, function (props) {
   return props.theme.fontWeight;
 }, function (props) {
   return props.theme.borderRadius;
@@ -6944,13 +6946,16 @@ var Button = _styledComponents2.default.button(_templateObject, function (props)
 var ButtonWrapper = function ButtonWrapper(_ref) {
   var theme = _ref.theme,
       value = _ref.value,
+      click = _ref.click,
       className = _ref.className;
   return _react2.default.createElement(
     _styledComponents.ThemeProvider,
     { theme: _styles2.default[theme].button.primary },
     _react2.default.createElement(
       Button,
-      { className: className },
+      { onClick: function onClick() {
+          return click(value);
+        }, className: className },
       value
     )
   );
@@ -7371,7 +7376,8 @@ exports.default = function (_ref) {
     var validation = _ref.validation,
         displayRule = _ref.displayRule,
         numberOfDigits = _ref.numberOfDigits,
-        specialKeys = _ref.specialKeys,
+        negative = _ref.negative,
+        float = _ref.float,
         inputButtonContent = _ref.inputButtonContent;
     return function (_Component) {
         _inherits(NumPad, _Component);
@@ -7383,14 +7389,23 @@ exports.default = function (_ref) {
 
             _this.state = { show: false, value: '' };
             _this.toggleKeyPad = _this.toggleKeyPad.bind(_this);
+            _this.confirm = _this.confirm.bind(_this);
             return _this;
         }
 
         _createClass(NumPad, [{
             key: 'toggleKeyPad',
             value: function toggleKeyPad(value) {
+                this.setState(function (prevState) {
+                    return { show: !prevState.show };
+                });
+            }
+        }, {
+            key: 'confirm',
+            value: function confirm(value) {
                 var updateValue = {};
                 if (this.state.show && validation(value)) {
+                    console.log('update value');
                     updateValue = { value: value };
                     this.props.onChange(value);
                 }
@@ -7420,9 +7435,11 @@ exports.default = function (_ref) {
                     _elements.KeyPadWrapper,
                     { key: 'key-pad-wrapper' },
                     _react2.default.createElement(_elements.KeyPad, _extends({
-                        hideKeyPad: this.toggleKeyPad,
+                        cancel: this.toggleKeyPad,
+                        confirm: this.confirm,
                         numberOfDigits: numberOfDigits,
-                        specialKeys: specialKeys,
+                        negative: negative,
+                        float: float,
                         displayRule: displayRule,
                         validation: validation,
                         label: label
@@ -7555,7 +7572,7 @@ var Display = function Display(_ref) {
         _react2.default.createElement(
             'button',
             { className: 'NumPad-display-icon', onClick: cancel },
-            _react2.default.createElement('span', { className: 'fa fa-long-arrow-left' })
+            _react2.default.createElement('i', { className: 'fa fa-long-arrow-left' })
         )
     );
 };
@@ -19563,7 +19580,11 @@ var numberOfDigits = 4;
 
 var inputButtonContent = _react2.default.createElement('span', { className: 'fa fa-clock-o' });
 
-exports.default = (0, _NumPad2.default)({ validation: validation, displayRule: displayRule, numberOfDigits: numberOfDigits, inputButtonContent: inputButtonContent });
+var float = false;
+
+var negative = false;
+
+exports.default = (0, _NumPad2.default)({ validation: validation, displayRule: displayRule, numberOfDigits: numberOfDigits, inputButtonContent: inputButtonContent, float: float, negative: negative });
 
 /***/ }),
 /* 143 */
@@ -23520,7 +23541,8 @@ exports.default = {
             background: '#dfdfdf',
             border: 'none',
             borderRadius: 'none',
-            fontWeight: 400
+            fontWeight: 400,
+            fontSize: '1.2em'
         }
     }
 };
@@ -24304,6 +24326,10 @@ var _Display = __webpack_require__(15);
 
 var _Display2 = _interopRequireDefault(_Display);
 
+var _specialKeys = __webpack_require__(203);
+
+var _specialKeys2 = _interopRequireDefault(_specialKeys);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24357,7 +24383,7 @@ var KeyPad = function (_Component) {
         value: function handleClickOutside(evt) {
             evt.preventDefault();
             evt.stopPropagation();
-            this.props.hideKeyPad(this.state.input);
+            this.props.cancel();
         }
     }, {
         key: 'cancelLastInsert',
@@ -24370,20 +24396,30 @@ var KeyPad = function (_Component) {
         key: 'keyDown',
         value: function keyDown(event) {
             event.preventDefault();
+            var _props = this.props,
+                float = _props.float,
+                negative = _props.negative,
+                confirm = _props.confirm,
+                cancel = _props.cancel;
+
             var key = event.key;
+
             if (key === 'Backspace') {
                 this.cancelLastInsert();
-            } else if (['Enter', 'Escape'].includes(key)) {
-                this.props.hideKeyPad(this.state.input);
+            } else if (key === 'Enter') {
+                confirm(this.state.input);
+            } else if (key === 'Escape') {
+                cancel();
             } else if (this.numericKeys.includes(parseFloat(key))) {
                 this.numericKeyClick(key);
-            } else if (this.props.specialKeys.includes(key)) {
+            } else if ((0, _specialKeys2.default)({ float: float, negative: negative }).keys.includes(key)) {
                 this.specialKeyClick(key);
             }
         }
     }, {
         key: 'numericKeyClick',
         value: function numericKeyClick(keyPressed) {
+            console.log('key pressed', keyPressed);
             if (!this.props.numberOfDigits || this.state.input.length < this.props.numberOfDigits) {
                 this.setState(function (prevState) {
                     return { input: prevState.input + keyPressed };
@@ -24413,16 +24449,31 @@ var KeyPad = function (_Component) {
         value: function render() {
             var _this2 = this;
 
-            var _props = this.props,
-                specialKeys = _props.specialKeys,
-                displayRule = _props.displayRule,
-                validation = _props.validation,
-                label = _props.label;
-
+            var _props2 = this.props,
+                float = _props2.float,
+                negative = _props2.negative,
+                displayRule = _props2.displayRule,
+                validation = _props2.validation,
+                label = _props2.label,
+                confirm = _props2.confirm,
+                cancel = _props2.cancel;
+            // let specialKeyLabels = specialKeys({float, negative}).values    
 
             return _react2.default.createElement(
                 Container,
                 null,
+                _react2.default.createElement(
+                    'div',
+                    { style: { display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #333', paddingBottom: '10px' } },
+                    _react2.default.createElement('i', { style: { cursor: 'pointer' },
+                        onClick: cancel,
+                        className: 'fa fa-remove' }),
+                    _react2.default.createElement('i', { style: { cursor: 'pointer' },
+                        onClick: function onClick() {
+                            return confirm(_this2.state.input);
+                        },
+                        className: 'fa fa-check' })
+                ),
                 _react2.default.createElement(_Display2.default, {
                     value: this.state.input,
                     displayRule: displayRule,
@@ -24439,8 +24490,8 @@ var KeyPad = function (_Component) {
                             return _react2.default.createElement(StyledKeyPadButton, _extends({
                                 key: 'button-' + key,
                                 value: key,
-                                click: function click() {
-                                    (0, _lodash2.default)(key) ? _this2.numericKeyClick(key) : _this2.specialKeyClick(key);
+                                click: function click(key) {
+                                    return (0, _lodash2.default)(key) ? _this2.numericKeyClick(key) : _this2.specialKeyClick(key);
                                 }
                             }, _this2.props));
                         })
@@ -24454,8 +24505,10 @@ var KeyPad = function (_Component) {
 }(_react.Component);
 
 KeyPad.propTypes = {
-    hideKeyPad: _propTypes2.default.func.isRequired,
-    specialKeys: _propTypes2.default.array,
+    confirm: _propTypes2.default.func.isRequired,
+    cancel: _propTypes2.default.func.isRequired,
+    negative: _propTypes2.default.bool,
+    float: _propTypes2.default.bool,
     numberOfDigits: _propTypes2.default.number,
     displayRule: _propTypes2.default.func,
     validation: _propTypes2.default.func
@@ -24468,7 +24521,8 @@ KeyPad.defaultProps = {
     validation: function validation() {
         return true;
     },
-    specialKeys: []
+    negative: true,
+    float: true
 };
 
 exports.default = (0, _reactOnclickoutside2.default)(KeyPad);
@@ -24476,15 +24530,13 @@ exports.default = (0, _reactOnclickoutside2.default)(KeyPad);
 
 var KeyPadButton = function KeyPadButton(_ref) {
     var value = _ref.value,
-        click = _ref.click,
         theme = _ref.theme,
+        click = _ref.click,
         className = _ref.className;
     return _react2.default.createElement(_Button2.default, {
         theme: theme,
+        click: click,
         className: className,
-        onClick: function onClick() {
-            return click(value);
-        },
         value: value });
 };
 
@@ -44107,9 +44159,7 @@ var displayRule = function displayRule(value) {
   return value;
 };
 
-var specialKeys = ['-', '.'];
-
-exports.default = (0, _NumPad2.default)({ validation: validation, displayRule: displayRule, specialKeys: specialKeys });
+exports.default = (0, _NumPad2.default)({ validation: validation, displayRule: displayRule });
 
 /***/ }),
 /* 201 */
@@ -44163,6 +44213,51 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.default = "\n* {\n    box-sizing: border-box;\n    -webkit-box-sizing: border-box;\n    -webkit-font-smoothing: antialiased;\n    padding: 0;\n}\n\n.Calendar {\n    margin: auto;\n    min-width: 320px;\n    max-width: 600px;\n}\n\n.Calendar-grid {\n    display: flex;\n    flex-wrap: wrap;\n    width: 100%;\n    cursor: pointer;\n}\n\n.Calendar-header {\n    font-size: 1.1em;    \n    height: 34px;\n    background: #333;\n    color: #fff;\n    display: flex;\n    justify-content: space-between;\n    text-transform: capitalize;        \n    cursor: pointer;\n    align-items: center;\n}\n\n.Calendar-header button {\n    width: 50px;\n    border: 0;\n    background: transparent;\n    color: white;\n    cursor: pointer;\n    outline: none;\n}\n\n.Calendar-grid-item {\n    &:nth-child(-n+7) {\n        padding: 0.2em;\n        font-size: 0.8em;\n        background: #efefef;\n    }\n    &.active {\n        font-weight: 700;\n        color: white;\n        background: #333;\n    }\n    flex: 0 14.28571%;\n    text-align: center;\n    border-right: 1px solid #ddd;\n    border-bottom: 1px solid #ddd;\n    padding: 0.25rem;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    text-transform: capitalize;\n    background: white;\n}\n\n.Calendar-grid-item.nextMonth,\n.Calendar-grid-item.prevMonth {\n    color: #999;\n}\n\n.Calendar-grid-item:nth-child(7n+1) {\n    border-left: 1px solid #ddd;\n}\n\n.Calendar-grid-item:nth-child(-n+7) {\n    border-top: 1px solid #ddd;\n}\n";
+
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = function (_ref) {
+    var negative = _ref.negative,
+        float = _ref.float;
+
+    var specialKeys = [];
+    if (negative) {
+        specialKeys.push({
+            key: '-',
+            value: _react2.default.createElement('span', { className: 'fa fa-minus' })
+        });
+    }
+    if (float) {
+        specialKeys.push({
+            key: '.',
+            value: _react2.default.createElement('span', { className: 'fa fa-circle' })
+        });
+    }
+
+    return {
+        keys: specialKeys.map(function (sk) {
+            return sk.key;
+        }),
+        values: specialKeys.map(function (sk) {
+            return sk.value;
+        })
+    };
+};
 
 /***/ })
 /******/ ]);

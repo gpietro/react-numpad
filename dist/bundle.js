@@ -6947,7 +6947,8 @@ var ButtonWrapper = function ButtonWrapper(_ref) {
   var theme = _ref.theme,
       value = _ref.value,
       click = _ref.click,
-      className = _ref.className;
+      className = _ref.className,
+      disabled = _ref.disabled;
   return _react2.default.createElement(
     _styledComponents.ThemeProvider,
     { theme: _styles2.default[theme].button.primary },
@@ -6955,14 +6956,18 @@ var ButtonWrapper = function ButtonWrapper(_ref) {
       Button,
       { onClick: function onClick() {
           return click(value);
-        }, className: className },
+        }, className: className, disabled: disabled },
       value
     )
   );
 };
 
 ButtonWrapper.propTypes = {
-  theme: _propTypes2.default.string.isRequired
+  theme: _propTypes2.default.string.isRequired,
+  click: _propTypes2.default.func.isRequired,
+  value: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
+  className: _propTypes2.default.string,
+  disabled: _propTypes2.default.bool
 };
 ButtonWrapper.defaultProps = {
   theme: 'basic'
@@ -7462,7 +7467,7 @@ exports.default = function (_ref) {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Calendar = exports.KeyPadWrapper = exports.KeyPadButton = exports.KeyPad = exports.InputField = exports.Input = exports.Display = exports.Button = undefined;
+exports.Calendar = exports.KeyPadWrapper = exports.KeyPad = exports.InputField = exports.Input = exports.Display = exports.Button = undefined;
 
 var _Button = __webpack_require__(5);
 
@@ -7484,10 +7489,6 @@ var _KeyPad = __webpack_require__(165);
 
 var _KeyPad2 = _interopRequireDefault(_KeyPad);
 
-var _KeyPadButton = __webpack_require__(183);
-
-var _KeyPadButton2 = _interopRequireDefault(_KeyPadButton);
-
 var _KeyPadWrapper = __webpack_require__(184);
 
 var _KeyPadWrapper2 = _interopRequireDefault(_KeyPadWrapper);
@@ -7503,7 +7504,6 @@ exports.Display = _Display2.default;
 exports.Input = _Input2.default;
 exports.InputField = _InputField2.default;
 exports.KeyPad = _KeyPad2.default;
-exports.KeyPadButton = _KeyPadButton2.default;
 exports.KeyPadWrapper = _KeyPadWrapper2.default;
 exports.Calendar = _Calendar2.default;
 
@@ -24288,15 +24288,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n    display: flex;\n    flex-direction: column;\n    margin: auto;\n    width: 240px;\n    height: 100%;\n'], ['\n    display: flex;\n    flex-direction: column;\n    margin: auto;\n    width: 240px;\n    height: 100%;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    display: flex;\n    flex: 4;\n'], ['\n    display: flex;\n    flex: 4;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n    display: flex;\n    flex: 3;\n    flex-wrap: wrap;\n    button {\n        border-bottom: 1px solid black;\n        border-right: 1px solid black;\n    }\n    button:nth-child(3n + 1) {\n        border-left: 1px solid black;\n    }\n    button:nth-child(-n + 3) {\n        border-top: 1px solid black;\n    }\n'], ['\n    display: flex;\n    flex: 3;\n    flex-wrap: wrap;\n    button {\n        border-bottom: 1px solid black;\n        border-right: 1px solid black;\n    }\n    button:nth-child(3n + 1) {\n        border-left: 1px solid black;\n    }\n    button:nth-child(-n + 3) {\n        border-top: 1px solid black;\n    }\n']),
-    _templateObject4 = _taggedTemplateLiteral(['\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    font-size: 1.4em;\n    button {\n        border-bottom: 1px solid black;\n        border-right: 1px solid black;\n    }\n    button:nth-child(1n + 1) {\n        border-left: 1px solid black;\n    }\n    button:nth-child(-n + 1) {\n        border-top: 1px solid black;\n    }\n'], ['\n    display: flex;\n    flex: 1;\n    flex-direction: column;\n    font-size: 1.4em;\n    button {\n        border-bottom: 1px solid black;\n        border-right: 1px solid black;\n    }\n    button:nth-child(1n + 1) {\n        border-left: 1px solid black;\n    }\n    button:nth-child(-n + 1) {\n        border-top: 1px solid black;\n    }\n']),
-    _templateObject5 = _taggedTemplateLiteral(['\n    width: 80px;\n'], ['\n    width: 80px;\n']);
+    _templateObject2 = _taggedTemplateLiteral(['\n    display: flex;\n    flex: 4;\n    flex-wrap: wrap;\n    button {\n        border-bottom: 1px solid black;\n        border-right: 1px solid black;\n    }\n    button:nth-child(3n + 1) {\n        border-left: 1px solid black;\n    }\n    button:nth-child(-n + 3) {\n        border-top: 1px solid black;\n    }\n'], ['\n    display: flex;\n    flex: 4;\n    flex-wrap: wrap;\n    button {\n        border-bottom: 1px solid black;\n        border-right: 1px solid black;\n    }\n    button:nth-child(3n + 1) {\n        border-left: 1px solid black;\n    }\n    button:nth-child(-n + 3) {\n        border-top: 1px solid black;\n    }\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n    width: 80px;\n'], ['\n    width: 80px;\n']);
 
 var _react = __webpack_require__(1);
 
@@ -24314,10 +24310,6 @@ var _reactOnclickoutside = __webpack_require__(16);
 
 var _reactOnclickoutside2 = _interopRequireDefault(_reactOnclickoutside);
 
-var _lodash = __webpack_require__(182);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
 var _Button = __webpack_require__(5);
 
 var _Button2 = _interopRequireDefault(_Button);
@@ -24332,6 +24324,8 @@ var _specialKeys2 = _interopRequireDefault(_specialKeys);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -24339,16 +24333,10 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-// import KeyPadButton from './KeyPadButton'
-
 
 var Container = _styledComponents2.default.div(_templateObject);
 
-var Wrapper = _styledComponents2.default.div(_templateObject2);
-
-var NumericKeys = _styledComponents2.default.div(_templateObject3);
-
-var SpecialKeys = _styledComponents2.default.div(_templateObject4);
+var Keys = _styledComponents2.default.div(_templateObject2);
 
 var KeyPad = function (_Component) {
     _inherits(KeyPad, _Component);
@@ -24359,12 +24347,13 @@ var KeyPad = function (_Component) {
         var _this = _possibleConstructorReturn(this, (KeyPad.__proto__ || Object.getPrototypeOf(KeyPad)).call(this, props));
 
         _this.state = { input: '' };
+        _this.handleClick = _this.handleClick.bind(_this);
         _this.numericKeyClick = _this.numericKeyClick.bind(_this);
         _this.specialKeyClick = _this.specialKeyClick.bind(_this);
         _this.keyDown = _this.keyDown.bind(_this);
         _this.cancelLastInsert = _this.cancelLastInsert.bind(_this);
-        _this.numericKeys = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0];
-        _this.keys = [7, 8, 9, 4, 5, 6, 1, 2, 3, '-', 0, '.'];
+        _this.numericKeys = [].concat(_toConsumableArray(Array(10).keys()));
+        _this.specialKeys = ['.', '-'];
         return _this;
     }
 
@@ -24410,16 +24399,26 @@ var KeyPad = function (_Component) {
                 confirm(this.state.input);
             } else if (key === 'Escape') {
                 cancel();
-            } else if (this.numericKeys.includes(parseFloat(key))) {
+            } else {
+                this.handleClick(key);
+            }
+        }
+    }, {
+        key: 'handleClick',
+        value: function handleClick(key) {
+            var _props2 = this.props,
+                float = _props2.float,
+                negative = _props2.negative;
+
+            if (this.numericKeys.includes(parseFloat(key))) {
                 this.numericKeyClick(key);
-            } else if ((0, _specialKeys2.default)({ float: float, negative: negative }).keys.includes(key)) {
+            } else if ((0, _specialKeys2.default)({ float: float, negative: negative }).includes(key)) {
                 this.specialKeyClick(key);
             }
         }
     }, {
         key: 'numericKeyClick',
         value: function numericKeyClick(keyPressed) {
-            console.log('key pressed', keyPressed);
             if (!this.props.numberOfDigits || this.state.input.length < this.props.numberOfDigits) {
                 this.setState(function (prevState) {
                     return { input: prevState.input + keyPressed };
@@ -24449,15 +24448,16 @@ var KeyPad = function (_Component) {
         value: function render() {
             var _this2 = this;
 
-            var _props2 = this.props,
-                float = _props2.float,
-                negative = _props2.negative,
-                displayRule = _props2.displayRule,
-                validation = _props2.validation,
-                label = _props2.label,
-                confirm = _props2.confirm,
-                cancel = _props2.cancel;
-            // let specialKeyLabels = specialKeys({float, negative}).values    
+            var _props3 = this.props,
+                float = _props3.float,
+                negative = _props3.negative,
+                displayRule = _props3.displayRule,
+                validation = _props3.validation,
+                label = _props3.label,
+                confirm = _props3.confirm,
+                cancel = _props3.cancel;
+
+            var activeKeys = [].concat(_toConsumableArray(this.numericKeys), _toConsumableArray((0, _specialKeys2.default)({ float: float, negative: negative })));
 
             return _react2.default.createElement(
                 Container,
@@ -24481,21 +24481,17 @@ var KeyPad = function (_Component) {
                     label: label,
                     cancel: this.cancelLastInsert }),
                 _react2.default.createElement(
-                    Wrapper,
+                    Keys,
                     null,
-                    _react2.default.createElement(
-                        NumericKeys,
-                        null,
-                        this.keys.map(function (key) {
-                            return _react2.default.createElement(StyledKeyPadButton, _extends({
-                                key: 'button-' + key,
-                                value: key,
-                                click: function click(key) {
-                                    return (0, _lodash2.default)(key) ? _this2.numericKeyClick(key) : _this2.specialKeyClick(key);
-                                }
-                            }, _this2.props));
-                        })
-                    )
+                    [7, 8, 9, 4, 5, 6, 1, 2, 3, '-', 0, '.'].map(function (key) {
+                        return _react2.default.createElement(StyledKeyPadButton, {
+                            key: 'button-' + key,
+                            value: key,
+                            click: function click(key) {
+                                return _this2.handleClick(key);
+                            },
+                            disabled: !activeKeys.includes(key) });
+                    })
                 )
             );
         }
@@ -24532,15 +24528,17 @@ var KeyPadButton = function KeyPadButton(_ref) {
     var value = _ref.value,
         theme = _ref.theme,
         click = _ref.click,
-        className = _ref.className;
+        className = _ref.className,
+        disabled = _ref.disabled;
     return _react2.default.createElement(_Button2.default, {
         theme: theme,
         click: click,
         className: className,
-        value: value });
+        value: value,
+        disabled: disabled });
 };
 
-var StyledKeyPadButton = (0, _styledComponents2.default)(KeyPadButton)(_templateObject5);
+var StyledKeyPadButton = (0, _styledComponents2.default)(KeyPadButton)(_templateObject3);
 
 /***/ }),
 /* 166 */
@@ -42384,151 +42382,8 @@ function autoInc() {
 /* harmony default export */ __webpack_exports__["a"] = (autoInc());
 
 /***/ }),
-/* 182 */
-/***/ (function(module, exports) {
-
-/**
- * lodash 3.0.3 (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <https://lodash.com/license>
- */
-
-/** `Object#toString` result references. */
-var numberTag = '[object Number]';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is classified as a `Number` primitive or object.
- *
- * **Note:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are classified
- * as numbers, use the `_.isFinite` method.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isNumber(3);
- * // => true
- *
- * _.isNumber(Number.MIN_VALUE);
- * // => true
- *
- * _.isNumber(Infinity);
- * // => true
- *
- * _.isNumber('3');
- * // => false
- */
-function isNumber(value) {
-  return typeof value == 'number' ||
-    (isObjectLike(value) && objectToString.call(value) == numberTag);
-}
-
-module.exports = isNumber;
-
-
-/***/ }),
-/* 183 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _propTypes = __webpack_require__(2);
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _Button = __webpack_require__(5);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-var _Input = __webpack_require__(8);
-
-var _Input2 = _interopRequireDefault(_Input);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var KeyPadButton = function KeyPadButton(props) {
-    var value = props.value,
-        click = props.click,
-        style = props.style,
-        theme = props.theme;
-
-    console.log('theme', theme);
-
-    return _react2.default.createElement(
-        _Button2.default,
-        {
-            theme: theme,
-            className: 'NumPad-keypad-button',
-            style: style, onClick: function onClick() {
-                return click(value);
-            } },
-        value
-    );
-};
-
-KeyPadButton.defaultProps = {
-    placeholder: ''
-};
-
-KeyPadButton.propTypes = {
-    click: _propTypes2.default.func.isRequired,
-    value: _propTypes2.default.oneOfType([_propTypes2.default.string, _propTypes2.default.number]),
-    style: _propTypes2.default.object
-};
-exports.default = KeyPadButton;
-
-/***/ }),
+/* 182 */,
+/* 183 */,
 /* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44225,38 +44080,19 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(1);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 exports.default = function (_ref) {
     var negative = _ref.negative,
         float = _ref.float;
 
     var specialKeys = [];
     if (negative) {
-        specialKeys.push({
-            key: '-',
-            value: _react2.default.createElement('span', { className: 'fa fa-minus' })
-        });
+        specialKeys.push('-');
     }
     if (float) {
-        specialKeys.push({
-            key: '.',
-            value: _react2.default.createElement('span', { className: 'fa fa-circle' })
-        });
+        specialKeys.push('.');
     }
 
-    return {
-        keys: specialKeys.map(function (sk) {
-            return sk.key;
-        }),
-        values: specialKeys.map(function (sk) {
-            return sk.value;
-        })
-    };
+    return specialKeys;
 };
 
 /***/ })

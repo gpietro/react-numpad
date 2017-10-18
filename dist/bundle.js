@@ -6907,7 +6907,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n  background: ', '; \n  border: ', ';\n  color: ', ';\n  cursor: pointer;\n  display: inline-block;\n  line-height: 40px;\n  min-height: 49px;\n  font-size: ', ';\n  font-weight: ', ';\n  margin: \'3px 0\';\n  outline: none;\n  padding: 0 12px;\n  border-radius: ', ';\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n'], ['\n  background: ', '; \n  border: ', ';\n  color: ', ';\n  cursor: pointer;\n  display: inline-block;\n  line-height: 40px;\n  min-height: 49px;\n  font-size: ', ';\n  font-weight: ', ';\n  margin: \'3px 0\';\n  outline: none;\n  padding: 0 12px;\n  border-radius: ', ';\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  background: ', '; \n  border: ', ';\n  color: ', ';\n  cursor: pointer;\n  display: inline-block;\n  line-height: 40px;\n  min-height: 49px;\n  font-size: ', ';\n  font-weight: ', ';\n  margin: \'3px 0\';\n  outline: none;\n  padding: 0 12px;\n  border-radius: ', ';\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n  &:disabled {\n    color: transparent;\n    cursor: auto;\n  }\n'], ['\n  background: ', '; \n  border: ', ';\n  color: ', ';\n  cursor: pointer;\n  display: inline-block;\n  line-height: 40px;\n  min-height: 49px;\n  font-size: ', ';\n  font-weight: ', ';\n  margin: \'3px 0\';\n  outline: none;\n  padding: 0 12px;\n  border-radius: ', ';\n  transition:\n    transform 0.08s ease,\n    background-color 0.08s ease,\n    box-shadow 0.08s ease;\n  &:active {\n    transform: translateY(1.5px);\n    box-shadow: \n        inset 0 -0.5px 0 #aaaaaa,\n    inset 0px -1px 1px -1px #fff,\n        0px 0.5px 0.75px 0px #999;\n  }\n  &:disabled {\n    color: transparent;\n    cursor: auto;\n  }\n']);
 
 var _react = __webpack_require__(1);
 
@@ -19572,6 +19572,7 @@ var validation = function validation() {
 var displayRule = function displayRule() {
     var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
 
+    value += '-'.repeat(4 - value.length);
     var splitValue = value ? [value.substr(0, 2), value.substr(2, 4)] : '';
     return value.length > 1 ? splitValue.join(':') : splitValue;
 };
@@ -23538,7 +23539,7 @@ exports.default = {
     button: {
         primary: {
             color: '#333',
-            background: '#dfdfdf',
+            background: 'none',
             border: 'none',
             borderRadius: 'none',
             fontWeight: 400,
@@ -24291,7 +24292,7 @@ Object.defineProperty(exports, "__esModule", {
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _templateObject = _taggedTemplateLiteral(['\n    display: flex;\n    flex-direction: column;\n    margin: auto;\n    width: 240px;\n    height: 100%;\n'], ['\n    display: flex;\n    flex-direction: column;\n    margin: auto;\n    width: 240px;\n    height: 100%;\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    display: flex;\n    flex: 4;\n    flex-wrap: wrap;\n    button {\n        border-bottom: 1px solid black;\n        border-right: 1px solid black;\n    }\n    button:nth-child(3n + 1) {\n        border-left: 1px solid black;\n    }\n    button:nth-child(-n + 3) {\n        border-top: 1px solid black;\n    }\n'], ['\n    display: flex;\n    flex: 4;\n    flex-wrap: wrap;\n    button {\n        border-bottom: 1px solid black;\n        border-right: 1px solid black;\n    }\n    button:nth-child(3n + 1) {\n        border-left: 1px solid black;\n    }\n    button:nth-child(-n + 3) {\n        border-top: 1px solid black;\n    }\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n    display: flex;\n    flex: 4;\n    flex-wrap: wrap;\n    button {\n        border-bottom: 1px solid #777;\n        border-right: 1px solid #777;\n    }\n    button:disabled {\n        border-bottom: none;\n    }\n    button:nth-child(3n + 1) {\n        border-left: 1px solid #777;\n    }\n    button:disabled:nth-child(3n + 1) {\n        border-left: none;\n    }\n    button:disabled:nth-child(3n) {\n        border-right: none;\n    }\n    button:nth-child(-n + 3) {\n        border-top: 1px solid #777;\n    }\n    button:disabled:nth-child(-n + 3) {\n        border-top: none;\n    }\n'], ['\n    display: flex;\n    flex: 4;\n    flex-wrap: wrap;\n    button {\n        border-bottom: 1px solid #777;\n        border-right: 1px solid #777;\n    }\n    button:disabled {\n        border-bottom: none;\n    }\n    button:nth-child(3n + 1) {\n        border-left: 1px solid #777;\n    }\n    button:disabled:nth-child(3n + 1) {\n        border-left: none;\n    }\n    button:disabled:nth-child(3n) {\n        border-right: none;\n    }\n    button:nth-child(-n + 3) {\n        border-top: 1px solid #777;\n    }\n    button:disabled:nth-child(-n + 3) {\n        border-top: none;\n    }\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n    width: 80px;\n'], ['\n    width: 80px;\n']);
 
 var _react = __webpack_require__(1);

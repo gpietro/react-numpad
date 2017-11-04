@@ -1,7 +1,6 @@
 ![Logo of the project](https://bitbucket.org/bpietro86/react-numpad/raw/master/logo.png)
 
 # React numpad
-> Work in progress
 
 A numpad for number, date and time, built with and for React.
 
@@ -13,7 +12,7 @@ The easiest way to use React-Numpad is to install it from NPM and include it in 
 npm install --save react-numpad
 ```
 
-At this point you can import react-numpad in your application:
+At this point you can import react-numpad in your application
 
 ```shell
 import NumPad from 'react-numpad';
@@ -26,9 +25,9 @@ React-NumPad generates an input field containing the selected value, so you can 
 
 //The value property of each option should be set to either a string or a number.
 
-When the value is changed, onChange(selectedValueOrValues) will fire.
+When the value is changed, onChange(selectedValue) will fire.
 
-### Number
+### NumPad.Number
 
 ```shell
 <NumPad.Number 
@@ -37,7 +36,22 @@ When the value is changed, onChange(selectedValueOrValues) will fire.
 />
 ```
 
-### Date
+#### Properties
+
+properties
+
+| Property | Type | Default | Description
+:---|:---|:---|:---|:---
+| `value` | integer | undefined | default input value. |
+| `placeholder` | string | undefined | text to display as input placeholder. |
+| `label` | string | undefined | text to display as input label. |
+| `validation` | function | value => true | function responsible to validate the input value. If the value is not valid, the onChange callback is not called. |
+| `displayRule` | function | value => value | function responsible to display the value in a certain form. By default the value is displayed as it is. |
+
+### NumPad.Time
+
+
+### NumPad.Date
 CurrentDate must be provided as moment date. The default value is the local current date time.
 
 ```shell

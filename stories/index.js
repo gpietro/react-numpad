@@ -30,7 +30,7 @@ storiesOf('Components', module)
   
 storiesOf('Elements', module)
   .add('Calendar', () => <Calendar 
-    locale='it' 
+    locale='it'
     dateFormat='MM/DD/YYYY'
     onChange={date => console.log(date)} />)
   .add('Button', () => <Button />)

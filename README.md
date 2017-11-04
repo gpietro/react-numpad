@@ -1,17 +1,54 @@
 ![Logo of the project](https://bitbucket.org/bpietro86/react-numpad/raw/master/logo.png)
 
 # React numpad
-> Working in progress
+> Work in progress
 
 A numpad for number, date and time, built with and for React.
 
-## Installing / Getting started
+## Installation
+
+The easiest way to use React-Numpad is to install it from NPM and include it in your own React build process (using Webpack, etc).
 
 ```shell
 npm install --save react-numpad
 ```
 
-Here you should say what actually happens when you execute the code above.
+At this point you can import react-numpad in your application:
+
+```shell
+import NumPad from 'react-numpad';
+```
+
+## Usage
+React-NumPad generates an input field containing the selected value, so you can submit it as part of a standard form. You can also listen for changes with the onChange event property.
+
+//Options should be provided as an Array of Objects, each with a value and label property for rendering and //searching. You can use a disabled property to indicate whether the option is disabled or not.
+
+//The value property of each option should be set to either a string or a number.
+
+When the value is changed, onChange(selectedValueOrValues) will fire.
+
+### Number
+
+```shell
+<NumPad.Number 
+    onChange={(value) => { console.log('value', value)}} 
+    label={'Total'} 
+/>
+```
+
+### Date
+CurrentDate must be provided as moment date. The default value is the local current date time.
+
+```shell
+<NumPad.Date
+    onChange={(value) => { console.log('value', value)}} 
+    label={'Departure date'} 
+/>
+```
+
+
+## Demo / Examples
 
 ## Developing
 
@@ -19,9 +56,11 @@ Here's a brief intro about what a developer must do in order to start developing
 the project further:
 
 ```shell
-git clone https://github.com/your/awesome-project.git
-cd awesome-project/
-packagemanager install
+git clone https://bitbucket.org/bpietro86/react-numpad
+cd react-numpad/
+npm install
+npm start
+npm run storybook
 ```
 
 And state what happens step-by-step.

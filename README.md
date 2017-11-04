@@ -1,20 +1,14 @@
 ![Logo of the project](https://bitbucket.org/bpietro86/react-numpad/raw/master/logo.png)
 
-# Name of the project
-> Additional information or tagline
+# React numpad
+> Working in progress
 
-A brief description of your project, what it is used for and how does life get
-awesome when someone starts to use it.
+A numpad for number, date and time, built with and for React.
 
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
-
 ```shell
-packagemanager install awesome-project
-awesome-project start
-awesome-project "Do something!"  # prints "Nah."
+npm install --save react-numpad
 ```
 
 Here you should say what actually happens when you execute the code above.

@@ -12,7 +12,10 @@ import Button from '../lib/elements/Button'
 
 storiesOf('Components', module)
   .add('Number', () => 
-    <NumPad.Number key='number-1' onChange={(value) => { console.log('value', value)}} label={'Totale'} />)    
+    <NumPad.Number 
+      key='number-1' 
+      onChange={(value) => { console.log('value', value)}} 
+      label={'Totale'} />)    
   .add('Time', () => ([
     <NumPad.Time key='time-1' label={'Sveglia'} onChange={(value) => console.log('changed', value)}/>,
     <NumPad.Time key='time-2' onChange={(value) => console.log('changed', value)}/>

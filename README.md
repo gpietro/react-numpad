@@ -27,7 +27,10 @@ React-NumPad generates an input field containing the selected value, so you can 
 
 When the value is changed, onChange(selectedValue) will fire.
 
+All NumPad components, except Calendar, share the base component, following the higher-order component technique. This allows to create new components (Time, Number, Date,...) by simply overriding few common properties keeping the code clean and easy to maintain.
+
 ### NumPad.Number
+Input field for integer value.
 
 ```shell
 <NumPad.Number 
@@ -36,20 +39,23 @@ When the value is changed, onChange(selectedValue) will fire.
 />
 ```
 
-#### Properties
-
-properties
-
 | Property | Type | Default | Description
 :---|:---|:---|:---|:---
-| `value` | integer | undefined | default input value. |
-| `placeholder` | string | undefined | text to display as input placeholder. |
-| `label` | string | undefined | text to display as input label. |
-| `validation` | function | value => true | function responsible to validate the input value. If the value is not valid, the onChange callback is not called. |
-| `displayRule` | function | value => value | function responsible to display the value in a certain form. By default the value is displayed as it is. |
+| `validation` | function | value => true | function responsible to validate the input value and be able to override it with custom validation. If the value is not valid, the onChange function is not called. |
+| `displayRule` | function | value => value | function responsible to display the value in a certain form. By default the value is displayed unchanged. |
 
 ### NumPad.Time
-
+Input field with time format.
+```shell
+<NumPad.Time 
+    onChange={(value) => { console.log('value', value)}} 
+    label={'Total'} 
+/>
+```
+| Property | Type | Default | Description
+:---|:---|:---|:---|:---
+| `validation` | function | value => true | function responsible to validate the input value and be able to override it with custom validation. If the value is not valid, the onChange function is not called. |
+| `displayRule` | function | value => value | function responsible to display the value in a certain form. By default the value is displayed unchanged. |
 
 ### NumPad.Date
 CurrentDate must be provided as moment date. The default value is the local current date time.
@@ -61,6 +67,20 @@ CurrentDate must be provided as moment date. The default value is the local curr
 />
 ```
 
+### NumPad.Calendar
+Input field with a calendar as a date picker
+
+## Common properties
+| Property | Type | Default | Description
+:---|:---|:---|:---|:---
+| `numberOfDigits` | integer | undefined | limit of number of digits. If undefined no limits is applied. |
+| `float` | boolean | true | flag to allow floating point value. |
+| `negative` | boolean | true | flag to allow floating point value. |
+| `inputButtonContent` | object | undefined | icon or text to display as input button content. |
+| `onChange` | function | undefined | function called when value change and is valid. |
+| `value` | integer | undefined | default input value. |
+| `placeholder` | string | undefined | text to display as input placeholder. |
+| `label` | string | undefined | text to display as input label. |
 
 ## Demo / Examples
 

@@ -1,11 +1,9 @@
 ![Logo of the project](https://bitbucket.org/bpietro86/react-numpad/raw/master/logo.png)
 
 # React numpad
-
 A numpad for number, date and time, built with and for React.
 
 ## Installation
-
 The easiest way to use React-Numpad is to install it from NPM and include it in your own React build process (using Webpack, etc).
 
 ```shell
@@ -21,13 +19,9 @@ import NumPad from 'react-numpad';
 ## Usage
 React-NumPad generates an input field containing the selected value, so you can submit it as part of a standard form. You can also listen for changes with the onChange event property.
 
-//Options should be provided as an Array of Objects, each with a value and label property for rendering and //searching. You can use a disabled property to indicate whether the option is disabled or not.
-
-//The value property of each option should be set to either a string or a number.
-
 When the value is changed, onChange(selectedValue) will fire.
 
-All NumPad components, except Calendar, share the base component, following the higher-order component technique. This allows to create new components (Time, Number, Date,...) by simply overriding few common properties keeping the code clean and easy to maintain.
+All NumPad components, except Calendar, share the base component, following the higher-order component technique. This allows to create new components (Time, Number, Date,...) by simply overriding few common properties.
 
 ### NumPad.Number
 Input field for integer value.
@@ -49,7 +43,7 @@ Input field with time format.
 ```shell
 <NumPad.Time 
     onChange={(value) => { console.log('value', value)}} 
-    label={'Total'} 
+    label={'Departure date'} 
 />
 ```
 | Property | Type | Default | Description
@@ -73,7 +67,7 @@ Input field with a calendar as a date picker
 ## Common properties
 | Property | Type | Default | Description
 :---|:---|:---|:---|:---
-| `numberOfDigits` | integer | undefined | limit of number of digits. If undefined no limits is applied. |
+| `numberOfDigits` | integer | undefined | limit the number of digits if defined. |
 | `float` | boolean | true | flag to allow floating point value. |
 | `negative` | boolean | true | flag to allow floating point value. |
 | `inputButtonContent` | object | undefined | icon or text to display as input button content. |

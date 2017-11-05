@@ -98,7 +98,7 @@ npm run build
 
 A bundle will be created in the dist directory.
 
-## Contributing
+## Contribute
 If you'd like to contribute, please fork the repository and use a feature
 branch. Pull requests are warmly welcome.
 

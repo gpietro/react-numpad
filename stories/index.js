@@ -36,4 +36,6 @@ storiesOf('Elements', module)
     locale='it'
     dateFormat='MM/DD/YYYY'
     onChange={date => console.log(date)} />)
-  .add('Button', () => <Button />)
+  .add('Button', () => <Button 
+    click={() => console.log('clicked')}
+    value='ciao' />)

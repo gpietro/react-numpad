@@ -89,7 +89,7 @@ npm start
 npm run storybook
 ```
 
-Visit localhost:6006 to see the available NumPad components available so far. Storybook is helpful during development to see how the components behaves and looks.
+Visit localhost:6006 to see the NumPad components available so far. Storybook is helpful during development to see how the components behaves and looks.
 
 ### Build
 ```shell

@@ -13,7 +13,7 @@ storiesOf('Components', module)
   .add('Number', () => 
     <NumPad.Number 
       key='number-1' 
-      theme={material}
+      theme='material'
       onChange={(value) => { console.log('value', value)}} 
       label={'Totale'} />)    
   .add('Time', () => ([

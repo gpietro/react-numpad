@@ -19,15 +19,16 @@ storiesOf('Components', module)
   .add('Time', () => ([
     <NumPad.Time key='time-1' label={'Sveglia'} onChange={(value) => console.log('changed', value)}/>,
     <NumPad.Time key='time-2' onChange={(value) => console.log('changed', value)}/>,
-    <LoremIpsum />
+    <LoremIpsum key='lorem' />
   ]))
   .add('Date US', () => [
     <NumPad.Date 
+      key='numpad-date'
       onChange={(value) => console.log('changed', value)}
       label={'Birthdate'}
       locale='en'
       dateFormat='MM/DD/YYYY' />,
-    <LoremIpsum />])
+    <LoremIpsum key='lorem' />])
   .add('Date CH-IT', () => <NumPad.Date 
     onChange={(value) => console.log('changed', value)}
     label={'Data di nascita'}

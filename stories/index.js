@@ -3,10 +3,12 @@ import moment from 'moment'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
+import styled from 'styled-components'
 
 import NumPad from '../lib'
 import Calendar from '../lib/elements/Calendar'
 import { material } from '../lib/styles'
+import { Number } from 'es6-shim';
 
 storiesOf('Components', module)
   .add('Number', () => 
@@ -21,7 +23,7 @@ storiesOf('Components', module)
     <LoremIpsum key='lorem' />
   ]))
   .add('Date US', () => [
-    <NumPad.Date 
+    <NumPad.Date
       key='numpad-date'
       onChange={(value) => console.log('changed', value)}
       label={'Birthdate'}
@@ -33,13 +35,15 @@ storiesOf('Components', module)
     label={'Data di nascita'}
     locale='it'
     dateFormat='DD.MM.YYYY' />)
+  .add('Styled', () => {
+    const StyledNumber = styled(NumPad.Number)`
+      color: green;
+      font-size: 1.3em;      
+    `
+    return <StyledNumber key='number-1' onChange={(value) => { console.log('value', value)}} label={'Restilizzato'} />
+  })
+        
   
-storiesOf('Elements', module)
-  .add('Calendar', () => <Calendar 
-    locale='it'
-    dateFormat='MM/DD/YYYY'
-    onChange={date => console.log(date)} />)
-
 const LoremIpsum = () => (
   <div>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pellentesque nulla eget eros tempor porta. Fusce quis leo ante. Cras vestibulum tincidunt mi, consequat euismod augue congue ac. Curabitur nulla neque, hendrerit nec est eu, gravida dignissim quam. Sed tincidunt finibus orci, sit amet condimentum metus ullamcorper ut. Suspendisse odio tortor, pretium vitae nisl ac, cursus iaculis odio. Suspendisse rhoncus dui commodo ligula facilisis, ut condimentum metus volutpat. Praesent bibendum venenatis ornare. Praesent eu luctus lacus, et varius nibh. Aliquam elit lectus, egestas ut sagittis gravida, consectetur quis justo. Fusce sed gravida est. Phasellus lectus tellus, fringilla sit amet ipsum ac, volutpat pharetra ipsum. Aenean lorem turpis, luctus a ullamcorper sit amet, mattis in leo. Suspendisse potenti.

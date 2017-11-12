@@ -19,7 +19,15 @@ storiesOf('Components', module)
     <NumPad.PositiveNumber
       key='number-2' 
       onChange={(value) => { console.log('value', value)}} 
-      label={'Positive'} />])    
+      label={'Positive'} />,
+    <NumPad.IntegerNumber
+      key='number-3' 
+      onChange={(value) => { console.log('value', value)}} 
+      label={'Integer'} />,
+    <NumPad.PositiveIntegerNumber
+      key='number-4' 
+      onChange={(value) => { console.log('value', value)}} 
+      label={'Positive integer'} />])    
   .add('Time', () => ([
     <NumPad.Time key='time-1' label={'Sveglia'} onChange={(value) => console.log('changed', value)}/>,
     <NumPad.Time key='time-2' theme='blackAndWhite' onChange={(value) => console.log('changed', value)}/>,

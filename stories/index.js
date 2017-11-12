@@ -8,15 +8,18 @@ import styled from 'styled-components'
 import NumPad from '../lib'
 import Calendar from '../lib/elements/Calendar'
 import { material } from '../lib/styles'
-import { Number } from 'es6-shim';
 
 storiesOf('Components', module)
-  .add('Number', () => 
+  .add('Number', () => [ 
     <NumPad.Number 
       key='number-1' 
       theme='orange'
       onChange={(value) => { console.log('value', value)}} 
-      label={'Totale'} />)    
+      label={'Totale'} />,
+    <NumPad.PositiveNumber
+      key='number-2' 
+      onChange={(value) => { console.log('value', value)}} 
+      label={'Positive'} />])    
   .add('Time', () => ([
     <NumPad.Time key='time-1' label={'Sveglia'} onChange={(value) => console.log('changed', value)}/>,
     <NumPad.Time key='time-2' theme='blackAndWhite' onChange={(value) => console.log('changed', value)}/>,
@@ -38,7 +41,17 @@ storiesOf('Components', module)
   .add('Styled', () => {
     const StyledNumber = styled(NumPad.Number)`
       color: green;
-      font-size: 1.3em;      
+      button {
+        color: red;
+      }
+      .numpad-input-value {
+        input {
+          border: 2px solid #333;
+        }
+        button {
+          color: navy;
+        }
+      }
     `
     return <StyledNumber key='number-1' onChange={(value) => { console.log('value', value)}} label={'Restilizzato'} />
   })

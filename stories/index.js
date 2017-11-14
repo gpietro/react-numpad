@@ -37,6 +37,10 @@ storiesOf('Components', module)
     <NumPad.NumPadDate key='date-1' label={'Data di nascita'} onChange={(value) => console.log('changed', value)}/>,
     <LoremIpsum key='lorem' />
   ]))
+  .add('Numpad date time', () => ([
+    <NumPad.DateTime key='date-1' label={'Data e ora'} onChange={(value) => console.log('changed', value)}/>,
+    <LoremIpsum key='lorem' />
+  ]))
   .add('Date US', () => [
     <NumPad.Date
       key='numpad-date'

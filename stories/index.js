@@ -33,6 +33,10 @@ storiesOf('Components', module)
     <NumPad.Time key='time-2' theme='blackAndWhite' onChange={(value) => console.log('changed', value)}/>,
     <LoremIpsum key='lorem' />
   ]))
+  .add('Numpad date', () => ([
+    <NumPad.NumPadDate key='date-1' label={'Data di nascita'} onChange={(value) => console.log('changed', value)}/>,
+    <LoremIpsum key='lorem' />
+  ]))
   .add('Date US', () => [
     <NumPad.Date
       key='numpad-date'
@@ -41,6 +45,12 @@ storiesOf('Components', module)
       locale='en'
       dateFormat='MM/DD/YYYY' />,
     <LoremIpsum key='lorem' />])
+  .add('Date range', () => [
+      <NumPad.DateRange
+        key='numpad-date'
+        onChange={(value) => console.log('changed', value)}
+        label={'Date range'} />,
+      <LoremIpsum key='lorem' />])
   .add('Date CH-IT', () => <NumPad.Date 
     onChange={(value) => console.log('changed', value)}
     label={'Data di nascita'}

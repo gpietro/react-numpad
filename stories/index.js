@@ -45,12 +45,6 @@ storiesOf('Components', module)
       locale='en'
       dateFormat='MM/DD/YYYY' />,
     <LoremIpsum key='lorem' />])
-  .add('Date range', () => [
-      <NumPad.DateRange
-        key='numpad-date'
-        onChange={(value) => console.log('changed', value)}
-        label={'Date range'} />,
-      <LoremIpsum key='lorem' />])
   .add('Date CH-IT', () => <NumPad.Date 
     onChange={(value) => console.log('changed', value)}
     label={'Data di nascita'}

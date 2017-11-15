@@ -21,7 +21,7 @@ import NumPad from 'react-numpad';
 React-NumPad generates an input field containing the selected value, so you can submit it as part of a standard form. You can also listen for changes with the onChange event property.
 When the value is changed, onChange(selectedValue) will fire.
 
-React-NumPad is built based on a "main" components (NumPad.js). Following the higher-order component technique, is possible to create new components by simply overriding few common properties.
+React-NumPad is built based on a "main" component (NumPad.js). Following the higher-order component technique, is possible to create new components by simply overriding few common properties.
 
 ### NumPad.Number
 Input field for numeric value. There are also **PositiveNumber**, **IntegerNumber**, **PositiveIntegerNumber** components with the same properties.
@@ -39,8 +39,7 @@ Input field for numeric value. There are also **PositiveNumber**, **IntegerNumbe
 Input field with time format.
 ```shell
 <NumPad.Time 
-    onChange={(value) => { console.log('value', value)}} 
-    locale={'it'}
+    onChange={(value) => { console.log('value', value)}}
     label={'Ora di partenza'} 
     placeholder={'my placeholder'}
     theme={'blackAndWhite'}
@@ -52,7 +51,6 @@ Input field with date format.
 ```shell
 <NumPad.Date 
     onChange={(value) => { console.log('value', value)}} 
-    locale={'it'}
     label={'Data di nascita di partenza'} 
 />
 ```
@@ -62,7 +60,6 @@ Input field with date and time format.
 ```shell
 <NumPad.DateTime 
     onChange={(value) => { console.log('value', value)}} 
-    locale={'it'}
     dateFormat={'DD.MM.YYYY'}
     label={'Data e ora di partenza'}
 />
@@ -75,7 +72,6 @@ Input field with date and time format.
 | `placeholder` | string | none | text to display as input placeholder. |
 | `label` | string | none | text to display as input label. |
 | `theme` | string | 'blue' | name for selecting a different theme. |
-| `locale` | string | 'en' | property available for NumPad.Time, NumPad.Date, NumPad.DateTime. |
 | `dateFormat` | string | 'MM/DD/YYYY' | specify a different date format. |
 
 ## Themes

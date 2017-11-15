@@ -1,18 +1,14 @@
 import React from 'react'
 import moment from 'moment'
 import { storiesOf } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { linkTo } from '@storybook/addon-links'
 import styled from 'styled-components'
 
 import NumPad from '../lib'
-import Calendar from '../lib/elements/Calendar'
-import { material } from '../lib/styles'
 
 storiesOf('Components', module)
   .add('Number', () => [ 
     <NumPad.Number 
-      key='number-1' 
+      placeholder='test'       
       theme='orange'
       onChange={(value) => { console.log('value', value)}} 
       label={'Totale'} />,
@@ -34,27 +30,15 @@ storiesOf('Components', module)
     <LoremIpsum key='lorem' />
   ]))
   .add('Numpad date', () => ([
-    <NumPad.NumPadDate key='date-1' label={'Data di nascita'} onChange={(value) => console.log('changed', value)}/>,
+    <NumPad.Date key='date-1' label={'Data di nascita'} onChange={(value) => console.log('changed', value)}/>,
     <LoremIpsum key='lorem' />
   ]))
   .add('Numpad date time', () => ([
     <NumPad.DateTime key='date-1' label={'Data e ora'} onChange={(value) => console.log('changed', value)}/>,
+    <NumPad.DateTime key='date-2' dateFormat={'DD.MM.YYYY'} onChange={(value) => console.log('changed', value)}/>,
     <LoremIpsum key='lorem' />
   ]))
-  .add('Date US', () => [
-    <NumPad.Date
-      key='numpad-date'
-      onChange={(value) => console.log('changed', value)}
-      label={'Birthdate'}
-      locale='en'
-      dateFormat='MM/DD/YYYY' />,
-    <LoremIpsum key='lorem' />])
-  .add('Date CH-IT', () => <NumPad.Date 
-    onChange={(value) => console.log('changed', value)}
-    label={'Data di nascita'}
-    locale='it'
-    dateFormat='DD.MM.YYYY' />)
-  .add('Styled', () => {
+  .add('Styled component', () => {
     const StyledNumber = styled(NumPad.Number)`
       color: green;
       button {

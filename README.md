@@ -1,4 +1,4 @@
-![Logo of the project](https://bitbucket.org/bpietro86/react-numpad/raw/master/logo.png)
+![Logo of the project](https://github.com/gpietro/react-numpad/raw/master/logo.png)
 
 # React numpad
 A numpad for number, date and time, built with and for React.
@@ -99,7 +99,7 @@ Live demo: [gpietro.github.io/docs](https://gpietro.github.io/docs)
 
 ## Developing
 ```shell
-git clone https://bitbucket.org/bpietro86/react-numpad
+git clone git@github.com:gpietro/react-numpad.git
 cd react-numpad/
 npm install
 npm start
@@ -119,7 +119,7 @@ A bundle will be created in the dist directory.
 If you'd like to contribute, please fork the repository and use a feature
 branch. Pull requests are warmly welcome.
 
-See our [CONTRIBUTING.md](https://bitbucket.org/bpietro86/react-numpad/blob/master/CONTRIBUTING.md) for information on how to contribute.
+See our [CONTRIBUTING.md](https://github.com/gpietro/react-numpad/blob/master/CONTRIBUTING.md) for information on how to contribute.
 
 ## License
 MIT Licensed. Copyright (c) Pietro Ghezzi 2017.

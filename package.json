@@ -3,6 +3,10 @@
   "version": "1.0.3",
   "description": "Numpad react component, as number input or time input",
   "main": "build/index.js",
+  "repository": { 
+    "type" : "git", 
+    "url" : "https://github.com/gpietro/react-numpad"
+  },
   "scripts": {
     "start": "webpack --watch",
     "build": "babel lib -d build",

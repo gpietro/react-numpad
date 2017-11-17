@@ -95,6 +95,7 @@ Usage example
 ```
 
 ## Demo / Examples
+Live demo: [gpietro.github.io/docs](https://gpietro.github.io/docs)
 
 ## Developing
 ```shell
@@ -118,7 +119,7 @@ A bundle will be created in the dist directory.
 If you'd like to contribute, please fork the repository and use a feature
 branch. Pull requests are warmly welcome.
 
-See our [CONTRIBUTING.md](https://bitbucket.org/bpietro86/react-numpad/raw/master/CONTRIBUTING.md) for information on how to contribute.
+See our [CONTRIBUTING.md](https://bitbucket.org/bpietro86/react-numpad/blob/master/CONTRIBUTING.md) for information on how to contribute.
 
 ## License
 MIT Licensed. Copyright (c) Pietro Ghezzi 2017.

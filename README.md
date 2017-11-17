@@ -1,4 +1,4 @@
-![Logo of the project](https://github.com/gpietro/react-numpad/raw/master/logo.png)
+![Logo of the project](https://raw.githubusercontent.com/gpietro/react-numpad/master/logo.png)
 
 # React numpad
 A numpad for number, date and time, built with and for React.

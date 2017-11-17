@@ -1,5 +1,5 @@
 {
-  "name": "numpad",
+  "name": "react-numpad",
   "version": "1.0.0",
   "description": "Numpad react component, as number input or time input",
   "main": "build/index.js",
@@ -41,25 +41,24 @@
     "jest-styled-components": "^4.9.0",
     "node-sass": "^4.5.3",
     "polished": "^1.8.1",
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
+    "prop-types": "^15.6.0",    
     "react-portal": "^4.0.0",
     "react-test-renderer": "^16.0.0",
     "sass-loader": "^6.0.6",
     "sinon": "^4.1.2",
     "sinon-sandbox": "^1.0.2",
-    "style-loader": "^0.19.0",
-    "styled-components": "^2.2.1",
+    "style-loader": "^0.19.0",    
     "url-loader": "^0.6.2",
     "webpack": "^3.7.1"
   },
   "dependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "styled-components": "^2.2.1",
     "color": "2.0.0",
     "moment": "2.19.1",
     "react-addons-css-transition-group": "^15.6.2",
     "react-icons": "2.2.7",
-    "react-onclickoutside": "6.6.0",
-    "react-swipeable": "4.2.0"
+    "react-onclickoutside": "6.6.0"
   }
 }

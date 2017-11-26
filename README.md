@@ -73,6 +73,7 @@ Input field with date and time format.
 | `label` | string | none | text to display as input label. |
 | `theme` | string | 'blue' | name for selecting a different theme. |
 | `dateFormat` | string | 'MM/DD/YYYY' | specify a different date format. |
+| `inputButtonContent` | object | none | override input button content |
 
 ## Themes
 There are themes available, in /styles folder, you can choose from: **blue**, **orange**, **blackAndWhite**. 

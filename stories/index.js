@@ -8,6 +8,7 @@ import NumPad from '../lib'
 storiesOf('Components', module)
   .add('Number', () => [ 
     <NumPad.Number 
+      key='number-1'  
       placeholder='test'       
       theme='orange'
       onChange={(value) => { console.log('value', value)}} 
@@ -25,12 +26,20 @@ storiesOf('Components', module)
       onChange={(value) => { console.log('value', value)}} 
       label={'Positive integer'} />])    
   .add('Time', () => ([
-    <NumPad.Time key='time-1' label={'Sveglia'} onChange={(value) => console.log('changed', value)}/>,
+    <NumPad.Time 
+      key='time-1' 
+      placeholder='HH:mm'
+      label={'Sveglia'} 
+      onChange={(value) => console.log('changed', value)} />,
     <NumPad.Time key='time-2' theme='blackAndWhite' onChange={(value) => console.log('changed', value)}/>,
     <LoremIpsum key='lorem' />
   ]))
   .add('Numpad date', () => ([
-    <NumPad.Date key='date-1' label={'Data di nascita'} onChange={(value) => console.log('changed', value)}/>,
+    <NumPad.Date 
+      key='date-1' 
+      placeholder='D.M.Y'
+      dateFormat='DD.MM.YYYY'
+      label={'Data di nascita'} onChange={(value) => console.log('changed', value)}/>,
     <LoremIpsum key='lorem' />
   ]))
   .add('Numpad date time', () => ([

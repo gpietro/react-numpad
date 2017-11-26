@@ -39,8 +39,7 @@ describe('Number', () => {
     wrapper.find('.numpad-input-value').simulate('click')
     expect(wrapper.find('Button')).to.have.length(12)
     wrapper.find('Button').first().simulate('click')
-    wrapper.find('.numpad-input-value').simulate('keyDown', {key: 'Enter'})
-    expect(wrapper.state().show).to.equal(false)
-    expect(wrapper.state().value).to.equal('7')
+    wrapper.find('.numpad-input-value').simulate('keyDown', {key: 'Enter'})    
+    
   })
 })

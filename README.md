@@ -67,7 +67,7 @@ Input field with date and time format.
 
 ## Properties
 | Property | Type | Default | Description
-:---|:---|:---|:---|:---
+:---|:---|:---|:---
 | `onChange` | function | **required** | function called when value change and is valid. |
 | `placeholder` | string | none | text to display as input placeholder. |
 | `label` | string | none | text to display as input label. |

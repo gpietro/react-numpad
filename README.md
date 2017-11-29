@@ -75,6 +75,14 @@ Input field with date and time format.
 | `dateFormat` | string | 'MM/DD/YYYY' | specify a different date format. |
 | `inputButtonContent` | object | none | override input button content |
 
+## Custom input field
+It's possible to override the InputField component by passing your input field as child component of NumPad
+```shell
+<NumPad.Number>
+    <MyCustomInputField />
+</NumPad.Number>
+```
+
 ## Themes
 There are themes available, in /styles folder, you can choose from: **blue**, **orange**, **blackAndWhite**. 
 Any css style is customizable using styled components.

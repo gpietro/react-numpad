@@ -2,17 +2,24 @@ import React from 'react'
 import moment from 'moment'
 import { storiesOf } from '@storybook/react'
 import styled from 'styled-components'
+import 'bootstrap/dist/css/bootstrap.css';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import NumPad from '../lib'
 
 storiesOf('Components', module)
   .add('Number', () => [ 
-    <NumPad.Number 
-      key='number-1'  
-      placeholder='test'       
-      theme='orange'
-      onChange={(value) => { console.log('value', value)}} 
-      label={'Totale'} />,
+    <div>
+      <label>Ciao</label>
+      <NumPad.Number 
+        key='number-1'  
+        placeholder='test'       
+        theme='orange'
+        onChange={(value) => { console.log('value', value)}} 
+        label={'Totale'}>
+          <input placeholder="test"/>
+      </NumPad.Number>
+    </div>,
     <NumPad.PositiveNumber
       key='number-2' 
       onChange={(value) => { console.log('value', value)}} 
@@ -34,6 +41,16 @@ storiesOf('Components', module)
     <NumPad.Time key='time-2' theme='blackAndWhite' onChange={(value) => console.log('changed', value)}/>,
     <LoremIpsum key='lorem' />
   ]))
+  .add('Inside modal', () => (
+    <DemoModal>
+      <NumPad.Time 
+        key='time-1' 
+        placeholder='HH:mm'
+        label={'Sveglia'} 
+        onChange={(value) => console.log('changed', value)} />
+        <NumPad.Time key='time-2' theme='blackAndWhite' onChange={(value) => console.log('changed', value)}/>
+    </DemoModal>
+  ))
   .add('Numpad date', () => ([
     <NumPad.Date 
       key='date-1' 
@@ -75,3 +92,38 @@ const LoremIpsum = () => (
     Aliquam elementum, leo quis gravida vehicula, justo neque porttitor tortor, eget volutpat sem lacus id lorem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc tortor tellus, fermentum vitae volutpat vitae, placerat ut lorem. Proin malesuada varius diam quis tempus. Fusce molestie massa ut turpis facilisis, ac ornare ligula cursus. Aliquam ligula ligula, maximus eu mattis elementum, tempor vel sapien. Nullam sit amet metus vitae ante ornare pharetra a id nibh. Suspendisse consectetur libero ante, id sodales lacus varius eu. Sed vehicula vulputate auctor. Quisque varius diam dui, at sollicitudin felis fringilla in. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut a consectetur ligula. Curabitur commodo maximus massa quis aliquam.
   </div>
 )
+
+
+class DemoModal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modal: false
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <Button onClick={this.toggle}>Open modal</Button>
+        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className} backdrop={false}>
+          <ModalHeader toggle={this.toggle}>Demo Modal</ModalHeader>
+          <ModalBody>
+            {this.props.children}
+          </ModalBody>
+          <ModalFooter>
+            <Button color="secondary" onClick={this.toggle}>Close</Button>
+          </ModalFooter>
+        </Modal>
+      </div>
+    );
+  }
+}

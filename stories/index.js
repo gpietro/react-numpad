@@ -18,6 +18,7 @@ storiesOf('Components', module)
         onChange={(value) => { console.log('value', value)}} 
         label={'Totale'}>
           <input placeholder="test" type="number"/>
+          <button>ciao</button>
       </NumPad.Number>
     </div>,
     <NumPad.Date 

@@ -9,7 +9,7 @@ import NumPad from '../lib'
 
 storiesOf('Components', module)
   .add('Number', () => [ 
-    <div>
+    <div key='story-1'>
       <label>Ciao</label>
       <NumPad.Number 
         key='number-1'  
@@ -17,9 +17,16 @@ storiesOf('Components', module)
         theme='orange'
         onChange={(value) => { console.log('value', value)}} 
         label={'Totale'}>
-          <input placeholder="test"/>
+          <input placeholder="test" type="number"/>
       </NumPad.Number>
     </div>,
+    <NumPad.Date 
+      key='issue-1' 
+      onChange={(value) => { console.log('value', value)}}
+      placeholder={'birthdate'}
+      dateFormat={'DD.MM.YYYY'}>
+      <input className="form-control input-lg" />
+    </NumPad.Date>,
     <NumPad.PositiveNumber
       key='number-2' 
       onChange={(value) => { console.log('value', value)}} 

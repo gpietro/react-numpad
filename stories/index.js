@@ -26,7 +26,8 @@ storiesOf('Components', module)
       onChange={(value) => { console.log('value', value)}}
       placeholder={'birthdate'}
       dateFormat={'DD.MM.YYYY'}>
-      <input className="form-control input-lg" />
+        <input className="form-control input-lg" />
+        <button>Pinco palla</button>
     </NumPad.Date>,
     <NumPad.PositiveNumber
       key='number-2' 

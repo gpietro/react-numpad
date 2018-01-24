@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from 'moment';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -9,7 +8,7 @@ import NumPad from '../lib';
 
 storiesOf('Components', module)
   .add('Number', () => [
-    <div>
+    <div key="story-1">
       <label>Ciao</label>
       <NumPad.Number
         key="number-1"
@@ -20,9 +19,21 @@ storiesOf('Components', module)
         }}
         label={'Totale'}
       >
-        <input placeholder="test" />
+        <input placeholder="test" type="number" />
+        <button>ciao</button>
       </NumPad.Number>
     </div>,
+    <NumPad.Date
+      key="issue-1"
+      onChange={value => {
+        console.log('value', value);
+      }}
+      placeholder={'birthdate'}
+      dateFormat={'DD.MM.YYYY'}
+    >
+      <input className="form-control input-lg" />
+      <button>Pinco palla</button>
+    </NumPad.Date>,
     <NumPad.PositiveNumber
       key="number-2"
       onChange={value => {
@@ -181,7 +192,7 @@ class DemoModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      modal: false
+      modal: false,
     };
 
     this.toggle = this.toggle.bind(this);

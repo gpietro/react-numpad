@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Portal } from 'react-portal';
 import { injectGlobal, ThemeProvider } from 'styled-components';
 import { InputField, Wrapper, KeyPad } from '../elements';
-import { Portal } from 'react-portal';
 import globalCSS from '../styles/global-css';
 import styles from '../styles';
 
-injectGlobal`${globalCSS}`;
+injectGlobal(`${globalCSS}`);
 
-export default ({ validation, displayRule, inputButtonContent, keyValid }) =>
+export default ({
+  validation, displayRule, inputButtonContent, keyValid,
+}) => {
   class NumPad extends Component {
     constructor(props) {
       super(props);
@@ -17,7 +19,7 @@ export default ({ validation, displayRule, inputButtonContent, keyValid }) =>
       this.confirm = this.confirm.bind(this);
     }
 
-    toggleKeyPad(value) {
+    toggleKeyPad() {
       this.setState(prevState => ({ show: !prevState.show }));
     }
 
@@ -28,41 +30,30 @@ export default ({ validation, displayRule, inputButtonContent, keyValid }) =>
         this.props.onChange(value);
       }
       this.setState(prevState =>
-        Object.assign({}, { show: !prevState.show }, updateValue)
-      );
+        Object.assign({}, { show: !prevState.show }, updateValue));
     }
 
     render() {
       const { show, value } = this.state;
-      const { placeholder, label, theme, dateFormat } = this.props;
+      const {
+        placeholder, label, theme, dateFormat,
+      } = this.props;
 
       return (
         <div className={this.props.className}>
           <ThemeProvider key="input-field" theme={styles(theme)}>
-            <div>
-              {this.props.children ? (
-                React.Children.map(this.props.children, child =>
-                  React.cloneElement(child, {
-                    onClick: this.toggleKeyPad,
-                    value: value,
-                    dateFormat: dateFormat,
-                    displayRule: displayRule,
-                    disabled: this.state.show
-                  })
-                )
-              ) : (
-                <InputField
-                  placeholder={placeholder}
-                  showKeyPad={this.toggleKeyPad}
-                  value={value}
-                  dateFormat={dateFormat}
-                  displayRule={displayRule}
-                  label={label}
-                  disabled={this.state.show}
-                  buttonContent={inputButtonContent}
-                />
-              )}
-            </div>
+            <InputField
+              placeholder={placeholder}
+              showKeyPad={this.toggleKeyPad}
+              value={value}
+              dateFormat={dateFormat}
+              displayRule={displayRule}
+              label={label}
+              disabled={this.state.show}
+              buttonContent={inputButtonContent}
+            >
+              {this.props.children}
+            </InputField>
           </ThemeProvider>
           {show && (
             <Portal>
@@ -84,4 +75,28 @@ export default ({ validation, displayRule, inputButtonContent, keyValid }) =>
         </div>
       );
     }
+  }
+
+  NumPad.defaultProps = {
+    className: undefined,
+    children: undefined,
+    placeholder: undefined,
+    label: undefined,
+    theme: undefined,
+    dateFormat: undefined,
+    displayRule: undefined,
   };
+
+  NumPad.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    className: PropTypes.string,
+    children: PropTypes.arrayOf(PropTypes.element),
+    placeholder: PropTypes.string,
+    label: PropTypes.string,
+    theme: PropTypes.string,
+    dateFormat: PropTypes.string,
+    displayRule: PropTypes.func,
+  };
+
+  return NumPad;
+};

@@ -22,6 +22,9 @@
   "lint-staged": {
     "*.{js,json,css,md}": ["prettier --write", "git add"]
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "author": "Pietro Ghezzi",
   "license": "ISC",
   "devDependencies": {

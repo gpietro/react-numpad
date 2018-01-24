@@ -13,7 +13,6 @@
     "build:watch": "babel lib -w -d build",
     "lint": "eslint lib/**; exit 0",
     "lint:watch": "esw -w lib/**",
-    "prettier": "prettier --single-quote --write \"**/*.js\"",
     "precommit": "lint-staged",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006",
@@ -21,14 +20,16 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --single-quote --write", "git add"]
+    "*.{js,json,css,md}": [
+      "prettier --single-quote --trailing-comma es5 --write",
+      "git add"
+    ]
   },
   "author": "Pietro Ghezzi",
   "license": "ISC",
   "devDependencies": {
     "@storybook/addon-actions": "^3.3.10",
     "@storybook/addon-links": "^3.3.10",
-    "@storybook/react": "^3.3.10",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
@@ -36,31 +37,31 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
-    "bootstrap": "^4.0.0-beta.2",
     "chai": "^4.1.2",
-    "eslint-config-airbnb": "^16.1.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^6.0.1",
-    "prettier": "^1.10.2",
-    "moment": "2.19.1",
     "css-loader": "^0.28.9",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.16.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.5.0",
     "eslint-plugin-react": "^7.5.1",
     "eslint-watch": "^3.1.3",
     "file-loader": "^1.1.6",
+    "husky": "^0.14.3",
     "jest": "^22.1.4",
     "jest-styled-components": "^4.10.0",
+    "lint-staged": "^6.0.1",
+    "moment": "2.19.1",
     "node-sass": "^4.7.2",
     "polished": "^1.8.1",
+    "prettier": "^1.10.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-test-renderer": "^16.2.0",
-    "reactstrap": "^5.0.0-alpha.4",
     "sass-loader": "^6.0.6",
     "sinon": "^4.2.0",
     "sinon-sandbox": "^1.0.2",
@@ -74,12 +75,15 @@
     "moment": "2.19.1"
   },
   "dependencies": {
-    "prop-types": "^15.6.0",
+    "@storybook/react": "^3.3.10",
+    "bootstrap": "^4.0.0-beta.2",
     "color": "^2.0.1",
-    "react-addons-css-transition-group": "^15.6.2",
+    "prop-types": "^15.6.0",
     "react-icons": "2.2.7",
     "react-onclickoutside": "^6.7.1",
     "react-portal": "^4.1.2",
+    "react-transition-group": "^2.2.1",
+    "reactstrap": "^5.0.0-alpha.4",
     "styled-components": "^3.0.2"
   }
 }

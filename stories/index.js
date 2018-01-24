@@ -1,7 +1,8 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
-import 'bootstrap/dist/css/bootstrap.css';
+
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import NumPad from '../lib';
@@ -9,7 +10,6 @@ import NumPad from '../lib';
 storiesOf('Components', module)
   .add('Number', () => [
     <div key="story-1">
-      <label>Ciao</label>
       <NumPad.Number
         key="number-1"
         placeholder="test"
@@ -17,7 +17,7 @@ storiesOf('Components', module)
         onChange={value => {
           console.log('value', value);
         }}
-        label={'Totale'}
+        label="Totale"
       >
         <input placeholder="test" type="number" />
         <button>ciao</button>
@@ -28,8 +28,8 @@ storiesOf('Components', module)
       onChange={value => {
         console.log('value', value);
       }}
-      placeholder={'birthdate'}
-      dateFormat={'DD.MM.YYYY'}
+      placeholder="birthdate"
+      dateFormat="DD.MM.YYYY"
     >
       <input className="form-control input-lg" />
       <button>Pinco palla</button>
@@ -39,28 +39,28 @@ storiesOf('Components', module)
       onChange={value => {
         console.log('value', value);
       }}
-      label={'Positive'}
+      label="Positive"
     />,
     <NumPad.IntegerNumber
       key="number-3"
       onChange={value => {
         console.log('value', value);
       }}
-      label={'Integer'}
+      label="Integer"
     />,
     <NumPad.PositiveIntegerNumber
       key="number-4"
       onChange={value => {
         console.log('value', value);
       }}
-      label={'Positive integer'}
-    />
+      label="Positive integer"
+    />,
   ])
   .add('Time', () => [
     <NumPad.Time
       key="time-1"
       placeholder="HH:mm"
-      label={'Sveglia'}
+      label="Sveglia"
       onChange={value => console.log('changed', value)}
     />,
     <NumPad.Time
@@ -68,14 +68,14 @@ storiesOf('Components', module)
       theme="blackAndWhite"
       onChange={value => console.log('changed', value)}
     />,
-    <LoremIpsum key="lorem" />
+    <LoremIpsum key="lorem" />,
   ])
   .add('Inside modal', () => (
     <DemoModal>
       <NumPad.Time
         key="time-1"
         placeholder="HH:mm"
-        label={'Sveglia'}
+        label="Sveglia"
         onChange={value => console.log('changed', value)}
       />
       <NumPad.Time
@@ -90,23 +90,23 @@ storiesOf('Components', module)
       key="date-1"
       placeholder="D.M.Y"
       dateFormat="DD.MM.YYYY"
-      label={'Data di nascita'}
+      label="Data di nascita"
       onChange={value => console.log('changed', value)}
     />,
-    <LoremIpsum key="lorem" />
+    <LoremIpsum key="lorem" />,
   ])
   .add('Numpad date time', () => [
     <NumPad.DateTime
       key="date-1"
-      label={'Data e ora'}
+      label="Data e ora"
       onChange={value => console.log('changed', value)}
     />,
     <NumPad.DateTime
       key="date-2"
-      dateFormat={'DD.MM.YYYY'}
+      dateFormat="DD.MM.YYYY"
       onChange={value => console.log('changed', value)}
     />,
-    <LoremIpsum key="lorem" />
+    <LoremIpsum key="lorem" />,
   ])
   .add('Styled component', () => {
     const StyledNumber = styled(NumPad.Number)`
@@ -129,7 +129,7 @@ storiesOf('Components', module)
         onChange={value => {
           console.log('value', value);
         }}
-        label={'Restilizzato'}
+        label="Restilizzato"
       />
     );
   });
@@ -200,7 +200,7 @@ class DemoModal extends React.Component {
 
   toggle() {
     this.setState({
-      modal: !this.state.modal
+      modal: !this.state.modal,
     });
   }
 

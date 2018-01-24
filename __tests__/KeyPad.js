@@ -11,11 +11,11 @@ var theme = {
   color: {
     primary: '#383D3B',
     secondary: '#32a5f2',
-    light: '#999'
+    light: '#999',
   },
   background: {
-    primary: '#f9f9f9'
-  }
+    primary: '#f9f9f9',
+  },
 };
 
 var fun = () => true;
@@ -29,11 +29,11 @@ describe('KeyPad', () => {
             color: {
               primary: '#383D3B',
               secondary: '#32a5f2',
-              light: '#999'
+              light: '#999',
             },
             background: {
-              primary: '#f9f9f9'
-            }
+              primary: '#f9f9f9',
+            },
           }}
           cancel={() => true}
           confirm={() => true}

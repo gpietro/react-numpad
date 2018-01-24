@@ -20,7 +20,7 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.{js,json,css,md}": ["prettier --single-quote --write", "git add"]
   },
   "prettier": {
     "singleQuote": true

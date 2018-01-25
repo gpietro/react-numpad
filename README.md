@@ -77,6 +77,19 @@ Input field with date and time format.
 />
 ```
 
+### NumPad.Calendar
+
+Calendar input field.
+
+```shell
+<NumPad.Calendar
+    onChange={value => console.log('changed', value)}
+    label='Data di nascita'
+    locale="it"
+    dateFormat="DD.MM.YYYY"
+/>
+```
+
 ## Properties
 
 | Property             | Type             | Default      | Description                                     |
@@ -87,6 +100,7 @@ Input field with date and time format.
 | `theme`              | string           | 'blue'       | name for selecting a different theme.           |
 | `dateFormat`         | string           | 'MM/DD/YYYY' | specify a different date format.                |
 | `defaultValue`       | string or number | none         | default value for the input field.              |
+| `locale`             | string           | 'en'         | locale for days and months                      |
 | `inputButtonContent` | object           | none         | override input button content                   |
 
 ## Custom input field

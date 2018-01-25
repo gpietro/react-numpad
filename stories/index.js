@@ -18,6 +18,7 @@ storiesOf('Components', module)
           console.log('value', value);
         }}
         label="Totale"
+        defaultValue={10}
       >
         <input placeholder="test" type="number" />
         <button>ciao</button>
@@ -62,6 +63,7 @@ storiesOf('Components', module)
       placeholder="HH:mm"
       label="Sveglia"
       onChange={value => console.log('changed', value)}
+      defaultValue={'12:33'}
     />,
     <NumPad.Time
       key="time-2"
@@ -92,6 +94,7 @@ storiesOf('Components', module)
       dateFormat="DD.MM.YYYY"
       label="Data di nascita"
       onChange={value => console.log('changed', value)}
+      defaultValue={'28.06.1986'}
     />,
     <LoremIpsum key="lorem" />,
   ])
@@ -105,6 +108,7 @@ storiesOf('Components', module)
       key="date-2"
       dateFormat="DD.MM.YYYY"
       onChange={value => console.log('changed', value)}
+      defaultValue={'28.06.1986 10:00'}
     />,
     <LoremIpsum key="lorem" />,
   ])

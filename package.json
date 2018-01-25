@@ -54,7 +54,7 @@
     "jest": "^22.1.4",
     "jest-styled-components": "^4.10.0",
     "lint-staged": "^6.0.1",
-    "moment": "2.19.1",
+    "moment": "^2.20.1",
     "node-sass": "^4.7.2",
     "polished": "^1.8.1",
     "prettier": "^1.10.2",
@@ -82,6 +82,7 @@
     "react-icons": "2.2.7",
     "react-onclickoutside": "^6.7.1",
     "react-portal": "^4.1.2",
+    "react-swipeable": "^4.2.0",
     "react-transition-group": "^2.2.1",
     "reactstrap": "^5.0.0-alpha.4",
     "styled-components": "^3.0.2"

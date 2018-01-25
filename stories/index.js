@@ -136,7 +136,27 @@ storiesOf('Components', module)
         label="Restilizzato"
       />
     );
-  });
+  })
+  .add('Date US', () => [
+    <NumPad.Calendar
+      key="numpad-date"
+      onChange={value => console.log('changed', value)}
+      label={'Birthdate'}
+      locale="en"
+      dateFormat="MM/DD/YYYY"
+    >
+      <input type="text" style={{ boder: '2px solid red', width: '300px' }} />
+    </NumPad.Calendar>,
+    <LoremIpsum key="lorem" />,
+  ])
+  .add('Date CH-IT', () => (
+    <NumPad.Calendar
+      onChange={value => console.log('changed', value)}
+      label={'Data di nascita'}
+      locale="it"
+      dateFormat="DD.MM.YYYY"
+    />
+  ));
 
 const LoremIpsum = () => (
   <div>

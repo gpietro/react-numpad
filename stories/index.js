@@ -85,6 +85,12 @@ storiesOf('Components', module)
         theme="blackAndWhite"
         onChange={value => console.log('changed', value)}
       />
+      <NumPad.Calendar
+        onChange={value => console.log('changed', value)}
+        label={'Data di nascita'}
+        locale="it"
+        dateFormat="DD.MM.YYYY"
+      />
     </DemoModal>
   ))
   .add('Numpad date', () => [

@@ -1,9 +1,6 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
-
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import NumPad from '../lib';
 
@@ -72,29 +69,6 @@ storiesOf('Components', module)
     />,
     <LoremIpsum key="lorem" />,
   ])
-  .add('Inside modal', () => (
-    <DemoModal>
-      <NumPad.Time
-        key="time-1"
-        placeholder="HH:mm"
-        label="Sveglia"
-        onChange={value => console.log('changed', value)}
-      />
-      <NumPad.Time
-        key="time-2"
-        theme="blackAndWhite"
-        onChange={value => console.log('changed', value)}
-      />
-      <NumPad.Calendar
-        onChange={value => console.log('changed', value)}
-        label={'Data di nascita'}
-        locale="it"
-        dateFormat="DD.MM.YYYY"
-        minDate={'20.01.2018'}
-        maxDate={'30.01.2018'}
-      />
-    </DemoModal>
-  ))
   .add('Numpad date', () => [
     <NumPad.Date
       key="date-1"
@@ -212,42 +186,3 @@ const LoremIpsum = () => (
     Curabitur commodo maximus massa quis aliquam.
   </div>
 );
-
-class DemoModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false,
-    };
-
-    this.toggle = this.toggle.bind(this);
-  }
-
-  toggle() {
-    this.setState({
-      modal: !this.state.modal,
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        <Button onClick={this.toggle}>Open modal</Button>
-        <Modal
-          isOpen={this.state.modal}
-          toggle={this.toggle}
-          className={this.props.className}
-          backdrop={false}
-        >
-          <ModalHeader toggle={this.toggle}>Demo Modal</ModalHeader>
-          <ModalBody>{this.props.children}</ModalBody>
-          <ModalFooter>
-            <Button color="secondary" onClick={this.toggle}>
-              Close
-            </Button>
-          </ModalFooter>
-        </Modal>
-      </div>
-    );
-  }
-}

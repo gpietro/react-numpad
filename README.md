@@ -87,6 +87,7 @@ Calendar input field.
     label='Data di nascita'
     locale="it"
     dateFormat="DD.MM.YYYY"
+    minDate="01.01.1900"
 />
 ```
 
@@ -102,6 +103,8 @@ Calendar input field.
 | `defaultValue`       | string or number | none         | default value for the input field.              |
 | `locale`             | string           | 'en'         | locale for days and months                      |
 | `inputButtonContent` | object           | none         | override input button content                   |
+| `minDate`            | string           | none         | min date for calendar input validation          |
+| `maxDate`            | string           | none         | max date for calendar input validation          |
 
 ## Custom input field
 

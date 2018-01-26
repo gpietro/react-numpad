@@ -11,7 +11,7 @@
     "start": "webpack --watch",
     "build": "babel lib -d build",
     "build:watch": "babel lib -w -d build",
-    "lint": "eslint lib/**; exit 0",
+    "lint": "eslint lib/** --fix; exit 0",
     "lint:watch": "esw -w lib/**",
     "precommit": "lint-staged",
     "prepublish": "npm run build",
@@ -21,7 +21,7 @@
   },
   "lint-staged": {
     "*.{js,json,css,md}": [
-      "prettier --single-quote --trailing-comma es5 --write",
+      "prettier --single-quote --trailing-comma es5 --print-width 100 --write",
       "git add"
     ]
   },

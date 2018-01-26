@@ -90,6 +90,8 @@ storiesOf('Components', module)
         label={'Data di nascita'}
         locale="it"
         dateFormat="DD.MM.YYYY"
+        minDate={'20.01.2018'}
+        maxDate={'30.01.2018'}
       />
     </DemoModal>
   ))
@@ -150,6 +152,8 @@ storiesOf('Components', module)
       label={'Birthdate'}
       locale="en"
       dateFormat="MM/DD/YYYY"
+      minDate={'01/20/2018'}
+      maxDate={'01/30/2018'}
     >
       <input type="text" style={{ boder: '2px solid red', width: '300px' }} />
     </NumPad.Calendar>,

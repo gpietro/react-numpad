@@ -13,7 +13,8 @@ module.exports = {
       'error',
       {
         singleQuote: true,
-        trailingComma: 'all',        
+        trailingComma: 'all',      
+        printWidth: 100,  
       },
     ],
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],

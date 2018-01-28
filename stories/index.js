@@ -8,6 +8,7 @@ storiesOf('Components', module)
   .add('Number', () => [
     <div key="story-1">
       <NumPad.Number
+        style={{ fontSize: '10px' }}
         key="number-1"
         placeholder="test"
         theme="orange"

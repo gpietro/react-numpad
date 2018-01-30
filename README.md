@@ -35,7 +35,6 @@ Input field for numeric value. There are also **PositiveNumber**, **IntegerNumbe
     onChange={(value) => { console.log('value', value)}}
     label={'Total'}
     placeholder={'my placeholder'}
-    theme={'orange'}
     defaultValue={100}
 />
 ```
@@ -47,9 +46,8 @@ Input field with time format.
 ```shell
 <NumPad.Time
     onChange={(value) => { console.log('value', value)}}
-    label={'Ora di partenza'}
+    label={'Departure time'}
     placeholder={'my placeholder'}
-    theme={'blackAndWhite'}
 />
 ```
 
@@ -93,26 +91,26 @@ Calendar input field.
 
 ## Properties
 
-| Property             | Type             | Default      | Description                                     |
-| :------------------- | :--------------- | :----------- | :---------------------------------------------- |
-| `onChange`           | function         | **required** | function called when value change and is valid. |
-| `placeholder`        | string           | none         | text to display as input placeholder.           |
-| `label`              | string           | none         | text to display as input label.                 |
-| `theme`              | string           | 'blue'       | name for selecting a different theme.           |
-| `dateFormat`         | string           | 'MM/DD/YYYY' | specify a different date format.                |
-| `defaultValue`       | string or number | none         | default value for the input field.              |
-| `locale`             | string           | 'en'         | locale for days and months                      |
-| `inputButtonContent` | object           | none         | override input button content                   |
-| `minDate`            | string           | none         | min date for calendar input validation          |
-| `maxDate`            | string           | none         | max date for calendar input validation          |
+| Property             | Type                 | Default      | Description                                                 |
+| :------------------- | :------------------- | :----------- | :---------------------------------------------------------- |
+| `onChange`           | `function`           | **required** | function called when value change and is valid.             |
+| `placeholder`        | `string`             | none         | text to display as input placeholder.                       |
+| `label`              | `string`             | none         | text to display as input label.                             |
+| `theme`              | `string` or `object` | 'blue'       | string as the name of the theme or object as custom styles. |
+| `dateFormat`         | `string`             | 'MM/DD/YYYY' | specify a different date format.                            |
+| `defaultValue`       | `string` or `number` | none         | default value for the input field.                          |
+| `locale`             | `string`             | 'en'         | locale for days and months                                  |
+| `inputButtonContent` | `object`             | none         | override input button content                               |
+| `minDate`            | `string`             | none         | min date for calendar input validation                      |
+| `maxDate`            | `string`             | none         | max date for calendar input validation                      |
 
 ## Custom input field
 
 It's possible to override the InputField component by passing your input field as child component of NumPad
 
 ```shell
-<NumPad.Number>
-    <MyCustomInputField />
+<NumPad.Number onChange={(value) => console.log('value', value)}>
+    <button>Click me!</button>
 </NumPad.Number>
 ```
 
@@ -130,7 +128,7 @@ Usage example
 
 ```shell
     import styled from 'styled-components';
-    import {NumPad} from 'react-numpad';
+    import NumPad from 'react-numpad';
 
     const Styled = styled(NumPad)`
         ${InputField} {

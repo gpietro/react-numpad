@@ -106,7 +106,7 @@ Calendar input field.
 
 ## Custom input field
 
-It's possible to override the InputField component by passing your input field as child component of NumPad
+It's possible to override the InputField component by passing your input field as child component of NumPad.
 
 ```shell
 <NumPad.Number onChange={(value) => console.log('value', value)}>
@@ -135,6 +135,22 @@ Usage example
             background: red;
         }
     `
+```
+
+Another way is to define an object as theme prop.
+
+```shell
+    const myTheme = {
+        color: {
+            primary: '#383D3B',
+            secondary: '#32a5f2',
+            light: '#999',
+        },
+        background: {
+            primary: '#f9f9f9',
+        },
+    };
+    <NumPad.Number theme={myTheme}>
 ```
 
 ## Demo / Examples

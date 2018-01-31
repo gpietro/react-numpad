@@ -121,37 +121,52 @@ Any css style is customizable using styled components.
 To install styled-components
 
 ```shell
-    npm install styled-components
+npm install styled-components
 ```
 
 Usage example
 
 ```shell
-    import styled from 'styled-components';
-    import NumPad from 'react-numpad';
+import styled from 'styled-components';
+import NumPad from 'react-numpad';
 
-    const Styled = styled(NumPad)`
-        ${InputField} {
-            background: red;
-        }
-    `
+const Styled = styled(NumPad)`
+    ${InputField} {
+        background: red;
+    }
+`
 ```
 
 Another way is to define an object as theme prop.
 
 ```shell
-    const myTheme = {
-        color: {
-            primary: '#383D3B',
-            secondary: '#32a5f2',
-            light: '#999',
-        },
-        background: {
-            primary: '#f9f9f9',
-        },
-    };
-    <NumPad.Number theme={myTheme}>
+const myTheme = {
+    color: {
+        primary: '#383D3B',
+        secondary: '#32a5f2',
+        light: '#999',
+    },
+    background: {
+        primary: '#f9f9f9',
+    },
+};
+
+<NumPad.Number theme={myTheme}>
 ```
+
+
+## Keyboard support
+`0, 1, 2, ... 9`: input number.
+
+`- and .`: input symbol.
+
+`Esc`: close keypad or calendar. 
+
+`Enter`: submit value.
+
+## Calendar swipe support
+On mobile is possible to switch between months by swipe.
+
 
 ## Demo / Examples
 

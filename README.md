@@ -2,6 +2,7 @@
 
 # React numpad
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/gpietro/react-numpad.svg)](https://greenkeeper.io/)
 [![BCH compliance](https://bettercodehub.com/edge/badge/gpietro/react-numpad?branch=master)](https://bettercodehub.com/)
 
 A numpad for number, date and time, built with and for React.

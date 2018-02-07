@@ -99,7 +99,7 @@ Calendar input field.
 | `onChange`           | `function`           | **required** | function called when value change and is valid.             |
 | `placeholder`        | `string`             | none         | text to display as input placeholder.                       |
 | `label`              | `string`             | none         | text to display as input label.                             |
-| `position`           | `string`             | `center`     | Position to the screen. `center`, `flex-start`, `flex-end   |
+| `position`           | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`  |
 | `theme`              | `string` or `object` | `blue`       | string as the name of the theme or object as custom styles. |
 | `dateFormat`         | `string`             | `MM/DD/YYYY` | specify a different date format.                            |
 | `defaultValue`       | `string` or `number` | none         | default value for the input field.                          |

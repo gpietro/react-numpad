@@ -75,6 +75,7 @@
   },
   "dependencies": {
     "color": "^3.0.0",
+    "material-ui": "^0.20.0",
     "moment": "2.20.1",
     "prop-types": "^15.6.0",
     "react-icons": "2.2.7",

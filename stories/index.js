@@ -15,6 +15,7 @@ storiesOf('Components', module)
         onChange={value => {
           console.log('value', value);
         }}
+        position="flex-start"
         label="Totale"
         defaultValue={10}
       >
@@ -27,6 +28,7 @@ storiesOf('Components', module)
       onChange={value => {
         console.log('value', value);
       }}
+      position="flex-end"
       placeholder="birthdate"
       dateFormat="DD.MM.YYYY"
     >
@@ -127,6 +129,7 @@ storiesOf('Components', module)
       label={'Birthdate'}
       locale="en"
       dateFormat="MM/DD/YYYY"
+      position="flex-end"
       minDate={'01/20/2018'}
       maxDate={'01/30/2018'}
     >

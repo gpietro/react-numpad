@@ -99,10 +99,11 @@ Calendar input field.
 | `onChange`           | `function`           | **required** | function called when value change and is valid.             |
 | `placeholder`        | `string`             | none         | text to display as input placeholder.                       |
 | `label`              | `string`             | none         | text to display as input label.                             |
-| `theme`              | `string` or `object` | 'blue'       | string as the name of the theme or object as custom styles. |
-| `dateFormat`         | `string`             | 'MM/DD/YYYY' | specify a different date format.                            |
+| `position`           | `string`             | `center`     | Position to the screen. `center`, `flex-start`, `flex-end   |
+| `theme`              | `string` or `object` | `blue`       | string as the name of the theme or object as custom styles. |
+| `dateFormat`         | `string`             | `MM/DD/YYYY` | specify a different date format.                            |
 | `defaultValue`       | `string` or `number` | none         | default value for the input field.                          |
-| `locale`             | `string`             | 'en'         | locale for days and months                                  |
+| `locale`             | `string`             | `en`         | locale for days and months                                  |
 | `inputButtonContent` | `object`             | none         | override input button content                               |
 | `minDate`            | `string`             | none         | min date for calendar input validation                      |
 | `maxDate`            | `string`             | none         | max date for calendar input validation                      |
@@ -157,19 +158,19 @@ const myTheme = {
 <NumPad.Number theme={myTheme}>
 ```
 
-
 ## Keyboard support
+
 `0, 1, 2, ... 9`: input number.
 
 `- and .`: input symbol.
 
-`Esc`: close keypad or calendar. 
+`Esc`: close keypad or calendar.
 
 `Enter`: submit value.
 
 ## Calendar swipe support
-On mobile is possible to switch between months by swipe.
 
+On mobile is possible to switch between months by swipe.
 
 ## Demo / Examples
 

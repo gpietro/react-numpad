@@ -94,19 +94,19 @@ Calendar input field.
 
 ## Properties
 
-| Property             | Type                 | Default      | Description                                                 |
-| :------------------- | :------------------- | :----------- | :---------------------------------------------------------- |
-| `onChange`           | `function`           | **required** | function called when value change and is valid.             |
-| `placeholder`        | `string`             | none         | text to display as input placeholder.                       |
-| `label`              | `string`             | none         | text to display as input label.                             |
-| `position`           | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`  |
-| `theme`              | `string` or `object` | `blue`       | string as the name of the theme or object as custom styles. |
-| `dateFormat`         | `string`             | `MM/DD/YYYY` | specify a different date format.                            |
-| `defaultValue`       | `string` or `number` | none         | default value for the input field.                          |
-| `locale`             | `string`             | `en`         | locale for days and months                                  |
-| `inputButtonContent` | `object`             | none         | override input button content                               |
-| `minDate`            | `string`             | none         | min date for calendar input validation                      |
-| `maxDate`            | `string`             | none         | max date for calendar input validation                      |
+| Property             | Type                 | Default      | Description                                                                                                                        |
+| :------------------- | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| `onChange`           | `function`           | **required** | function called when value change and is valid.                                                                                    |
+| `placeholder`        | `string`             | none         | text to display as input placeholder.                                                                                              |
+| `label`              | `string`             | none         | text to display as input label.                                                                                                    |
+| `position`           | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
+| `theme`              | `string` or `object` | `blue`       | string as the name of the theme or object as custom styles.                                                                        |
+| `dateFormat`         | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
+| `defaultValue`       | `string` or `number` | none         | default value for the input field.                                                                                                 |
+| `locale`             | `string`             | `en`         | locale for days and months                                                                                                         |
+| `inputButtonContent` | `object`             | none         | override input button content                                                                                                      |
+| `minDate`            | `string`             | none         | min date for calendar input validation                                                                                             |
+| `maxDate`            | `string`             | none         | max date for calendar input validation                                                                                             |
 
 ## Custom input field
 

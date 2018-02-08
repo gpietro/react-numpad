@@ -15,7 +15,7 @@ storiesOf('Components', module)
         onChange={value => {
           console.log('value', value);
         }}
-        position="flex-start"
+        position="startBottomLeft"
         label="Totale"
         defaultValue={10}
       >
@@ -23,12 +23,17 @@ storiesOf('Components', module)
         <button>ciao</button>
       </NumPad.Number>
     </div>,
+    <br />,
+    <br />,
+    <br />,
+    <br />,
+    <br />,
     <NumPad.Date
       key="issue-1"
       onChange={value => {
         console.log('value', value);
       }}
-      position="flex-end"
+      position="startTopLeft"
       placeholder="birthdate"
       dateFormat="DD.MM.YYYY"
     >
@@ -40,6 +45,7 @@ storiesOf('Components', module)
       onChange={value => {
         console.log('value', value);
       }}
+      position="startTopRight"
       label="Positive"
     />,
     <NumPad.IntegerNumber
@@ -54,6 +60,7 @@ storiesOf('Components', module)
       onChange={value => {
         console.log('value', value);
       }}
+      position="startBottomRight"
       label="Positive integer"
     />,
   ])

@@ -6,7 +6,7 @@ import NumPad from '../lib';
 
 storiesOf('Components', module)
   .add('Number', () => [
-    <div key="story-1">
+    <div key="story-1" style={{ marginBottom: '400px' }}>
       <NumPad.Number
         style={{ fontSize: '10px' }}
         key="number-1"
@@ -23,11 +23,6 @@ storiesOf('Components', module)
         <button>ciao</button>
       </NumPad.Number>
     </div>,
-    <br />,
-    <br />,
-    <br />,
-    <br />,
-    <br />,
     <NumPad.Date
       key="issue-1"
       onChange={value => {
@@ -36,10 +31,7 @@ storiesOf('Components', module)
       position="startTopLeft"
       placeholder="birthdate"
       dateFormat="DD.MM.YYYY"
-    >
-      <input className="form-control input-lg" />
-      <button>Pinco palla</button>
-    </NumPad.Date>,
+    />,
     <NumPad.PositiveNumber
       key="number-2"
       onChange={value => {

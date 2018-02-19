@@ -19,8 +19,8 @@ storiesOf('Components', module)
         label="Totale"
         defaultValue={10}
       >
-        <input placeholder="test" type="number" />
-        <button>ciao</button>
+        <input type="text" placeholder="test" />
+        <Button />
       </NumPad.Number>
     </div>,
     <NumPad.Date
@@ -128,7 +128,7 @@ storiesOf('Components', module)
       label={'Birthdate'}
       locale="en"
       dateFormat="MM/DD/YYYY"
-      position="flex-end"
+      position="startBottomLeft"
       minDate={'01/20/2018'}
       maxDate={'01/30/2018'}
     >
@@ -146,6 +146,13 @@ storiesOf('Components', module)
       defaultValue={'28.06.1986'}
     />
   ));
+
+class Button extends React.Component {
+  render() {
+    console.log('props', this.props);
+    return <button {...this.props}>click me</button>;
+  }
+}
 
 const LoremIpsum = () => (
   <div>

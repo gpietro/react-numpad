@@ -45,6 +45,7 @@ storiesOf('Components', module)
       onChange={value => {
         console.log('value', value);
       }}
+      position="flex-start"
       label="Integer"
     />,
     <NumPad.PositiveIntegerNumber

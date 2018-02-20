@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
 
 import NumPad from '../lib';
+import Modal from './DemoModal';
 
 storiesOf('Components', module)
   .add('Number', () => [
@@ -23,6 +24,7 @@ storiesOf('Components', module)
         <Button />
       </NumPad.Number>
     </div>,
+    <LoremIpsum key="lorem" />,
     <NumPad.Date
       key="issue-1"
       onChange={value => {
@@ -146,6 +148,41 @@ storiesOf('Components', module)
       dateFormat="DD.MM.YYYY"
       defaultValue={'28.06.1986'}
     />
+  ))
+  .add('Modal', () => (
+    <Modal>
+      <h4>Test component inside a modal</h4>
+      <NumPad.Number
+        style={{ fontSize: '10px' }}
+        key="number-1"
+        placeholder="test"
+        theme="orange"
+        onChange={value => {
+          console.log('value', value);
+        }}
+        position="startBottomLeft"
+        label="Totale"
+        defaultValue={10}
+      >
+        <input type="text" placeholder="test" />
+        <Button />
+      </NumPad.Number>
+      <hr />
+      <NumPad.Time
+        key="time-2"
+        theme="blackAndWhite"
+        onChange={value => console.log('changed', value)}
+      />
+      <hr />
+      <NumPad.Calendar
+        onChange={value => console.log('changed', value)}
+        label={'Data di nascita'}
+        locale="it"
+        theme={'orange'}
+        dateFormat="DD.MM.YYYY"
+        defaultValue={'28.06.1986'}
+      />
+    </Modal>
   ));
 
 class Button extends React.Component {

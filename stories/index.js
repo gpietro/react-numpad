@@ -8,6 +8,7 @@ import Modal from './DemoModal';
 storiesOf('Components', module)
   .add('Number', () => [
     <div key="story-1" style={{ marginBottom: '400px' }}>
+      <p>daédlfkja adf acfadsf asdélfk ajsdaf sodalesasdf asf asdf af </p>,
       <NumPad.Number
         style={{ fontSize: '10px' }}
         key="number-1"

@@ -89,6 +89,7 @@ Calendar input field.
     locale="it"
     dateFormat="DD.MM.YYYY"
     minDate="01.01.1900"
+    markers=['01.03.2018', '06.03.2018']
 />
 ```
 
@@ -106,6 +107,7 @@ Calendar input field.
 | `locale`             | `string`             | `en`         | locale for days and months                                                                                                         |
 | `weekOffset`         | `number`             | `0`          | First day of the week, by default is Sunday                                                                                        |
 | `inputButtonContent` | `object`             | none         | override input button content                                                                                                      |
+| `markers`            | `array`              | []           | list of dates to place a marker on Calendar. The string date format must be the same as dateFormat property                        |
 | `minDate`            | `string`             | none         | min date for calendar input validation                                                                                             |
 | `maxDate`            | `string`             | none         | max date for calendar input validation                                                                                             |
 

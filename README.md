@@ -104,6 +104,7 @@ Calendar input field.
 | `dateFormat`         | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
 | `defaultValue`       | `string` or `number` | none         | default value for the input field.                                                                                                 |
 | `locale`             | `string`             | `en`         | locale for days and months                                                                                                         |
+| `weekOffset`         | `number`             | `0`          | First day of the week, by default is Sunday                                                                                        |
 | `inputButtonContent` | `object`             | none         | override input button content                                                                                                      |
 | `minDate`            | `string`             | none         | min date for calendar input validation                                                                                             |
 | `maxDate`            | `string`             | none         | max date for calendar input validation                                                                                             |

@@ -149,6 +149,7 @@ storiesOf('Components', module)
       weekOffset={1}
       dateFormat="DD.MM.YYYY"
       defaultValue={'28.06.1986'}
+      markers={['01.03.2018', '06.03.2018']}
     />
   ))
   .add('Modal', () => (

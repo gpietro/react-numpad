@@ -69,6 +69,6 @@ class Body extends Component {
   }
 }
 
-const BodyWrapper = onClickOutside(Body);
+const BodyWrapper = Body;
 
 export default Modal;

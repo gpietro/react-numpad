@@ -144,8 +144,9 @@ storiesOf('Components', module)
     <NumPad.Calendar
       onChange={value => console.log('changed', value)}
       label={'Data di nascita'}
-      locale="it"
       theme={'orange'}
+      locale={'it'}
+      weekOffset={1}
       dateFormat="DD.MM.YYYY"
       defaultValue={'28.06.1986'}
     />

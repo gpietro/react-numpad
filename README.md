@@ -38,7 +38,7 @@ Input field for numeric value. There are also **PositiveNumber**, **IntegerNumbe
     onChange={(value) => { console.log('value', value)}}
     label={'Total'}
     placeholder={'my placeholder'}
-    defaultValue={100}
+    value={100}
 />
 ```
 
@@ -74,7 +74,7 @@ Input field with date and time format.
     onChange={(value) => { console.log('value', value)}}
     dateFormat={'DD.MM.YYYY'}
     label={'Data e ora di partenza'}
-    defaultValue={'10.02.2018 10:00'}
+    value={'10.02.2018 10:00'}
 />
 ```
 
@@ -103,7 +103,7 @@ Calendar input field.
 | `position`           | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
 | `theme`              | `string` or `object` | `blue`       | string as the name of the theme or object as custom styles.                                                                        |
 | `dateFormat`         | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
-| `defaultValue`       | `string` or `number` | none         | default value for the input field.                                                                                                 |
+| `value`              | `string` or `number` | none         | value (default) for the input field.                                                                                               |
 | `locale`             | `string`             | `en`         | locale for days and months                                                                                                         |
 | `weekOffset`         | `number`             | `0`          | First day of the week, by default is Sunday                                                                                        |
 | `inputButtonContent` | `object`             | none         | override input button content                                                                                                      |

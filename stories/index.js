@@ -19,7 +19,7 @@ storiesOf('Components', module)
         }}
         position="startBottomLeft"
         label="Totale"
-        defaultValue={10}
+        value={10}
       >
         <input type="text" placeholder="test" />
         <Button />
@@ -66,7 +66,7 @@ storiesOf('Components', module)
       placeholder="HH:mm"
       label="Sveglia"
       onChange={value => console.log('changed', value)}
-      defaultValue={'12:33'}
+      value={'12:33'}
     />,
     <NumPad.Time
       key="time-2"
@@ -82,7 +82,7 @@ storiesOf('Components', module)
       dateFormat="DD.MM.YYYY"
       label="Data di nascita"
       onChange={value => console.log('changed', value)}
-      defaultValue={'28.06.1986'}
+      value={'28.06.1986'}
     />,
     <LoremIpsum key="lorem" />,
   ])
@@ -96,7 +96,7 @@ storiesOf('Components', module)
       key="date-2"
       dateFormat="DD.MM.YYYY"
       onChange={value => console.log('changed', value)}
-      defaultValue={'28.06.1986 10:00'}
+      value={'28.06.1986 10:00'}
     />,
     <LoremIpsum key="lorem" />,
   ])
@@ -148,7 +148,7 @@ storiesOf('Components', module)
       locale={'it'}
       weekOffset={1}
       dateFormat="DD.MM.YYYY"
-      defaultValue={'28.06.1986'}
+      value={'28.06.1986'}
       markers={['01.03.2018', '06.03.2018']}
     />
   ))
@@ -165,7 +165,7 @@ storiesOf('Components', module)
         }}
         position="startBottomLeft"
         label="Totale"
-        defaultValue={10}
+        value={10}
       >
         <input type="text" placeholder="test" />
         <Button />
@@ -183,7 +183,7 @@ storiesOf('Components', module)
         locale="it"
         theme={'orange'}
         dateFormat="DD.MM.YYYY"
-        defaultValue={'28.06.1986'}
+        value={'28.06.1986'}
       />
     </Modal>
   ));

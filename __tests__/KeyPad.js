@@ -39,6 +39,7 @@ describe('KeyPad', () => {
           confirm={() => true}
           validation={() => true}
           keyValid={() => true}
+          sync={false}
         />
       )
       .toJSON();

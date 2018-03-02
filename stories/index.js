@@ -19,6 +19,7 @@ storiesOf('Components', module)
         }}
         position="startBottomLeft"
         label="Totale"
+        sync={true}
         value={10}
       >
         <input type="text" placeholder="test" />
@@ -66,11 +67,13 @@ storiesOf('Components', module)
       placeholder="HH:mm"
       label="Sveglia"
       onChange={value => console.log('changed', value)}
+      sync={true}
       value={'12:33'}
     />,
     <NumPad.Time
       key="time-2"
       theme="blackAndWhite"
+      sync={true}
       onChange={value => console.log('changed', value)}
     />,
     <LoremIpsum key="lorem" />,
@@ -121,8 +124,11 @@ storiesOf('Components', module)
         onChange={value => {
           console.log('value', value);
         }}
+        sync={true}
         label="Restilizzato"
-      />
+      >
+        <input type="text" />
+      </StyledNumber>
     );
   })
   .add('Date US', () => [

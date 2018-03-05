@@ -8,23 +8,24 @@ import Modal from './DemoModal';
 storiesOf('Components', module)
   .add('Number', () => [
     <div key="story-1" style={{ marginBottom: '400px' }}>
-      <p>daédlfkja adf acfadsf asdélfk ajsdaf sodalesasdf asf asdf af </p>,
-      <NumPad.Number
-        style={{ fontSize: '10px' }}
-        key="number-1"
-        placeholder="test"
-        theme="orange"
-        onChange={value => {
-          console.log('value', value);
-        }}
-        position="startBottomLeft"
-        label="Totale"
-        sync={true}
-        value={10}
-      >
-        <input type="text" placeholder="test" />
-        <Button />
-      </NumPad.Number>
+      <p>daédlfkja adf acfadsf asdélfk ajsdaf sodalesasdf asf asdf af </p>
+      <ChangeProps>
+        <NumPad.Number
+          style={{ fontSize: '10px' }}
+          key="number-1"
+          placeholder="test"
+          theme="orange"
+          onChange={value => {
+            console.log('value', value);
+          }}
+          position="startBottomLeft"
+          label="Totale"
+          sync={true}
+        >
+          <input type="text" placeholder="test" />
+          <Button />
+        </NumPad.Number>
+      </ChangeProps>
     </div>,
     <LoremIpsum key="lorem" />,
     <NumPad.Date
@@ -198,6 +199,29 @@ class Button extends React.Component {
   render() {
     console.log('props', this.props);
     return <button {...this.props}>click me</button>;
+  }
+}
+
+class ChangeProps extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: 1 };
+  }
+  render() {
+    return (
+      <div>
+        <button
+          onClick={() => this.setState({ value: Math.floor(Math.random() * Math.floor(100)) })}
+        >
+          Gen new value
+        </button>
+        <div>
+          {React.Children.map(this.props.children, child =>
+            React.cloneElement(child, { value: this.state.value })
+          )}
+        </div>
+      </div>
+    );
   }
 }
 

@@ -78,6 +78,19 @@ Input field with date and time format.
 />
 ```
 
+## NumPad Properties
+
+| Property      | Type                 | Default      | Description                                                                                                                        |
+| :------------ | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| `onChange`    | `function`           | **required** | function called when value change and is valid.                                                                                    |
+| `placeholder` | `string`             | none         | text to display as input placeholder.                                                                                              |
+| `label`       | `string`             | none         | text to display as input label.                                                                                                    |
+| `position`    | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
+| `theme`       | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
+| `dateFormat`  | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
+| `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
+| `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
+
 ### NumPad.Calendar
 
 Calendar input field.
@@ -93,24 +106,23 @@ Calendar input field.
 />
 ```
 
-## Properties
+## Calendar Properties
 
-| Property             | Type                 | Default      | Description                                                                                                                        |
-| :------------------- | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| `onChange`           | `function`           | **required** | function called when value change and is valid.                                                                                    |
-| `placeholder`        | `string`             | none         | text to display as input placeholder.                                                                                              |
-| `label`              | `string`             | none         | text to display as input label.                                                                                                    |
-| `position`           | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
-| `theme`              | `string` or `object` | `blue`       | string as the name of the theme or object as custom styles.                                                                        |
-| `dateFormat`         | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
-| `value`              | `string` or `number` | none         | value (default) for the input field.                                                                                               |
-| `locale`             | `string`             | `en`         | locale for days and months                                                                                                         |
-| `weekOffset`         | `number`             | `0`          | First day of the week, by default is Sunday                                                                                        |
-| `inputButtonContent` | `object`             | none         | override input button content                                                                                                      |
-| `markers`            | `array`              | []           | list of dates to place a marker on Calendar. The string date format must be the same as dateFormat property                        |
-| `minDate`            | `string`             | none         | min date for calendar input validation                                                                                             |
-| `maxDate`            | `string`             | none         | max date for calendar input validation                                                                                             |
-| `sync`               | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
+| Property      | Type                 | Default      | Description                                                                                                                        |
+| :------------ | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| `onChange`    | `function`           | **required** | function called when value change and is valid.                                                                                    |
+| `placeholder` | `string`             | none         | text to display as input placeholder.                                                                                              |
+| `label`       | `string`             | none         | text to display as input label.                                                                                                    |
+| `position`    | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
+| `theme`       | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
+| `dateFormat`  | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
+| `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
+| `locale`      | `string`             | `en`         | locale for days and months                                                                                                         |
+| `weekOffset`  | `number`             | `0`          | First day of the week, by default is Sunday                                                                                        |
+| `markers`     | `array`              | []           | list of dates to place a marker on Calendar. The string date format must be the same as dateFormat property                        |
+| `minDate`     | `string`             | none         | min date for calendar input validation                                                                                             |
+| `maxDate`     | `string`             | none         | max date for calendar input validation                                                                                             |
+| `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
 
 ## Custom input field
 
@@ -124,40 +136,30 @@ It's possible to override the InputField component by passing your input field a
 
 ## Themes
 
-There are themes available, in /styles folder, you can choose from: **blue**, **orange**, **blackAndWhite**.
+There is only one theme available for now, in /styles folder, **numpad**.
 Any css style is customizable using styled components.
-To install styled-components
 
-```shell
-npm install styled-components
-```
-
-Usage example
-
-```shell
-import styled from 'styled-components';
-import NumPad from 'react-numpad';
-
-const Styled = styled(NumPad)`
-    ${InputField} {
-        background: red;
-    }
-`
-```
-
-Another way is to define an object as theme prop.
+It is possible to override a theme by defining an object with the theme properties:
 
 ```shell
 const myTheme = {
-    color: {
-        primary: '#383D3B',
-        secondary: '#32a5f2',
-        light: '#999',
-    },
-    background: {
-        primary: '#f9f9f9',
-    },
+  header: {
+    primaryColor: '#263238',
+    secondaryColor: '#f9f9f9',
+    highlightColor: '#FFC107',
+    backgroundColor: '#607D8B',
+  },
+  body: {
+    primaryColor: '#263238',
+    secondaryColor: '#32a5f2',
+    highlightColor: '#FFC107',
+    backgroundColor: '#f9f9f9',
+  },
+  panel: {
+    backgroundColor: '#CFD8DC'
+  }
 };
+
 
 <NumPad.Number theme={myTheme}>
 ```

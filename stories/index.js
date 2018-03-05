@@ -151,12 +151,10 @@ storiesOf('Components', module)
     <NumPad.Calendar
       onChange={value => console.log('changed', value)}
       label={'Data di nascita'}
-      theme={'orange'}
       locale={'it'}
       weekOffset={1}
       dateFormat="DD.MM.YYYY"
       value={'28.06.1986'}
-      markers={['01.03.2018', '06.03.2018']}
     />
   ))
   .add('Modal', () => (
@@ -188,9 +186,16 @@ storiesOf('Components', module)
         onChange={value => console.log('changed', value)}
         label={'Data di nascita'}
         locale="it"
-        theme={'orange'}
         dateFormat="DD.MM.YYYY"
         value={'28.06.1986'}
+      />
+      <hr />
+      <NumPad.Calendar
+        onChange={value => console.log('changed', value)}
+        label={'Markers'}
+        locale="it"
+        dateFormat="DD.MM.YYYY"
+        markers={['01.03.2018', '06.03.2018']}
       />
     </Modal>
   ));

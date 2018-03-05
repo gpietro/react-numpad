@@ -149,12 +149,11 @@ storiesOf('Components', module)
   ])
   .add('Date CH-IT', () => (
     <NumPad.Calendar
-      onChange={value => console.log('changed', value)}
-      label={'Data di nascita'}
+      label="data in italiano"
+      dateFormat={'DD.MM.YYYY'}
+      position="center"
       locale={'it'}
-      weekOffset={1}
-      dateFormat="DD.MM.YYYY"
-      value={'28.06.1986'}
+      onChange={value => console.log('value', value)}
     />
   ))
   .add('Modal', () => (

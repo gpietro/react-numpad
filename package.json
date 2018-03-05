@@ -1,6 +1,6 @@
 {
   "name": "react-numpad",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "description": "Numpad react component, as number input or time input",
   "main": "build/index.js",
   "repository": {

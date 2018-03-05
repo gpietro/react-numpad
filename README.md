@@ -122,7 +122,6 @@ Calendar input field.
 | `markers`     | `array`              | []           | list of dates to place a marker on Calendar. The string date format must be the same as dateFormat property                        |
 | `minDate`     | `string`             | none         | min date for calendar input validation                                                                                             |
 | `maxDate`     | `string`             | none         | max date for calendar input validation                                                                                             |
-| `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
 
 ## Custom input field
 

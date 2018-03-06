@@ -5,6 +5,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/gpietro/react-numpad.svg)](https://greenkeeper.io/)
 [![BCH compliance](https://bettercodehub.com/edge/badge/gpietro/react-numpad?branch=master)](https://bettercodehub.com/)
 [![npm version](https://badge.fury.io/js/react-numpad.svg)](https://badge.fury.io/js/react-numpad)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
 A numpad for number, date and time, built with and for React.
 It's written with the extensibility in mind. The idea of this project is to cover the majority of input types in a form.

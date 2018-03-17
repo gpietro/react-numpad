@@ -5,8 +5,37 @@ import styled from 'styled-components';
 import NumPad from '../lib';
 import Modal from './DemoModal';
 
-storiesOf('Components', module)
-  .add('Number', () => [
+const appointmentDates = [
+  '12.03.2018 08:00',
+  '12.03.2018 10:00',
+  '12.03.2018 11:00',
+  '12.03.2018 12:00',
+  '12.03.2018 14:00',
+  '12.03.2018 15:00',
+  '12.03.2018 16:00',
+  '12.03.2018 17:00',
+
+  '13.03.2018 08:00',
+  '13.03.2018 12:00',
+  '13.03.2018 16:00',
+  '14.03.2018 08:00',
+  '14.03.2018 12:00',
+  '14.03.2018 16:00',
+  '15.03.2018 08:00',
+  '15.03.2018 12:00',
+  '15.03.2018 16:00',
+  '16.03.2018 08:00',
+  '16.03.2018 10:00',
+  '16.03.2018 11:00',
+  '16.03.2018 12:00',
+  '16.03.2018 14:00',
+  '16.03.2018 15:00',
+  '16.03.2018 16:00',
+  '16.03.2018 17:00',
+];
+
+storiesOf('NumPad', module)
+  .add('Input number', () => [
     <div key="story-1" style={{ marginBottom: '400px' }}>
       <p>daédlfkja adf acfadsf asdélfk ajsdaf sodalesasdf asf asdf af </p>
       <ChangeProps>
@@ -131,7 +160,9 @@ storiesOf('Components', module)
         <input type="text" />
       </StyledNumber>
     );
-  })
+  });
+
+storiesOf('Calendar', module)
   .add('Date US', () => [
     <NumPad.Calendar
       key="numpad-date"
@@ -151,12 +182,29 @@ storiesOf('Components', module)
     <NumPad.Calendar
       label="data in italiano"
       dateFormat={'DD.MM.YYYY'}
-      position="center"
+      position="fullscreen"
       locale={'it'}
       onChange={value => console.log('value', value)}
     />
   ))
-  .add('Modal', () => (
+  .add('Events', () => (
+    <NumPad.Appointment
+      dateFormat={'DD.MM.YYYY'}
+      dates={appointmentDates}
+      locale={'it'}
+      onChange={value => console.log('value', value)}
+    />
+  ))
+  .add('Events fullscreen', () => (
+    <NumPad.Appointment
+      dateFormat={'DD.MM.YYYY'}
+      position={'fullscreen'}
+      dates={appointmentDates}
+      locale={'it'}
+      onChange={value => console.log('value', value)}
+    />
+  ))
+  .add('Inside modal', () => (
     <Modal>
       <h4>Test component inside a modal</h4>
       <NumPad.Number
@@ -215,7 +263,11 @@ class ChangeProps extends React.Component {
     return (
       <div>
         <button
-          onClick={() => this.setState({ value: Math.floor(Math.random() * Math.floor(100)) })}
+          onClick={() =>
+            this.setState({
+              value: Math.floor(Math.random() * Math.floor(100)),
+            })
+          }
         >
           Gen new value
         </button>

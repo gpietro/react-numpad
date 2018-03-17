@@ -22,8 +22,6 @@ class Modal extends React.Component {
       zIndex: 12,
     };
 
-    console.log('this', this.props.children);
-
     return (
       <Portal>
         <div style={backdropStyle}>

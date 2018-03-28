@@ -104,7 +104,7 @@ Calendar input field.
     locale="it"
     dateFormat="DD.MM.YYYY"
     minDate="01.01.1900"
-    markers=['01.03.2018', '06.03.2018']
+    markers={['01.03.2018', '06.03.2018']}
 />
 ```
 

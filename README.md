@@ -125,6 +125,39 @@ Calendar input field.
 | `minDate`     | `string`             | none         | min date for calendar input validation                                                                                             |
 | `maxDate`     | `string`             | none         | max date for calendar input validation                                                                                             |
 
+### NumPad.Appointment
+
+Available date time appointments picker.
+
+```shell
+<NumPad.Appointment
+    dateFormat={"DD.MM.YYYY"}
+    dates={appointmentDates}
+    locale={"it"}
+    onChange={value => console.log("value", value)}
+/>
+
+const appointmentDates = {
+    '01.04.2018': ['08:00', '09:00', '10:00', '11:00'],
+    '03.04.2018': ['08:00', '09:00', '10:00'],
+    '04.04.2018': ['08:00', '09:00', '10:00', '11:00', '17:00'],
+    '09.04.2018': ['08:00', '10:00', '11:00', '15:00']
+}
+```
+
+## Appointment Properties
+
+| Property           | Type                 | Default      | Description                                                                                                                        |
+| :----------------- | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
+| `onChange`         | `function`           | **required** | function called when value change and is valid.                                                                                    |
+| `appointmentDates` | `object`             | **required** | object representing available dates with times                                                                                     |
+| `placeholder`      | `string`             | none         | text to display as input placeholder.                                                                                              |
+| `label`            | `string`             | none         | text to display as input label.                                                                                                    |
+| `position`         | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
+| `theme`            | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
+| `dateFormat`       | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
+| `locale`           | `string`             | `en`         | locale for days and months                                                                                                         |
+
 ## Custom input field
 
 It's possible to override the InputField component by passing your input field as child component of NumPad.

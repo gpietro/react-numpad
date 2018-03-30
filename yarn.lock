@@ -71,6 +71,10 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
+"@sindresorhus/is@^0.7.0":
+  version "0.7.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
+
 "@sinonjs/formatio@^2.0.0":
   version "2.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/@sinonjs/formatio/-/formatio-2.0.0.tgz#84db7e9eb5531df18a8c5e0bfb6e449e55e654b2"
@@ -427,6 +431,10 @@ ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
+ansi-styles@~1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/ansi-styles/-/ansi-styles-1.0.0.tgz#cb102df1c56f5123eab8b67cd7b98027a0279178"
+
 any-observable@^0.2.0:
   version "0.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/any-observable/-/any-observable-0.2.0.tgz#c67870058003579009083f54ac0abafb5c33d242"
@@ -496,6 +504,10 @@ arr-flatten@^1.0.1, arr-flatten@^1.1.0:
 arr-union@^3.1.0:
   version "3.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/arr-union/-/arr-union-3.1.0.tgz#e39b09aea9def866a8f206e288af63919bae39c4"
+
+array-differ@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/array-differ/-/array-differ-1.0.0.tgz#eff52e3758249d33be402b8bb8e564bb2b5d4031"
 
 array-equal@^1.0.0:
   version "1.0.0"
@@ -604,6 +616,10 @@ ast-types@0.10.1:
   version "0.10.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/ast-types/-/ast-types-0.10.1.tgz#f52fca9715579a14f841d67d7f8d25432ab6a3dd"
 
+ast-types@0.11.3:
+  version "0.11.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/ast-types/-/ast-types-0.11.3.tgz#c20757fe72ee71278ea0ff3d87e5c2ca30d9edf8"
+
 ast-types@0.9.6:
   version "0.9.6"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/ast-types/-/ast-types-0.9.6.tgz#102c9e9e9005d3e7e3829bf0c4fa24ee862ee9b9"
@@ -624,11 +640,11 @@ async-limiter@~1.0.0:
   version "1.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
 
-async@^1.4.0:
+async@^1.4.0, async@^1.5.0:
   version "1.5.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/async/-/async-1.5.2.tgz#ec6a61ae56480c0c3cb241c95618e20892f9672a"
 
-async@^2.1.2, async@^2.1.4:
+async@^2.1.2, async@^2.1.4, async@^2.6.0:
   version "2.6.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/async/-/async-2.6.0.tgz#61a29abb6fcc026fea77e56d1c6ec53a795951f4"
   dependencies:
@@ -917,12 +933,12 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-jest@^22.4.1:
-  version "22.4.1"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babel-jest/-/babel-jest-22.4.1.tgz#ff53ebca45957347f27ff4666a31499fbb4c4ddd"
+babel-jest@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babel-jest/-/babel-jest-22.4.3.tgz#4b7a0b6041691bbd422ab49b3b73654a49a6627a"
   dependencies:
     babel-plugin-istanbul "^4.1.5"
-    babel-preset-jest "^22.4.1"
+    babel-preset-jest "^22.4.3"
 
 babel-loader@^7.1.2:
   version "7.1.4"
@@ -961,9 +977,9 @@ babel-plugin-istanbul@^4.1.5:
     istanbul-lib-instrument "^1.10.1"
     test-exclude "^4.2.1"
 
-babel-plugin-jest-hoist@^22.4.1:
-  version "22.4.1"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-22.4.1.tgz#d712fe5da8b6965f3191dacddbefdbdf4fb66d63"
+babel-plugin-jest-hoist@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-22.4.3.tgz#7d8bcccadc2667f96a0dcc6afe1891875ee6c14a"
 
 babel-plugin-minify-builtins@^0.2.0:
   version "0.2.0"
@@ -1327,7 +1343,7 @@ babel-plugin-transform-export-extensions@^6.22.0:
     babel-plugin-syntax-export-extensions "^6.8.0"
     babel-runtime "^6.22.0"
 
-babel-plugin-transform-flow-strip-types@^6.22.0:
+babel-plugin-transform-flow-strip-types@^6.22.0, babel-plugin-transform-flow-strip-types@^6.8.0:
   version "6.22.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babel-plugin-transform-flow-strip-types/-/babel-plugin-transform-flow-strip-types-6.22.0.tgz#84cb672935d43714fdc32bce84568d87441cf7cf"
   dependencies:
@@ -1500,7 +1516,7 @@ babel-preset-env@1.6.1, babel-preset-env@^1.6.1:
     invariant "^2.2.2"
     semver "^5.3.0"
 
-babel-preset-es2015@^6.24.1:
+babel-preset-es2015@^6.24.1, babel-preset-es2015@^6.9.0:
   version "6.24.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babel-preset-es2015/-/babel-preset-es2015-6.24.1.tgz#d44050d6bc2c9feea702aaf38d727a0210538939"
   dependencies:
@@ -1535,11 +1551,11 @@ babel-preset-flow@^6.23.0:
   dependencies:
     babel-plugin-transform-flow-strip-types "^6.22.0"
 
-babel-preset-jest@^22.4.1:
-  version "22.4.1"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babel-preset-jest/-/babel-preset-jest-22.4.1.tgz#efa2e5f5334242a9457a068452d7d09735db172a"
+babel-preset-jest@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babel-preset-jest/-/babel-preset-jest-22.4.3.tgz#e92eef9813b7026ab4ca675799f37419b5a44156"
   dependencies:
-    babel-plugin-jest-hoist "^22.4.1"
+    babel-plugin-jest-hoist "^22.4.3"
     babel-plugin-syntax-object-rest-spread "^6.13.0"
 
 babel-preset-minify@^0.2.0:
@@ -1607,7 +1623,7 @@ babel-preset-stage-0@^6.24.1:
     babel-plugin-transform-function-bind "^6.22.0"
     babel-preset-stage-1 "^6.24.1"
 
-babel-preset-stage-1@^6.24.1:
+babel-preset-stage-1@^6.24.1, babel-preset-stage-1@^6.5.0:
   version "6.24.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babel-preset-stage-1/-/babel-preset-stage-1-6.24.1.tgz#7692cd7dcd6849907e6ae4a0a85589cfb9e2bfb0"
   dependencies:
@@ -1634,7 +1650,7 @@ babel-preset-stage-3@^6.24.1:
     babel-plugin-transform-exponentiation-operator "^6.24.1"
     babel-plugin-transform-object-rest-spread "^6.22.0"
 
-babel-register@^6.26.0:
+babel-register@^6.26.0, babel-register@^6.9.0:
   version "6.26.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babel-register/-/babel-register-6.26.0.tgz#6ed021173e2fcb486d7acb45c6009a856f647071"
   dependencies:
@@ -1690,9 +1706,13 @@ babylon@7.0.0-beta.40, babylon@^7.0.0-beta.40:
   version "7.0.0-beta.40"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babylon/-/babylon-7.0.0-beta.40.tgz#91fc8cd56d5eb98b28e6fde41045f2957779940a"
 
-babylon@^6.18.0:
+babylon@^6.17.3, babylon@^6.18.0:
   version "6.18.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babylon/-/babylon-6.18.0.tgz#af2f3b88fa6f5c1e4c634d1a0f8eac4f55b395e3"
+
+babylon@^7.0.0-beta.30:
+  version "7.0.0-beta.42"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/babylon/-/babylon-7.0.0-beta.42.tgz#67cfabcd4f3ec82999d29031ccdea89d0ba99657"
 
 babylon@~5.8.3:
   version "5.8.38"
@@ -1735,6 +1755,10 @@ big.js@^3.1.3:
 binary-extensions@^1.0.0:
   version "1.11.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/binary-extensions/-/binary-extensions-1.11.0.tgz#46aa1751fb6a2f93ee5e689bb1087d4b14c6c205"
+
+binaryextensions@2:
+  version "2.1.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/binaryextensions/-/binaryextensions-2.1.1.tgz#3209a51ca4a4ad541a3b8d3d6a6d5b83a2485935"
 
 block-stream@*:
   version "0.0.9"
@@ -1976,6 +2000,18 @@ cache-base@^1.0.1:
     union-value "^1.0.0"
     unset-value "^1.0.0"
 
+cacheable-request@^2.1.1:
+  version "2.1.4"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/cacheable-request/-/cacheable-request-2.1.4.tgz#0d808801b6342ad33c91df9d0b44dc09b91e5c3d"
+  dependencies:
+    clone-response "1.0.2"
+    get-stream "3.0.0"
+    http-cache-semantics "3.8.1"
+    keyv "3.0.0"
+    lowercase-keys "1.0.0"
+    normalize-url "2.0.1"
+    responselike "1.0.2"
+
 caller-path@^0.1.0:
   version "0.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/caller-path/-/caller-path-0.1.0.tgz#94085ef63581ecd3daa92444a8fe94e82577751f"
@@ -2081,13 +2117,21 @@ chalk@1.1.3, chalk@^1.0.0, chalk@^1.1.1, chalk@^1.1.3:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
-chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1:
+chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.3.0, chalk@^2.3.1, chalk@^2.3.2:
   version "2.3.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/chalk/-/chalk-2.3.2.tgz#250dc96b07491bfd601e648d66ddf5f60c7a5c65"
   dependencies:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
+
+chalk@~0.4.0:
+  version "0.4.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/chalk/-/chalk-0.4.0.tgz#5199a3ddcd0c1efe23bc08c1b027b06176e0c64f"
+  dependencies:
+    ansi-styles "~1.0.0"
+    has-color "~0.1.0"
+    strip-ansi "~0.1.0"
 
 change-emitter@^0.1.2:
   version "0.1.6"
@@ -2112,7 +2156,7 @@ cheerio@^1.0.0-rc.2:
     lodash "^4.15.0"
     parse5 "^3.0.1"
 
-chokidar@^1.4.3, chokidar@^1.6.1:
+chokidar@^1.6.1:
   version "1.7.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
   dependencies:
@@ -2126,6 +2170,24 @@ chokidar@^1.4.3, chokidar@^1.6.1:
     readdirp "^2.0.0"
   optionalDependencies:
     fsevents "^1.0.0"
+
+chokidar@^2.0.0:
+  version "2.0.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/chokidar/-/chokidar-2.0.3.tgz#dcbd4f6cbb2a55b4799ba8a840ac527e5f4b1176"
+  dependencies:
+    anymatch "^2.0.0"
+    async-each "^1.0.0"
+    braces "^2.3.0"
+    glob-parent "^3.1.0"
+    inherits "^2.0.1"
+    is-binary-path "^1.0.0"
+    is-glob "^4.0.0"
+    normalize-path "^2.1.1"
+    path-is-absolute "^1.0.0"
+    readdirp "^2.0.0"
+    upath "^1.0.0"
+  optionalDependencies:
+    fsevents "^1.1.2"
 
 chokidar@^2.0.2:
   version "2.0.2"
@@ -2209,6 +2271,12 @@ cli-spinners@^0.1.2:
   version "0.1.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/cli-spinners/-/cli-spinners-0.1.2.tgz#bb764d88e185fb9e1e6a2a1f19772318f605e31c"
 
+cli-table@^0.3.1:
+  version "0.3.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/cli-table/-/cli-table-0.3.1.tgz#f53b05266a8b1a0b934b3d0821e6e2dc5914ae23"
+  dependencies:
+    colors "1.0.3"
+
 cli-truncate@^0.2.1:
   version "0.2.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/cli-truncate/-/cli-truncate-0.2.1.tgz#9f15cfbb0705005369216c626ac7d05ab90dd574"
@@ -2219,6 +2287,10 @@ cli-truncate@^0.2.1:
 cli-width@^2.0.0:
   version "2.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/cli-width/-/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
+
+clipboard-copy@^2.0.0:
+  version "2.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/clipboard-copy/-/clipboard-copy-2.0.0.tgz#663abcd8be9c641de6e92a2eb9afef6e0afa727e"
 
 cliui@^2.1.0:
   version "2.1.0"
@@ -2244,6 +2316,10 @@ cliui@^4.0.0:
     strip-ansi "^4.0.0"
     wrap-ansi "^2.0.0"
 
+clone-buffer@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/clone-buffer/-/clone-buffer-1.0.0.tgz#e3e25b207ac4e701af721e2cb5a16792cac3dc58"
+
 clone-deep@^2.0.1:
   version "2.0.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/clone-deep/-/clone-deep-2.0.2.tgz#00db3a1e173656730d1188c3d6aced6d7ea97713"
@@ -2253,9 +2329,39 @@ clone-deep@^2.0.1:
     kind-of "^6.0.0"
     shallow-clone "^1.0.0"
 
+clone-response@1.0.2:
+  version "1.0.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/clone-response/-/clone-response-1.0.2.tgz#d1dc973920314df67fbeb94223b4ee350239e96b"
+  dependencies:
+    mimic-response "^1.0.0"
+
+clone-stats@^0.0.1:
+  version "0.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/clone-stats/-/clone-stats-0.0.1.tgz#b88f94a82cf38b8791d58046ea4029ad88ca99d1"
+
+clone-stats@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/clone-stats/-/clone-stats-1.0.0.tgz#b3782dff8bb5474e18b9b6bf0fdfe782f8777680"
+
+clone@^1.0.0:
+  version "1.0.4"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/clone/-/clone-1.0.4.tgz#da309cc263df15994c688ca902179ca3c7cd7c7e"
+
 clone@^1.0.2:
   version "1.0.3"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/clone/-/clone-1.0.3.tgz#298d7e2231660f40c003c2ed3140decf3f53085f"
+
+clone@^2.1.1:
+  version "2.1.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
+
+cloneable-readable@^1.0.0:
+  version "1.1.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/cloneable-readable/-/cloneable-readable-1.1.2.tgz#d591dee4a8f8bc15da43ce97dceeba13d43e2a65"
+  dependencies:
+    inherits "^2.0.1"
+    process-nextick-args "^2.0.0"
+    readable-stream "^2.3.5"
 
 co@^4.6.0:
   version "4.6.0"
@@ -2327,6 +2433,14 @@ colormin@^1.0.5:
 colors@0.5.x:
   version "0.5.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/colors/-/colors-0.5.1.tgz#7d0023eaeb154e8ee9fce75dcb923d0ed1667774"
+
+colors@1.0.3:
+  version "1.0.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/colors/-/colors-1.0.3.tgz#0433f44d809680fdeb60ed260f1b0c262e82a40b"
+
+colors@^1.1.2:
+  version "1.2.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/colors/-/colors-1.2.1.tgz#f4a3d302976aaf042356ba1ade3b1a2c62d9d794"
 
 colors@~1.1.2:
   version "1.1.2"
@@ -2527,6 +2641,16 @@ cross-spawn@^5.0.1, cross-spawn@^5.1.0:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
+cross-spawn@^6.0.5:
+  version "6.0.5"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
+  dependencies:
+    nice-try "^1.0.4"
+    path-key "^2.0.1"
+    semver "^5.5.0"
+    shebang-command "^1.2.0"
+    which "^1.2.9"
+
 cryptiles@2.x.x:
   version "2.0.5"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/cryptiles/-/cryptiles-2.0.5.tgz#3bdfecdc608147c1c67202fa291e7dca59eaa3b8"
@@ -2573,7 +2697,26 @@ css-in-js-utils@^2.0.0:
   dependencies:
     hyphenate-style-name "^1.0.2"
 
-css-loader@^0.28.10, css-loader@^0.28.8:
+css-loader@^0.28.11:
+  version "0.28.11"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/css-loader/-/css-loader-0.28.11.tgz#c3f9864a700be2711bb5a2462b2389b1a392dab7"
+  dependencies:
+    babel-code-frame "^6.26.0"
+    css-selector-tokenizer "^0.7.0"
+    cssnano "^3.10.0"
+    icss-utils "^2.1.0"
+    loader-utils "^1.0.2"
+    lodash.camelcase "^4.3.0"
+    object-assign "^4.1.1"
+    postcss "^5.0.6"
+    postcss-modules-extract-imports "^1.2.0"
+    postcss-modules-local-by-default "^1.2.0"
+    postcss-modules-scope "^1.1.0"
+    postcss-modules-values "^1.3.0"
+    postcss-value-parser "^3.3.0"
+    source-list-map "^2.0.0"
+
+css-loader@^0.28.8:
   version "0.28.10"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/css-loader/-/css-loader-0.28.10.tgz#40282e79230f7bcb4e483efa631d670b735ebf42"
   dependencies:
@@ -2718,6 +2861,10 @@ damerau-levenshtein@^1.0.0:
   version "1.0.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/damerau-levenshtein/-/damerau-levenshtein-1.0.4.tgz#03191c432cb6eea168bb77f3a55ffdccb8978514"
 
+dargs@^5.1.0:
+  version "5.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/dargs/-/dargs-5.1.0.tgz#ec7ea50c78564cd36c9d5ec18f66329fade27829"
+
 dashdash@^1.12.0:
   version "1.14.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
@@ -2731,6 +2878,10 @@ date-fns@^1.27.2:
 date-now@^0.1.4:
   version "0.1.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
+
+dateformat@^3.0.2:
+  version "3.0.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
@@ -2752,6 +2903,12 @@ decode-uri-component@^0.2.0:
   version "0.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
 
+decompress-response@^3.2.0, decompress-response@^3.3.0:
+  version "3.3.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/decompress-response/-/decompress-response-3.3.0.tgz#80a4dd323748384bfa248083622aedec982adff3"
+  dependencies:
+    mimic-response "^1.0.0"
+
 dedent@^0.7.0:
   version "0.7.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/dedent/-/dedent-0.7.0.tgz#2495ddbaf6eb874abb0e1be9df22d2e5a544326c"
@@ -2766,7 +2923,7 @@ deep-equal@^1.0.1:
   version "1.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
 
-deep-extend@~0.4.0:
+deep-extend@^0.4.0, deep-extend@~0.4.0:
   version "0.4.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/deep-extend/-/deep-extend-0.4.2.tgz#48b699c27e334bf89f10892be432f6e4c7d34a7f"
 
@@ -2853,6 +3010,10 @@ destroy@~1.0.4:
   version "1.0.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
 
+detect-conflict@^1.0.0:
+  version "1.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/detect-conflict/-/detect-conflict-1.0.1.tgz#088657a66a961c05019db7c4230883b1c6b4176e"
+
 detect-indent@^4.0.0:
   version "4.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/detect-indent/-/detect-indent-4.0.0.tgz#f76d064352cdf43a1cb6ce619c4ee3a9475de208"
@@ -2871,7 +3032,7 @@ detect-passive-events@^1.0.4:
   version "1.0.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/detect-passive-events/-/detect-passive-events-1.0.4.tgz#6ed477e6e5bceb79079735dcd357789d37f9a91a"
 
-diff@^3.1.0, diff@^3.2.0:
+diff@^3.1.0, diff@^3.2.0, diff@^3.3.1, diff@^3.5.0:
   version "3.5.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
 
@@ -2987,6 +3148,10 @@ dotenv@^5.0.1:
   version "5.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/dotenv/-/dotenv-5.0.1.tgz#a5317459bd3d79ab88cff6e44057a6a3fbb1fcef"
 
+duplexer3@^0.1.4:
+  version "0.1.4"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
+
 duplexify@^3.4.2, duplexify@^3.5.3:
   version "3.5.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/duplexify/-/duplexify-3.5.4.tgz#4bb46c1796eabebeec4ca9a2e66b808cb7a3d8b4"
@@ -3002,9 +3167,17 @@ ecc-jsbn@~0.1.1:
   dependencies:
     jsbn "~0.1.0"
 
+editions@^1.3.3:
+  version "1.3.4"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/editions/-/editions-1.3.4.tgz#3662cb592347c3168eb8e498a0ff73271d67f50b"
+
 ee-first@1.1.1:
   version "1.1.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
+
+ejs@^2.3.1:
+  version "2.5.8"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/ejs/-/ejs-2.5.8.tgz#2ab6954619f225e6193b7ac5f7c39c48fefe4380"
 
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
   version "1.3.37"
@@ -3123,6 +3296,13 @@ error-ex@^1.2.0, error-ex@^1.3.1:
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/error-ex/-/error-ex-1.3.1.tgz#f855a86ce61adc4e8621c3cda21e7a7612c3a8dc"
   dependencies:
     is-arrayish "^0.2.1"
+
+error@^7.0.2:
+  version "7.0.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/error/-/error-7.0.2.tgz#a5f75fff4d9926126ddac0ea5dc38e689153cb02"
+  dependencies:
+    string-template "~0.2.1"
+    xtend "~4.0.0"
 
 es-abstract@^1.10.0, es-abstract@^1.4.3, es-abstract@^1.5.1, es-abstract@^1.6.1, es-abstract@^1.7.0, es-abstract@^1.9.0:
   version "1.10.0"
@@ -3327,26 +3507,26 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint-watch@^3.1.3:
-  version "3.1.3"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/eslint-watch/-/eslint-watch-3.1.3.tgz#e3882a93f02ba4d8a797562fa9c3815e3181c4ba"
+eslint-watch@^3.1.4:
+  version "3.1.4"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/eslint-watch/-/eslint-watch-3.1.4.tgz#76ae7a587e2100fa6c7cfc3753108f80880b3d16"
   dependencies:
     babel-polyfill "^6.20.0"
     bluebird "^3.5.1"
     chalk "^2.1.0"
-    chokidar "^1.4.3"
+    chokidar "^2.0.0"
     debug "^3.0.1"
     keypress "^0.2.1"
     lodash "^4.17.4"
     optionator "^0.8.2"
-    source-map-support "^0.5.0"
+    source-map-support "^0.5.3"
     strip-ansi "^4.0.0"
     text-table "^0.2.0"
     unicons "0.0.3"
 
-eslint@^4.18.2:
-  version "4.18.2"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/eslint/-/eslint-4.18.2.tgz#0f81267ad1012e7d2051e186a9004cc2267b8d45"
+eslint@^4.19.1:
+  version "4.19.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/eslint/-/eslint-4.19.1.tgz#32d1d653e1d90408854bfb296f076ec7e186a300"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -3357,7 +3537,7 @@ eslint@^4.18.2:
     doctrine "^2.1.0"
     eslint-scope "^3.7.1"
     eslint-visitor-keys "^1.0.0"
-    espree "^3.5.2"
+    espree "^3.5.4"
     esquery "^1.0.0"
     esutils "^2.0.2"
     file-entry-cache "^2.0.0"
@@ -3379,6 +3559,7 @@ eslint@^4.18.2:
     path-is-inside "^1.0.2"
     pluralize "^7.0.0"
     progress "^2.0.0"
+    regexpp "^1.0.1"
     require-uncached "^1.0.3"
     semver "^5.3.0"
     strip-ansi "^4.0.0"
@@ -3386,7 +3567,7 @@ eslint@^4.18.2:
     table "4.0.2"
     text-table "~0.2.0"
 
-espree@^3.5.2:
+espree@^3.5.4:
   version "3.5.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/espree/-/espree-3.5.4.tgz#b0f447187c8a8bed944b815a660bddf5deb5d1a7"
   dependencies:
@@ -3513,6 +3694,12 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
+expand-tilde@^2.0.0, expand-tilde@^2.0.2:
+  version "2.0.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/expand-tilde/-/expand-tilde-2.0.2.tgz#97e801aa052df02454de46b02bf621642cdc8502"
+  dependencies:
+    homedir-polyfill "^1.0.1"
+
 expect@^22.4.0:
   version "22.4.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/expect/-/expect-22.4.0.tgz#371edf1ae15b83b5bf5ec34b42f1584660a36c16"
@@ -3523,6 +3710,17 @@ expect@^22.4.0:
     jest-matcher-utils "^22.4.0"
     jest-message-util "^22.4.0"
     jest-regex-util "^22.1.0"
+
+expect@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/expect/-/expect-22.4.3.tgz#d5a29d0a0e1fb2153557caef2674d4547e914674"
+  dependencies:
+    ansi-styles "^3.2.0"
+    jest-diff "^22.4.3"
+    jest-get-type "^22.4.3"
+    jest-matcher-utils "^22.4.3"
+    jest-message-util "^22.4.3"
+    jest-regex-util "^22.4.3"
 
 express@^4.16.2:
   version "4.16.3"
@@ -3576,7 +3774,7 @@ extend@~3.0.0, extend@~3.0.1:
   version "3.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
 
-external-editor@^2.0.1, external-editor@^2.0.4:
+external-editor@^2.0.1, external-editor@^2.0.4, external-editor@^2.1.0:
   version "2.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/external-editor/-/external-editor-2.1.0.tgz#3d026a21b7f95b5726387d4200ac160d372c3b48"
   dependencies:
@@ -3747,6 +3945,12 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
+first-chunk-stream@^2.0.0:
+  version "2.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/first-chunk-stream/-/first-chunk-stream-2.0.0.tgz#1bdecdb8e083c0664b91945581577a43a9f31d70"
+  dependencies:
+    readable-stream "^2.0.2"
+
 flat-cache@^1.2.1:
   version "1.3.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/flat-cache/-/flat-cache-1.3.0.tgz#d3030b32b38154f4e3b7e9c709f490f7ef97c481"
@@ -3759,6 +3963,10 @@ flat-cache@^1.2.1:
 flatten@^1.0.2:
   version "1.0.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/flatten/-/flatten-1.0.2.tgz#dae46a9d78fbe25292258cc1e780a41d95c03782"
+
+flow-parser@^0.*:
+  version "0.69.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/flow-parser/-/flow-parser-0.69.0.tgz#378b5128d6d0b554a8b2f16a4ca3e1ab9649f00e"
 
 flush-write-stream@^1.0.0:
   version "1.0.2"
@@ -3825,7 +4033,7 @@ fresh@0.5.2:
   version "0.5.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/fresh/-/fresh-0.5.2.tgz#3d8cadd90d976569fa835ab1f8e4b23a105605a7"
 
-from2@^2.1.0:
+from2@^2.1.0, from2@^2.1.1:
   version "2.3.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/from2/-/from2-2.3.0.tgz#8bfb5502bde4a4d36cfdeea007fcca21d7e382af"
   dependencies:
@@ -3849,7 +4057,7 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
 
-fsevents@^1.0.0, fsevents@^1.1.1:
+fsevents@^1.0.0, fsevents@^1.1.1, fsevents@^1.1.2:
   version "1.1.3"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/fsevents/-/fsevents-1.1.3.tgz#11f82318f5fe7bb2cd22965a108e9306208216d8"
   dependencies:
@@ -3942,7 +4150,7 @@ get-stdin@^5.0.1:
   version "5.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/get-stdin/-/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398"
 
-get-stream@^3.0.0:
+get-stream@3.0.0, get-stream@^3.0.0:
   version "3.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/get-stream/-/get-stream-3.0.0.tgz#8e943d1358dc37555054ecbe2edb05aa174ede14"
 
@@ -3955,6 +4163,19 @@ getpass@^0.1.1:
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa"
   dependencies:
     assert-plus "^1.0.0"
+
+gh-got@^6.0.0:
+  version "6.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/gh-got/-/gh-got-6.0.0.tgz#d74353004c6ec466647520a10bd46f7299d268d0"
+  dependencies:
+    got "^7.0.0"
+    is-plain-obj "^1.1.0"
+
+github-username@^4.0.0:
+  version "4.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/github-username/-/github-username-4.1.0.tgz#cbe280041883206da4212ae9e4b5f169c30bf417"
+  dependencies:
+    gh-got "^6.0.0"
 
 glamor@^2.20.40:
   version "2.20.40"
@@ -3977,6 +4198,13 @@ glamorous@^4.11.2:
     is-plain-object "^2.0.4"
     react-html-attributes "^1.3.0"
     svg-tag-names "^1.1.0"
+
+glob-all@^3.1.0:
+  version "3.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/glob-all/-/glob-all-3.1.0.tgz#8913ddfb5ee1ac7812656241b03d5217c64b02ab"
+  dependencies:
+    glob "^7.0.5"
+    yargs "~1.2.6"
 
 glob-base@^0.3.0:
   version "0.3.0"
@@ -4019,6 +4247,24 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.0.5, glob@^7.1.1, glob@^7.1.2, glob@~7.1.1:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+global-modules@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/global-modules/-/global-modules-1.0.0.tgz#6d770f0eb523ac78164d72b5e71a8877265cc3ea"
+  dependencies:
+    global-prefix "^1.0.1"
+    is-windows "^1.0.1"
+    resolve-dir "^1.0.0"
+
+global-prefix@^1.0.1:
+  version "1.0.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/global-prefix/-/global-prefix-1.0.2.tgz#dbf743c6c14992593c655568cb66ed32c0122ebe"
+  dependencies:
+    expand-tilde "^2.0.2"
+    homedir-polyfill "^1.0.1"
+    ini "^1.3.4"
+    is-windows "^1.0.1"
+    which "^1.2.14"
+
 global@^4.3.2, global@~4.3.0:
   version "4.3.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/global/-/global-4.3.2.tgz#e76989268a6c74c38908b1305b10fc0e394e9d0f"
@@ -4045,6 +4291,16 @@ globby@^5.0.0:
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
 
+globby@^6.1.0:
+  version "6.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/globby/-/globby-6.1.0.tgz#f5a6d70e8395e21c858fb0489d64df02424d506c"
+  dependencies:
+    array-union "^1.0.1"
+    glob "^7.0.3"
+    object-assign "^4.0.1"
+    pify "^2.0.0"
+    pinkie-promise "^2.0.0"
+
 globule@^1.0.0:
   version "1.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/globule/-/globule-1.2.0.tgz#1dc49c6822dd9e8a2fa00ba2a295006e8664bd09"
@@ -4053,9 +4309,56 @@ globule@^1.0.0:
     lodash "~4.17.4"
     minimatch "~3.0.2"
 
+got@^7.0.0:
+  version "7.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/got/-/got-7.1.0.tgz#05450fd84094e6bbea56f451a43a9c289166385a"
+  dependencies:
+    decompress-response "^3.2.0"
+    duplexer3 "^0.1.4"
+    get-stream "^3.0.0"
+    is-plain-obj "^1.1.0"
+    is-retry-allowed "^1.0.0"
+    is-stream "^1.0.0"
+    isurl "^1.0.0-alpha5"
+    lowercase-keys "^1.0.0"
+    p-cancelable "^0.3.0"
+    p-timeout "^1.1.1"
+    safe-buffer "^5.0.1"
+    timed-out "^4.0.0"
+    url-parse-lax "^1.0.0"
+    url-to-options "^1.0.1"
+
+got@^8.2.0:
+  version "8.3.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/got/-/got-8.3.0.tgz#6ba26e75f8a6cc4c6b3eb1fe7ce4fec7abac8533"
+  dependencies:
+    "@sindresorhus/is" "^0.7.0"
+    cacheable-request "^2.1.1"
+    decompress-response "^3.3.0"
+    duplexer3 "^0.1.4"
+    get-stream "^3.0.0"
+    into-stream "^3.1.0"
+    is-retry-allowed "^1.1.0"
+    isurl "^1.0.0-alpha5"
+    lowercase-keys "^1.0.0"
+    mimic-response "^1.0.0"
+    p-cancelable "^0.4.0"
+    p-timeout "^2.0.1"
+    pify "^3.0.0"
+    safe-buffer "^5.1.1"
+    timed-out "^4.0.1"
+    url-parse-lax "^3.0.0"
+    url-to-options "^1.0.1"
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.4:
   version "4.1.11"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
+
+grouped-queue@^0.3.3:
+  version "0.3.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/grouped-queue/-/grouped-queue-0.3.3.tgz#c167d2a5319c5a0e0964ef6a25b7c2df8996c85c"
+  dependencies:
+    lodash "^4.17.2"
 
 growly@^1.3.0:
   version "1.3.0"
@@ -4108,6 +4411,10 @@ has-ansi@^2.0.0:
   dependencies:
     ansi-regex "^2.0.0"
 
+has-color@~0.1.0:
+  version "0.1.7"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/has-color/-/has-color-0.1.7.tgz#67144a5260c34fc3cca677d041daf52fe7b78b2f"
+
 has-flag@^1.0.0:
   version "1.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/has-flag/-/has-flag-1.0.0.tgz#9d9e793165ce017a00f00418c43f942a7b1d11fa"
@@ -4120,9 +4427,19 @@ has-flag@^3.0.0:
   version "3.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
 
+has-symbol-support-x@^1.4.1:
+  version "1.4.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/has-symbol-support-x/-/has-symbol-support-x-1.4.2.tgz#1409f98bc00247da45da67cee0a36f282ff26455"
+
 has-symbols@^1.0.0:
   version "1.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/has-symbols/-/has-symbols-1.0.0.tgz#ba1a8f1af2a0fc39650f5c850367704122063b44"
+
+has-to-string-tag-x@^1.2.0:
+  version "1.4.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/has-to-string-tag-x/-/has-to-string-tag-x-1.4.1.tgz#a045ab383d7b4b2012a00148ab0aa5f290044d4d"
+  dependencies:
+    has-symbol-support-x "^1.4.1"
 
 has-unicode@^2.0.0:
   version "2.0.1"
@@ -4234,6 +4551,12 @@ home-or-tmp@^2.0.0:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.1"
 
+homedir-polyfill@^1.0.1:
+  version "1.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/homedir-polyfill/-/homedir-polyfill-1.0.1.tgz#4c2bbc8a758998feebf5ed68580f76d46768b4bc"
+  dependencies:
+    parse-passwd "^1.0.0"
+
 hosted-git-info@^2.1.4:
   version "2.6.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/hosted-git-info/-/hosted-git-info-2.6.0.tgz#23235b29ab230c576aab0d4f13fc046b0b038222"
@@ -4313,6 +4636,10 @@ htmlparser2@~3.3.0:
     domhandler "2.1"
     domutils "1.1"
     readable-stream "1.0"
+
+http-cache-semantics@3.8.1:
+  version "3.8.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/http-cache-semantics/-/http-cache-semantics-3.8.1.tgz#39b0e16add9b605bf0a9ef3d9daaf4843b4cacd2"
 
 http-errors@1.6.2, http-errors@~1.6.2:
   version "1.6.2"
@@ -4433,7 +4760,7 @@ inherits@2.0.1:
   version "2.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/inherits/-/inherits-2.0.1.tgz#b17d08d326b4423e568eff719f91b0b1cbdf69f1"
 
-ini@~1.3.0:
+ini@^1.3.4, ini@~1.3.0:
   version "1.3.5"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/ini/-/ini-1.3.5.tgz#eee25f56db1c9ec6085e0c22778083f596abf927"
 
@@ -4469,7 +4796,7 @@ inquirer@3.0.6:
     strip-ansi "^3.0.0"
     through "^2.3.6"
 
-inquirer@^3.0.6:
+inquirer@^3.0.6, inquirer@^3.3.0:
   version "3.3.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/inquirer/-/inquirer-3.3.0.tgz#9dd2f2ad765dcab1ff0443b491442a20ba227dc9"
   dependencies:
@@ -4488,9 +4815,34 @@ inquirer@^3.0.6:
     strip-ansi "^4.0.0"
     through "^2.3.6"
 
-interpret@^1.0.0:
+inquirer@^5.1.0:
+  version "5.2.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/inquirer/-/inquirer-5.2.0.tgz#db350c2b73daca77ff1243962e9f22f099685726"
+  dependencies:
+    ansi-escapes "^3.0.0"
+    chalk "^2.0.0"
+    cli-cursor "^2.1.0"
+    cli-width "^2.0.0"
+    external-editor "^2.1.0"
+    figures "^2.0.0"
+    lodash "^4.3.0"
+    mute-stream "0.0.7"
+    run-async "^2.2.0"
+    rxjs "^5.5.2"
+    string-width "^2.1.0"
+    strip-ansi "^4.0.0"
+    through "^2.3.6"
+
+interpret@^1.0.0, interpret@^1.0.4:
   version "1.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
+
+into-stream@^3.1.0:
+  version "3.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/into-stream/-/into-stream-3.1.0.tgz#96fb0a936c12babd6ff1752a17d05616abd094c6"
+  dependencies:
+    from2 "^2.1.1"
+    p-is-promise "^1.1.0"
 
 invariant@^2.2.0, invariant@^2.2.2:
   version "2.2.3"
@@ -4712,6 +5064,10 @@ is-obj@^1.0.0, is-obj@^1.0.1:
   version "1.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
 
+is-object@^1.0.1:
+  version "1.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/is-object/-/is-object-1.0.1.tgz#8952688c5ec2ffd6b03ecc85e769e02903083470"
+
 is-observable@^0.2.0:
   version "0.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/is-observable/-/is-observable-0.2.0.tgz#b361311d83c6e5d726cabf5e250b0237106f5ae2"
@@ -4740,7 +5096,7 @@ is-path-inside@^1.0.0:
   dependencies:
     path-is-inside "^1.0.1"
 
-is-plain-obj@^1.0.0:
+is-plain-obj@^1.0.0, is-plain-obj@^1.1.0:
   version "1.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/is-plain-obj/-/is-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
 
@@ -4780,7 +5136,17 @@ is-resolvable@^1.0.0:
   version "1.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/is-resolvable/-/is-resolvable-1.1.0.tgz#fb18f87ce1feb925169c9a407c19318a3206ed88"
 
-is-stream@^1.0.1, is-stream@^1.1.0:
+is-retry-allowed@^1.0.0, is-retry-allowed@^1.1.0:
+  version "1.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/is-retry-allowed/-/is-retry-allowed-1.1.0.tgz#11a060568b67339444033d0125a61a20d564fb34"
+
+is-scoped@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/is-scoped/-/is-scoped-1.0.0.tgz#449ca98299e713038256289ecb2b540dc437cb30"
+  dependencies:
+    scoped-regex "^1.0.0"
+
+is-stream@^1.0.0, is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/is-stream/-/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
 
@@ -4810,7 +5176,7 @@ is-utf8@^0.2.0:
   version "0.2.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
 
-is-windows@^1.0.2:
+is-windows@^1.0.1, is-windows@^1.0.2:
   version "1.0.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
 
@@ -4911,15 +5277,30 @@ istanbul-reports@^1.3.0:
   dependencies:
     handlebars "^4.0.3"
 
-jest-changed-files@^22.2.0:
-  version "22.2.0"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-changed-files/-/jest-changed-files-22.2.0.tgz#517610c4a8ca0925bdc88b0ca53bd678aa8d019e"
+istextorbinary@^2.1.0:
+  version "2.2.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/istextorbinary/-/istextorbinary-2.2.1.tgz#a5231a08ef6dd22b268d0895084cf8d58b5bec53"
+  dependencies:
+    binaryextensions "2"
+    editions "^1.3.3"
+    textextensions "2"
+
+isurl@^1.0.0-alpha5:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/isurl/-/isurl-1.0.0.tgz#b27f4f49f3cdaa3ea44a0a5b7f3462e6edc39d67"
+  dependencies:
+    has-to-string-tag-x "^1.2.0"
+    is-object "^1.0.1"
+
+jest-changed-files@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-changed-files/-/jest-changed-files-22.4.3.tgz#8882181e022c38bd46a2e4d18d44d19d90a90fb2"
   dependencies:
     throat "^4.0.0"
 
-jest-cli@^22.4.2:
-  version "22.4.2"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-cli/-/jest-cli-22.4.2.tgz#e6546dc651e13d164481aa3e76e53ac4f4edab06"
+jest-cli@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-cli/-/jest-cli-22.4.3.tgz#bf16c4a5fb7edc3fa5b9bb7819e34139e88a72c7"
   dependencies:
     ansi-escapes "^3.0.0"
     chalk "^2.0.1"
@@ -4932,20 +5313,20 @@ jest-cli@^22.4.2:
     istanbul-lib-coverage "^1.1.1"
     istanbul-lib-instrument "^1.8.0"
     istanbul-lib-source-maps "^1.2.1"
-    jest-changed-files "^22.2.0"
-    jest-config "^22.4.2"
-    jest-environment-jsdom "^22.4.1"
-    jest-get-type "^22.1.0"
-    jest-haste-map "^22.4.2"
-    jest-message-util "^22.4.0"
-    jest-regex-util "^22.1.0"
-    jest-resolve-dependencies "^22.1.0"
-    jest-runner "^22.4.2"
-    jest-runtime "^22.4.2"
-    jest-snapshot "^22.4.0"
-    jest-util "^22.4.1"
-    jest-validate "^22.4.2"
-    jest-worker "^22.2.2"
+    jest-changed-files "^22.4.3"
+    jest-config "^22.4.3"
+    jest-environment-jsdom "^22.4.3"
+    jest-get-type "^22.4.3"
+    jest-haste-map "^22.4.3"
+    jest-message-util "^22.4.3"
+    jest-regex-util "^22.4.3"
+    jest-resolve-dependencies "^22.4.3"
+    jest-runner "^22.4.3"
+    jest-runtime "^22.4.3"
+    jest-snapshot "^22.4.3"
+    jest-util "^22.4.3"
+    jest-validate "^22.4.3"
+    jest-worker "^22.4.3"
     micromatch "^2.3.11"
     node-notifier "^5.2.1"
     realpath-native "^1.0.0"
@@ -4972,6 +5353,22 @@ jest-config@^22.4.2:
     jest-validate "^22.4.2"
     pretty-format "^22.4.0"
 
+jest-config@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-config/-/jest-config-22.4.3.tgz#0e9d57db267839ea31309119b41dc2fa31b76403"
+  dependencies:
+    chalk "^2.0.1"
+    glob "^7.1.1"
+    jest-environment-jsdom "^22.4.3"
+    jest-environment-node "^22.4.3"
+    jest-get-type "^22.4.3"
+    jest-jasmine2 "^22.4.3"
+    jest-regex-util "^22.4.3"
+    jest-resolve "^22.4.3"
+    jest-util "^22.4.3"
+    jest-validate "^22.4.3"
+    pretty-format "^22.4.3"
+
 jest-diff@^22.4.0:
   version "22.4.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-diff/-/jest-diff-22.4.0.tgz#384c2b78519ca44ca126382df53f134289232525"
@@ -4981,13 +5378,22 @@ jest-diff@^22.4.0:
     jest-get-type "^22.1.0"
     pretty-format "^22.4.0"
 
+jest-diff@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-diff/-/jest-diff-22.4.3.tgz#e18cc3feff0aeef159d02310f2686d4065378030"
+  dependencies:
+    chalk "^2.0.1"
+    diff "^3.2.0"
+    jest-get-type "^22.4.3"
+    pretty-format "^22.4.3"
+
 jest-docblock@^21.0.0:
   version "21.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-docblock/-/jest-docblock-21.2.0.tgz#51529c3b30d5fd159da60c27ceedc195faf8d414"
 
-jest-docblock@^22.4.0:
-  version "22.4.0"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-docblock/-/jest-docblock-22.4.0.tgz#dbf1877e2550070cfc4d9b07a55775a0483159b8"
+jest-docblock@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-docblock/-/jest-docblock-22.4.3.tgz#50886f132b42b280c903c592373bb6e93bb68b19"
   dependencies:
     detect-newline "^2.1.0"
 
@@ -4999,6 +5405,14 @@ jest-environment-jsdom@^22.4.1:
     jest-util "^22.4.1"
     jsdom "^11.5.1"
 
+jest-environment-jsdom@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-environment-jsdom/-/jest-environment-jsdom-22.4.3.tgz#d67daa4155e33516aecdd35afd82d4abf0fa8a1e"
+  dependencies:
+    jest-mock "^22.4.3"
+    jest-util "^22.4.3"
+    jsdom "^11.5.1"
+
 jest-environment-node@^22.4.1:
   version "22.4.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-environment-node/-/jest-environment-node-22.4.1.tgz#418850eb654596b8d6e36c2021cbedbc23df8e16"
@@ -5006,19 +5420,30 @@ jest-environment-node@^22.4.1:
     jest-mock "^22.2.0"
     jest-util "^22.4.1"
 
+jest-environment-node@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-environment-node/-/jest-environment-node-22.4.3.tgz#54c4eaa374c83dd52a9da8759be14ebe1d0b9129"
+  dependencies:
+    jest-mock "^22.4.3"
+    jest-util "^22.4.3"
+
 jest-get-type@^22.1.0:
   version "22.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-get-type/-/jest-get-type-22.1.0.tgz#4e90af298ed6181edc85d2da500dbd2753e0d5a9"
 
-jest-haste-map@^22.4.2:
-  version "22.4.2"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-haste-map/-/jest-haste-map-22.4.2.tgz#a90178e66146d4378bb076345a949071f3b015b4"
+jest-get-type@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-get-type/-/jest-get-type-22.4.3.tgz#e3a8504d8479342dd4420236b322869f18900ce4"
+
+jest-haste-map@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-haste-map/-/jest-haste-map-22.4.3.tgz#25842fa2ba350200767ac27f658d58b9d5c2e20b"
   dependencies:
     fb-watchman "^2.0.0"
     graceful-fs "^4.1.11"
-    jest-docblock "^22.4.0"
-    jest-serializer "^22.4.0"
-    jest-worker "^22.2.2"
+    jest-docblock "^22.4.3"
+    jest-serializer "^22.4.3"
+    jest-worker "^22.4.3"
     micromatch "^2.3.11"
     sane "^2.0.0"
 
@@ -5038,11 +5463,27 @@ jest-jasmine2@^22.4.2:
     jest-util "^22.4.1"
     source-map-support "^0.5.0"
 
-jest-leak-detector@^22.4.0:
-  version "22.4.0"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-leak-detector/-/jest-leak-detector-22.4.0.tgz#64da77f05b001c96d2062226e079f89989c4aa2f"
+jest-jasmine2@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-jasmine2/-/jest-jasmine2-22.4.3.tgz#4daf64cd14c793da9db34a7c7b8dcfe52a745965"
   dependencies:
-    pretty-format "^22.4.0"
+    chalk "^2.0.1"
+    co "^4.6.0"
+    expect "^22.4.3"
+    graceful-fs "^4.1.11"
+    is-generator-fn "^1.0.0"
+    jest-diff "^22.4.3"
+    jest-matcher-utils "^22.4.3"
+    jest-message-util "^22.4.3"
+    jest-snapshot "^22.4.3"
+    jest-util "^22.4.3"
+    source-map-support "^0.5.0"
+
+jest-leak-detector@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-leak-detector/-/jest-leak-detector-22.4.3.tgz#2b7b263103afae8c52b6b91241a2de40117e5b35"
+  dependencies:
+    pretty-format "^22.4.3"
 
 jest-matcher-utils@^22.4.0:
   version "22.4.0"
@@ -5051,6 +5492,14 @@ jest-matcher-utils@^22.4.0:
     chalk "^2.0.1"
     jest-get-type "^22.1.0"
     pretty-format "^22.4.0"
+
+jest-matcher-utils@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-matcher-utils/-/jest-matcher-utils-22.4.3.tgz#4632fe428ebc73ebc194d3c7b65d37b161f710ff"
+  dependencies:
+    chalk "^2.0.1"
+    jest-get-type "^22.4.3"
+    pretty-format "^22.4.3"
 
 jest-message-util@^22.4.0:
   version "22.4.0"
@@ -5062,19 +5511,37 @@ jest-message-util@^22.4.0:
     slash "^1.0.0"
     stack-utils "^1.0.1"
 
+jest-message-util@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-message-util/-/jest-message-util-22.4.3.tgz#cf3d38aafe4befddbfc455e57d65d5239e399eb7"
+  dependencies:
+    "@babel/code-frame" "^7.0.0-beta.35"
+    chalk "^2.0.1"
+    micromatch "^2.3.11"
+    slash "^1.0.0"
+    stack-utils "^1.0.1"
+
 jest-mock@^22.2.0:
   version "22.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-mock/-/jest-mock-22.2.0.tgz#444b3f9488a7473adae09bc8a77294afded397a7"
+
+jest-mock@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-mock/-/jest-mock-22.4.3.tgz#f63ba2f07a1511772cdc7979733397df770aabc7"
 
 jest-regex-util@^22.1.0:
   version "22.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-regex-util/-/jest-regex-util-22.1.0.tgz#5daf2fe270074b6da63e5d85f1c9acc866768f53"
 
-jest-resolve-dependencies@^22.1.0:
-  version "22.1.0"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-resolve-dependencies/-/jest-resolve-dependencies-22.1.0.tgz#340e4139fb13315cd43abc054e6c06136be51e31"
+jest-regex-util@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-regex-util/-/jest-regex-util-22.4.3.tgz#a826eb191cdf22502198c5401a1fc04de9cef5af"
+
+jest-resolve-dependencies@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-resolve-dependencies/-/jest-resolve-dependencies-22.4.3.tgz#e2256a5a846732dc3969cb72f3c9ad7725a8195e"
   dependencies:
-    jest-regex-util "^22.1.0"
+    jest-regex-util "^22.4.3"
 
 jest-resolve@^22.4.2:
   version "22.4.2"
@@ -5083,39 +5550,46 @@ jest-resolve@^22.4.2:
     browser-resolve "^1.11.2"
     chalk "^2.0.1"
 
-jest-runner@^22.4.2:
-  version "22.4.2"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-runner/-/jest-runner-22.4.2.tgz#19390ea9d99f768973e16f95a1efa351c0017e87"
+jest-resolve@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-resolve/-/jest-resolve-22.4.3.tgz#0ce9d438c8438229aa9b916968ec6b05c1abb4ea"
+  dependencies:
+    browser-resolve "^1.11.2"
+    chalk "^2.0.1"
+
+jest-runner@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-runner/-/jest-runner-22.4.3.tgz#298ddd6a22b992c64401b4667702b325e50610c3"
   dependencies:
     exit "^0.1.2"
-    jest-config "^22.4.2"
-    jest-docblock "^22.4.0"
-    jest-haste-map "^22.4.2"
-    jest-jasmine2 "^22.4.2"
-    jest-leak-detector "^22.4.0"
-    jest-message-util "^22.4.0"
-    jest-runtime "^22.4.2"
-    jest-util "^22.4.1"
-    jest-worker "^22.2.2"
+    jest-config "^22.4.3"
+    jest-docblock "^22.4.3"
+    jest-haste-map "^22.4.3"
+    jest-jasmine2 "^22.4.3"
+    jest-leak-detector "^22.4.3"
+    jest-message-util "^22.4.3"
+    jest-runtime "^22.4.3"
+    jest-util "^22.4.3"
+    jest-worker "^22.4.3"
     throat "^4.0.0"
 
-jest-runtime@^22.4.2:
-  version "22.4.2"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-runtime/-/jest-runtime-22.4.2.tgz#0de0444f65ce15ee4f2e0055133fc7c17b9168f3"
+jest-runtime@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-runtime/-/jest-runtime-22.4.3.tgz#b69926c34b851b920f666c93e86ba2912087e3d0"
   dependencies:
     babel-core "^6.0.0"
-    babel-jest "^22.4.1"
+    babel-jest "^22.4.3"
     babel-plugin-istanbul "^4.1.5"
     chalk "^2.0.1"
     convert-source-map "^1.4.0"
     exit "^0.1.2"
     graceful-fs "^4.1.11"
-    jest-config "^22.4.2"
-    jest-haste-map "^22.4.2"
-    jest-regex-util "^22.1.0"
-    jest-resolve "^22.4.2"
-    jest-util "^22.4.1"
-    jest-validate "^22.4.2"
+    jest-config "^22.4.3"
+    jest-haste-map "^22.4.3"
+    jest-regex-util "^22.4.3"
+    jest-resolve "^22.4.3"
+    jest-util "^22.4.3"
+    jest-validate "^22.4.3"
     json-stable-stringify "^1.0.1"
     micromatch "^2.3.11"
     realpath-native "^1.0.0"
@@ -5124,9 +5598,9 @@ jest-runtime@^22.4.2:
     write-file-atomic "^2.1.0"
     yargs "^10.0.3"
 
-jest-serializer@^22.4.0:
-  version "22.4.0"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-serializer/-/jest-serializer-22.4.0.tgz#b5d145b98c4b0d2c20ab686609adbb81fe23b566"
+jest-serializer@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-serializer/-/jest-serializer-22.4.3.tgz#a679b81a7f111e4766235f4f0c46d230ee0f7436"
 
 jest-snapshot@^22.4.0:
   version "22.4.0"
@@ -5138,6 +5612,17 @@ jest-snapshot@^22.4.0:
     mkdirp "^0.5.1"
     natural-compare "^1.4.0"
     pretty-format "^22.4.0"
+
+jest-snapshot@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-snapshot/-/jest-snapshot-22.4.3.tgz#b5c9b42846ffb9faccb76b841315ba67887362d2"
+  dependencies:
+    chalk "^2.0.1"
+    jest-diff "^22.4.3"
+    jest-matcher-utils "^22.4.3"
+    mkdirp "^0.5.1"
+    natural-compare "^1.4.0"
+    pretty-format "^22.4.3"
 
 jest-styled-components@^5.0.0:
   version "5.0.0"
@@ -5157,6 +5642,18 @@ jest-util@^22.4.1:
     mkdirp "^0.5.1"
     source-map "^0.6.0"
 
+jest-util@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-util/-/jest-util-22.4.3.tgz#c70fec8eec487c37b10b0809dc064a7ecf6aafac"
+  dependencies:
+    callsites "^2.0.0"
+    chalk "^2.0.1"
+    graceful-fs "^4.1.11"
+    is-ci "^1.0.10"
+    jest-message-util "^22.4.3"
+    mkdirp "^0.5.1"
+    source-map "^0.6.0"
+
 jest-validate@^22.4.0, jest-validate@^22.4.2:
   version "22.4.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-validate/-/jest-validate-22.4.2.tgz#e789a4e056173bf97fe797a2df2d52105c57d4f4"
@@ -5167,18 +5664,28 @@ jest-validate@^22.4.0, jest-validate@^22.4.2:
     leven "^2.1.0"
     pretty-format "^22.4.0"
 
-jest-worker@^22.2.2:
-  version "22.2.2"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-worker/-/jest-worker-22.2.2.tgz#c1f5dc39976884b81f68ec50cb8532b2cbab3390"
+jest-validate@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-validate/-/jest-validate-22.4.3.tgz#0780954a5a7daaeec8d3c10834b9280865976b30"
+  dependencies:
+    chalk "^2.0.1"
+    jest-config "^22.4.3"
+    jest-get-type "^22.4.3"
+    leven "^2.1.0"
+    pretty-format "^22.4.3"
+
+jest-worker@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest-worker/-/jest-worker-22.4.3.tgz#5c421417cba1c0abf64bf56bd5fb7968d79dd40b"
   dependencies:
     merge-stream "^1.0.1"
 
-jest@^22.4.2:
-  version "22.4.2"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest/-/jest-22.4.2.tgz#34012834a49bf1bdd3bc783850ab44e4499afc20"
+jest@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jest/-/jest-22.4.3.tgz#2261f4b117dc46d9a4a1a673d2150958dee92f16"
   dependencies:
     import-local "^1.0.0"
-    jest-cli "^22.4.2"
+    jest-cli "^22.4.3"
 
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.4.3"
@@ -5205,6 +5712,46 @@ js-yaml@~3.7.0:
 jsbn@~0.1.0:
   version "0.1.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jsbn/-/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
+
+jscodeshift@^0.4.0:
+  version "0.4.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jscodeshift/-/jscodeshift-0.4.1.tgz#da91a1c2eccfa03a3387a21d39948e251ced444a"
+  dependencies:
+    async "^1.5.0"
+    babel-plugin-transform-flow-strip-types "^6.8.0"
+    babel-preset-es2015 "^6.9.0"
+    babel-preset-stage-1 "^6.5.0"
+    babel-register "^6.9.0"
+    babylon "^6.17.3"
+    colors "^1.1.2"
+    flow-parser "^0.*"
+    lodash "^4.13.1"
+    micromatch "^2.3.7"
+    node-dir "0.1.8"
+    nomnom "^1.8.1"
+    recast "^0.12.5"
+    temp "^0.8.1"
+    write-file-atomic "^1.2.0"
+
+jscodeshift@^0.5.0:
+  version "0.5.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jscodeshift/-/jscodeshift-0.5.0.tgz#bdb7b6cc20dd62c16aa728c3fa2d2fe66ca7c748"
+  dependencies:
+    babel-plugin-transform-flow-strip-types "^6.8.0"
+    babel-preset-es2015 "^6.9.0"
+    babel-preset-stage-1 "^6.5.0"
+    babel-register "^6.9.0"
+    babylon "^7.0.0-beta.30"
+    colors "^1.1.2"
+    flow-parser "^0.*"
+    lodash "^4.13.1"
+    micromatch "^2.3.7"
+    neo-async "^2.5.0"
+    node-dir "0.1.8"
+    nomnom "^1.8.1"
+    recast "^0.14.1"
+    temp "^0.8.1"
+    write-file-atomic "^1.2.0"
 
 jsdom@^11.5.1:
   version "11.6.2"
@@ -5248,6 +5795,10 @@ jsesc@^2.5.1:
 jsesc@~0.5.0:
   version "0.5.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
+
+json-buffer@3.0.0:
+  version "3.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/json-buffer/-/json-buffer-3.0.0.tgz#5b1f397afc75d677bde8bcfc0e47e1f9a3d9a898"
 
 json-loader@^0.5.4, json-loader@^0.5.7:
   version "0.5.7"
@@ -5393,6 +5944,12 @@ keypress@^0.2.1:
   version "0.2.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/keypress/-/keypress-0.2.1.tgz#1e80454250018dbad4c3fe94497d6e67b6269c77"
 
+keyv@3.0.0:
+  version "3.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/keyv/-/keyv-3.0.0.tgz#44923ba39e68b12a7cec7df6c3268c031f2ef373"
+  dependencies:
+    json-buffer "3.0.0"
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -5531,6 +6088,15 @@ load-json-file@^2.0.0:
     pify "^2.0.0"
     strip-bom "^3.0.0"
 
+load-json-file@^4.0.0:
+  version "4.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/load-json-file/-/load-json-file-4.0.0.tgz#2f5f45ab91e33216234fd53adab668eb4ec0993b"
+  dependencies:
+    graceful-fs "^4.1.2"
+    parse-json "^4.0.0"
+    pify "^3.0.0"
+    strip-bom "^3.0.0"
+
 loader-runner@^2.3.0:
   version "2.3.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/loader-runner/-/loader-runner-2.3.0.tgz#f482aea82d543e07921700d5a46ef26fdac6b8a2"
@@ -5643,7 +6209,7 @@ lodash@^3.10.1:
   version "3.10.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.0, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.4:
+lodash@^4.0.0, lodash@^4.13.1, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.0, lodash@^4.17.2, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.2.0, lodash@^4.2.1, lodash@^4.3.0, lodash@~4.17.4:
   version "4.17.5"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
@@ -5653,7 +6219,7 @@ log-symbols@^1.0.2:
   dependencies:
     chalk "^1.0.0"
 
-log-symbols@^2.2.0:
+log-symbols@^2.1.0, log-symbols@^2.2.0:
   version "2.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/log-symbols/-/log-symbols-2.2.0.tgz#5740e1c5d6f0dfda4ad9323b5332107ef6b4c40a"
   dependencies:
@@ -5691,6 +6257,14 @@ lower-case@^1.1.1:
   version "1.1.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
 
+lowercase-keys@1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/lowercase-keys/-/lowercase-keys-1.0.0.tgz#4e3366b39e7f5457e35f1324bdf6f88d0bfc7306"
+
+lowercase-keys@^1.0.0:
+  version "1.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/lowercase-keys/-/lowercase-keys-1.0.1.tgz#6f9e30b47084d971a7c820ff15a6c5167b74c26f"
+
 lru-cache@^4.0.1, lru-cache@^4.1.1:
   version "4.1.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/lru-cache/-/lru-cache-4.1.2.tgz#45234b2e6e2f2b33da125624c4664929a0224c3f"
@@ -5702,7 +6276,7 @@ macaddress@^0.2.8:
   version "0.2.8"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/macaddress/-/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
 
-make-dir@^1.0.0:
+make-dir@^1.0.0, make-dir@^1.1.0:
   version "1.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/make-dir/-/make-dir-1.2.0.tgz#6d6a49eead4aae296c53bbf3a1a008bd6c89469b"
   dependencies:
@@ -5743,15 +6317,16 @@ marked@^0.3.9:
   version "0.3.17"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/marked/-/marked-0.3.17.tgz#607f06668b3c6b1246b28f13da76116ac1aa2d2b"
 
-material-ui@^1.0.0-beta.37:
-  version "1.0.0-beta.37"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/material-ui/-/material-ui-1.0.0-beta.37.tgz#19097dd05e61936d2d8449874aeed1c9ae9ceb8a"
+material-ui@^1.0.0-beta.39:
+  version "1.0.0-beta.39"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/material-ui/-/material-ui-1.0.0-beta.39.tgz#54697f0620bf1dc833d2b0046c981fd8beabedeb"
   dependencies:
     "@types/jss" "^9.3.0"
     "@types/react-transition-group" "^2.0.6"
     babel-runtime "^6.26.0"
     brcast "^3.0.1"
     classnames "^2.2.5"
+    clipboard-copy "^2.0.0"
     deepmerge "^2.0.1"
     dom-helpers "^3.2.1"
     hoist-non-react-statics "^2.5.0"
@@ -5790,6 +6365,29 @@ md5.js@^1.3.4:
 media-typer@0.3.0:
   version "0.3.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
+
+mem-fs-editor@^3.0.2:
+  version "3.0.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/mem-fs-editor/-/mem-fs-editor-3.0.2.tgz#dd0a6eaf2bb8a6b37740067aa549eb530105af9f"
+  dependencies:
+    commondir "^1.0.1"
+    deep-extend "^0.4.0"
+    ejs "^2.3.1"
+    glob "^7.0.3"
+    globby "^6.1.0"
+    mkdirp "^0.5.0"
+    multimatch "^2.0.0"
+    rimraf "^2.2.8"
+    through2 "^2.0.0"
+    vinyl "^2.0.1"
+
+mem-fs@^1.1.0:
+  version "1.1.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/mem-fs/-/mem-fs-1.1.3.tgz#b8ae8d2e3fcb6f5d3f9165c12d4551a065d989cc"
+  dependencies:
+    through2 "^2.0.0"
+    vinyl "^1.1.0"
+    vinyl-file "^2.0.0"
 
 mem@^1.1.0:
   version "1.1.0"
@@ -5837,7 +6435,7 @@ methods@~1.1.2:
   version "1.1.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/methods/-/methods-1.1.2.tgz#5529a4d67654134edcc5266656835b0f851afcee"
 
-micromatch@^2.1.5, micromatch@^2.3.11:
+micromatch@^2.1.5, micromatch@^2.3.11, micromatch@^2.3.7:
   version "2.3.11"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/micromatch/-/micromatch-2.3.11.tgz#86677c97d1720b363431d04d0d15293bd38c1565"
   dependencies:
@@ -5906,6 +6504,10 @@ mimic-fn@^1.0.0:
   version "1.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
 
+mimic-response@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/mimic-response/-/mimic-response-1.0.0.tgz#df3d3652a73fded6b9b0b24146e6fd052353458e"
+
 min-document@^2.19.0:
   version "2.19.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
@@ -5933,6 +6535,10 @@ minimist@0.0.8:
 minimist@1.2.0, minimist@^1.1.1, minimist@^1.1.3, minimist@^1.2.0:
   version "1.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
+
+minimist@^0.1.0:
+  version "0.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/minimist/-/minimist-0.1.0.tgz#99df657a52574c21c9057497df742790b2b4c0de"
 
 minimist@~0.0.1:
   version "0.0.10"
@@ -5992,11 +6598,24 @@ ms@2.0.0:
   version "2.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
 
+multimatch@^2.0.0:
+  version "2.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/multimatch/-/multimatch-2.1.0.tgz#9c7906a22fb4c02919e2f5f75161b4cdbd4b2a2b"
+  dependencies:
+    array-differ "^1.0.0"
+    array-union "^1.0.1"
+    arrify "^1.0.0"
+    minimatch "^3.0.0"
+
 mute-stream@0.0.7:
   version "0.0.7"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
 
-nan@^2.3.0, nan@^2.9.2:
+nan@^2.10.0:
+  version "2.10.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/nan/-/nan-2.10.0.tgz#96d0cd610ebd58d4b4de9cc0c6828cda99c7548f"
+
+nan@^2.3.0:
   version "2.9.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/nan/-/nan-2.9.2.tgz#f564d75f5f8f36a6d9456cca7a6c4fe488ab7866"
 
@@ -6044,6 +6663,10 @@ neo-async@^2.5.0:
   version "2.5.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/neo-async/-/neo-async-2.5.0.tgz#76b1c823130cca26acfbaccc8fbaf0a2fa33b18f"
 
+nice-try@^1.0.4:
+  version "1.0.4"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/nice-try/-/nice-try-1.0.4.tgz#d93962f6c52f2c1558c0fbda6d512819f1efe1c4"
+
 nise@^1.2.0:
   version "1.3.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/nise/-/nise-1.3.0.tgz#7d6d506e64a0e37959495157f30a799c0436df72"
@@ -6059,6 +6682,10 @@ no-case@^2.2.0:
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/no-case/-/no-case-2.3.2.tgz#60b813396be39b3f1288a4c1ed5d1e7d28b464ac"
   dependencies:
     lower-case "^1.1.1"
+
+node-dir@0.1.8:
+  version "0.1.8"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/node-dir/-/node-dir-0.1.8.tgz#55fb8deb699070707fb67f91a460f0448294c77d"
 
 node-dir@^0.1.10:
   version "0.1.17"
@@ -6155,9 +6782,9 @@ node-pre-gyp@^0.6.39:
     tar "^2.2.1"
     tar-pack "^3.4.0"
 
-node-sass@^4.7.2:
-  version "4.8.2"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/node-sass/-/node-sass-4.8.2.tgz#d265fc0355e5980c685340846d0751596d0e514b"
+node-sass@^4.8.3:
+  version "4.8.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/node-sass/-/node-sass-4.8.3.tgz#d077cc20a08ac06f661ca44fb6f19cd2ed41debb"
   dependencies:
     async-foreach "^0.1.3"
     chalk "^1.1.1"
@@ -6171,13 +6798,20 @@ node-sass@^4.7.2:
     lodash.mergewith "^4.6.0"
     meow "^3.7.0"
     mkdirp "^0.5.1"
-    nan "^2.9.2"
+    nan "^2.10.0"
     node-gyp "^3.3.1"
     npmlog "^4.0.0"
     request "~2.79.0"
     sass-graph "^2.2.4"
     stdout-stream "^1.4.0"
     "true-case-path" "^1.0.2"
+
+nomnom@^1.8.1:
+  version "1.8.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/nomnom/-/nomnom-1.8.1.tgz#2151f722472ba79e50a76fc125bb8c8f2e4dc2a7"
+  dependencies:
+    chalk "~0.4.0"
+    underscore "~1.6.0"
 
 nomnom@~1.6.2:
   version "1.6.2"
@@ -6225,6 +6859,14 @@ normalize-range@^0.1.2:
 normalize-scroll-left@^0.1.2:
   version "0.1.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/normalize-scroll-left/-/normalize-scroll-left-0.1.2.tgz#6b79691ba79eb5fb107fa5edfbdc06b55caee2aa"
+
+normalize-url@2.0.1:
+  version "2.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/normalize-url/-/normalize-url-2.0.1.tgz#835a9da1551fa26f70e92329069a23aa6574d7e6"
+  dependencies:
+    prepend-http "^2.0.0"
+    query-string "^5.0.1"
+    sort-keys "^2.0.0"
 
 normalize-url@^1.4.0:
   version "1.9.1"
@@ -6471,9 +7113,31 @@ output-file-sync@^1.1.2:
     mkdirp "^0.5.1"
     object-assign "^4.1.0"
 
+p-cancelable@^0.3.0:
+  version "0.3.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/p-cancelable/-/p-cancelable-0.3.0.tgz#b9e123800bcebb7ac13a479be195b507b98d30fa"
+
+p-cancelable@^0.4.0:
+  version "0.4.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/p-cancelable/-/p-cancelable-0.4.0.tgz#bcb41d35bf6097fc4367a065b6eb84b9b124eff0"
+
+p-each-series@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/p-each-series/-/p-each-series-1.0.0.tgz#930f3d12dd1f50e7434457a22cd6f04ac6ad7f71"
+  dependencies:
+    p-reduce "^1.0.0"
+
 p-finally@^1.0.0:
   version "1.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/p-finally/-/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
+
+p-is-promise@^1.1.0:
+  version "1.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/p-is-promise/-/p-is-promise-1.1.0.tgz#9c9456989e9f6588017b0434d56097675c3da05e"
+
+p-lazy@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/p-lazy/-/p-lazy-1.0.0.tgz#ec53c802f2ee3ac28f166cc82d0b2b02de27a835"
 
 p-limit@^1.1.0:
   version "1.2.0"
@@ -6490,6 +7154,22 @@ p-locate@^2.0.0:
 p-map@^1.1.1:
   version "1.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/p-map/-/p-map-1.2.0.tgz#e4e94f311eabbc8633a1e79908165fca26241b6b"
+
+p-reduce@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/p-reduce/-/p-reduce-1.0.0.tgz#18c2b0dd936a4690a529f8231f58a0fdb6a47dfa"
+
+p-timeout@^1.1.1:
+  version "1.2.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/p-timeout/-/p-timeout-1.2.1.tgz#5eb3b353b7fce99f101a1038880bb054ebbea386"
+  dependencies:
+    p-finally "^1.0.0"
+
+p-timeout@^2.0.1:
+  version "2.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/p-timeout/-/p-timeout-2.0.1.tgz#d8dd1979595d2dc0139e1fe46b8b646cb3cdf038"
+  dependencies:
+    p-finally "^1.0.0"
 
 p-try@^1.0.0:
   version "1.0.0"
@@ -6545,6 +7225,10 @@ parse-json@^4.0.0:
     error-ex "^1.3.1"
     json-parse-better-errors "^1.0.1"
 
+parse-passwd@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/parse-passwd/-/parse-passwd-1.0.0.tgz#6d5b934a456993b23d37f40a382d6f1666a8e5c6"
+
 parse5@4.0.0:
   version "4.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
@@ -6589,7 +7273,7 @@ path-is-inside@^1.0.1, path-is-inside@^1.0.2:
   version "1.0.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/path-is-inside/-/path-is-inside-1.0.2.tgz#365417dede44430d1c11af61027facf074bdfc53"
 
-path-key@^2.0.0:
+path-key@^2.0.0, path-key@^2.0.1:
   version "2.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/path-key/-/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
 
@@ -6621,6 +7305,12 @@ path-type@^2.0.0:
   dependencies:
     pify "^2.0.0"
 
+path-type@^3.0.0:
+  version "3.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/path-type/-/path-type-3.0.0.tgz#cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f"
+  dependencies:
+    pify "^3.0.0"
+
 pathval@^1.0.0:
   version "1.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/pathval/-/pathval-1.1.0.tgz#b942e6d4bde653005ef6b71361def8727d0645e0"
@@ -6643,7 +7333,7 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
 
-pify@^2.0.0:
+pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
 
@@ -6985,17 +7675,25 @@ prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
 
-prepend-http@^1.0.0:
+prepend-http@^1.0.0, prepend-http@^1.0.1:
   version "1.0.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
+
+prepend-http@^2.0.0:
+  version "2.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
 
 preserve@^0.2.0:
   version "0.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-prettier@^1.11.1:
+prettier@^1.11.1, prettier@^1.5.3:
   version "1.11.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/prettier/-/prettier-1.11.1.tgz#61e43fc4cd44e68f2b0dfc2c38cd4bb0fccdcc75"
+
+pretty-bytes@^4.0.2:
+  version "4.0.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/pretty-bytes/-/pretty-bytes-4.0.2.tgz#b2bf82e7350d65c6c33aa95aaa5a4f6327f61cd9"
 
 pretty-error@^2.0.2:
   version "2.1.1"
@@ -7011,11 +7709,18 @@ pretty-format@^22.4.0:
     ansi-regex "^3.0.0"
     ansi-styles "^3.2.0"
 
+pretty-format@^22.4.3:
+  version "22.4.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/pretty-format/-/pretty-format-22.4.3.tgz#f873d780839a9c02e9664c8a082e9ee79eaac16f"
+  dependencies:
+    ansi-regex "^3.0.0"
+    ansi-styles "^3.2.0"
+
 private@^0.1.6, private@^0.1.7, private@~0.1.5:
   version "0.1.8"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/private/-/private-0.1.8.tgz#2381edb3689f7a53d653190060fcf822d2f368ff"
 
-process-nextick-args@~2.0.0:
+process-nextick-args@^2.0.0, process-nextick-args@~2.0.0:
   version "2.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
 
@@ -7129,6 +7834,14 @@ query-string@^4.1.0:
   version "4.3.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/query-string/-/query-string-4.3.4.tgz#bbb693b9ca915c232515b228b1a02b609043dbeb"
   dependencies:
+    object-assign "^4.1.0"
+    strict-uri-encode "^1.0.0"
+
+query-string@^5.0.1:
+  version "5.1.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/query-string/-/query-string-5.1.1.tgz#a78c012b71c17e05f2e3fa2319dd330682efb3cb"
+  dependencies:
+    decode-uri-component "^0.2.0"
     object-assign "^4.1.0"
     strict-uri-encode "^1.0.0"
 
@@ -7309,9 +8022,9 @@ react-popper@^0.8.0:
     popper.js "^1.12.9"
     prop-types "^15.6.0"
 
-react-portal@^4.1.3:
-  version "4.1.3"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/react-portal/-/react-portal-4.1.3.tgz#0cb58333bc02186ccd2f0997790e4573623dce87"
+react-portal@^4.1.4:
+  version "4.1.4"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/react-portal/-/react-portal-4.1.4.tgz#3fc3f3f3a0e81362ab1dc9afa3c4bb5a84ec76a3"
   dependencies:
     prop-types "^15.5.8"
 
@@ -7347,9 +8060,9 @@ react-style-proptype@^3.0.0:
   dependencies:
     prop-types "^15.5.4"
 
-react-swipeable@^4.2.0:
-  version "4.2.0"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/react-swipeable/-/react-swipeable-4.2.0.tgz#553d62c8fe62eac9308f559069c02693cc78665c"
+react-swipeable@^4.2.1:
+  version "4.2.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/react-swipeable/-/react-swipeable-4.2.1.tgz#dae68ecd041c299a9b55b4925baf940195858637"
   dependencies:
     detect-passive-events "^1.0.4"
     prop-types "^15.5.8"
@@ -7403,6 +8116,13 @@ react@^16.2.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
+read-chunk@^2.1.0:
+  version "2.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/read-chunk/-/read-chunk-2.1.0.tgz#6a04c0928005ed9d42e1a6ac5600e19cbc7ff655"
+  dependencies:
+    pify "^3.0.0"
+    safe-buffer "^5.1.1"
+
 read-pkg-up@^1.0.1:
   version "1.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/read-pkg-up/-/read-pkg-up-1.0.1.tgz#9d63c13276c065918d57f002a57f40a1b643fb02"
@@ -7416,6 +8136,13 @@ read-pkg-up@^2.0.0:
   dependencies:
     find-up "^2.0.0"
     read-pkg "^2.0.0"
+
+read-pkg-up@^3.0.0:
+  version "3.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/read-pkg-up/-/read-pkg-up-3.0.0.tgz#3ed496685dba0f8fe118d0691dc51f4a1ff96f07"
+  dependencies:
+    find-up "^2.0.0"
+    read-pkg "^3.0.0"
 
 read-pkg@^1.0.0:
   version "1.1.0"
@@ -7433,7 +8160,15 @@ read-pkg@^2.0.0:
     normalize-package-data "^2.3.2"
     path-type "^2.0.0"
 
-"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3:
+read-pkg@^3.0.0:
+  version "3.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/read-pkg/-/read-pkg-3.0.0.tgz#9cbc686978fee65d16c00e2b19c237fcf6e38389"
+  dependencies:
+    load-json-file "^4.0.0"
+    normalize-package-data "^2.3.2"
+    path-type "^3.0.0"
+
+"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.5:
   version "2.3.5"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/readable-stream/-/readable-stream-2.3.5.tgz#b4f85003a938cbb6ecbce2a124fb1012bd1a838d"
   dependencies:
@@ -7469,12 +8204,21 @@ realpath-native@^1.0.0:
   dependencies:
     util.promisify "^1.0.0"
 
-recast@^0.12.6:
+recast@^0.12.5, recast@^0.12.6:
   version "0.12.9"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/recast/-/recast-0.12.9.tgz#e8e52bdb9691af462ccbd7c15d5a5113647a15f1"
   dependencies:
     ast-types "0.10.1"
     core-js "^2.4.1"
+    esprima "~4.0.0"
+    private "~0.1.5"
+    source-map "~0.6.1"
+
+recast@^0.14.1:
+  version "0.14.7"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/recast/-/recast-0.14.7.tgz#4f1497c2b5826d42a66e8e3c9d80c512983ff61d"
+  dependencies:
+    ast-types "0.11.3"
     esprima "~4.0.0"
     private "~0.1.5"
     source-map "~0.6.1"
@@ -7566,6 +8310,10 @@ regex-not@^1.0.0, regex-not@^1.0.2:
     extend-shallow "^3.0.2"
     safe-regex "^1.1.0"
 
+regexpp@^1.0.1:
+  version "1.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/regexpp/-/regexpp-1.0.1.tgz#d857c3a741dce075c2848dcb019a0a975b190d43"
+
 regexpu-core@^1.0.0:
   version "1.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/regexpu-core/-/regexpu-core-1.0.0.tgz#86a763f58ee4d7c2f6b102e4764050de7ed90c6b"
@@ -7623,6 +8371,14 @@ repeating@^2.0.0:
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/repeating/-/repeating-2.0.1.tgz#5214c53a926d3552707527fbab415dbc08d06dda"
   dependencies:
     is-finite "^1.0.0"
+
+replace-ext@0.0.1:
+  version "0.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/replace-ext/-/replace-ext-0.0.1.tgz#29bbd92078a739f0bcce2b4ee41e837953522924"
+
+replace-ext@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/replace-ext/-/replace-ext-1.0.0.tgz#de63128373fcbf7c3ccfa4de5a480c45a67958eb"
 
 request-promise-core@1.1.1:
   version "1.1.1"
@@ -7746,6 +8502,13 @@ resolve-cwd@^2.0.0:
   dependencies:
     resolve-from "^3.0.0"
 
+resolve-dir@^1.0.0:
+  version "1.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/resolve-dir/-/resolve-dir-1.0.1.tgz#79a40644c362be82f26effe739c9bb5382046f43"
+  dependencies:
+    expand-tilde "^2.0.0"
+    global-modules "^1.0.0"
+
 resolve-from@^1.0.0:
   version "1.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/resolve-from/-/resolve-from-1.0.1.tgz#26cbfe935d1aeeeabb29bc3fe5aeb01e93d44226"
@@ -7767,6 +8530,12 @@ resolve@^1.1.6, resolve@^1.5.0:
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/resolve/-/resolve-1.5.0.tgz#1f09acce796c9a762579f31b2c1cc4c3cddf9f36"
   dependencies:
     path-parse "^1.0.5"
+
+responselike@1.0.2:
+  version "1.0.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/responselike/-/responselike-1.0.2.tgz#918720ef3b631c5642be068f15ade5a46f4ba1e7"
+  dependencies:
+    lowercase-keys "^1.0.0"
 
 restore-cursor@^1.0.1:
   version "1.0.1"
@@ -7798,6 +8567,10 @@ rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.5.4, rimraf@^2.6.1, rimraf@^2.
   dependencies:
     glob "^7.0.5"
 
+rimraf@~2.2.6:
+  version "2.2.8"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/rimraf/-/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
+
 ripemd160@^2.0.0, ripemd160@^2.0.1:
   version "2.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/ripemd160/-/ripemd160-2.0.1.tgz#0f4584295c53a3628af7e6d79aca21ce57d1c6e7"
@@ -7812,7 +8585,7 @@ rst-selector-parser@^2.2.3:
     lodash.flattendeep "^4.4.0"
     nearley "^2.7.10"
 
-run-async@^2.2.0:
+run-async@^2.0.0, run-async@^2.2.0:
   version "2.3.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/run-async/-/run-async-2.3.0.tgz#0371ab4ae0bdd720d4166d7dfda64ff7a445a6c0"
   dependencies:
@@ -7841,6 +8614,12 @@ rx@^4.1.0:
 rxjs@^5.4.2:
   version "5.5.6"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/rxjs/-/rxjs-5.5.6.tgz#e31fb96d6fd2ff1fd84bcea8ae9c02d007179c02"
+  dependencies:
+    symbol-observable "1.0.1"
+
+rxjs@^5.5.2:
+  version "5.5.8"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/rxjs/-/rxjs-5.5.8.tgz#b2b0809a57614ad6254c03d7446dea0d83ca3791"
   dependencies:
     symbol-observable "1.0.1"
 
@@ -7908,6 +8687,10 @@ schema-utils@^0.4.0, schema-utils@^0.4.2, schema-utils@^0.4.3, schema-utils@^0.4
     ajv "^6.1.0"
     ajv-keywords "^3.1.0"
 
+scoped-regex@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/scoped-regex/-/scoped-regex-1.0.0.tgz#a346bb1acd4207ae70bd7c0c7ca9e566b6baddb8"
+
 scroll@^2.0.3:
   version "2.0.3"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/scroll/-/scroll-2.0.3.tgz#0951b785544205fd17753bc3d294738ba16fc2ab"
@@ -7921,7 +8704,7 @@ scss-tokenizer@^0.2.3:
     js-base64 "^2.1.8"
     source-map "^0.4.2"
 
-"semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1:
+"semver@2 || 3 || 4 || 5", semver@^5.3.0, semver@^5.4.1, semver@^5.5.0:
   version "5.5.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
 
@@ -8047,6 +8830,14 @@ shelljs@^0.7.8:
     interpret "^1.0.0"
     rechoir "^0.6.2"
 
+shelljs@^0.8.0:
+  version "0.8.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/shelljs/-/shelljs-0.8.1.tgz#729e038c413a2254c4078b95ed46e0397154a9f1"
+  dependencies:
+    glob "^7.0.0"
+    interpret "^1.0.0"
+    rechoir "^0.6.2"
+
 shellwords@^0.1.1:
   version "0.1.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/shellwords/-/shellwords-0.1.1.tgz#d6b9181c1a48d397324c84871efbcfc73fc0654b"
@@ -8065,9 +8856,9 @@ sinon-sandbox@^1.0.2:
   version "1.0.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/sinon-sandbox/-/sinon-sandbox-1.0.2.tgz#285694e60609b9961a5cf9e65385e5874cb955e1"
 
-sinon@^4.4.4:
-  version "4.4.4"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/sinon/-/sinon-4.4.4.tgz#113199a29ece8a394ea71bac77c5db0a4733c9b5"
+sinon@^4.4.9:
+  version "4.4.10"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/sinon/-/sinon-4.4.10.tgz#592ba39256cd5aecd35c883e1da2759b75d90e02"
   dependencies:
     "@sinonjs/formatio" "^2.0.0"
     diff "^3.1.0"
@@ -8090,6 +8881,10 @@ slice-ansi@1.0.0:
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/slice-ansi/-/slice-ansi-1.0.0.tgz#044f1a49d8842ff307aad6b505ed178bd950134d"
   dependencies:
     is-fullwidth-code-point "^2.0.0"
+
+slide@^1.1.5:
+  version "1.1.6"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"
@@ -8136,6 +8931,12 @@ sort-keys@^1.0.0:
   dependencies:
     is-plain-obj "^1.0.0"
 
+sort-keys@^2.0.0:
+  version "2.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/sort-keys/-/sort-keys-2.0.0.tgz#658535584861ec97d730d6cf41822e1f56684128"
+  dependencies:
+    is-plain-obj "^1.0.0"
+
 source-list-map@^2.0.0:
   version "2.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/source-list-map/-/source-list-map-2.0.0.tgz#aaa47403f7b245a92fbc97ea08f250d6087ed085"
@@ -8168,6 +8969,12 @@ source-map-support@^0.4.15:
 source-map-support@^0.5.0:
   version "0.5.3"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/source-map-support/-/source-map-support-0.5.3.tgz#2b3d5fff298cfa4d1afd7d4352d569e9a0158e76"
+  dependencies:
+    source-map "^0.6.0"
+
+source-map-support@^0.5.3:
+  version "0.5.4"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/source-map-support/-/source-map-support-0.5.4.tgz#54456efa89caa9270af7cd624cc2f123e51fbae8"
   dependencies:
     source-map "^0.6.0"
 
@@ -8329,6 +9136,10 @@ string-length@^2.0.0:
     astral-regex "^1.0.0"
     strip-ansi "^4.0.0"
 
+string-template@~0.2.1:
+  version "0.2.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/string-template/-/string-template-0.2.1.tgz#42932e598a352d01fc22ec3367d9d84eec6c9add"
+
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
@@ -8400,6 +9211,17 @@ strip-ansi@^4.0.0:
   dependencies:
     ansi-regex "^3.0.0"
 
+strip-ansi@~0.1.0:
+  version "0.1.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/strip-ansi/-/strip-ansi-0.1.1.tgz#39e8a98d044d150660abe4a6808acf70bb7bc991"
+
+strip-bom-stream@^2.0.0:
+  version "2.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/strip-bom-stream/-/strip-bom-stream-2.0.0.tgz#f87db5ef2613f6968aa545abfe1ec728b6a829ca"
+  dependencies:
+    first-chunk-stream "^2.0.0"
+    strip-bom "^2.0.0"
+
 strip-bom@3.0.0, strip-bom@^3.0.0:
   version "3.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/strip-bom/-/strip-bom-3.0.0.tgz#2334c18e9c759f7bdd56fdef7e9ae3d588e68ed3"
@@ -8442,9 +9264,9 @@ style-loader@^0.20.3:
     loader-utils "^1.1.0"
     schema-utils "^0.4.5"
 
-styled-components@^3.2.1:
-  version "3.2.1"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/styled-components/-/styled-components-3.2.1.tgz#4f780c588829eb06624b686f9b793a10d04db139"
+styled-components@^3.2.3:
+  version "3.2.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/styled-components/-/styled-components-3.2.3.tgz#50f71207320eeb1ef539dec4637f21f5e3c936b4"
   dependencies:
     buffer "^5.0.3"
     css-to-react-native "^2.0.3"
@@ -8453,15 +9275,15 @@ styled-components@^3.2.1:
     is-plain-object "^2.0.1"
     opencollective "^1.0.3"
     prop-types "^15.5.4"
-    stylis "^3.4.10"
-    stylis-rule-sheet "^0.0.8"
+    stylis "^3.5.0"
+    stylis-rule-sheet "^0.0.10"
     supports-color "^3.2.3"
 
-stylis-rule-sheet@^0.0.8:
-  version "0.0.8"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/stylis-rule-sheet/-/stylis-rule-sheet-0.0.8.tgz#b0d0a126c945b1f3047447a3aae0647013e8d166"
+stylis-rule-sheet@^0.0.10:
+  version "0.0.10"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/stylis-rule-sheet/-/stylis-rule-sheet-0.0.10.tgz#44e64a2b076643f4b52e5ff71efc04d8c3c4a430"
 
-stylis@^3.4.10:
+stylis@^3.5.0:
   version "3.5.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/stylis/-/stylis-3.5.0.tgz#016fa239663d77f868fef5b67cf201c4b7c701e1"
 
@@ -8559,6 +9381,13 @@ tar@^2.0.0, tar@^2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
+temp@^0.8.1:
+  version "0.8.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/temp/-/temp-0.8.3.tgz#e0c6bc4d26b903124410e4fed81103014dfc1f59"
+  dependencies:
+    os-tmpdir "^1.0.0"
+    rimraf "~2.2.6"
+
 test-exclude@^4.2.1:
   version "4.2.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/test-exclude/-/test-exclude-4.2.1.tgz#dfa222f03480bca69207ca728b37d74b45f724fa"
@@ -8576,6 +9405,10 @@ text-encoding@^0.6.4:
 text-table@^0.2.0, text-table@~0.2.0:
   version "0.2.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
+
+textextensions@2:
+  version "2.2.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/textextensions/-/textextensions-2.2.0.tgz#38ac676151285b658654581987a0ce1a4490d286"
 
 theming@^1.3.0:
   version "1.3.0"
@@ -8604,6 +9437,10 @@ through@^2.3.6, through@^2.3.8, through@~2.3.6:
 time-stamp@^2.0.0:
   version "2.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/time-stamp/-/time-stamp-2.0.0.tgz#95c6a44530e15ba8d6f4a3ecb8c3a3fac46da357"
+
+timed-out@^4.0.0, timed-out@^4.0.1:
+  version "4.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
 
 timers-browserify@^2.0.4:
   version "2.0.6"
@@ -8763,9 +9600,22 @@ uglifyjs-webpack-plugin@^0.4.6:
     uglify-js "^2.8.29"
     webpack-sources "^1.0.1"
 
-uglifyjs-webpack-plugin@^1.1.1, uglifyjs-webpack-plugin@^1.1.6:
+uglifyjs-webpack-plugin@^1.1.6:
   version "1.2.3"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.3.tgz#bf23197b37a8fc953fecfbcbab66e506f9a0ae72"
+  dependencies:
+    cacache "^10.0.4"
+    find-cache-dir "^1.0.0"
+    schema-utils "^0.4.5"
+    serialize-javascript "^1.4.0"
+    source-map "^0.6.1"
+    uglify-es "^3.3.4"
+    webpack-sources "^1.1.0"
+    worker-farm "^1.5.2"
+
+uglifyjs-webpack-plugin@^1.2.4:
+  version "1.2.4"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/uglifyjs-webpack-plugin/-/uglifyjs-webpack-plugin-1.2.4.tgz#5eec941b2e9b8538be0a20fc6eda25b14c7c1043"
   dependencies:
     cacache "^10.0.4"
     find-cache-dir "^1.0.0"
@@ -8783,6 +9633,10 @@ uid-number@^0.0.6:
 underscore@~1.4.4:
   version "1.4.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/underscore/-/underscore-1.4.4.tgz#61a6a32010622afa07963bf325203cf12239d604"
+
+underscore@~1.6.0:
+  version "1.6.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/underscore/-/underscore-1.6.0.tgz#8b38b10cacdef63337b8b24e4ff86d45aea529a8"
 
 unicons@0.0.3:
   version "0.0.3"
@@ -8840,6 +9694,10 @@ unset-value@^1.0.0:
     has-value "^0.3.1"
     isobject "^3.0.0"
 
+untildify@^3.0.2:
+  version "3.0.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/untildify/-/untildify-3.0.2.tgz#7f1f302055b3fea0f3e81dc78eb36766cb65e3f1"
+
 upath@^1.0.0:
   version "1.0.4"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/upath/-/upath-1.0.4.tgz#ee2321ba0a786c50973db043a50b7bcba822361d"
@@ -8867,6 +9725,22 @@ url-loader@^1.0.1:
     loader-utils "^1.1.0"
     mime "^2.0.3"
     schema-utils "^0.4.3"
+
+url-parse-lax@^1.0.0:
+  version "1.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/url-parse-lax/-/url-parse-lax-1.0.0.tgz#7af8f303645e9bd79a272e7a14ac68bc0609da73"
+  dependencies:
+    prepend-http "^1.0.1"
+
+url-parse-lax@^3.0.0:
+  version "3.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/url-parse-lax/-/url-parse-lax-3.0.0.tgz#16b5cafc07dbe3676c1b1999177823d6503acb0c"
+  dependencies:
+    prepend-http "^2.0.0"
+
+url-to-options@^1.0.1:
+  version "1.0.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/url-to-options/-/url-to-options-1.0.1.tgz#1505a03a289a48cbd7a434efbaeec5055f5633a9"
 
 url@^0.11.0:
   version "0.11.0"
@@ -8918,6 +9792,10 @@ uuid@^3.0.0, uuid@^3.1.0:
   version "3.2.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
 
+v8-compile-cache@^1.1.2:
+  version "1.1.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/v8-compile-cache/-/v8-compile-cache-1.1.2.tgz#8d32e4f16974654657e676e0e467a348e89b0dc4"
+
 v8flags@^2.1.1:
   version "2.1.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/v8flags/-/v8flags-2.1.1.tgz#aab1a1fa30d45f88dd321148875ac02c0b55e5b4"
@@ -8959,6 +9837,36 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+vinyl-file@^2.0.0:
+  version "2.0.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/vinyl-file/-/vinyl-file-2.0.0.tgz#a7ebf5ffbefda1b7d18d140fcb07b223efb6751a"
+  dependencies:
+    graceful-fs "^4.1.2"
+    pify "^2.3.0"
+    pinkie-promise "^2.0.0"
+    strip-bom "^2.0.0"
+    strip-bom-stream "^2.0.0"
+    vinyl "^1.1.0"
+
+vinyl@^1.1.0:
+  version "1.2.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/vinyl/-/vinyl-1.2.0.tgz#5c88036cf565e5df05558bfc911f8656df218884"
+  dependencies:
+    clone "^1.0.0"
+    clone-stats "^0.0.1"
+    replace-ext "0.0.1"
+
+vinyl@^2.0.1:
+  version "2.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/vinyl/-/vinyl-2.1.0.tgz#021f9c2cf951d6b939943c89eb5ee5add4fd924c"
+  dependencies:
+    clone "^2.1.1"
+    clone-buffer "^1.0.0"
+    clone-stats "^1.0.0"
+    cloneable-readable "^1.0.0"
+    remove-trailing-separator "^1.0.1"
+    replace-ext "^1.0.0"
 
 vm-browserify@0.0.4:
   version "0.0.4"
@@ -9002,6 +9910,42 @@ watchpack@^1.4.0, watchpack@^1.5.0:
 webidl-conversions@^4.0.1, webidl-conversions@^4.0.2:
   version "4.0.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/webidl-conversions/-/webidl-conversions-4.0.2.tgz#a855980b1f0b6b359ba1d5d9fb39ae941faa63ad"
+
+webpack-addons@^1.1.5:
+  version "1.1.5"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/webpack-addons/-/webpack-addons-1.1.5.tgz#2b178dfe873fb6e75e40a819fa5c26e4a9bc837a"
+  dependencies:
+    jscodeshift "^0.4.0"
+
+webpack-cli@^2.0.13:
+  version "2.0.13"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/webpack-cli/-/webpack-cli-2.0.13.tgz#6e2bd9ef91345344737217e22e29001ad8537518"
+  dependencies:
+    chalk "^2.3.2"
+    cross-spawn "^6.0.5"
+    diff "^3.5.0"
+    enhanced-resolve "^4.0.0"
+    glob-all "^3.1.0"
+    global-modules "^1.0.0"
+    got "^8.2.0"
+    inquirer "^5.1.0"
+    interpret "^1.0.4"
+    jscodeshift "^0.5.0"
+    listr "^0.13.0"
+    loader-utils "^1.1.0"
+    lodash "^4.17.5"
+    log-symbols "^2.2.0"
+    mkdirp "^0.5.1"
+    p-each-series "^1.0.0"
+    p-lazy "^1.0.0"
+    prettier "^1.5.3"
+    resolve-cwd "^2.0.0"
+    supports-color "^5.3.0"
+    v8-compile-cache "^1.1.2"
+    webpack-addons "^1.1.5"
+    yargs "^11.0.0"
+    yeoman-environment "^2.0.0"
+    yeoman-generator "^2.0.3"
 
 webpack-dev-middleware@^1.12.2:
   version "1.12.2"
@@ -9056,9 +10000,9 @@ webpack@^3.10.0:
     webpack-sources "^1.0.1"
     yargs "^8.0.2"
 
-webpack@^4.1.1:
-  version "4.1.1"
-  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/webpack/-/webpack-4.1.1.tgz#44e4d6a869dd36fdfc0b227f9bd865a4bccfd81c"
+webpack@^4.4.1:
+  version "4.4.1"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/webpack/-/webpack-4.4.1.tgz#b0105789890c28bfce9f392623ef5850254328a4"
   dependencies:
     acorn "^5.0.0"
     acorn-dynamic-import "^3.0.0"
@@ -9076,7 +10020,7 @@ webpack@^4.1.1:
     node-libs-browser "^2.0.0"
     schema-utils "^0.4.2"
     tapable "^1.0.0"
-    uglifyjs-webpack-plugin "^1.1.1"
+    uglifyjs-webpack-plugin "^1.2.4"
     watchpack "^1.5.0"
     webpack-sources "^1.0.1"
 
@@ -9110,7 +10054,7 @@ which-module@^2.0.0:
   version "2.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/which-module/-/which-module-2.0.0.tgz#d9ef07dce77b9902b8a3a8fa4b31c3e3f7e6e87a"
 
-which@1, which@^1.2.10, which@^1.2.12, which@^1.2.9, which@^1.3.0:
+which@1, which@^1.2.10, which@^1.2.12, which@^1.2.14, which@^1.2.9, which@^1.3.0:
   version "1.3.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/which/-/which-1.3.0.tgz#ff04bdfc010ee547d780bec38e1ac1c2777d253a"
   dependencies:
@@ -9155,6 +10099,14 @@ wrappy@1:
   version "1.0.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/wrappy/-/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"
 
+write-file-atomic@^1.2.0:
+  version "1.3.4"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/write-file-atomic/-/write-file-atomic-1.3.4.tgz#f807a4f0b1d9e913ae7a48112e6cc3af1991b45f"
+  dependencies:
+    graceful-fs "^4.1.11"
+    imurmurhash "^0.1.4"
+    slide "^1.1.5"
+
 write-file-atomic@^2.0.0, write-file-atomic@^2.1.0:
   version "2.3.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/write-file-atomic/-/write-file-atomic-2.3.0.tgz#1ff61575c2e2a4e8e510d6fa4e243cce183999ab"
@@ -9188,7 +10140,7 @@ xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"
 
-xtend@^4.0.0, xtend@~4.0.1:
+xtend@^4.0.0, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/xtend/-/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
@@ -9222,6 +10174,12 @@ yargs-parser@^8.1.0:
   dependencies:
     camelcase "^4.1.0"
 
+yargs-parser@^9.0.2:
+  version "9.0.2"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/yargs-parser/-/yargs-parser-9.0.2.tgz#9ccf6a43460fe4ed40a9bb68f48d43b8a68cc077"
+  dependencies:
+    camelcase "^4.1.0"
+
 yargs@^10.0.3:
   version "10.1.2"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/yargs/-/yargs-10.1.2.tgz#454d074c2b16a51a43e2fb7807e4f9de69ccb5c5"
@@ -9238,6 +10196,23 @@ yargs@^10.0.3:
     which-module "^2.0.0"
     y18n "^3.2.1"
     yargs-parser "^8.1.0"
+
+yargs@^11.0.0:
+  version "11.1.0"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/yargs/-/yargs-11.1.0.tgz#90b869934ed6e871115ea2ff58b03f4724ed2d77"
+  dependencies:
+    cliui "^4.0.0"
+    decamelize "^1.1.1"
+    find-up "^2.1.0"
+    get-caller-file "^1.0.1"
+    os-locale "^2.0.0"
+    require-directory "^2.1.1"
+    require-main-filename "^1.0.1"
+    set-blocking "^2.0.0"
+    string-width "^2.0.0"
+    which-module "^2.0.0"
+    y18n "^3.2.1"
+    yargs-parser "^9.0.2"
 
 yargs@^7.0.0:
   version "7.1.0"
@@ -9275,6 +10250,12 @@ yargs@^8.0.2:
     y18n "^3.2.1"
     yargs-parser "^7.0.0"
 
+yargs@~1.2.6:
+  version "1.2.6"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/yargs/-/yargs-1.2.6.tgz#9c7b4a82fd5d595b2bf17ab6dcc43135432fe34b"
+  dependencies:
+    minimist "^0.1.0"
+
 yargs@~3.10.0:
   version "3.10.0"
   resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/yargs/-/yargs-3.10.0.tgz#f7ee7bd857dd7c1d2d38c0e74efbd681d1431fd1"
@@ -9283,3 +10264,51 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
+
+yeoman-environment@^2.0.0, yeoman-environment@^2.0.5:
+  version "2.0.5"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/yeoman-environment/-/yeoman-environment-2.0.5.tgz#84f22bafa84088971fe99ea85f654a3a3dd2b693"
+  dependencies:
+    chalk "^2.1.0"
+    debug "^3.1.0"
+    diff "^3.3.1"
+    escape-string-regexp "^1.0.2"
+    globby "^6.1.0"
+    grouped-queue "^0.3.3"
+    inquirer "^3.3.0"
+    is-scoped "^1.0.0"
+    lodash "^4.17.4"
+    log-symbols "^2.1.0"
+    mem-fs "^1.1.0"
+    text-table "^0.2.0"
+    untildify "^3.0.2"
+
+yeoman-generator@^2.0.3:
+  version "2.0.3"
+  resolved "http://svnexus003.eoc.ch:8081/repository/npm-public/yeoman-generator/-/yeoman-generator-2.0.3.tgz#19426ed22687ffe05d31526c3f1c2cf67ba768f3"
+  dependencies:
+    async "^2.6.0"
+    chalk "^2.3.0"
+    cli-table "^0.3.1"
+    cross-spawn "^5.1.0"
+    dargs "^5.1.0"
+    dateformat "^3.0.2"
+    debug "^3.1.0"
+    detect-conflict "^1.0.0"
+    error "^7.0.2"
+    find-up "^2.1.0"
+    github-username "^4.0.0"
+    istextorbinary "^2.1.0"
+    lodash "^4.17.4"
+    make-dir "^1.1.0"
+    mem-fs-editor "^3.0.2"
+    minimist "^1.2.0"
+    pretty-bytes "^4.0.2"
+    read-chunk "^2.1.0"
+    read-pkg-up "^3.0.0"
+    rimraf "^2.6.2"
+    run-async "^2.0.0"
+    shelljs "^0.8.0"
+    text-table "^0.2.0"
+    through2 "^2.0.0"
+    yeoman-environment "^2.0.5"

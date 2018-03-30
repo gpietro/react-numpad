@@ -6,6 +6,7 @@ module.exports = {
     path: `${__dirname}/dist`,
     filename: 'bundle.js',
   },
+  mode: 'development',
   resolve: {
     modules: ['node_modules', 'bower_components'],
   },

@@ -298,6 +298,7 @@ storiesOf('Calendar', module)
       dateFormat={'DD.MM.YYYY'}
       dates={appointmentDates}
       locale={'it'}
+      value={'20.04.2018 10:00'}
       position={'startBottomLeft'}
       onChange={value => console.log('value', value)}
     />

@@ -1,12 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
 
 import NumPad from '../lib';
 import Modal from './DemoModal';
 import { appointmentDates, LoremIpsum } from './data';
 
-storiesOf('Number', module)
+const numberStories = storiesOf('Number', module);
+numberStories.addDecorator(withKnobs);
+
+numberStories
   .add('Input number', () => [
     <div key="story-1" style={{ marginBottom: '400px' }}>
       <p>daédlfkja adf acfadsf asdélfk ajsdaf sodalesasdf asf asdf af </p>
@@ -142,8 +146,8 @@ storiesOf('Calendar', module)
       locale="en"
       dateFormat="MM/DD/YYYY"
       position="startBottomLeft"
-      minDate={'01/20/2018'}
-      maxDate={'01/30/2018'}
+      min={'01/20/2018'}
+      max={'01/30/2018'}
     >
       <input type="text" style={{ boder: '2px solid red', width: '300px' }} />
     </NumPad.Calendar>,

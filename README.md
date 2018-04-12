@@ -92,6 +92,8 @@ Input field with date and time format.
 | `dateFormat`  | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
 | `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
 | `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
+| `min`         | `string`             | none         | min value for validation                                                                                                           |
+| `max`         | `string`             | none         | max value for validation                                                                                                           |
 
 ### NumPad.Calendar
 
@@ -103,7 +105,7 @@ Calendar input field.
     label='Data di nascita'
     locale="it"
     dateFormat="DD.MM.YYYY"
-    minDate="01.01.1900"
+    min="01.01.1900"
     markers={['01.03.2018', '06.03.2018']}
 />
 ```
@@ -122,8 +124,8 @@ Calendar input field.
 | `locale`      | `string`             | `en`         | locale for days and months                                                                                                         |
 | `weekOffset`  | `number`             | `0`          | First day of the week, by default is Sunday                                                                                        |
 | `markers`     | `array`              | []           | list of dates to place a marker on Calendar. The string date format must be the same as dateFormat property                        |
-| `minDate`     | `string`             | none         | min date for calendar input validation                                                                                             |
-| `maxDate`     | `string`             | none         | max date for calendar input validation                                                                                             |
+| `min`         | `string`             | none         | min value for validation                                                                                                           |
+| `max`         | `string`             | none         | max value for validation                                                                                                           |
 
 ### NumPad.Appointment
 
@@ -157,8 +159,8 @@ const appointmentDates = {
 | `theme`            | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
 | `dateFormat`       | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
 | `locale`           | `string`             | `en`         | locale for days and months                                                                                                         |
-
-## Custom input field
+| `min`              | `string`             | none         | min value for validation                                                                                                           |
+| `max`              | `string`             | none         | max value for validation                                                                                                           |
 
 It's possible to override the InputField component by passing your input field as child component of NumPad.
 

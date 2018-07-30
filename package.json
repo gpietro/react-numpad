@@ -79,7 +79,7 @@
     "lodash": "^4.17.5",
     "material-ui": "^1.0.0-beta.39",
     "moment": "^2.21.0",
-    "react-icons": "2.2.7",
+    "react-icons": "3.0.0",
     "react-onclickoutside": "^6.7.1",
     "react-portal": "^4.1.4",
     "react-swipeable": "^4.2.1",

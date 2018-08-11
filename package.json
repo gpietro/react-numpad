@@ -54,7 +54,7 @@
     "file-loader": "^1.1.11",
     "husky": "^0.14.3",
     "jest": "^22.4.3",
-    "jest-styled-components": "^5.0.0",
+    "jest-styled-components": "^6.0.0",
     "lint-staged": "^7.0.0",
     "node-sass": "^4.8.3",
     "polished": "^1.9.2",

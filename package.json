@@ -75,15 +75,15 @@
     "react-dom": "^16.2.0"
   },
   "dependencies": {
+    "@material-ui/core": "^3.0.0",
     "color": "^3.0.0",
     "lodash": "^4.17.5",
-    "material-ui": "^1.0.0-beta.39",
     "moment": "^2.21.0",
+    "prop-types": "^15.6.1",
     "react-icons": "2.2.7",
     "react-onclickoutside": "^6.7.1",
     "react-portal": "^4.1.4",
     "react-swipeable": "^4.2.1",
-    "prop-types": "^15.6.1",
     "styled-components": "^3.2.3"
   }
 }

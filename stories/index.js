@@ -13,7 +13,7 @@ numberStories.addDecorator(withKnobs);
 numberStories
   .add('Input number', () => [
     <div key="story-1" style={{ marginBottom: '400px' }}>
-      <p>daédlfkja adf acfadsf asdélfk ajsdaf sodalesasdf asf asdf af </p>
+      <p>Input nubmer teset</p>
       <ChangeProps>
         <NumPad.Number
           style={{ fontSize: '10px' }}
@@ -57,15 +57,18 @@ numberStories
       }}
       position="flex-start"
       label="Integer"
+      value="-ciao100.99"
     />,
     <NumPad.PositiveIntegerNumber
       key="number-4"
       onChange={value => {
         console.log('value', value);
       }}
+      value="-ciao100.99"
       position="startBottomRight"
       label="Positive integer"
     />,
+    <NumPad.Number onChange={() => {}} value="-100.99" />,
   ])
   .add('Time', () => [
     <NumPad.Time

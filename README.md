@@ -157,8 +157,6 @@ const appointmentDates = {
 | `theme`            | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
 | `dateFormat`       | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
 | `locale`           | `string`             | `en`         | locale for days and months                                                                                                         |
-| `min`              | `string`             | none         | min value for validation                                                                                                           |
-| `max`              | `string`             | none         | max value for validation                                                                                                           |
 
 It's possible to override the InputField component by passing your input field as child component of NumPad.
 

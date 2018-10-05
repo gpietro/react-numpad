@@ -92,8 +92,6 @@ Input field with date and time format.
 | `dateFormat`  | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
 | `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
 | `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
-| `min`         | `string`             | none         | min value for validation                                                                                                           |
-| `max`         | `string`             | none         | max value for validation                                                                                                           |
 
 ### NumPad.Calendar
 

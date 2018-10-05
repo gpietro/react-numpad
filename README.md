@@ -92,8 +92,6 @@ Input field with date and time format.
 | `dateFormat`  | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
 | `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
 | `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
-| `min`         | `string`             | none         | min value for validation                                                                                                           |
-| `max`         | `string`             | none         | max value for validation                                                                                                           |
 
 ### NumPad.Calendar
 
@@ -159,8 +157,6 @@ const appointmentDates = {
 | `theme`            | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
 | `dateFormat`       | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
 | `locale`           | `string`             | `en`         | locale for days and months                                                                                                         |
-| `min`              | `string`             | none         | min value for validation                                                                                                           |
-| `max`              | `string`             | none         | max value for validation                                                                                                           |
 
 It's possible to override the InputField component by passing your input field as child component of NumPad.
 

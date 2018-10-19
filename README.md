@@ -10,6 +10,10 @@
 A numpad for number, date and time, built with and for React.
 It's written with the extensibility in mind. The idea of this project is to cover the majority of input types in a form.
 
+## Demo / Examples
+
+Live demo: [gpietro.github.io/docs](https://gpietro.github.io/docs)
+
 ## Installation
 
 To use React-Numpad, install it from NPM and include it in your own React build process (using Webpack, etc).
@@ -209,10 +213,6 @@ const myTheme = {
 ## Calendar swipe support
 
 On mobile is possible to switch between months by swipe.
-
-## Demo / Examples
-
-Live demo: [gpietro.github.io/docs](https://gpietro.github.io/docs)
 
 ## Developing
 

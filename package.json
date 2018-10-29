@@ -34,7 +34,7 @@
     "@babel/preset-env": "7.0.0",
     "@babel/preset-react": "7.0.0",
     "babel-loader": "8.0.0",
-    "@storybook/addon-actions": "^4.0.0-alpha.1",
+    "@storybook/addon-actions": "^4.0.0",
     "@storybook/addon-knobs": "^3.4.1",
     "@storybook/addon-links": "^4.0.0-alpha.1",
     "@storybook/react": "^4.0.0-alpha.1",

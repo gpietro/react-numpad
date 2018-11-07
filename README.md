@@ -10,7 +10,7 @@
 A numpad for number, date and time, built with and for React.
 It's written with the extensibility in mind. The idea of this project is to cover the majority of input types in a form.
 
-### Did react-numpad make a difference to your project? Consider buying me a coffee!<br/><a href="https://www.buymeacoffee.com/gpietro" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+Did react-numpad make a difference to your project? Consider buying me a coffee!<br/><a href="https://www.buymeacoffee.com/gpietro" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
 
 ## Demo / Examples
 
@@ -245,4 +245,4 @@ See our [CONTRIBUTING.md](https://github.com/gpietro/react-numpad/blob/master/CO
 
 ## License
 
-MIT Licensed. Copyright (c) Pietro Ghezzi 2017.
+MIT Licensed. Copyright (c) Pietro Ghezzi 2017-2018.

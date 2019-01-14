@@ -15,7 +15,7 @@ import {
   NumberEditor,
   positiveIntegerValidation,
   CalendarDate,
-  DateTime,
+  DateTimeEditor,
   Appointment,
 } from '../lib';
 import Modal from './DemoModal';
@@ -79,29 +79,59 @@ storiesOf('Number', module)
   });
 
 storiesOf('Date Time Editor', module)
+  .add('time', () => (
+    <NumPad onChange={action('onChange')} position="startButtomLeft" placeholder="HH : mm">
+      <DateTimeEditor dateFormat="HH:mm" />
+    </NumPad>
+  ))
+  .add('time with default', () => {
+    const formatString = text('format string', 'HH:mm');
+    const value = text('initial value', '21:45');
+    return (
+      <NumPad
+        onChange={action('onChange')}
+        position="startButtomLeft"
+        value={value}
+        placeholder={formatString}
+      >
+        <DateTimeEditor dateFormat={formatString} />
+      </NumPad>
+    );
+  })
   .add('Datetime', () => (
     <NumPad
       onChange={action('onChange')}
       position="startButtomLeft"
       placeholder="DD-MM-YYYY HH : mm"
     >
-      <DateTime dateFormat="DD-MM-YYYY HH : mm" />
+      <DateTimeEditor dateFormat="DD-MM-YYYY HH : mm" />
     </NumPad>
   ))
   .add('Datetime date format', () => {
     const dateFormat = text('Date format', 'DD.MM.YYYY HH:mm');
     return (
       <NumPad onChange={action('onChange')} position="startButtomLeft" placeholder={dateFormat}>
-        <DateTime dateFormat={dateFormat} />
+        <DateTimeEditor dateFormat={dateFormat} />
       </NumPad>
     );
   });
 
-storiesOf('Calendar Editor', module).add('Calendar', () => (
-  <NumPad onChange={action('onChange')} position="startButtomLeft" placeholder="DD-MM-YYYY">
-    <CalendarDate dateFormat="DD-MM-YYYY" />
-  </NumPad>
-));
+storiesOf('Calendar Editor', module)
+  .add('default', () => (
+    <NumPad onChange={action('onChange')} position="startButtomLeft" placeholder="DD-MM-YYYY">
+      <CalendarDate dateFormat="DD-MM-YYYY" />
+    </NumPad>
+  ))
+  .add('initial value', () => (
+    <NumPad
+      onChange={action('onChange')}
+      position="startButtomLeft"
+      value="29-12-1978"
+      placeholder="DD-MM-YYYY"
+    >
+      <CalendarDate dateFormat="DD-MM-YYYY" />
+    </NumPad>
+  ));
 
 storiesOf('Appointment Editor', module)
   .add('default', () => (

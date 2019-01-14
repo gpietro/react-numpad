@@ -94,8 +94,5 @@
     "printWidth": 100,
     "singleQuote": true,
     "trailingComma": "es5"
-  },
-  "jest": {
-    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js"
   }
 }

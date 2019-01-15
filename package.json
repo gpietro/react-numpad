@@ -14,7 +14,6 @@
     "build:watch": "babel lib -w -d build",
     "lint": "eslint lib/** --fix; exit 0",
     "lint:watch": "esw -w lib/**",
-    "precommit": "lint-staged",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
@@ -94,5 +93,10 @@
     "printWidth": 100,
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }

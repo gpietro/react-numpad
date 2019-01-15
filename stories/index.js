@@ -13,7 +13,7 @@ import { Button } from '@material-ui/core';
 import {
   NumPad,
   NumberEditor,
-  positiveIntegerValidation,
+  numberValidatior,
   CalendarDate,
   DateTimeEditor,
   Appointment,
@@ -41,9 +41,24 @@ storiesOf('Number', module)
       </NumPad>
     );
   })
+  .add('positive number', () => (
+    <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
+      <NumberEditor keyValidator={numberValidatior(true, false)} />
+    </NumPad>
+  ))
   .add('positive integer', () => (
     <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
-      <NumberEditor keyValidator={positiveIntegerValidation} />
+      <NumberEditor keyValidator={numberValidatior(false, false)} />
+    </NumPad>
+  ))
+  .add('positive & negative number', () => (
+    <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
+      <NumberEditor keyValidator={numberValidatior(true, true)} />
+    </NumPad>
+  ))
+  .add('positive & negazive integer', () => (
+    <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
+      <NumberEditor keyValidator={numberValidatior(false, true)} />
     </NumPad>
   ))
   .add('odd numbers', () => (
@@ -80,7 +95,7 @@ storiesOf('Number', module)
 
 storiesOf('Date Time Editor', module)
   .add('time', () => (
-    <NumPad onChange={action('onChange')} position="startButtomLeft" placeholder="HH : mm">
+    <NumPad onChange={action('onChange')} position="startButtomLeft" placeholder="HH : mm" sync>
       <DateTimeEditor dateFormat="HH:mm" />
     </NumPad>
   ))

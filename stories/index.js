@@ -61,6 +61,14 @@ storiesOf('Number', module)
       <NumberEditor keyValidator={numberValidatior(false, true)} />
     </NumPad>
   ))
+  .add('configure decimals allowed', () => {
+    const decimals = number('Decimals', 2);
+    return (
+      <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
+        <NumberEditor keyValidator={numberValidatior(decimals, true)} />
+      </NumPad>
+    );
+  })
   .add('odd numbers', () => (
     <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
       <NumberEditor keyValidator={oddValidator} />
@@ -133,8 +141,13 @@ storiesOf('Date Time Editor', module)
 
 storiesOf('Calendar Editor', module)
   .add('default', () => (
-    <NumPad onChange={action('onChange')} position="startButtomLeft" placeholder="DD-MM-YYYY">
-      <CalendarDate dateFormat="DD-MM-YYYY" />
+    <NumPad
+      onChange={action('onChange')}
+      position="startButtomLeft"
+      locale="it"
+      placeholder="DD-MM-YYYY"
+    >
+      <CalendarDate dateFormat="DD MMMM YYYY" />
     </NumPad>
   ))
   .add('initial value', () => (

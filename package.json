@@ -10,8 +10,8 @@
   },
   "scripts": {
     "start": "webpack --watch",
-    "build": "babel lib -d build",
-    "build:watch": "babel lib -w -d build",
+    "build": "babel lib --ignore **/__tests__/*.js -d build",
+    "build:watch": "babel lib -w --ignore **/__tests__/*.js -d build",
     "lint": "eslint lib/** --fix; exit 0",
     "lint:watch": "esw -w lib/**",
     "prepublish": "npm run build",

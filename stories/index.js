@@ -223,3 +223,45 @@ storiesOf('Modal', module).add('Inside modal', () => (
       /> */}
   </Modal>
 ));
+
+storiesOf('Calendar Editor formats', module)
+  .add('DD-MM-YYYY', () => (
+    <NumPad
+      onChange={action('onChange')}
+      position="startButtomLeft"
+      locale="it"
+      placeholder="DD-MM-YYYY"
+    >
+      <DateTimeEditor dateFormat="DD-MM-YYYY" />
+    </NumPad>
+  ))
+  .add('MM-DD-YYYY', () => (
+    <NumPad
+      onChange={action('onChange')}
+      position="startButtomLeft"
+      locale="it"
+      placeholder="MM-DD-YYYY"
+    >
+      <DateTimeEditor dateFormat="MM-DD-YYYY" />
+    </NumPad>
+  ))
+  .add('YYYY-MM-DD', () => (
+    <NumPad
+      onChange={action('onChange')}
+      position="startButtomLeft"
+      locale="it"
+      placeholder="YYYY-MM-DD"
+    >
+      <DateTimeEditor dateFormat="YYYY-MM-DD" />
+    </NumPad>
+  ))
+  .add('DD**YYYY', () => (
+    <NumPad
+      onChange={action('onChange')}
+      position="startButtomLeft"
+      locale="it"
+      placeholder="DD*MMM*YYYY"
+    >
+      <DateTimeEditor dateFormat="DD*MMM*YYYY" />
+    </NumPad>
+  ));

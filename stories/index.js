@@ -86,7 +86,7 @@ storiesOf('Number', module)
   ))
   .add('testing numbers', () => {
     const story = (
-      <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
+      <NumPad onChange={action('onChange')} value="" position="startBottomRight" label="Number">
         <NumberEditor />
       </NumPad>
     );
@@ -158,6 +158,17 @@ storiesOf('Calendar Editor', module)
       placeholder="DD-MM-YYYY"
     >
       <CalendarDate dateFormat="DD-MM-YYYY" />
+    </NumPad>
+  ))
+  .add('time value', () => (
+    <NumPad
+      onChange={action('onChange')}
+      position="startButtomLeft"
+      value="30-03-2019"
+      placeholder="DD-MM-YYYY"
+      locale="it"
+    >
+      <CalendarDate dateFormat="DD-MM-YYYY" timeFormat="HH:mm" />
     </NumPad>
   ));
 

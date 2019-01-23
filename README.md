@@ -10,6 +10,7 @@
 A numpad for number, date and time, built with and for React.
 It's written with the extensibility in mind. The idea of this project is to cover the majority of input types in a form.
 
+
 ## Demo / Examples
 
 Live demo: [gpietro.github.io/docs](https://gpietro.github.io/docs)
@@ -243,4 +244,4 @@ See our [CONTRIBUTING.md](https://github.com/gpietro/react-numpad/blob/master/CO
 
 ## License
 
-MIT Licensed. Copyright (c) Pietro Ghezzi 2017.
+MIT Licensed. Copyright (c) Pietro Ghezzi 2017-2018.

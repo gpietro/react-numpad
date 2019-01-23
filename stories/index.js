@@ -9,15 +9,7 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
 
-import { Button } from '@material-ui/core';
-import {
-  NumPad,
-  NumberEditor,
-  numberValidatior,
-  CalendarDate,
-  DateTimeEditor,
-  Appointment,
-} from '../lib';
+import { NumPad, NumberEditor, CalendarDate, DateTimeEditor, Appointment } from '../lib';
 import Modal from './DemoModal';
 import { appointmentDates } from './data';
 
@@ -29,66 +21,92 @@ const oddValidator = value =>
 storiesOf('Number', module)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <NumPad onChange={action('onChange')} position="startBottomLeft" label="Number">
-      <NumberEditor />
-    </NumPad>
+    <NumberEditor onChange={action('onChange')} position="startBottomLeft" label="Number" />
   ))
   .add('initial value', () => {
     const value = number('Default value', 70, { range: true, min: 0, max: 90, step: 5 });
     return (
-      <NumPad onChange={action('onChange')} position="startBottomLeft" label="Number" value={value}>
-        <NumberEditor />
-      </NumPad>
+      <NumberEditor
+        onChange={action('onChange')}
+        position="startBottomLeft"
+        label="Number"
+        value={value}
+      />
     );
   })
   .add('positive number', () => (
-    <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
-      <NumberEditor keyValidator={numberValidatior(true, false)} />
-    </NumPad>
+    <NumberEditor
+      onChange={action('onChange')}
+      value=""
+      position="startBottomLeft"
+      label="Number"
+      decimal
+      sign={false}
+    />
   ))
   .add('positive integer', () => (
-    <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
-      <NumberEditor keyValidator={numberValidatior(false, false)} />
-    </NumPad>
+    <NumberEditor
+      decimal={false}
+      sign={false}
+      onChange={action('onChange')}
+      value=""
+      position="startBottomLeft"
+      label="Number"
+    />
   ))
   .add('positive & negative number', () => (
-    <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
-      <NumberEditor keyValidator={numberValidatior(true, true)} />
-    </NumPad>
+    <NumberEditor
+      onChange={action('onChange')}
+      value=""
+      position="startBottomLeft"
+      label="Number"
+      decimal
+      sign
+    />
   ))
   .add('positive & negazive integer', () => (
-    <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
-      <NumberEditor keyValidator={numberValidatior(false, true)} />
-    </NumPad>
+    <NumberEditor
+      decimal={false}
+      onChange={action('onChange')}
+      value=""
+      position="startBottomLeft"
+      label="Number"
+    />
   ))
   .add('configure decimals allowed', () => {
     const decimals = number('Decimals', 2);
     return (
-      <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
-        <NumberEditor keyValidator={numberValidatior(decimals, true)} />
-      </NumPad>
+      <NumberEditor
+        onChange={action('onChange')}
+        value=""
+        position="startBottomLeft"
+        label="Number"
+      />
     );
   })
-  .add('odd numbers', () => (
-    <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
-      <NumberEditor keyValidator={oddValidator} />
-    </NumPad>
-  ))
-  .add('custom input field', () => (
-    <NumPad
+  .add('odd numbers with custom validator', () => (
+    <NumberEditor
+      keyValidator={oddValidator}
       onChange={action('onChange')}
       value=""
       position="startBottomLeft"
-      customInput={<TextField label="Number" variant="outlined" />}
-    >
-      <NumberEditor />
-    </NumPad>
+      label="Number"
+    />
+  ))
+  .add('custom input field', () => (
+    <NumberEditor onChange={action('onChange')} value="5" position="startBottomLeft">
+      <input type="text" />
+      <button>culo</button>
+    </NumberEditor>
   ))
   .add('testing numbers', () => {
     const story = (
-      <NumPad onChange={action('onChange')} value="" position="startBottomLeft" label="Number">
-        <NumberEditor />
-      </NumPad>
+      <NumberEditor
+        onChange={action('onChange')}
+        value=""
+        position="startBottomLeft"
+        label="Number"
+      />
     );
     specs(() =>
       describe('Check text', () => {
@@ -103,7 +121,7 @@ storiesOf('Number', module)
 
 storiesOf('Date Time Editor', module)
   .add('time', () => (
-    <NumPad onChange={action('onChange')} position="startButtomLeft" placeholder="HH : mm" sync>
+    <NumPad onChange={action('onChange')} position="startBottomLeft" placeholder="HH : mm" sync>
       <DateTimeEditor dateFormat="HH:mm" />
     </NumPad>
   ))
@@ -113,7 +131,7 @@ storiesOf('Date Time Editor', module)
     return (
       <NumPad
         onChange={action('onChange')}
-        position="startButtomLeft"
+        position="startBottomLeft"
         value={value}
         placeholder={formatString}
       >
@@ -124,7 +142,7 @@ storiesOf('Date Time Editor', module)
   .add('Datetime', () => (
     <NumPad
       onChange={action('onChange')}
-      position="startButtomLeft"
+      position="startBottomLeft"
       placeholder="DD-MM-YYYY HH : mm"
     >
       <DateTimeEditor dateFormat="DD-MM-YYYY HH : mm" />
@@ -133,7 +151,7 @@ storiesOf('Date Time Editor', module)
   .add('Datetime date format', () => {
     const dateFormat = text('Date format', 'DD.MM.YYYY HH:mm');
     return (
-      <NumPad onChange={action('onChange')} position="startButtomLeft" placeholder={dateFormat}>
+      <NumPad onChange={action('onChange')} position="startBottomLeft" placeholder={dateFormat}>
         <DateTimeEditor dateFormat={dateFormat} />
       </NumPad>
     );
@@ -143,7 +161,7 @@ storiesOf('Calendar Editor', module)
   .add('default', () => (
     <NumPad
       onChange={action('onChange')}
-      position="startButtomLeft"
+      position="startBottomLeft"
       locale="it"
       placeholder="DD-MM-YYYY"
     >
@@ -153,7 +171,7 @@ storiesOf('Calendar Editor', module)
   .add('initial value', () => (
     <NumPad
       onChange={action('onChange')}
-      position="startButtomLeft"
+      position="startBottomLeft"
       value="29-12-1978"
       placeholder="DD-MM-YYYY"
     >
@@ -163,7 +181,7 @@ storiesOf('Calendar Editor', module)
 
 storiesOf('Appointment Editor', module)
   .add('default', () => (
-    <NumPad onChange={action('onChange')} position="startButtomLeft" placeholder="DD-MM-YYYY">
+    <NumPad onChange={action('onChange')} position="startBottomLeft" placeholder="DD-MM-YYYY">
       <Appointment dates={appointmentDates} dateFormat="DD-MM-YYYY" />
     </NumPad>
   ))
@@ -181,7 +199,8 @@ storiesOf('Appointment Editor', module)
 storiesOf('Modal', module).add('Inside modal', () => (
   <Modal>
     <h4>Test component inside a modal</h4>
-    <NumPad
+
+    <NumberEditor
       style={{ fontSize: '10px' }}
       key="number-1"
       placeholder="test"
@@ -190,37 +209,7 @@ storiesOf('Modal', module).add('Inside modal', () => (
       position="startBottomLeft"
       label="Totale"
       value={10}
-      customInput={
-        <div>
-          <TextField label="Uncontrolled" margin="normal" variant="outlined" value="1234" />
-          <Button>open</Button>
-        </div>
-      }
-    >
-      <NumberEditor />
-    </NumPad>
-    {/* <hr />
-      <NumPad.Time
-        key="time-2"
-        theme="blackAndWhite"
-        onChange={value => console.log('changed', value)}
-      />
-      <hr />
-      <NumPad.Calendar
-        onChange={value => console.log('changed', value)}
-        label={'Data di nascita'}
-        locale="it"
-        dateFormat="DD.MM.YYYY"
-        value={'28.06.1986'}
-      />
-      <hr />
-      <NumPad.Calendar
-        onChange={value => console.log('changed', value)}
-        label={'Markers'}
-        locale="it"
-        dateFormat="DD.MM.YYYY"
-        markers={['01.03.2018', '06.03.2018']}
-      /> */}
+    />
   </Modal>
 ));
 
@@ -228,7 +217,7 @@ storiesOf('Calendar Editor formats', module)
   .add('DD-MM-YYYY', () => (
     <NumPad
       onChange={action('onChange')}
-      position="startButtomLeft"
+      position="startBottomLeft"
       locale="it"
       placeholder="DD-MM-YYYY"
     >
@@ -238,7 +227,7 @@ storiesOf('Calendar Editor formats', module)
   .add('MM-DD-YYYY', () => (
     <NumPad
       onChange={action('onChange')}
-      position="startButtomLeft"
+      position="startBottomLeft"
       locale="it"
       placeholder="MM-DD-YYYY"
     >
@@ -248,7 +237,7 @@ storiesOf('Calendar Editor formats', module)
   .add('YYYY-MM-DD', () => (
     <NumPad
       onChange={action('onChange')}
-      position="startButtomLeft"
+      position="startBottomLeft"
       locale="it"
       placeholder="YYYY-MM-DD"
     >
@@ -258,7 +247,7 @@ storiesOf('Calendar Editor formats', module)
   .add('DD**YYYY', () => (
     <NumPad
       onChange={action('onChange')}
-      position="startButtomLeft"
+      position="startBottomLeft"
       locale="it"
       placeholder="DD*MMM*YYYY"
     >

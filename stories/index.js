@@ -9,7 +9,7 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
 
-import { NumPad, NumberEditor, CalendarDate, DateTimeEditor, Appointment } from '../lib';
+import { NumberEditor, CalendarDate, DateTimeEditor, Appointment } from '../lib';
 import Modal from './DemoModal';
 import { appointmentDates } from './data';
 
@@ -121,79 +121,86 @@ storiesOf('Number', module)
 
 storiesOf('Date Time Editor', module)
   .add('time', () => (
-    <NumPad onChange={action('onChange')} position="startBottomLeft" placeholder="HH : mm" sync>
-      <DateTimeEditor dateFormat="HH:mm" />
-    </NumPad>
+    <DateTimeEditor
+      dateFormat="HH:mm"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      placeholder="HH:mm"
+      sync
+    />
   ))
   .add('time with default', () => {
     const formatString = text('format string', 'HH:mm');
     const value = text('initial value', '21:45');
     return (
-      <NumPad
+      <DateTimeEditor
+        dateFormat={formatString}
         onChange={action('onChange')}
         position="startBottomLeft"
         value={value}
         placeholder={formatString}
-      >
-        <DateTimeEditor dateFormat={formatString} />
-      </NumPad>
+      />
     );
   })
   .add('Datetime', () => (
-    <NumPad
+    <DateTimeEditor
+      dateFormat="DD-MM-YYYY HH:mm"
       onChange={action('onChange')}
       position="startBottomLeft"
       placeholder="DD-MM-YYYY HH : mm"
-    >
-      <DateTimeEditor dateFormat="DD-MM-YYYY HH : mm" />
-    </NumPad>
+    />
   ))
   .add('Datetime date format', () => {
     const dateFormat = text('Date format', 'DD.MM.YYYY HH:mm');
     return (
-      <NumPad onChange={action('onChange')} position="startBottomLeft" placeholder={dateFormat}>
-        <DateTimeEditor dateFormat={dateFormat} />
-      </NumPad>
+      <DateTimeEditor
+        dateFormat={dateFormat}
+        onChange={action('onChange')}
+        position="startBottomLeft"
+        placeholder={dateFormat}
+      />
     );
   });
 
 storiesOf('Calendar Editor', module)
   .add('default', () => (
-    <NumPad
+    <CalendarDate
+      dateFormat="DD MMMM YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
       locale="it"
       placeholder="DD-MM-YYYY"
-    >
-      <CalendarDate dateFormat="DD MMMM YYYY" />
-    </NumPad>
+    />
   ))
   .add('initial value', () => (
-    <NumPad
+    <CalendarDate
+      dateFormat="DD-MM-YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
       value="29-12-1978"
       placeholder="DD-MM-YYYY"
-    >
-      <CalendarDate dateFormat="DD-MM-YYYY" />
-    </NumPad>
+    />
   ));
 
 storiesOf('Appointment Editor', module)
   .add('default', () => (
-    <NumPad onChange={action('onChange')} position="startBottomLeft" placeholder="DD-MM-YYYY">
-      <Appointment dates={appointmentDates} dateFormat="DD-MM-YYYY" />
-    </NumPad>
+    <Appointment
+      dates={appointmentDates}
+      dateFormat="DD-MM-YYYY"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      placeholder="DD-MM-YYYY"
+    />
   ))
   .add('fullscreen', () => (
-    <NumPad
+    <Appointment
+      dates={appointmentDates}
+      dateFormat="DD-MM-YYYY"
       onChange={action('onChange')}
       position="fullscreen"
       locale="it"
       placeholder="DD-MM-YYYY"
-    >
-      <Appointment dates={appointmentDates} dateFormat="DD-MM-YYYY" />
-    </NumPad>
+    />
   ));
 
 storiesOf('Modal', module).add('Inside modal', () => (
@@ -215,42 +222,38 @@ storiesOf('Modal', module).add('Inside modal', () => (
 
 storiesOf('Calendar Editor formats', module)
   .add('DD-MM-YYYY', () => (
-    <NumPad
+    <DateTimeEditor
+      dateFormat="DD-MM-YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
       locale="it"
       placeholder="DD-MM-YYYY"
-    >
-      <DateTimeEditor dateFormat="DD-MM-YYYY" />
-    </NumPad>
+    />
   ))
   .add('MM-DD-YYYY', () => (
-    <NumPad
+    <DateTimeEditor
+      dateFormat="MM-DD-YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
       locale="it"
       placeholder="MM-DD-YYYY"
-    >
-      <DateTimeEditor dateFormat="MM-DD-YYYY" />
-    </NumPad>
+    />
   ))
   .add('YYYY-MM-DD', () => (
-    <NumPad
+    <DateTimeEditor
+      dateFormat="YYYY-MM-DD"
       onChange={action('onChange')}
       position="startBottomLeft"
       locale="it"
       placeholder="YYYY-MM-DD"
-    >
-      <DateTimeEditor dateFormat="YYYY-MM-DD" />
-    </NumPad>
+    />
   ))
   .add('DD**YYYY', () => (
-    <NumPad
+    <DateTimeEditor
+      dateFormat="DD*MMM*YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
       locale="it"
       placeholder="DD*MMM*YYYY"
-    >
-      <DateTimeEditor dateFormat="DD*MMM*YYYY" />
-    </NumPad>
+    />
   ));

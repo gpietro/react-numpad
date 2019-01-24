@@ -96,7 +96,7 @@ storiesOf('Number', module)
   .add('custom input field', () => (
     <NumPad.Number onChange={action('onChange')} value="5" position="startBottomLeft">
       <input type="text" />
-      <button>culo</button>
+      <button>i'm custom</button>
     </NumPad.Number>
   ))
   .add('testing numbers', () => {

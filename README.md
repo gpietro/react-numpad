@@ -7,9 +7,10 @@
 [![npm version](https://badge.fury.io/js/react-numpad.svg)](https://badge.fury.io/js/react-numpad)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
+> **v4**: API and components are changed.
+
 A numpad for number, date and time, built with and for React.
 It's written with the extensibility in mind. The idea of this project is to cover the majority of input types in a form.
-
 
 ## Demo / Examples
 
@@ -36,57 +37,6 @@ When the value is changed, onChange(selectedValue) will fire.
 
 React-NumPad is built based on a "main" component (NumPad.js). Following the higher-order component technique, is possible to create new components by simply overriding few common properties.
 
-### NumPad.Number
-
-Input field for numeric value. There are also **PositiveNumber**, **IntegerNumber**, **PositiveIntegerNumber** components with the same properties.
-
-```shell
-<NumPad.Number
-    onChange={(value) => { console.log('value', value)}}
-    label={'Total'}
-    placeholder={'my placeholder'}
-    value={100}
-/>
-```
-
-### NumPad.Time
-
-Input field with time format.
-
-```shell
-<NumPad.Time
-    onChange={(value) => { console.log('value', value)}}
-    label={'Departure time'}
-    placeholder={'my placeholder'}
-/>
-```
-
-### NumPad.Date
-
-Input field with date format.
-
-```shell
-<NumPad.Date
-    onChange={(value) => { console.log('value', value)}}
-    label={'Data di nascita di partenza'}
-/>
-```
-
-### NumPad.DateTime
-
-Input field with date and time format.
-
-```shell
-<NumPad.DateTime
-    onChange={(value) => { console.log('value', value)}}
-    dateFormat={'DD.MM.YYYY'}
-    label={'Data e ora di partenza'}
-    value={'10.02.2018 10:00'}
-/>
-```
-
-## NumPad Properties
-
 | Property      | Type                 | Default      | Description                                                                                                                        |
 | :------------ | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
 | `onChange`    | `function`           | **required** | function called when value change and is valid.                                                                                    |
@@ -94,13 +44,74 @@ Input field with date and time format.
 | `label`       | `string`             | none         | text to display as input label.                                                                                                    |
 | `position`    | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
 | `theme`       | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
-| `dateFormat`  | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
 | `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
 | `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
+
+> **v4**: is possible to override the following component's functions
+
+| Property       | Type       | Default | Description                              |
+| :------------- | :--------- | :------ | :--------------------------------------- |
+| `validation`   | `function` |         | Validates the input value                |
+| `keyValidator` | `function` |         | Validates the enabled keys while typing  |
+| `displayRule`  | `function` |         | Format the output value                  |
+
+### NumPad.Number
+
+Input field for numeric value.
+
+> **v4**: the components PositiveNumber, IntegerNumber, PositiveIntegerNumber are replaced with the props **decimal** and **negative**.
+
+| Property   | Type                  | Default  | Description                                                                   |
+| :--------- | :-------------------- | :------- | :---------------------------------------------------------------------------- |
+| `decimal`  | `boolean` or `number` | **true** | True allows decimal numbers or is possible to specify the number of decimals. |
+| `negative` | `bolean`              | **true** | True allows negative numbers                                                  |
+
+```shell
+<NumPad.Number
+    onChange={(value) => { console.log('value', value)}}
+    label={'Total'}
+    placeholder={'my placeholder'}
+    value={100}
+    decimal={2}
+/>
+```
+
+### NumPad.DateTime
+
+Input field for date and time format.
+
+> **v4**: the input layout is now based on the date format, date time format or only time format property. Components Date and Time have been removed.
+
+| Property     | Type     | Default          | Description                                                                                    |
+| :----------- | :------- | :--------------- | :--------------------------------------------------------------------------------------------- |
+| `dateFormat` | `string` | **'DD.MM.YYYY'** | Specify the date time format based on moment.js. Ex: 'DD.MM.YYYY', 'HH:mm', 'YYYY-MM-DD HH:mm' |
+
+```shell
+<NumPad.DateTime
+    onChange={(value) => { console.log('value', value)} }
+    dateFormat="DD.MM.YYYY HH:mm"
+    label={'Input for date and time'}
+/>
+
+<NumPad.DateTime
+    onChange={(value) => { console.log('value', value)} }
+    dateFormat="HH:mm"
+    label={'Input for time'}
+/>
+```
 
 ### NumPad.Calendar
 
 Calendar input field.
+
+| Property     | Type     | Default      | Description                                                                                                 |
+| :----------- | :------- | :----------- | :---------------------------------------------------------------------------------------------------------- |
+| `dateFormat` | `string` | `MM/DD/YYYY` | specify a different date format.                                                                            |
+| `locale`     | `string` | `en`         | locale for days and months                                                                                  |
+| `weekOffset` | `number` | `0`          | First day of the week, by default is Sunday                                                                 |
+| `markers`    | `array`  | []           | list of dates to place a marker on Calendar. The string date format must be the same as dateFormat property |
+| `min`        | `string` | none         | min value for validation                                                                                    |
+| `max`        | `string` | none         | max value for validation                                                                                    |
 
 ```shell
 <NumPad.Calendar
@@ -113,26 +124,15 @@ Calendar input field.
 />
 ```
 
-## Calendar Properties
-
-| Property      | Type                 | Default      | Description                                                                                                                        |
-| :------------ | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| `onChange`    | `function`           | **required** | function called when value change and is valid.                                                                                    |
-| `placeholder` | `string`             | none         | text to display as input placeholder.                                                                                              |
-| `label`       | `string`             | none         | text to display as input label.                                                                                                    |
-| `position`    | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
-| `theme`       | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
-| `dateFormat`  | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
-| `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
-| `locale`      | `string`             | `en`         | locale for days and months                                                                                                         |
-| `weekOffset`  | `number`             | `0`          | First day of the week, by default is Sunday                                                                                        |
-| `markers`     | `array`              | []           | list of dates to place a marker on Calendar. The string date format must be the same as dateFormat property                        |
-| `min`         | `string`             | none         | min value for validation                                                                                                           |
-| `max`         | `string`             | none         | max value for validation                                                                                                           |
-
 ### NumPad.Appointment
 
 Available date time appointments picker.
+
+| Property           | Type     | Default      | Description                                    |
+| :----------------- | :------- | :----------- | :--------------------------------------------- |
+| `appointmentDates` | `object` | **required** | object representing available dates with times |
+| `dateFormat`       | `string` | `MM/DD/YYYY` | specify a different date format.               |
+| `locale`           | `string` | `en`         | locale for days and months                     |
 
 ```shell
 <NumPad.Appointment
@@ -150,18 +150,7 @@ const appointmentDates = {
 }
 ```
 
-## Appointment Properties
-
-| Property           | Type                 | Default      | Description                                                                                                                        |
-| :----------------- | :------------------- | :----------- | :--------------------------------------------------------------------------------------------------------------------------------- |
-| `onChange`         | `function`           | **required** | function called when value change and is valid.                                                                                    |
-| `appointmentDates` | `object`             | **required** | object representing available dates with times                                                                                     |
-| `placeholder`      | `string`             | none         | text to display as input placeholder.                                                                                              |
-| `label`            | `string`             | none         | text to display as input label.                                                                                                    |
-| `position`         | `string`             | `flex-end`   | Position to the screen. `center`, `flex-start`, `flex-end`, `startBottomLeft`, `startBottomRight`, `startTopLeft`, `startTopRight` |
-| `theme`            | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
-| `dateFormat`       | `string`             | `MM/DD/YYYY` | specify a different date format.                                                                                                   |
-| `locale`           | `string`             | `en`         | locale for days and months                                                                                                         |
+## Custom input
 
 It's possible to override the InputField component by passing your input field as child component of NumPad.
 

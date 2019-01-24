@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import TextField from '@material-ui/core/TextField';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
@@ -9,7 +8,7 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
 
-import { NumberEditor, CalendarDate, DateTimeEditor, Appointment } from '../lib';
+import NumPad from '../lib';
 import Modal from './DemoModal';
 import { appointmentDates } from './data';
 
@@ -21,12 +20,12 @@ const oddValidator = value =>
 storiesOf('Number', module)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <NumberEditor onChange={action('onChange')} position="startBottomLeft" label="Number" />
+    <NumPad.Number onChange={action('onChange')} position="startBottomLeft" label="Number" />
   ))
   .add('initial value', () => {
     const value = number('Default value', 70, { range: true, min: 0, max: 90, step: 5 });
     return (
-      <NumberEditor
+      <NumPad.Number
         onChange={action('onChange')}
         position="startBottomLeft"
         label="Number"
@@ -35,7 +34,7 @@ storiesOf('Number', module)
     );
   })
   .add('positive number', () => (
-    <NumberEditor
+    <NumPad.Number
       onChange={action('onChange')}
       value=""
       position="startBottomLeft"
@@ -45,7 +44,7 @@ storiesOf('Number', module)
     />
   ))
   .add('positive integer', () => (
-    <NumberEditor
+    <NumPad.Number
       decimal={false}
       negative={false}
       onChange={action('onChange')}
@@ -55,7 +54,7 @@ storiesOf('Number', module)
     />
   ))
   .add('positive & negative number', () => (
-    <NumberEditor
+    <NumPad.Number
       onChange={action('onChange')}
       value=""
       position="startBottomLeft"
@@ -65,7 +64,7 @@ storiesOf('Number', module)
     />
   ))
   .add('positive & negazive integer', () => (
-    <NumberEditor
+    <NumPad.Number
       decimal={false}
       onChange={action('onChange')}
       value=""
@@ -76,16 +75,17 @@ storiesOf('Number', module)
   .add('configure decimals allowed', () => {
     const decimals = number('Decimals', 2);
     return (
-      <NumberEditor
+      <NumPad.Number
         onChange={action('onChange')}
         value=""
         position="startBottomLeft"
         label="Number"
+        decimal={2}
       />
     );
   })
   .add('odd numbers with custom validator', () => (
-    <NumberEditor
+    <NumPad.Number
       keyValidator={oddValidator}
       onChange={action('onChange')}
       value=""
@@ -94,14 +94,14 @@ storiesOf('Number', module)
     />
   ))
   .add('custom input field', () => (
-    <NumberEditor onChange={action('onChange')} value="5" position="startBottomLeft">
+    <NumPad.Number onChange={action('onChange')} value="5" position="startBottomLeft">
       <input type="text" />
       <button>culo</button>
-    </NumberEditor>
+    </NumPad.Number>
   ))
   .add('testing numbers', () => {
     const story = (
-      <NumberEditor
+      <NumPad.Number
         onChange={action('onChange')}
         value=""
         position="startBottomLeft"
@@ -121,7 +121,7 @@ storiesOf('Number', module)
 
 storiesOf('Date Time Editor', module)
   .add('time', () => (
-    <DateTimeEditor
+    <NumPad.DateTime
       dateFormat="HH:mm"
       onChange={action('onChange')}
       position="startBottomLeft"
@@ -133,7 +133,7 @@ storiesOf('Date Time Editor', module)
     const formatString = text('format string', 'HH:mm');
     const value = text('initial value', '21:45');
     return (
-      <DateTimeEditor
+      <NumPad.DateTime
         dateFormat={formatString}
         onChange={action('onChange')}
         position="startBottomLeft"
@@ -143,7 +143,7 @@ storiesOf('Date Time Editor', module)
     );
   })
   .add('Datetime', () => (
-    <DateTimeEditor
+    <NumPad.DateTime
       dateFormat="DD-MM-YYYY HH:mm"
       onChange={action('onChange')}
       position="startBottomLeft"
@@ -153,7 +153,7 @@ storiesOf('Date Time Editor', module)
   .add('Datetime date format', () => {
     const dateFormat = text('Date format', 'DD.MM.YYYY HH:mm');
     return (
-      <DateTimeEditor
+      <NumPad.DateTime
         dateFormat={dateFormat}
         onChange={action('onChange')}
         position="startBottomLeft"
@@ -164,16 +164,15 @@ storiesOf('Date Time Editor', module)
 
 storiesOf('Calendar Editor', module)
   .add('default', () => (
-    <CalendarDate
+    <NumPad.Calendar
       dateFormat="DD MMMM YYYY"
       onChange={action('onChange')}
-      position="startBottomLeft"
       locale="it"
       placeholder="DD-MM-YYYY"
     />
   ))
   .add('initial value', () => (
-    <CalendarDate
+    <NumPad.Calendar
       dateFormat="DD-MM-YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
@@ -184,7 +183,7 @@ storiesOf('Calendar Editor', module)
 
 storiesOf('Appointment Editor', module)
   .add('default', () => (
-    <Appointment
+    <NumPad.Appointment
       dates={appointmentDates}
       dateFormat="DD-MM-YYYY"
       onChange={action('onChange')}
@@ -193,7 +192,7 @@ storiesOf('Appointment Editor', module)
     />
   ))
   .add('fullscreen', () => (
-    <Appointment
+    <NumPad.Appointment
       dates={appointmentDates}
       dateFormat="DD-MM-YYYY"
       onChange={action('onChange')}
@@ -207,7 +206,7 @@ storiesOf('Modal', module).add('Inside modal', () => (
   <Modal>
     <h4>Test component inside a modal</h4>
 
-    <NumberEditor
+    <NumPad.Number
       style={{ fontSize: '10px' }}
       key="number-1"
       placeholder="test"
@@ -222,7 +221,7 @@ storiesOf('Modal', module).add('Inside modal', () => (
 
 storiesOf('Calendar Editor formats', module)
   .add('DD-MM-YYYY', () => (
-    <DateTimeEditor
+    <NumPad.DateTime
       dateFormat="DD-MM-YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
@@ -231,7 +230,7 @@ storiesOf('Calendar Editor formats', module)
     />
   ))
   .add('MM-DD-YYYY', () => (
-    <DateTimeEditor
+    <NumPad.DateTime
       dateFormat="MM-DD-YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
@@ -240,7 +239,7 @@ storiesOf('Calendar Editor formats', module)
     />
   ))
   .add('YYYY-MM-DD', () => (
-    <DateTimeEditor
+    <NumPad.DateTime
       dateFormat="YYYY-MM-DD"
       onChange={action('onChange')}
       position="startBottomLeft"
@@ -249,7 +248,7 @@ storiesOf('Calendar Editor formats', module)
     />
   ))
   .add('DD**YYYY', () => (
-    <DateTimeEditor
+    <NumPad.DateTime
       dateFormat="DD*MMM*YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"

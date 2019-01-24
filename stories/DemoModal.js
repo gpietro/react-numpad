@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Button } from '@material-ui/core';
 import Modal from './Modal';
 
 class ExampleModal extends Component {
+  propTypes = {
+    children: PropTypes.element.isRequired,
+  };
+
   constructor(props) {
     super(props);
     this.state = { showModal: false };
@@ -9,14 +15,20 @@ class ExampleModal extends Component {
   }
 
   toggleModal() {
-    this.setState({ showModal: !this.state.showModal });
+    const { showModal } = this.state;
+    this.setState({ showModal: !showModal });
   }
+
   render() {
+    const { showModal } = this.state;
+    const { children } = this.props;
     return (
       <div>
-        <button onClick={this.toggleModal}>Click me</button>
-        <Modal show={this.state.showModal} onClose={this.toggleModal}>
-          {this.props.children}
+        <Button variant="outlined" onClick={this.toggleModal}>
+          Open
+        </Button>
+        <Modal show={showModal} onClose={this.toggleModal}>
+          {children}
         </Modal>
       </div>
     );

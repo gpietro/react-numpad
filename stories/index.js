@@ -1,264 +1,258 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import styled from 'styled-components';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
+import { action } from '@storybook/addon-actions';
+import { withKnobs, text, number } from '@storybook/addon-knobs';
+import { specs, describe, it } from 'storybook-addon-specifications';
+import { mount, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import { expect } from 'chai';
 
 import NumPad from '../lib';
 import Modal from './DemoModal';
-import { appointmentDates, LoremIpsum } from './data';
+import { appointmentDates } from './data';
 
-const numberStories = storiesOf('Number', module);
-numberStories.addDecorator(withKnobs);
+configure({ adapter: new Adapter() });
 
-numberStories
-  .add('Input number', () => [
-    <div key="story-1" style={{ marginBottom: '400px' }}>
-      <p>Input nubmer teset</p>
-      <ChangeProps>
-        <NumPad.Number
-          style={{ fontSize: '10px' }}
-          key="number-1"
-          placeholder="test"
-          theme="orange"
-          onChange={value => {
-            console.log('value', value);
-          }}
-          position="startBottomLeft"
-          label="Totale"
-          sync={true}
-        >
-          <input type="text" placeholder="test" />
-          <Button />
-        </NumPad.Number>
-      </ChangeProps>
-    </div>,
-    <LoremIpsum key="lorem" />,
-    <NumPad.Date
-      key="issue-1"
-      onChange={value => {
-        console.log('value', value);
-      }}
-      position="startTopLeft"
-      placeholder="birthdate"
-      dateFormat="DD.MM.YYYY"
-    />,
-    <NumPad.PositiveNumber
-      key="number-2"
-      onChange={value => {
-        console.log('value', value);
-      }}
-      position="startTopRight"
-      label="Positive"
-    />,
-    <NumPad.IntegerNumber
-      key="number-3"
-      onChange={value => {
-        console.log('value', value);
-      }}
-      position="flex-start"
-      label="Integer"
-      value="-ciao100.99"
-    />,
-    <NumPad.PositiveIntegerNumber
-      key="number-4"
-      onChange={value => {
-        console.log('value', value);
-      }}
-      value="-ciao100.99"
-      position="startBottomRight"
-      label="Positive integer"
-    />,
-    <NumPad.Number onChange={() => {}} value="-100.99" />,
-  ])
-  .add('Time', () => [
-    <NumPad.Time
-      key="time-1"
-      placeholder="HH:mm"
-      label="Sveglia"
-      onChange={value => console.log('changed', value)}
-      sync={true}
-      value={'12:33'}
-    />,
-    <NumPad.Time
-      key="time-2"
-      theme="blackAndWhite"
-      sync={true}
-      onChange={value => console.log('changed', value)}
-    />,
-    <LoremIpsum key="lorem" />,
-  ])
-  .add('Numpad date', () => [
-    <NumPad.Date
-      key="date-1"
-      placeholder="D.M.Y"
-      dateFormat="DD.MM.YYYY"
-      label="Data di nascita"
-      onChange={value => console.log('changed', value)}
-      value={'28.06.1986'}
-    />,
-    <LoremIpsum key="lorem" />,
-  ])
-  .add('Numpad date time', () => [
-    <NumPad.DateTime
-      key="date-1"
-      label="Data e ora"
-      onChange={value => console.log('changed', value)}
-    />,
-    <NumPad.DateTime
-      key="date-2"
-      dateFormat="DD.MM.YYYY"
-      onChange={value => console.log('changed', value)}
-      value={'28.06.1986 10:00'}
-    />,
-    <LoremIpsum key="lorem" />,
-  ])
-  .add('Styled component', () => {
-    const StyledNumber = styled(NumPad.Number)`
-      color: green;
-      button {
-        color: red;
-      }
-      .numpad-input-value {
-        input {
-          border: 2px solid #333;
-        }
-        button {
-          color: navy;
-        }
-      }
-    `;
+const oddValidator = value =>
+  parseInt(value, 10) > 0 && parseInt(value, 10) % 2 !== 0 && parseFloat(value) % 1 === 0;
+
+storiesOf('Number', module)
+  .addDecorator(withKnobs)
+  .add('default', () => (
+    <NumPad.Number onChange={action('onChange')} position="startBottomLeft" label="Number" />
+  ))
+  .add('initial value', () => {
+    const value = number('Default value', 70, { range: true, min: 0, max: 90, step: 5 });
     return (
-      <StyledNumber
-        key="number-1"
-        onChange={value => {
-          console.log('value', value);
-        }}
-        sync={true}
-        label="Restilizzato"
-      >
-        <input type="text" />
-      </StyledNumber>
+      <NumPad.Number
+        onChange={action('onChange')}
+        position="startBottomLeft"
+        label="Number"
+        value={value}
+      />
+    );
+  })
+  .add('positive number', () => (
+    <NumPad.Number
+      onChange={action('onChange')}
+      value=""
+      position="startBottomLeft"
+      label="Number"
+      decimal
+      negative={false}
+    />
+  ))
+  .add('positive integer', () => (
+    <NumPad.Number
+      decimal={false}
+      negative={false}
+      onChange={action('onChange')}
+      value=""
+      position="startBottomLeft"
+      label="Number"
+    />
+  ))
+  .add('positive & negative number', () => (
+    <NumPad.Number
+      onChange={action('onChange')}
+      value=""
+      position="startBottomLeft"
+      label="Number"
+      decimal
+      negative
+    />
+  ))
+  .add('positive & negazive integer', () => (
+    <NumPad.Number
+      decimal={false}
+      onChange={action('onChange')}
+      value=""
+      position="startBottomLeft"
+      label="Number"
+    />
+  ))
+  .add('configure decimals allowed', () => {
+    const decimals = number('Decimals', 2);
+    return (
+      <NumPad.Number
+        onChange={action('onChange')}
+        value=""
+        position="startBottomLeft"
+        label="Number"
+        decimal={2}
+      />
+    );
+  })
+  .add('odd numbers with custom validator', () => (
+    <NumPad.Number
+      keyValidator={oddValidator}
+      onChange={action('onChange')}
+      value=""
+      position="startBottomLeft"
+      label="Number"
+    />
+  ))
+  .add('custom input field', () => (
+    <NumPad.Number onChange={action('onChange')} value="5" position="startBottomLeft">
+      <input type="text" />
+      <button>culo</button>
+    </NumPad.Number>
+  ))
+  .add('testing numbers', () => {
+    const story = (
+      <NumPad.Number
+        onChange={action('onChange')}
+        value=""
+        position="startBottomLeft"
+        label="Number"
+      />
+    );
+    specs(() =>
+      describe('Check text', () => {
+        it('Should have the Number label', () => {
+          const wrapper = mount(story);
+          expect(wrapper.text()).equal('Number');
+        });
+      })
+    );
+    return story;
+  });
+
+storiesOf('Date Time Editor', module)
+  .add('time', () => (
+    <NumPad.DateTime
+      dateFormat="HH:mm"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      placeholder="HH:mm"
+      sync
+    />
+  ))
+  .add('time with default', () => {
+    const formatString = text('format string', 'HH:mm');
+    const value = text('initial value', '21:45');
+    return (
+      <NumPad.DateTime
+        dateFormat={formatString}
+        onChange={action('onChange')}
+        position="startBottomLeft"
+        value={value}
+        placeholder={formatString}
+      />
+    );
+  })
+  .add('Datetime', () => (
+    <NumPad.DateTime
+      dateFormat="DD-MM-YYYY HH:mm"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      placeholder="DD-MM-YYYY HH : mm"
+    />
+  ))
+  .add('Datetime date format', () => {
+    const dateFormat = text('Date format', 'DD.MM.YYYY HH:mm');
+    return (
+      <NumPad.DateTime
+        dateFormat={dateFormat}
+        onChange={action('onChange')}
+        position="startBottomLeft"
+        placeholder={dateFormat}
+      />
     );
   });
-storiesOf('Calendar', module)
-  .add('Date US', () => [
+
+storiesOf('Calendar Editor', module)
+  .add('default', () => (
     <NumPad.Calendar
-      key="numpad-date"
-      onChange={value => console.log('changed', value)}
-      label={'Birthdate'}
-      locale="en"
-      dateFormat="MM/DD/YYYY"
+      dateFormat="DD MMMM YYYY"
+      onChange={action('onChange')}
+      locale="it"
+      placeholder="DD-MM-YYYY"
+    />
+  ))
+  .add('initial value', () => (
+    <NumPad.Calendar
+      dateFormat="DD-MM-YYYY"
+      onChange={action('onChange')}
       position="startBottomLeft"
-      min={'01/20/2018'}
-      max={'01/30/2018'}
-    >
-      <input type="text" style={{ boder: '2px solid red', width: '300px' }} />
-    </NumPad.Calendar>,
-    <LoremIpsum key="lorem" />,
-  ])
-  .add('Date CH-IT', () => (
-    <NumPad.Calendar
-      label="data in italiano"
-      dateFormat={'DD.MM.YYYY'}
+      value="29-12-1978"
+      placeholder="DD-MM-YYYY"
+    />
+  ));
+
+storiesOf('Appointment Editor', module)
+  .add('default', () => (
+    <NumPad.Appointment
+      dates={appointmentDates}
+      dateFormat="DD-MM-YYYY"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      placeholder="DD-MM-YYYY"
+    />
+  ))
+  .add('fullscreen', () => (
+    <NumPad.Appointment
+      dates={appointmentDates}
+      dateFormat="DD-MM-YYYY"
+      onChange={action('onChange')}
       position="fullscreen"
-      locale={'it'}
-      onChange={value => console.log('value', value)}
-    />
-  ))
-  .add('Inside modal', () => (
-    <Modal>
-      <h4>Test component inside a modal</h4>
-      <NumPad.Number
-        style={{ fontSize: '10px' }}
-        key="number-1"
-        placeholder="test"
-        theme="orange"
-        onChange={value => {
-          console.log('value', value);
-        }}
-        position="startBottomLeft"
-        label="Totale"
-        value={10}
-      >
-        <input type="text" placeholder="test" />
-        <Button />
-      </NumPad.Number>
-      <hr />
-      <NumPad.Time
-        key="time-2"
-        theme="blackAndWhite"
-        onChange={value => console.log('changed', value)}
-      />
-      <hr />
-      <NumPad.Calendar
-        onChange={value => console.log('changed', value)}
-        label={'Data di nascita'}
-        locale="it"
-        dateFormat="DD.MM.YYYY"
-        value={'28.06.1986'}
-      />
-      <hr />
-      <NumPad.Calendar
-        onChange={value => console.log('changed', value)}
-        label={'Markers'}
-        locale="it"
-        dateFormat="DD.MM.YYYY"
-        markers={['01.03.2018', '06.03.2018']}
-      />
-    </Modal>
-  ));
-
-storiesOf('Appointment', module)
-  .add('Events', () => (
-    <NumPad.Appointment
-      dateFormat={'DD.MM.YYYY'}
-      dates={appointmentDates}
-      locale={'it'}
-      value={'20.04.2018 10:00'}
-      position={'startBottomLeft'}
-      onChange={value => console.log('value', value)}
-    />
-  ))
-  .add('Events fullscreen', () => (
-    <NumPad.Appointment
-      dateFormat={'DD.MM.YYYY'}
-      position={'fullscreen'}
-      dates={appointmentDates}
-      locale={'it'}
-      onChange={value => console.log('value', value)}
+      locale="it"
+      placeholder="DD-MM-YYYY"
     />
   ));
 
-class Button extends React.Component {
-  render() {
-    console.log('props', this.props);
-    return <button {...this.props}>click me</button>;
-  }
-}
+storiesOf('Modal', module).add('Inside modal', () => (
+  <Modal>
+    <h4>Test component inside a modal</h4>
 
-class ChangeProps extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { value: 1 };
-  }
-  render() {
-    return (
-      <div>
-        <button
-          onClick={() =>
-            this.setState({
-              value: Math.floor(Math.random() * Math.floor(100)),
-            })
-          }
-        >
-          Gen new value
-        </button>
-        <div>
-          {React.Children.map(this.props.children, child =>
-            React.cloneElement(child, { value: this.state.value })
-          )}
-        </div>
-      </div>
-    );
-  }
-}
+    <NumPad.Number
+      style={{ fontSize: '10px' }}
+      key="number-1"
+      placeholder="test"
+      theme="orange"
+      onChange={action('selected value')}
+      position="startBottomLeft"
+      label="Totale"
+      value={10}
+    />
+  </Modal>
+));
+
+storiesOf('Calendar Editor formats', module)
+  .add('DD-MM-YYYY', () => (
+    <NumPad.DateTime
+      dateFormat="DD-MM-YYYY"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      locale="it"
+      placeholder="DD-MM-YYYY"
+    />
+  ))
+  .add('MM-DD-YYYY', () => (
+    <NumPad.DateTime
+      dateFormat="MM-DD-YYYY"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      locale="it"
+      placeholder="MM-DD-YYYY"
+    />
+  ))
+  .add('YYYY-MM-DD', () => (
+    <NumPad.DateTime
+      dateFormat="YYYY-MM-DD"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      locale="it"
+      placeholder="YYYY-MM-DD"
+    />
+  ))
+  .add('DD**YYYY', () => (
+    <NumPad.DateTime
+      dateFormat="DD*MMM*YYYY"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      locale="it"
+      placeholder="DD*MMM*YYYY"
+    />
+  ));

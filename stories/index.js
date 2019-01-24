@@ -41,13 +41,13 @@ storiesOf('Number', module)
       position="startBottomLeft"
       label="Number"
       decimal
-      sign={false}
+      negative={false}
     />
   ))
   .add('positive integer', () => (
     <NumberEditor
       decimal={false}
-      sign={false}
+      negative={false}
       onChange={action('onChange')}
       value=""
       position="startBottomLeft"
@@ -61,7 +61,7 @@ storiesOf('Number', module)
       position="startBottomLeft"
       label="Number"
       decimal
-      sign
+      negative
     />
   ))
   .add('positive & negazive integer', () => (

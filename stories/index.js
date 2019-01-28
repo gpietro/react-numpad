@@ -179,6 +179,16 @@ storiesOf('Calendar Editor', module)
       value="29-12-1978"
       placeholder="DD-MM-YYYY"
     />
+  ))
+  .add('time format', () => (
+    <NumPad.Calendar
+      dateFormat="DD-MM-YYYY"
+      timeFormat=" HH:mm"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      value="29-12-1978 10:00"
+      placeholder="DD-MM-YYYY"
+    />
   ));
 
 storiesOf('Appointment Editor', module)

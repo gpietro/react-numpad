@@ -180,7 +180,7 @@ storiesOf('Calendar Editor', module)
       placeholder="DD-MM-YYYY"
     />
   ))
-  .add('time format', () => (
+  .add('Calendar with time picker', () => (
     <NumPad.Calendar
       dateFormat="DD-MM-YYYY"
       timeFormat=" HH:mm"

@@ -7,7 +7,7 @@
 [![npm version](https://badge.fury.io/js/react-numpad.svg)](https://badge.fury.io/js/react-numpad)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
 
-> **v4**: API and components are changed.
+> **Version > 4.0.0**: API and components are changed.
 
 A numpad for number, date and time, built with and for React.
 It's written with the extensibility in mind. The idea of this project is to cover the majority of input types in a form.
@@ -47,7 +47,7 @@ React-NumPad is built based on a "main" component (NumPad.js). Following the hig
 | `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
 | `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
 
-> **v4**: is possible to override the following component's functions
+> **Version > 4.0.0**: is possible to override the following component's functions
 
 | Property       | Type       | Default | Description                              |
 | :------------- | :--------- | :------ | :--------------------------------------- |
@@ -59,7 +59,7 @@ React-NumPad is built based on a "main" component (NumPad.js). Following the hig
 
 Input field for numeric value.
 
-> **v4**: the components PositiveNumber, IntegerNumber, PositiveIntegerNumber are replaced with the props **decimal** and **negative**.
+> **Version > 4.0.0**: the components PositiveNumber, IntegerNumber, PositiveIntegerNumber are replaced with the props **decimal** and **negative**.
 
 | Property   | Type                  | Default  | Description                                                                   |
 | :--------- | :-------------------- | :------- | :---------------------------------------------------------------------------- |
@@ -80,7 +80,7 @@ Input field for numeric value.
 
 Input field for date and time format.
 
-> **v4**: the input layout is now based on the date format, date time format or only time format property. Components Date and Time have been removed.
+> **Version > 4.0.0**: the input layout is now based on the date format, date time format or only time format property. Components Date and Time have been removed.
 
 | Property     | Type     | Default          | Description                                                                                    |
 | :----------- | :------- | :--------------- | :--------------------------------------------------------------------------------------------- |
@@ -124,7 +124,7 @@ Calendar input field.
 />
 ```
 
-> **> v4.1.0**
+> **Version > 4.1.0**
 
 #### NumPad.Calendar with Times Picker ( can pick only hours for now )
 

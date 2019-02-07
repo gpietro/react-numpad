@@ -124,6 +124,14 @@ Calendar input field.
 />
 ```
 
+> **> v4.1.0**
+
+#### NumPad.Calendar with Times Picker ( can pick only hours for now )
+
+| Property     | Type     | Default            | Description                               |
+| :----------- | :------- | :----------------- | :---------------------------------------- |
+| `dateFormat` | `string` | `MM/DD/YYYY HH:mm` | specify a different date format and time. |
+
 ### NumPad.Appointment
 
 Available date time appointments picker.

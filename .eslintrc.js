@@ -1,5 +1,8 @@
 module.exports = {
   parser: 'babel-eslint',
+  "plugins": [
+    "react-hooks"
+  ],
   extends: [
     'airbnb',
     'prettier',
@@ -15,5 +18,6 @@ module.exports = {
   },
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    "react-hooks/rules-of-hooks": "error"
   },
 };

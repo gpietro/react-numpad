@@ -30,6 +30,7 @@ storiesOf('Number', module)
         position="startBottomLeft"
         label="Number"
         value={value}
+        sync
       />
     );
   })
@@ -176,7 +177,7 @@ storiesOf('Calendar Editor', module)
       dateFormat="DD-MM-YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
-      value="29-12-1978"
+      defaultValue="29-12-1978"
       placeholder="DD-MM-YYYY"
     />
   ))

@@ -214,13 +214,28 @@ storiesOf('Appointment Editor', module)
 
 storiesOf('Modal', module).add('Inside modal', () => (
   <Modal>
-    <h4>Test component inside a modal</h4>
-
+    <h4>Test component inside a modal with custom theme</h4>
     <NumPad.Number
       style={{ fontSize: '10px' }}
       key="number-1"
       placeholder="test"
-      theme="orange"
+      theme={{
+        header: {
+          primaryColor: 'red',
+          secondaryColor: 'yellow',
+          highlightColor: '#FFC107',
+          backgroundColor: '#607D8B',
+        },
+        body: {
+          primaryColor: '#263238',
+          secondaryColor: '#32a5f2',
+          highlightColor: '#FFC107',
+          backgroundColor: '#f9f9f9',
+        },
+        panel: {
+          backgroundColor: '#CFD8DC',
+        },
+      }}
       onChange={action('selected value')}
       position="startBottomLeft"
       label="Totale"

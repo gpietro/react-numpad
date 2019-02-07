@@ -4,10 +4,6 @@ import { Button } from '@material-ui/core';
 import Modal from './Modal';
 
 class ExampleModal extends Component {
-  propTypes = {
-    children: PropTypes.element.isRequired,
-  };
-
   constructor(props) {
     super(props);
     this.state = { showModal: false };
@@ -35,4 +31,7 @@ class ExampleModal extends Component {
   }
 }
 
+ExampleModal.propTypes = {
+  children: PropTypes.array.isRequired,
+};
 export default ExampleModal;

@@ -25,12 +25,14 @@ storiesOf('Number', module)
   .add('initial value', () => {
     const value = number('Default value', 70, { range: true, min: 0, max: 90, step: 5 });
     return (
-      <NumPad.Number
-        onChange={action('onChange')}
-        position="startBottomLeft"
-        label="Number"
-        value={value}
-      />
+      <div style={{marginLeft: '100px'}}>
+        <NumPad.KeyPadEditor
+          onChange={action('onChange')}
+          position="startBottomLeft"
+          label="Number"
+          value={value}
+        />
+      </div>      
     );
   })
   .add('positive number', () => (

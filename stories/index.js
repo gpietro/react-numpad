@@ -8,7 +8,7 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
 
-import NumPad from '../lib';
+import NumPad, {KeyPad} from '../lib';
 import Modal from './DemoModal';
 import { appointmentDates } from './data';
 
@@ -26,11 +26,13 @@ storiesOf('Number', module)
     const value = number('Default value', 70, { range: true, min: 0, max: 90, step: 5 });
     return (
       <div style={{marginLeft: '100px'}}>
-        <NumPad.KeyPadEditor
+        <KeyPad.Number
           onChange={action('onChange')}
           position="startBottomLeft"
           label="Number"
           value={value}
+          negative={false}
+          decimal={2}
         />
       </div>      
     );

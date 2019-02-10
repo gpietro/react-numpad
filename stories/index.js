@@ -28,6 +28,7 @@ storiesOf('Number', module)
       <div style={{marginLeft: '100px'}}>
         <KeyPad.Number
           onChange={action('onChange')}
+          cancel={() => console.log('cancel value')}
           position="startBottomLeft"
           label="Number"
           value={value}

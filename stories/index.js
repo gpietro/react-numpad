@@ -7,12 +7,19 @@ import { specs, describe, it } from 'storybook-addon-specifications';
 import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
-
-import NumPad, {KeyPad} from '../lib';
+import styled from 'styled-components';
+import NumPad, { KeyPad } from '../lib';
 import Modal from './DemoModal';
 import { appointmentDates } from './data';
 
 configure({ adapter: new Adapter() });
+
+const DisplayContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+
 
 const oddValidator = value =>
   parseInt(value, 10) > 0 && parseInt(value, 10) % 2 !== 0 && parseFloat(value) % 1 === 0;
@@ -20,13 +27,20 @@ const oddValidator = value =>
 storiesOf('Number', module)
   .addDecorator(withKnobs)
   .add('default', () => (
-    <NumPad.Number onChange={action('onChange')} position="startBottomLeft" label="Number" />
+    <DisplayContainer>
+      <div>
+        <NumPad.Number onChange={action('onChange')} position="startBottomLeft" label="Number" />
+      </div>      
+      <KeyPad.Number onChange={action('onChange')} position="startBottomLeft" label="Number" />
+    </DisplayContainer>
+    
   ))
   .add('initial value', () => {
     const value = number('Default value', 70, { range: true, min: 0, max: 90, step: 5 });
     return (
-      <div style={{marginLeft: '100px'}}>
-        <KeyPad.Number
+      <DisplayContainer>
+      <div>
+        <NumPad.Number
           onChange={action('onChange')}
           cancel={() => console.log('cancel value')}
           position="startBottomLeft"
@@ -36,6 +50,14 @@ storiesOf('Number', module)
           decimal={2}
         />
       </div>      
+      <KeyPad.Number onChange={action('onChange')}
+      cancel={() => console.log('cancel value')}
+      position="startBottomLeft"
+      label="Number"
+      value={value}
+      negative={false}
+      decimal={2}/>
+      </DisplayContainer>
     );
   })
   .add('positive number', () => (
@@ -126,13 +148,25 @@ storiesOf('Number', module)
 
 storiesOf('Date Time Editor', module)
   .add('time', () => (
-    <NumPad.DateTime
-      dateFormat="HH:mm"
-      onChange={action('onChange')}
-      position="startBottomLeft"
-      placeholder="HH:mm"
-      sync
-    />
+    <DisplayContainer>
+      <div>
+        <NumPad.DateTime
+          dateFormat="HH:mm"
+          onChange={action('onChange')}
+          position="startBottomLeft"
+          placeholder="HH:mm"
+          sync
+        />
+      </div>
+      <KeyPad.DateTime
+        dateFormat="HH:mm"
+        onChange={action('onChange')}
+        position="startBottomLeft"
+        placeholder="HH:mm"
+        sync
+      />
+    </DisplayContainer>
+    
   ))
   .add('time with default', () => {
     const formatString = text('format string', 'HH:mm');
@@ -169,12 +203,22 @@ storiesOf('Date Time Editor', module)
 
 storiesOf('Calendar Editor', module)
   .add('default', () => (
+    <DisplayContainer>
+    <div>
     <NumPad.Calendar
       dateFormat="DD MMMM YYYY"
       onChange={action('onChange')}
       locale="it"
       placeholder="DD-MM-YYYY"
     />
+    </div>
+    <KeyPad.Calendar
+      dateFormat="DD MMMM YYYY"
+      onChange={action('onChange')}
+      locale="it"
+      placeholder="DD-MM-YYYY"
+    />
+    </DisplayContainer>
   ))
   .add('initial value', () => (
     <NumPad.Calendar
@@ -198,13 +242,26 @@ storiesOf('Calendar Editor', module)
 
 storiesOf('Appointment Editor', module)
   .add('default', () => (
-    <NumPad.Appointment
+    <DisplayContainer><div>
+      <NumPad.Appointment
       dates={appointmentDates}
       dateFormat="DD-MM-YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
       placeholder="DD-MM-YYYY"
     />
+      </div>
+      
+    <KeyPad.Appointment
+      dates={appointmentDates}
+      dateFormat="DD-MM-YYYY"
+      onChange={action('onChange')}
+      position="startBottomLeft"
+      placeholder="DD-MM-YYYY"
+    />
+    
+    </DisplayContainer>  
+    
   ))
   .add('fullscreen', () => (
     <NumPad.Appointment

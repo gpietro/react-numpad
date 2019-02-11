@@ -19,8 +19,6 @@ const DisplayContainer = styled.div`
   justify-content: space-between;
 `;
 
-
-
 const oddValidator = value =>
   parseInt(value, 10) > 0 && parseInt(value, 10) % 2 !== 0 && parseFloat(value) % 1 === 0;
 
@@ -30,17 +28,26 @@ storiesOf('Number', module)
     <DisplayContainer>
       <div>
         <NumPad.Number onChange={action('onChange')} position="startBottomLeft" label="Number" />
-      </div>      
+      </div>
       <KeyPad.Number onChange={action('onChange')} position="startBottomLeft" label="Number" />
     </DisplayContainer>
-    
   ))
   .add('initial value', () => {
     const value = number('Default value', 70, { range: true, min: 0, max: 90, step: 5 });
     return (
       <DisplayContainer>
-      <div>
-        <NumPad.Number
+        <div>
+          <NumPad.Number
+            onChange={action('onChange')}
+            cancel={() => console.log('cancel value')}
+            position="startBottomLeft"
+            label="Number"
+            value={value}
+            negative={false}
+            decimal={2}
+          />
+        </div>
+        <KeyPad.Number
           onChange={action('onChange')}
           cancel={() => console.log('cancel value')}
           position="startBottomLeft"
@@ -49,26 +56,11 @@ storiesOf('Number', module)
           negative={false}
           decimal={2}
         />
-      </div>      
-      <KeyPad.Number onChange={action('onChange')}
-      cancel={() => console.log('cancel value')}
-      position="startBottomLeft"
-      label="Number"
-      value={value}
-      negative={false}
-      decimal={2}/>
       </DisplayContainer>
     );
   })
   .add('positive number', () => (
-    <NumPad.Number
-      onChange={action('onChange')}
-      value=""
-      position="startBottomLeft"
-      label="Number"
-      decimal
-      negative={false}
-    />
+    <NumPad.Number onChange={action('onChange')} value="" label="Number" decimal negative={false} />
   ))
   .add('positive integer', () => (
     <NumPad.Number
@@ -166,7 +158,6 @@ storiesOf('Date Time Editor', module)
         sync
       />
     </DisplayContainer>
-    
   ))
   .add('time with default', () => {
     const formatString = text('format string', 'HH:mm');
@@ -204,20 +195,20 @@ storiesOf('Date Time Editor', module)
 storiesOf('Calendar Editor', module)
   .add('default', () => (
     <DisplayContainer>
-    <div>
-    <NumPad.Calendar
-      dateFormat="DD MMMM YYYY"
-      onChange={action('onChange')}
-      locale="it"
-      placeholder="DD-MM-YYYY"
-    />
-    </div>
-    <KeyPad.Calendar
-      dateFormat="DD MMMM YYYY"
-      onChange={action('onChange')}
-      locale="it"
-      placeholder="DD-MM-YYYY"
-    />
+      <div>
+        <NumPad.Calendar
+          dateFormat="DD MMMM YYYY"
+          onChange={action('onChange')}
+          locale="it"
+          placeholder="DD-MM-YYYY"
+        />
+      </div>
+      <KeyPad.Calendar
+        dateFormat="DD MMMM YYYY"
+        onChange={action('onChange')}
+        locale="it"
+        placeholder="DD-MM-YYYY"
+      />
     </DisplayContainer>
   ))
   .add('initial value', () => (
@@ -225,7 +216,7 @@ storiesOf('Calendar Editor', module)
       dateFormat="DD-MM-YYYY"
       onChange={action('onChange')}
       position="startBottomLeft"
-      value="29-12-1978"
+      defaultValue="29-12-1978"
       placeholder="DD-MM-YYYY"
     />
   ))
@@ -234,7 +225,6 @@ storiesOf('Calendar Editor', module)
       dateFormat="DD-MM-YYYY"
       timeFormat=" HH:mm"
       onChange={action('onChange')}
-      position="startBottomLeft"
       value="29-12-1978 10:00"
       placeholder="DD-MM-YYYY"
     />
@@ -242,26 +232,25 @@ storiesOf('Calendar Editor', module)
 
 storiesOf('Appointment Editor', module)
   .add('default', () => (
-    <DisplayContainer><div>
-      <NumPad.Appointment
-      dates={appointmentDates}
-      dateFormat="DD-MM-YYYY"
-      onChange={action('onChange')}
-      position="startBottomLeft"
-      placeholder="DD-MM-YYYY"
-    />
+    <DisplayContainer>
+      <div>
+        <NumPad.Appointment
+          dates={appointmentDates}
+          dateFormat="DD-MM-YYYY"
+          onChange={action('onChange')}
+          position="startBottomLeft"
+          placeholder="DD-MM-YYYY"
+        />
       </div>
-      
-    <KeyPad.Appointment
-      dates={appointmentDates}
-      dateFormat="DD-MM-YYYY"
-      onChange={action('onChange')}
-      position="startBottomLeft"
-      placeholder="DD-MM-YYYY"
-    />
-    
-    </DisplayContainer>  
-    
+
+      <KeyPad.Appointment
+        dates={appointmentDates}
+        dateFormat="DD-MM-YYYY"
+        onChange={action('onChange')}
+        position="startBottomLeft"
+        placeholder="DD-MM-YYYY"
+      />
+    </DisplayContainer>
   ))
   .add('fullscreen', () => (
     <NumPad.Appointment

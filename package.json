@@ -75,8 +75,8 @@
     "webpack-cli": "^3.2.3"
   },
   "peerDependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.2",

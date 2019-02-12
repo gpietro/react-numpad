@@ -48,11 +48,11 @@ React-NumPad is built based on a "main" component (NumPad.js). Following the hig
 
 > **Version > 4.0.0**: is possible to override the following component's functions
 
-| Property       | Type       | Default | Description                              |
-| :------------- | :--------- | :------ | :--------------------------------------- |
-| `validation`   | `function` |         | Validates the input value                |
-| `keyValidator` | `function` |         | Validates the enabled keys while typing  |
-| `displayRule`  | `function` |         | Format the output value                  |
+| Property                | Type       | Default | Description                              |
+| :---------------------- | :--------- | :------ | :--------------------------------------- |
+| `validation`            | `function` |         | Validates the input value                |
+| `(Number) keyValidator` | `function` |         | Validates the enabled keys while typing  |
+| `displayRule`           | `function` |         | Format the output value                  |
 
 ### NumPad.Number
 

@@ -52,7 +52,7 @@ storiesOf('Number', module)
             decimal={2}
           />
         </div>
-        <Number
+        <NumPad.Number
           onChange={action('onChange')}
           cancel={() => console.log('cancel value')}
           position="startBottomLeft"
@@ -60,7 +60,6 @@ storiesOf('Number', module)
           value={value}
           negative={false}
           decimal={2}
-          inline
         />
       </DisplayContainer>
     );

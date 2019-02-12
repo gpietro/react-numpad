@@ -8,7 +8,7 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
 import styled from 'styled-components';
-import NumPad, { KeyPad } from '../lib';
+import NumPad from '../lib';
 import Modal from './DemoModal';
 import { appointmentDates } from './data';
 
@@ -29,7 +29,12 @@ storiesOf('Number', module)
       <div>
         <NumPad.Number onChange={action('onChange')} position="startBottomLeft" label="Number" />
       </div>
-      <KeyPad.Number onChange={action('onChange')} position="startBottomLeft" label="Number" />
+      <NumPad.Number
+        onChange={action('onChange')}
+        position="startBottomLeft"
+        label="Number"
+        inline
+      />
     </DisplayContainer>
   ))
   .add('initial value', () => {
@@ -47,7 +52,7 @@ storiesOf('Number', module)
             decimal={2}
           />
         </div>
-        <KeyPad.Number
+        <Number
           onChange={action('onChange')}
           cancel={() => console.log('cancel value')}
           position="startBottomLeft"
@@ -55,6 +60,7 @@ storiesOf('Number', module)
           value={value}
           negative={false}
           decimal={2}
+          inline
         />
       </DisplayContainer>
     );
@@ -150,12 +156,13 @@ storiesOf('Date Time Editor', module)
           sync
         />
       </div>
-      <KeyPad.DateTime
+      <NumPad.DateTime
         dateFormat="HH:mm"
         onChange={action('onChange')}
         position="startBottomLeft"
         placeholder="HH:mm"
         sync
+        inline
       />
     </DisplayContainer>
   ))
@@ -203,11 +210,12 @@ storiesOf('Calendar Editor', module)
           placeholder="DD-MM-YYYY"
         />
       </div>
-      <KeyPad.Calendar
+      <NumPad.Calendar
         dateFormat="DD MMMM YYYY"
         onChange={action('onChange')}
         locale="it"
         placeholder="DD-MM-YYYY"
+        inline
       />
     </DisplayContainer>
   ))
@@ -243,12 +251,13 @@ storiesOf('Appointment Editor', module)
         />
       </div>
 
-      <KeyPad.Appointment
+      <NumPad.Appointment
         dates={appointmentDates}
         dateFormat="DD-MM-YYYY"
         onChange={action('onChange')}
         position="startBottomLeft"
         placeholder="DD-MM-YYYY"
+        inline
       />
     </DisplayContainer>
   ))

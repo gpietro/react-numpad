@@ -44,6 +44,7 @@ React-NumPad is built based on a "main" component (NumPad.js). Following the hig
 | `theme`       | `string` or `object` | `numpad`     | string as the name of the theme or object as custom styles.                                                                        |
 | `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
 | `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
+| `inline`      | `boolean`            | false        | show the component inline always visible without input field.                                                                      |
 
 > **Version > 4.0.0**: is possible to override the following component's functions
 

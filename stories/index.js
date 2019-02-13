@@ -229,29 +229,23 @@ storiesOf('Calendar Editor', module)
           locale="it"
           placeholder="DD-MM-YYYY"
         />
-      </div>
-      {/* <NumPad.Calendar
-        dateFormat="DD MMMM YYYY"
-        onChange={action('onChange')}
-        locale="it"
-        placeholder="DD-MM-YYYY"
-        inline
-      /> */}
+      </div>      
     </DisplayContainer>
   ))
   .add('initial value', () => {
     const Demo = () => {
-      const [value, setValue] = useState(value)
+      const [value, setValue] = useState()
       return (
         <NumPad.Calendar
           dateFormat="DD-MM-YYYY"
-          onChange={setValue(value)}
+          onChange={value => setValue(value)}
           position="startBottomLeft"
           value={value}          
           placeholder="DD-MM-YYYY"
         />
       )
     }
+    return <Demo />
   })
   .add('Calendar with time picker', () => (
     <NumPad.Calendar

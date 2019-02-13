@@ -38,10 +38,22 @@ storiesOf('Number', module)
     </DisplayContainer>
   ))
   .add('initial value', () => {
-    const value = number('Default value', 70, { range: true, min: 0, max: 90, step: 5 });
-    return (
-      <DisplayContainer>
-        <div>
+    const Demo = () => {
+      const [value, setValue] = useState(number('Default value', 70, { range: true, min: 0, max: 90, step: 5 }));
+    
+      return (
+        <DisplayContainer>
+          <div>
+            <NumPad.Number
+              onChange={(value) => setValue(value)}
+              cancel={() => console.log('cancel value')}
+              position="startBottomLeft"
+              label="Number"
+              value={value}
+              negative={false}
+              decimal={2}
+            />
+          </div>
           <NumPad.Number
             onChange={action('onChange')}
             cancel={() => console.log('cancel value')}
@@ -51,21 +63,15 @@ storiesOf('Number', module)
             negative={false}
             decimal={2}
           />
-        </div>
-        <NumPad.Number
-          onChange={action('onChange')}
-          cancel={() => console.log('cancel value')}
-          position="startBottomLeft"
-          label="Number"
-          value={value}
-          negative={false}
-          decimal={2}
-        />
-      </DisplayContainer>
-    );
+        </DisplayContainer>
+      );
+    }
+    
+    return <Demo />
+    
   })
   .add('positive number', () => (
-    <NumPad.Number onChange={action('onChange')} value="" label="Number" decimal negative={false} />
+    <NumPad.Number onChange={action('onChange')} value="" label="Number" decimal negative={false} position={'center'}/>
   ))
   .add('positive integer', () => (
     <NumPad.Number
@@ -73,7 +79,7 @@ storiesOf('Number', module)
       negative={false}
       onChange={action('onChange')}
       value=""
-      position="startBottomLeft"
+      position="flex-start"
       label="Number"
     />
   ))
@@ -224,24 +230,29 @@ storiesOf('Calendar Editor', module)
           placeholder="DD-MM-YYYY"
         />
       </div>
-      <NumPad.Calendar
+      {/* <NumPad.Calendar
         dateFormat="DD MMMM YYYY"
         onChange={action('onChange')}
         locale="it"
         placeholder="DD-MM-YYYY"
         inline
-      />
+      /> */}
     </DisplayContainer>
   ))
-  .add('initial value', () => (
-    <NumPad.Calendar
-      dateFormat="DD-MM-YYYY"
-      onChange={action('onChange')}
-      position="startBottomLeft"
-      defaultValue="29-12-1978"
-      placeholder="DD-MM-YYYY"
-    />
-  ))
+  .add('initial value', () => {
+    const Demo = () => {
+      const [value, setValue] = useState(value)
+      return (
+        <NumPad.Calendar
+          dateFormat="DD-MM-YYYY"
+          onChange={setValue(value)}
+          position="startBottomLeft"
+          value={value}          
+          placeholder="DD-MM-YYYY"
+        />
+      )
+    }
+  })
   .add('Calendar with time picker', () => (
     <NumPad.Calendar
       dateFormat="DD-MM-YYYY"

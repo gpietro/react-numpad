@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
@@ -167,25 +167,40 @@ storiesOf('Date Time Editor', module)
   ))
   .add('time with default', () => {
     const formatString = text('format string', 'HH:mm');
-    const value = text('initial value', '21:45');
-    return (
-      <NumPad.DateTime
+    const Demo = () => {
+      const [value, setValue] = useState('21:45');
+
+      return <NumPad.DateTime
         dateFormat={formatString}
-        onChange={action('onChange')}
+        onChange={(newValue) => { console.log('update value', newValue); setValue(newValue)}}
         position="startBottomLeft"
         value={value}
         placeholder={formatString}
+        sync
       />
+    }
+    return (
+      <Demo />
     );
   })
-  .add('Datetime', () => (
-    <NumPad.DateTime
-      dateFormat="DD-MM-YYYY HH:mm"
-      onChange={action('onChange')}
-      position="startBottomLeft"
-      placeholder="DD-MM-YYYY HH : mm"
-    />
-  ))
+  .add('Datetime', () => {
+    const Demo = () => {
+      const [value, setValue] = useState();
+
+      return <NumPad.DateTime
+        dateFormat="DD-MM-YYYY HH:mm"
+        placeholder="DD-MM-YYYY HH : mm"        
+        onChange={(newValue) => { console.log('update value', newValue); setValue(newValue)}}
+        position="startBottomLeft"
+        value={value}
+        sync      
+      />
+    }
+    return (
+      <Demo />
+    );
+    
+    })
   .add('Datetime date format', () => {
     const dateFormat = text('Date format', 'DD.MM.YYYY HH:mm');
     return (

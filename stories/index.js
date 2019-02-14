@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, number } from '@storybook/addon-knobs';
@@ -22,6 +22,29 @@ const DisplayContainer = styled.div`
 const oddValidator = value =>
   parseInt(value, 10) > 0 && parseInt(value, 10) % 2 !== 0 && parseFloat(value) % 1 === 0;
 
+function StateValueTestComponent(props) {
+  const [value, setValue] = useState(props.value);
+
+  useEffect(() => {
+    setValue(props.value);
+  }, [props.value]);
+
+  return (
+    <NumPad.Number
+      onChange={v => {
+        console.log('on change', v);
+        setValue(v);
+      }}
+      cancel={() => console.log('cancel value')}
+      position="startBottomLeft"
+      label={`Number: Value(${value}) - Prop(${props.value}): `}
+      value={value}
+      negative={false}
+      decimal={2}
+    />
+  );
+}
+
 storiesOf('Number', module)
   .addDecorator(withKnobs)
   .add('default', () => (
@@ -37,15 +60,21 @@ storiesOf('Number', module)
       />
     </DisplayContainer>
   ))
+  .add('hooks and mutable props example', () => {
+    const value = number('Default value', 70, { range: true, min: 0, max: 90, step: 5 });
+    return <StateValueTestComponent value={value} />;
+  })
   .add('initial value', () => {
     const Demo = () => {
-      const [value, setValue] = useState(number('Default value', 70, { range: true, min: 0, max: 90, step: 5 }));
-    
+      const [value, setValue] = useState(
+        number('Default value', 70, { range: true, min: 0, max: 90, step: 5 })
+      );
+
       return (
         <DisplayContainer>
           <div>
             <NumPad.Number
-              onChange={(value) => setValue(value)}
+              onChange={value => setValue(value)}
               cancel={() => console.log('cancel value')}
               position="startBottomLeft"
               label="Number"
@@ -65,13 +94,19 @@ storiesOf('Number', module)
           />
         </DisplayContainer>
       );
-    }
-    
-    return <Demo />
-    
+    };
+
+    return <Demo />;
   })
   .add('positive number', () => (
-    <NumPad.Number onChange={action('onChange')} value="" label="Number" decimal negative={false} position={'center'}/>
+    <NumPad.Number
+      onChange={action('onChange')}
+      value=""
+      label="Number"
+      decimal
+      negative={false}
+      position="center"
+    />
   ))
   .add('positive integer', () => (
     <NumPad.Number
@@ -136,6 +171,7 @@ storiesOf('Number', module)
         value=""
         position="startBottomLeft"
         label="Number"
+        sync
       />
     );
     specs(() =>
@@ -171,42 +207,47 @@ storiesOf('Date Time Editor', module)
       />
     </DisplayContainer>
   ))
-  .add('time with default', () => {
+  .add('time with default → sync', () => {
     const formatString = text('format string', 'HH:mm');
     const Demo = () => {
       const [value, setValue] = useState('21:45');
 
-      return <NumPad.DateTime
-        dateFormat={formatString}
-        onChange={(newValue) => { console.log('update value', newValue); setValue(newValue)}}
-        position="startBottomLeft"
-        value={value}
-        placeholder={formatString}
-        sync
-      />
-    }
-    return (
-      <Demo />
-    );
+      return (
+        <NumPad.DateTime
+          dateFormat={formatString}
+          onChange={newValue => {
+            console.log('update value', newValue);
+            setValue(newValue);
+          }}
+          position="startBottomLeft"
+          value={value}
+          placeholder={formatString}
+          sync
+        />
+      );
+    };
+    return <Demo />;
   })
   .add('Datetime', () => {
     const Demo = () => {
       const [value, setValue] = useState();
 
-      return <NumPad.DateTime
-        dateFormat="DD-MM-YYYY HH:mm"
-        placeholder="DD-MM-YYYY HH : mm"        
-        onChange={(newValue) => { console.log('update value', newValue); setValue(newValue)}}
-        position="startBottomLeft"
-        value={value}
-        sync      
-      />
-    }
-    return (
-      <Demo />
-    );
-    
-    })
+      return (
+        <NumPad.DateTime
+          dateFormat="DD-MM-YYYY HH:mm"
+          placeholder="DD-MM-YYYY HH : mm"
+          onChange={newValue => {
+            console.log('update value', newValue);
+            setValue(newValue);
+          }}
+          position="startBottomLeft"
+          value={value}
+          sync
+        />
+      );
+    };
+    return <Demo />;
+  })
   .add('Datetime date format', () => {
     const dateFormat = text('Date format', 'DD.MM.YYYY HH:mm');
     return (
@@ -229,23 +270,23 @@ storiesOf('Calendar Editor', module)
           locale="it"
           placeholder="DD-MM-YYYY"
         />
-      </div>      
+      </div>
     </DisplayContainer>
   ))
   .add('initial value', () => {
     const Demo = () => {
-      const [value, setValue] = useState()
+      const [value, setValue] = useState();
       return (
         <NumPad.Calendar
           dateFormat="DD-MM-YYYY"
           onChange={value => setValue(value)}
           position="startBottomLeft"
-          value={value}          
+          value={value}
           placeholder="DD-MM-YYYY"
         />
-      )
-    }
-    return <Demo />
+      );
+    };
+    return <Demo />;
   })
   .add('Calendar with time picker', () => (
     <NumPad.Calendar

@@ -261,18 +261,25 @@ storiesOf('Date Time Editor', module)
   });
 
 storiesOf('Calendar Editor', module)
-  .add('default', () => (
+  .add('default', () => {
+    const Demo = () => {
+      const [value, setValue] = useState();
+
+      return (
     <DisplayContainer>
       <div>
         <NumPad.Calendar
           dateFormat="DD MMMM YYYY"
-          onChange={action('onChange')}
+          onChange={value => setValue(value)}
           locale="it"
-          placeholder="DD-MM-YYYY"
+          placeholder="DD MMMM YYYY"
+          value={value}
         />
       </div>
     </DisplayContainer>
-  ))
+  )}
+  return <Demo />
+})
   .add('initial value', () => {
     const Demo = () => {
       const [value, setValue] = useState();
@@ -288,15 +295,21 @@ storiesOf('Calendar Editor', module)
     };
     return <Demo />;
   })
-  .add('Calendar with time picker', () => (
-    <NumPad.Calendar
-      dateFormat="DD-MM-YYYY"
-      timeFormat=" HH:mm"
-      onChange={action('onChange')}
-      value="29-12-1978 10:00"
-      placeholder="DD-MM-YYYY"
-    />
-  ));
+  .add('Calendar with time picker', () => {
+    const Demo = () => {
+      const [value, setValue] = useState();
+      console.log('value', value)
+      return (
+        <NumPad.Calendar
+          dateFormat="DD-MM-YYYY"
+          timeFormat=" HH:mm"
+          onChange={setValue}
+          value="29-12-1978 10:00"
+          placeholder="date and time"
+          value={value}
+        />)}
+    return <Demo />
+      });
 
 storiesOf('Appointment Editor', module)
   .add('default', () => (

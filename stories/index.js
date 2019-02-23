@@ -86,7 +86,7 @@ storiesOf('Number', module)
           <NumPad.Number
             onChange={action('onChange')}
             cancel={() => console.log('cancel value')}
-            position="startBottomLeft"
+            position="startBottomRight"
             label="Number"
             value={value}
             negative={false}
@@ -261,18 +261,33 @@ storiesOf('Date Time Editor', module)
   });
 
 storiesOf('Calendar Editor', module)
-  .add('default', () => (
+  .add('default', () => {
+    const Demo = () => {
+      const [value, setValue] = useState();
+
+      return (
     <DisplayContainer>
       <div>
         <NumPad.Calendar
           dateFormat="DD MMMM YYYY"
-          onChange={action('onChange')}
+          onChange={value => setValue(value)}
           locale="it"
-          placeholder="DD-MM-YYYY"
+          placeholder="DD MMMM YYYY"
+          value={value}
         />
       </div>
     </DisplayContainer>
-  ))
+  )}
+  return <Demo />
+}).add('inline', () => (
+  <NumPad.Calendar
+          dateFormat="DD MMMM YYYY"
+          locale="it"
+          placeholder="DD MMMM YYYY"
+          position='fullscreen'
+          inline
+        />
+))
   .add('initial value', () => {
     const Demo = () => {
       const [value, setValue] = useState();
@@ -288,15 +303,21 @@ storiesOf('Calendar Editor', module)
     };
     return <Demo />;
   })
-  .add('Calendar with time picker', () => (
-    <NumPad.Calendar
-      dateFormat="DD-MM-YYYY"
-      timeFormat=" HH:mm"
-      onChange={action('onChange')}
-      value="29-12-1978 10:00"
-      placeholder="DD-MM-YYYY"
-    />
-  ));
+  .add('Calendar with time picker', () => {
+    const Demo = () => {
+      const [value, setValue] = useState();
+      console.log('value', value)
+      return (
+        <NumPad.Calendar
+          dateFormat="DD-MM-YYYY"
+          timeFormat=" HH:mm"
+          onChange={setValue}
+          value="29-12-1978 10:00"
+          placeholder="date and time"
+          value={value}
+        />)}
+    return <Demo />
+      });
 
 storiesOf('Appointment Editor', module)
   .add('default', () => (
@@ -311,15 +332,18 @@ storiesOf('Appointment Editor', module)
         />
       </div>
 
-      <NumPad.Appointment
+      
+    </DisplayContainer>
+  ))
+  .add('inline', () => (
+<NumPad.Appointment
         dates={appointmentDates}
         dateFormat="DD-MM-YYYY"
         onChange={action('onChange')}
-        position="startBottomLeft"
+        position="fullscreen"
         placeholder="DD-MM-YYYY"
         inline
-      />
-    </DisplayContainer>
+      />      
   ))
   .add('fullscreen', () => (
     <NumPad.Appointment
@@ -339,23 +363,6 @@ storiesOf('Modal', module).add('Inside modal', () => (
       style={{ fontSize: '10px' }}
       key="number-1"
       placeholder="test"
-      theme={{
-        header: {
-          primaryColor: 'red',
-          secondaryColor: 'yellow',
-          highlightColor: '#FFC107',
-          backgroundColor: '#607D8B',
-        },
-        body: {
-          primaryColor: '#263238',
-          secondaryColor: '#32a5f2',
-          highlightColor: '#FFC107',
-          backgroundColor: '#f9f9f9',
-        },
-        panel: {
-          backgroundColor: '#CFD8DC',
-        },
-      }}
       onChange={action('selected value')}
       position="startBottomLeft"
       label="Totale"

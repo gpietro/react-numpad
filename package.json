@@ -4,6 +4,7 @@
   "description": "Numpad react component, as number input or time input",
   "homepage": "https://gpietro.github.io/docs/",
   "main": "build/index.js",
+  "types": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/gpietro/react-numpad"
@@ -62,8 +63,8 @@
     "node-sass": "^4.11.0",
     "polished": "^2.3.3",
     "prettier": "^1.16.4",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "react-test-renderer": "^16.8.0",
     "sass-loader": "^7.1.0",
     "sinon": "^7.2.3",

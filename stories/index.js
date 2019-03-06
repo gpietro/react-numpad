@@ -339,23 +339,6 @@ storiesOf('Modal', module).add('Inside modal', () => (
       style={{ fontSize: '10px' }}
       key="number-1"
       placeholder="test"
-      theme={{
-        header: {
-          primaryColor: 'red',
-          secondaryColor: 'yellow',
-          highlightColor: '#FFC107',
-          backgroundColor: '#607D8B',
-        },
-        body: {
-          primaryColor: '#263238',
-          secondaryColor: '#32a5f2',
-          highlightColor: '#FFC107',
-          backgroundColor: '#f9f9f9',
-        },
-        panel: {
-          backgroundColor: '#CFD8DC',
-        },
-      }}
       onChange={action('selected value')}
       position="startBottomLeft"
       label="Totale"

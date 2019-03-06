@@ -266,28 +266,30 @@ storiesOf('Calendar Editor', module)
       const [value, setValue] = useState();
 
       return (
-    <DisplayContainer>
-      <div>
-        <NumPad.Calendar
-          dateFormat="DD MMMM YYYY"
-          onChange={value => setValue(value)}
-          locale="it"
-          placeholder="DD MMMM YYYY"
-          value={value}
-        />
-      </div>
-    </DisplayContainer>
-  )}
-  return <Demo />
-}).add('inline', () => (
-  <NumPad.Calendar
-          dateFormat="DD MMMM YYYY"
-          locale="it"
-          placeholder="DD MMMM YYYY"
-          position='fullscreen'
-          inline
-        />
-))
+        <DisplayContainer>
+          <div>
+            <NumPad.Calendar
+              dateFormat="DD MMMM YYYY"
+              onChange={value => setValue(value)}
+              locale="it"
+              placeholder="DD MMMM YYYY"
+              value={value}
+            />
+          </div>
+        </DisplayContainer>
+      );
+    };
+    return <Demo />;
+  })
+  .add('inline', () => (
+    <NumPad.Calendar
+      dateFormat="DD MMMM YYYY"
+      locale="it"
+      placeholder="DD MMMM YYYY"
+      position="fullscreen"
+      inline
+    />
+  ))
   .add('initial value', () => {
     const Demo = () => {
       const [value, setValue] = useState();
@@ -306,7 +308,7 @@ storiesOf('Calendar Editor', module)
   .add('Calendar with time picker', () => {
     const Demo = () => {
       const [value, setValue] = useState();
-      console.log('value', value)
+      console.log('value', value);
       return (
         <NumPad.Calendar
           dateFormat="DD-MM-YYYY"
@@ -315,9 +317,11 @@ storiesOf('Calendar Editor', module)
           value="29-12-1978 10:00"
           placeholder="date and time"
           value={value}
-        />)}
-    return <Demo />
-      });
+        />
+      );
+    };
+    return <Demo />;
+  });
 
 storiesOf('Appointment Editor', module)
   .add('default', () => (
@@ -331,19 +335,17 @@ storiesOf('Appointment Editor', module)
           placeholder="DD-MM-YYYY"
         />
       </div>
-
-      
     </DisplayContainer>
   ))
   .add('inline', () => (
-<NumPad.Appointment
-        dates={appointmentDates}
-        dateFormat="DD-MM-YYYY"
-        onChange={action('onChange')}
-        position="fullscreen"
-        placeholder="DD-MM-YYYY"
-        inline
-      />      
+    <NumPad.Appointment
+      dates={appointmentDates}
+      dateFormat="DD-MM-YYYY"
+      onChange={action('onChange')}
+      position="fullscreen"
+      placeholder="DD-MM-YYYY"
+      inline
+    />
   ))
   .add('fullscreen', () => (
     <NumPad.Appointment

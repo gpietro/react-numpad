@@ -87,7 +87,7 @@
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "prop-types": "^15.7.2",
-    "react-icons": "3.5.0",
+    "react-icons": "3.6.0",
     "react-onclickoutside": "^6.8.0",
     "react-portal": "^4.2.0",
     "react-swipeable": "^5.0.1",

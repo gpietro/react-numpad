@@ -65,7 +65,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-test-renderer": "^16.8.4",
-    "react-testing-library": "^6.0.0",
+    "react-testing-library": "^7.0.0",
     "sass-loader": "^7.1.0",
     "sinon": "^7.2.7",
     "sinon-sandbox": "^2.0.0",

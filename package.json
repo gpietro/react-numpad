@@ -71,7 +71,7 @@
     "sinon-sandbox": "^2.0.0",
     "storybook-addon-specifications": "^2.1.2",
     "style-loader": "^0.23.1",
-    "url-loader": "^1.1.2",
+    "url-loader": "^2.0.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.2.3"
   },

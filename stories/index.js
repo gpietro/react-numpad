@@ -50,14 +50,16 @@ storiesOf('Number', module)
   .add('default', () => (
     <DisplayContainer>
       <div>
-        <NumPad.Number onChange={action('onChange')} position="startBottomLeft" label="Number" />
+        <NumPad.Number
+          onChange={value => {
+            console.log('value', value);
+          }}
+          position="startTopRight"
+          label="Number"
+          disabled
+        />
       </div>
-      <NumPad.Number
-        onChange={action('onChange')}
-        position="startBottomLeft"
-        label="Number"
-        inline
-      />
+      {/* <NumPad.Number onChange={action('onChange')} position="startBottomLeft" inline /> */}
     </DisplayContainer>
   ))
   .add('hooks and mutable props example', () => {
@@ -86,7 +88,7 @@ storiesOf('Number', module)
           <NumPad.Number
             onChange={action('onChange')}
             cancel={() => console.log('cancel value')}
-            position="startBottomRight"
+            position="startBottomLeft"
             label="Number"
             value={value}
             negative={false}
@@ -197,14 +199,14 @@ storiesOf('Date Time Editor', module)
           sync
         />
       </div>
-      <NumPad.DateTime
+      {/* <NumPad.DateTime
         dateFormat="HH:mm"
         onChange={action('onChange')}
         position="startBottomLeft"
         placeholder="HH:mm"
         sync
         inline
-      />
+      /> */}
     </DisplayContainer>
   ))
   .add('time with default → sync', () => {
@@ -281,15 +283,15 @@ storiesOf('Calendar Editor', module)
     };
     return <Demo />;
   })
-  .add('inline', () => (
-    <NumPad.Calendar
-      dateFormat="DD MMMM YYYY"
-      locale="it"
-      placeholder="DD MMMM YYYY"
-      position="fullscreen"
-      inline
-    />
-  ))
+  // .add('inline', () => (
+  //   <NumPad.Calendar
+  //     dateFormat="DD MMMM YYYY"
+  //     locale="it"
+  //     placeholder="DD MMMM YYYY"
+  //     position="fullscreen"
+  //     inline
+  //   />
+  // ))
   .add('initial value', () => {
     const Demo = () => {
       const [value, setValue] = useState();
@@ -297,7 +299,7 @@ storiesOf('Calendar Editor', module)
         <NumPad.Calendar
           dateFormat="DD-MM-YYYY"
           onChange={value => setValue(value)}
-          position="startBottomLeft"
+          position="startBottomRight"
           value={value}
           placeholder="DD-MM-YYYY"
         />
@@ -337,16 +339,16 @@ storiesOf('Appointment Editor', module)
       </div>
     </DisplayContainer>
   ))
-  .add('inline', () => (
-    <NumPad.Appointment
-      dates={appointmentDates}
-      dateFormat="DD-MM-YYYY"
-      onChange={action('onChange')}
-      position="fullscreen"
-      placeholder="DD-MM-YYYY"
-      inline
-    />
-  ))
+  // .add('inline', () => (
+  //   <NumPad.Appointment
+  //     dates={appointmentDates}
+  //     dateFormat="DD-MM-YYYY"
+  //     onChange={action('onChange')}
+  //     position="fullscreen"
+  //     placeholder="DD-MM-YYYY"
+  //     inline
+  //   />
+  // ))
   .add('fullscreen', () => (
     <NumPad.Appointment
       dates={appointmentDates}

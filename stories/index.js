@@ -8,6 +8,7 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
 import styled from 'styled-components';
+import { Button } from '@material-ui/core';
 import NumPad from '../lib';
 import Modal from './DemoModal';
 import { appointmentDates } from './data';
@@ -41,7 +42,10 @@ function StateValueTestComponent(props) {
       value={value}
       negative={false}
       decimal={2}
-    />
+      disabled
+    >
+      <Button color="primary">Ciao</Button>
+    </NumPad.Number>
   );
 }
 

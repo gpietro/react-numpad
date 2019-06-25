@@ -54,7 +54,7 @@ storiesOf('Number', module)
           onChange={value => {
             console.log('value', value);
           }}
-          position="startTopRight"
+          position="fullscreen"
           label="Number"
           disabled
         />
@@ -76,9 +76,9 @@ storiesOf('Number', module)
         <DisplayContainer>
           <div>
             <NumPad.Number
-              onChange={value => setValue(value)}
+              onChange={newVal => setValue(newVal)}
               cancel={() => console.log('cancel value')}
-              position="startBottomLeft"
+              position="startBottomRight"
               label="Number"
               value={value}
               negative={false}

@@ -17,7 +17,7 @@
     "lint:watch": "esw -w lib/**",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006 -c .storybook",
-    "test": "jest",
+    "test": "jest --verbose false",
     "test:watch": "jest --watch"
   },
   "lint-staged": {

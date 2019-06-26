@@ -37,12 +37,11 @@ function StateValueTestComponent(props) {
         setValue(v);
       }}
       cancel={() => console.log('cancel value')}
-      position="startBottomLeft"
+      position="center"
       label={`Number: Value(${value}) - Prop(${props.value}): `}
       value={value}
       negative={false}
       decimal={2}
-      disabled
     >
       <Button color="primary">Ciao</Button>
     </NumPad.Number>
@@ -58,9 +57,8 @@ storiesOf('Number', module)
           onChange={value => {
             console.log('value', value);
           }}
-          position="fullscreen"
+          position="center"
           label="Number"
-          disabled
         />
       </div>
       {/* <NumPad.Number onChange={action('onChange')} position="startBottomLeft" inline /> */}

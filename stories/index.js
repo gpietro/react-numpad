@@ -50,20 +50,29 @@ function StateValueTestComponent(props) {
 
 storiesOf('Number', module)
   .addDecorator(withKnobs)
-  .add('default', () => (
-    <DisplayContainer>
-      <div>
+  .add('default', () => {
+    return (
+      <DisplayContainer>
+        <div>
+          <NumPad.Number
+            onChange={value => {
+              console.log('value', value);
+            }}
+            position="center"
+            label="Number"
+          />
+        </div>
         <NumPad.Number
           onChange={value => {
-            console.log('value', value);
+            console.log('inline sync', value);
+            action('onChange');
           }}
-          position="center"
-          label="Number"
+          inline
+          sync
         />
-      </div>
-      {/* <NumPad.Number onChange={action('onChange')} position="startBottomLeft" inline /> */}
-    </DisplayContainer>
-  ))
+      </DisplayContainer>
+    );
+  })
   .add('hooks and mutable props example', () => {
     const value = number('Default value', 70, { range: true, min: 0, max: 90, step: 5 });
     return <StateValueTestComponent value={value} />;
@@ -201,14 +210,14 @@ storiesOf('Date Time Editor', module)
           sync
         />
       </div>
-      {/* <NumPad.DateTime
+      <NumPad.DateTime
         dateFormat="HH:mm"
         onChange={action('onChange')}
         position="startBottomLeft"
         placeholder="HH:mm"
         sync
         inline
-      /> */}
+      />
     </DisplayContainer>
   ))
   .add('time with default → sync', () => {
@@ -274,7 +283,10 @@ storiesOf('Calendar Editor', module)
           <div>
             <NumPad.Calendar
               dateFormat="DD MMMM YYYY"
-              onChange={value => setValue(value)}
+              onChange={newVal => {
+                console.log('newVal', newVal);
+                setValue(newVal);
+              }}
               locale="it"
               placeholder="DD MMMM YYYY"
               value={value}
@@ -285,22 +297,25 @@ storiesOf('Calendar Editor', module)
     };
     return <Demo />;
   })
-  // .add('inline', () => (
-  //   <NumPad.Calendar
-  //     dateFormat="DD MMMM YYYY"
-  //     locale="it"
-  //     placeholder="DD MMMM YYYY"
-  //     position="fullscreen"
-  //     inline
-  //   />
-  // ))
+  .add('inline', () => (
+    <NumPad.Calendar
+      dateFormat="DD MMMM YYYY"
+      locale="it"
+      onChange={newVal => {
+        console.log('newVal', newVal);
+      }}
+      placeholder="DD MMMM YYYY"
+      position="fullscreen"
+      inline
+    />
+  ))
   .add('initial value', () => {
     const Demo = () => {
       const [value, setValue] = useState();
       return (
         <NumPad.Calendar
           dateFormat="DD-MM-YYYY"
-          onChange={value => setValue(value)}
+          onChange={newVal => setValue(newVal)}
           position="startBottomRight"
           value={value}
           placeholder="DD-MM-YYYY"

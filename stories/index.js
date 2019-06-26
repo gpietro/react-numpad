@@ -38,12 +38,13 @@ function StateValueTestComponent(props) {
       }}
       cancel={() => console.log('cancel value')}
       position="center"
-      label={`Number: Value(${value}) - Prop(${props.value}): `}
       value={value}
       negative={false}
       decimal={2}
     >
-      <Button color="primary">Ciao</Button>
+      <Button color="primary" variant="outlined">
+        I'm custom, click me!
+      </Button>
     </NumPad.Number>
   );
 }
@@ -174,7 +175,6 @@ storiesOf('Number', module)
   .add('custom input field', () => (
     <NumPad.Number onChange={action('onChange')} value="5" position="startBottomLeft">
       <input type="text" />
-      <button>i'm custom</button>
     </NumPad.Number>
   ))
   .add('testing numbers', () => {

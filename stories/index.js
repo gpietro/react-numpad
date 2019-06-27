@@ -20,6 +20,21 @@ const DisplayContainer = styled.div`
   justify-content: space-between;
 `;
 
+const CustomInput = ({ value, ...props }) => {
+  console.log('props', props);
+  return (
+    <div className="input-group">
+      <input
+        type="text"
+        className="form-control displayPicker"
+        placeholder="__"
+        value={value}
+        readOnly
+      />
+    </div>
+  );
+};
+
 const oddValidator = value =>
   parseInt(value, 10) > 0 && parseInt(value, 10) % 2 !== 0 && parseFloat(value) % 1 === 0;
 
@@ -174,7 +189,7 @@ storiesOf('Number', module)
   ))
   .add('custom input field', () => (
     <NumPad.Number onChange={action('onChange')} value="5" position="startBottomLeft">
-      <input type="text" />
+      <CustomInput />
     </NumPad.Number>
   ))
   .add('testing numbers', () => {

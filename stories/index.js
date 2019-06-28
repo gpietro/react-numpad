@@ -51,7 +51,6 @@ function StateValueTestComponent(props) {
         console.log('on change', v);
         setValue(v);
       }}
-      cancel={() => console.log('cancel value')}
       position="center"
       value={value}
       negative={false}
@@ -104,7 +103,6 @@ storiesOf('Number', module)
           <div>
             <NumPad.Number
               onChange={newVal => setValue(newVal)}
-              cancel={() => console.log('cancel value')}
               position="startBottomRight"
               label="Number"
               value={value}
@@ -113,8 +111,7 @@ storiesOf('Number', module)
             />
           </div>
           <NumPad.Number
-            onChange={action('onChange')}
-            cancel={() => console.log('cancel value')}
+            onChange={newVal => setValue(newVal)}
             position="startBottomLeft"
             label="Number"
             value={value}
@@ -167,7 +164,6 @@ storiesOf('Number', module)
     />
   ))
   .add('configure decimals allowed', () => {
-    const decimals = number('Decimals', 2);
     return (
       <NumPad.Number
         onChange={action('onChange')}
@@ -364,31 +360,31 @@ storiesOf('Appointment Editor', module)
         <NumPad.Appointment
           dates={appointmentDates}
           dateFormat="DD-MM-YYYY"
-          onChange={action('onChange')}
+          onChange={value => console.log('appointment', value)}
           position="startBottomLeft"
           placeholder="DD-MM-YYYY"
         />
       </div>
     </DisplayContainer>
   ))
-  // .add('inline', () => (
-  //   <NumPad.Appointment
-  //     dates={appointmentDates}
-  //     dateFormat="DD-MM-YYYY"
-  //     onChange={action('onChange')}
-  //     position="fullscreen"
-  //     placeholder="DD-MM-YYYY"
-  //     inline
-  //   />
-  // ))
-  .add('fullscreen', () => (
+  .add('inline', () => (
     <NumPad.Appointment
       dates={appointmentDates}
       dateFormat="DD-MM-YYYY"
-      onChange={action('onChange')}
+      onChange={value => console.log('appointment', value)}
+      position="fullscreen"
+      placeholder="DD-MM-YYYY"
+      inline
+    />
+  ))
+  .add('fullscreen', () => (
+    <NumPad.Appointment
+      dates={appointmentDates}
+      dateFormat="DD.MM.YYYY"
+      onChange={value => console.log('appointment', value)}
       position="fullscreen"
       locale="it"
-      placeholder="DD-MM-YYYY"
+      placeholder="DD.MM.YYYY"
     />
   ));
 
@@ -433,14 +429,5 @@ storiesOf('Calendar Editor formats', module)
       position="startBottomLeft"
       locale="it"
       placeholder="YYYY-MM-DD"
-    />
-  ))
-  .add('DD**YYYY', () => (
-    <NumPad.DateTime
-      dateFormat="DD*MMM*YYYY"
-      onChange={action('onChange')}
-      position="startBottomLeft"
-      locale="it"
-      placeholder="DD*MMM*YYYY"
     />
   ));

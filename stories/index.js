@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import { Button } from '@material-ui/core';
 import NumPad from '../lib';
 import Modal from './DemoModal';
+import Demo from './Demo';
 import { appointmentDates } from './data';
 
 configure({ adapter: new Adapter() });
@@ -62,6 +63,9 @@ function StateValueTestComponent(props) {
     </NumPad.Number>
   );
 }
+
+storiesOf('Demo', module)
+  .add('page', () => <Demo />);
 
 storiesOf('Number', module)
   .addDecorator(withKnobs)

@@ -12,7 +12,7 @@ It's written with the extensibility in mind. The idea of this project is to cove
 
 ## Demo / Examples
 
-Live demo: [gpietro.github.io/docs](https://gpietro.github.io/docs)
+Live demo: [gpietro.github.io/react-numpad-demo](https://gpietro.github.io/react-numpad-demo)
 
 ## Installation
 

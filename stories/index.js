@@ -10,6 +10,7 @@ import { expect } from 'chai';
 import styled from 'styled-components';
 import { Button } from '@material-ui/core';
 import NumPad from '../lib';
+import Demo from './Demo';
 import Modal from './DemoModal';
 import { appointmentDates } from './data';
 
@@ -62,6 +63,8 @@ function StateValueTestComponent(props) {
     </NumPad.Number>
   );
 }
+
+storiesOf('Demo', module).add('page', () => <Demo />);
 
 storiesOf('Number', module)
   .addDecorator(withKnobs)

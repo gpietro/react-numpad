@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import IconAccessTime from '@material-ui/icons/AccessTimeSharp';
 import IconCalendarToday from '@material-ui/icons/CalendarTodaySharp';
 
-import NumPad from '../lib';
 import moment from 'moment';
 import {
   Grid,
@@ -15,6 +14,7 @@ import {
   IconButton,
   Link,
 } from '@material-ui/core';
+import NumPad from '../lib';
 
 const useStyles = makeStyles({
   card: {
@@ -213,7 +213,7 @@ const NumPadDemo = () => {
               <Grid item sm xs={12}>
                 <NumPad.Number
                   onChange={value => dispatch({ type: 'any.number', value })}
-                  position={'startBottomLeft'}
+                  position="startBottomLeft"
                 >
                   <Grid container alignItems="center">
                     <Grid item xs>
@@ -230,8 +230,8 @@ const NumPadDemo = () => {
                   onChange={value => dispatch({ type: 'positive.number', value })}
                   theme="orange"
                   negative={false}
-                  position={'startTopLeft'}
-                  placeholder={'Positive'}
+                  position="startTopLeft"
+                  placeholder="Positive"
                 >
                   <TextField label="Positive number" value={state.positiveNumber} />
                 </NumPad.Number>
@@ -241,7 +241,7 @@ const NumPadDemo = () => {
                 <NumPad.Number
                   onChange={value => dispatch({ type: 'integer.number', value })}
                   decimal={false}
-                  placeholder={'Integer number'}
+                  placeholder="Integer number"
                 >
                   <TextField label="Integer number" value={state.integerNumber} />
                 </NumPad.Number>
@@ -266,9 +266,9 @@ const NumPadDemo = () => {
               <Grid item sm xs={12}>
                 <NumPad.DateTime
                   onChange={value => dispatch({ type: 'any.time', value })}
-                  position={'startBottomLeft'}
-                  dateFormat={'HH:mm'}
-                  placeholder={'--:--'}
+                  position="startBottomLeft"
+                  dateFormat="HH:mm"
+                  placeholder="--:--"
                 >
                   <TextField label="Time" value={state.anyTime} />
                   <IconButton>
@@ -280,8 +280,8 @@ const NumPadDemo = () => {
               <Grid item sm xs={12}>
                 <NumPad.DateTime
                   onChange={value => dispatch({ type: 'any.date', value })}
-                  dateFormat={'DD.MM.YYYY'}
-                  placeholder={'DD.MM.YYYY'}
+                  dateFormat="DD.MM.YYYY"
+                  placeholder="DD.MM.YYYY"
                 >
                   <TextField label="Date DD.MM.YYYY" value={state.anyDate} />
                   <IconButton>
@@ -293,7 +293,7 @@ const NumPadDemo = () => {
               <Grid item sm xs={12}>
                 <NumPad.DateTime
                   onChange={value => dispatch({ type: 'time.date', value })}
-                  dateFormat={'YYYY-MM-DD HH:mm'}
+                  dateFormat="YYYY-MM-DD HH:mm"
                 >
                   <TextField label="DD.MM.YYYY HH:mm" value={state.timeDate} />
                   <IconButton>
@@ -310,7 +310,7 @@ const NumPadDemo = () => {
             <Grid container alignItems="center">
               <Grid item sm xs={12}>
                 <NumPad.Calendar
-                  dateFormat={'DD.MM.YYYY'}
+                  dateFormat="DD.MM.YYYY"
                   locale="it"
                   onChange={value => dispatch({ type: 'italian.calendar', value })}
                 >
@@ -351,10 +351,10 @@ const NumPadDemo = () => {
             <Grid container alignItems="center">
               <Grid item sm xs={12}>
                 <NumPad.Appointment
-                  dateFormat={'DD.MM.YYYY'}
+                  dateFormat="DD.MM.YYYY"
                   dates={appointmentDates}
-                  locale={'it'}
-                  position={'startTopLeft'}
+                  locale="it"
+                  position="startTopLeft"
                   onChange={value => dispatch({ type: 'any.appointment', value })}
                 >
                   <TextField label="Appuntamento" value={state.anyAppointment} />
@@ -362,9 +362,9 @@ const NumPadDemo = () => {
               </Grid>
               <Grid item sm xs={12}>
                 <NumPad.Appointment
-                  dateFormat={'DD.MM.YYYY'}
+                  dateFormat="DD.MM.YYYY"
                   dates={appointmentDates}
-                  position={'fullscreen'}
+                  position="fullscreen"
                   onChange={value => dispatch({ type: 'fullscreen.appointment', value })}
                 >
                   <TextField label="Fullscreen" value={state.fullscreenAppointment} />

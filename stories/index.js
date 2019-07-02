@@ -293,20 +293,16 @@ storiesOf('Calendar Editor', module)
       const [value, setValue] = useState();
 
       return (
-        <DisplayContainer>
-          <div>
-            <NumPad.Calendar
-              dateFormat="DD MMMM YYYY"
-              onChange={newVal => {
-                console.log('newVal', newVal);
-                setValue(newVal);
-              }}
-              locale="it"
-              placeholder="DD MMMM YYYY"
-              value={value}
-            />
-          </div>
-        </DisplayContainer>
+        <NumPad.Calendar
+          dateFormat="DD MMMM YYYY"
+          onChange={newVal => {
+            console.log('newVal', newVal);
+            setValue(newVal);
+          }}
+          locale="it"
+          placeholder="DD MMMM YYYY"
+          value={value}
+        />
       );
     };
     return <Demo />;

@@ -2,7 +2,7 @@
   "name": "react-numpad",
   "version": "5.0.0-beta.15",
   "description": "Numpad react component, as number input or time input",
-  "homepage": "https://gpietro.github.io/docs/",
+  "homepage": "https://gpietro.github.io/react-numpad-demo/",
   "main": "build/index.js",
   "types": "./index.d.ts",
   "repository": {

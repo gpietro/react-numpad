@@ -45,20 +45,12 @@ React-NumPad is built based on a "main" component (NumPad.js). Following the hig
 | `value`       | `string` or `number` | none         | value (default) for the input field.                                                                                               |
 | `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
 | `inline`      | `boolean`            | false        | show the component inline always visible without input field.                                                                      |
-
-> **Version > 4.0.0**: is possible to override the following component's functions
-
-| Property                | Type       | Default | Description                              |
-| :---------------------- | :--------- | :------ | :--------------------------------------- |
-| `validation`            | `function` |         | Validates the input value                |
-| `(Number) keyValidator` | `function` |         | Validates the enabled keys while typing  |
+| `keyValidator` | `function` |         | Validates the enabled keys while typing. **Only for Number**  |
 | `displayRule`           | `function` |         | Format the output value                  |
 
 ### NumPad.Number
 
 Input field for numeric value.
-
-> **Version > 4.0.0**: the components PositiveNumber, IntegerNumber, PositiveIntegerNumber are replaced with the props **decimal** and **negative**.
 
 | Property   | Type                  | Default  | Description                                                                   |
 | :--------- | :-------------------- | :------- | :---------------------------------------------------------------------------- |
@@ -78,8 +70,6 @@ Input field for numeric value.
 ### NumPad.DateTime
 
 Input field for date and time format.
-
-> **Version > 4.0.0**: the input layout is now based on the date format, date time format or only time format property. Components Date and Time have been removed.
 
 | Property     | Type     | Default          | Description                                                                                    |
 | :----------- | :------- | :--------------- | :--------------------------------------------------------------------------------------------- |
@@ -240,4 +230,4 @@ See our [CONTRIBUTING.md](https://github.com/gpietro/react-numpad/blob/master/CO
 
 ## License
 
-MIT Licensed. Copyright (c) Pietro Ghezzi 2017-2018.
+MIT Licensed. Copyright (c) Pietro Ghezzi 2017-2019.

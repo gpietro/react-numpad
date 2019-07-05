@@ -1,10 +1,16 @@
 const webpack = require('webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
-  entry: './lib/index.js',
+  entry: './lib/index',
   output: {
+    filename: '[name].bundle.js',    
     path: `${__dirname}/dist`,
-    filename: 'bundle.js',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   mode: 'development',
   resolve: {
@@ -14,7 +20,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         loader: 'babel-loader', // 'babel-loader' is also a valid name to reference
       },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
@@ -39,11 +45,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'),
-      },
-    }),
+    new CleanWebpackPlugin(),    
   ],
   devtool: 'source-map',
 };

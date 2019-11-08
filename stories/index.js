@@ -326,7 +326,7 @@ storiesOf('Calendar Editor', module)
         <NumPad.Calendar
           dateFormat="DD-MM-YYYY"
           onChange={newVal => setValue(newVal)}
-          position="startBottomRight"
+          position="startBottomLeft"
           value={value}
           placeholder="DD-MM-YYYY"
         />

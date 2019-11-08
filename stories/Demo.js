@@ -213,7 +213,7 @@ const NumPadDemo = () => {
               <Grid item sm xs={12}>
                 <NumPad.Number
                   onChange={value => dispatch({ type: 'any.number', value })}
-                  position="startBottomLeft"
+                  position="flex-end"
                 >
                   <Grid container alignItems="center">
                     <Grid item xs>

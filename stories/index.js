@@ -22,7 +22,6 @@ const DisplayContainer = styled.div`
 `;
 
 const CustomInput = ({ value, ...props }) => {
-  console.log('props', props);
   return (
     <div className="input-group">
       <input
@@ -39,21 +38,20 @@ const CustomInput = ({ value, ...props }) => {
 const oddValidator = value =>
   parseInt(value, 10) > 0 && parseInt(value, 10) % 2 !== 0 && parseFloat(value) % 1 === 0;
 
-function StateValueTestComponent(props) {
-  const [value, setValue] = useState(props.value);
+function StateValueTestComponent({ value }) {
+  const [testValue, setValue] = useState(value);
 
   useEffect(() => {
-    setValue(props.value);
-  }, [props.value]);
+    setValue(value);
+  }, [value]);
 
   return (
     <NumPad.Number
       onChange={v => {
-        console.log('on change', v);
         setValue(v);
       }}
       position="center"
-      value={value}
+      value={testValue}
       negative={false}
       decimal={2}
     >
@@ -72,17 +70,10 @@ storiesOf('Number', module)
     return (
       <DisplayContainer>
         <div>
-          <NumPad.Number
-            onChange={value => {
-              console.log('value', value);
-            }}
-            position="center"
-            label="Number"
-          />
+          <NumPad.Number onChange={() => {}} position="center" label="Number" />
         </div>
         <NumPad.Number
-          onChange={value => {
-            console.log('inline sync', value);
+          onChange={() => {
             action('onChange');
           }}
           inline
@@ -96,7 +87,7 @@ storiesOf('Number', module)
     return <StateValueTestComponent value={value} />;
   })
   .add('initial value', () => {
-    const Demo = () => {
+    const DemoNumber = () => {
       const [value, setValue] = useState(
         number('Default value', 70, { range: true, min: 0, max: 90, step: 5 })
       );
@@ -125,7 +116,7 @@ storiesOf('Number', module)
       );
     };
 
-    return <Demo />;
+    return <DemoNumber />;
   })
   .add('positive number', () => (
     <NumPad.Number
@@ -243,7 +234,6 @@ storiesOf('Date Time Editor', module)
         <NumPad.DateTime
           dateFormat={formatString}
           onChange={newValue => {
-            console.log('update value', newValue);
             setValue(newValue);
           }}
           position="startBottomLeft"
@@ -256,7 +246,7 @@ storiesOf('Date Time Editor', module)
     return <Demo />;
   })
   .add('Datetime', () => {
-    const Demo = () => {
+    const DemoTime = () => {
       const [value, setValue] = useState();
 
       return (
@@ -264,7 +254,6 @@ storiesOf('Date Time Editor', module)
           dateFormat="DD-MM-YYYY HH:mm"
           placeholder="DD-MM-YYYY HH : mm"
           onChange={newValue => {
-            console.log('update value', newValue);
             setValue(newValue);
           }}
           position="startBottomLeft"
@@ -273,7 +262,7 @@ storiesOf('Date Time Editor', module)
         />
       );
     };
-    return <Demo />;
+    return <DemoTime />;
   })
   .add('Datetime date format', () => {
     const dateFormat = text('Date format', 'DD.MM.YYYY HH:mm');
@@ -296,7 +285,6 @@ storiesOf('Calendar Editor', module)
         <NumPad.Calendar
           dateFormat="DD MMMM YYYY"
           onChange={newVal => {
-            console.log('newVal', newVal);
             setValue(newVal);
           }}
           locale="it"
@@ -311,16 +299,14 @@ storiesOf('Calendar Editor', module)
     <NumPad.Calendar
       dateFormat="DD MMMM YYYY"
       locale="it"
-      onChange={newVal => {
-        console.log('newVal', newVal);
-      }}
+      onChange={() => {}}
       placeholder="DD MMMM YYYY"
       position="fullscreen"
       inline
     />
   ))
   .add('initial value', () => {
-    const Demo = () => {
+    const DemoCal = () => {
       const [value, setValue] = useState();
       return (
         <NumPad.Calendar
@@ -332,24 +318,22 @@ storiesOf('Calendar Editor', module)
         />
       );
     };
-    return <Demo />;
+    return <DemoCal />;
   })
   .add('Calendar with time picker', () => {
-    const Demo = () => {
-      const [value, setValue] = useState();
-      console.log('value', value);
+    const DemoCalendar = () => {
+      const [datetime, setDatetime] = useState('29-12-1978 10:00');
       return (
         <NumPad.Calendar
           dateFormat="DD-MM-YYYY"
           timeFormat=" HH:mm"
-          onChange={setValue}
-          value="29-12-1978 10:00"
+          onChange={setDatetime}
           placeholder="date and time"
-          value={value}
+          value={datetime}
         />
       );
     };
-    return <Demo />;
+    return <DemoCalendar />;
   });
 
 storiesOf('Appointment Editor', module)
@@ -359,7 +343,7 @@ storiesOf('Appointment Editor', module)
         <NumPad.Appointment
           dates={appointmentDates}
           dateFormat="DD-MM-YYYY"
-          onChange={value => console.log('appointment', value)}
+          onChange={() => {}}
           position="startBottomLeft"
           placeholder="DD-MM-YYYY"
         />
@@ -370,7 +354,7 @@ storiesOf('Appointment Editor', module)
     <NumPad.Appointment
       dates={appointmentDates}
       dateFormat="DD-MM-YYYY"
-      onChange={value => console.log('appointment', value)}
+      onChange={() => {}}
       position="fullscreen"
       placeholder="DD-MM-YYYY"
       inline
@@ -380,7 +364,7 @@ storiesOf('Appointment Editor', module)
     <NumPad.Appointment
       dates={appointmentDates}
       dateFormat="DD.MM.YYYY"
-      onChange={value => console.log('appointment', value)}
+      onChange={() => {}}
       position="fullscreen"
       locale="it"
       placeholder="DD.MM.YYYY"

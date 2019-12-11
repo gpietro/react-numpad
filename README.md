@@ -2,7 +2,7 @@
 
 # React numpad
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/gpietro/react-numpad.svg)](https://greenkeeper.io/)
+[![Financial Contributors on Open Collective](https://opencollective.com/react-numpad/all/badge.svg?label=financial+contributors)](https://opencollective.com/react-numpad) [![Greenkeeper badge](https://badges.greenkeeper.io/gpietro/react-numpad.svg)](https://greenkeeper.io/)
 [![BCH compliance](https://bettercodehub.com/edge/badge/gpietro/react-numpad?branch=master)](https://bettercodehub.com/)
 [![npm version](https://badge.fury.io/js/react-numpad.svg)](https://badge.fury.io/js/react-numpad)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md#pull-requests)
@@ -227,6 +227,36 @@ If you'd like to contribute, please fork the repository and use a feature
 branch. Pull requests are warmly welcome.
 
 See our [CONTRIBUTING.md](https://github.com/gpietro/react-numpad/blob/master/CONTRIBUTING.md) for information on how to contribute.
+
+## Contributors
+
+### Code Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/gpietro/react-numpad/graphs/contributors"><img src="https://opencollective.com/react-numpad/contributors.svg?width=890&button=false" /></a>
+
+### Financial Contributors
+
+Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/react-numpad/contribute)]
+
+#### Individuals
+
+<a href="https://opencollective.com/react-numpad"><img src="https://opencollective.com/react-numpad/individuals.svg?width=890"></a>
+
+#### Organizations
+
+Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/react-numpad/contribute)]
+
+<a href="https://opencollective.com/react-numpad/organization/0/website"><img src="https://opencollective.com/react-numpad/organization/0/avatar.svg"></a>
+<a href="https://opencollective.com/react-numpad/organization/1/website"><img src="https://opencollective.com/react-numpad/organization/1/avatar.svg"></a>
+<a href="https://opencollective.com/react-numpad/organization/2/website"><img src="https://opencollective.com/react-numpad/organization/2/avatar.svg"></a>
+<a href="https://opencollective.com/react-numpad/organization/3/website"><img src="https://opencollective.com/react-numpad/organization/3/avatar.svg"></a>
+<a href="https://opencollective.com/react-numpad/organization/4/website"><img src="https://opencollective.com/react-numpad/organization/4/avatar.svg"></a>
+<a href="https://opencollective.com/react-numpad/organization/5/website"><img src="https://opencollective.com/react-numpad/organization/5/avatar.svg"></a>
+<a href="https://opencollective.com/react-numpad/organization/6/website"><img src="https://opencollective.com/react-numpad/organization/6/avatar.svg"></a>
+<a href="https://opencollective.com/react-numpad/organization/7/website"><img src="https://opencollective.com/react-numpad/organization/7/avatar.svg"></a>
+<a href="https://opencollective.com/react-numpad/organization/8/website"><img src="https://opencollective.com/react-numpad/organization/8/avatar.svg"></a>
+<a href="https://opencollective.com/react-numpad/organization/9/website"><img src="https://opencollective.com/react-numpad/organization/9/avatar.svg"></a>
 
 ## License
 

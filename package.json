@@ -67,7 +67,7 @@
     "react-dom": "^16.11.0",
     "react-test-renderer": "^16.11.0",
     "sass-loader": "^8.0.0",
-    "sinon": "^7.5.0",
+    "sinon": "^8.0.0",
     "sinon-sandbox": "^2.0.6",
     "storybook-addon-specifications": "^2.1.5",
     "style-loader": "^1.0.0",

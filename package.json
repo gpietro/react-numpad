@@ -58,7 +58,7 @@
     "husky": "^3.0.9",
     "jest": "^24.9.0",
     "jest-dom": "^4.0.0",
-    "jest-styled-components": "^6.3.3",
+    "jest-styled-components": "^7.0.0",
     "lint-staged": "^9.4.2",
     "node-sass": "^4.13.0",
     "polished": "^3.4.2",

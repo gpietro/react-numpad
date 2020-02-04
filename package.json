@@ -92,7 +92,7 @@
     "prop-types": "^15.7.2",
     "react-portal": "^4.2.0",
     "react-swipeable": "^5.4.0",
-    "styled-components": "^4.4.1",
+    "styled-components": "^5.0.1",
     "use-onclickoutside": "^0.3.1"
   },
   "prettier": {

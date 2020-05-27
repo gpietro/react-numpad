@@ -14,6 +14,7 @@ import {
   IconButton,
   Link,
 } from '@material-ui/core';
+import { appointmentDates } from './data';
 import NumPad from '../lib';
 
 const useStyles = makeStyles({
@@ -32,140 +33,6 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
 });
-
-const appointmentDates = {
-  [moment().format('DD.MM.YYYY')]: [
-    '08:00',
-    '08:30',
-    '09:00',
-    '09:30',
-    '10:00',
-    '11:00',
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-  ],
-  [moment()
-    .add(1, 'days')
-    .format('DD.MM.YYYY')]: [
-    '08:00',
-    '08:30',
-    '09:00',
-    '09:30',
-    '10:00',
-    '11:00',
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-  ],
-  [moment()
-    .add(3, 'days')
-    .format('DD.MM.YYYY')]: [
-    '08:00',
-    '08:30',
-    '09:00',
-    '09:30',
-    '10:00',
-    '10:30',
-    '11:00',
-    '12:00',
-    '13:00',
-    '13:30',
-    '14:00',
-    '15:00',
-  ],
-  [moment()
-    .add(4, 'days')
-    .format('DD.MM.YYYY')]: ['08:00', '08:30', '09:00', '09:30'],
-  [moment()
-    .add(6, 'days')
-    .format('DD.MM.YYYY')]: ['08:00', '08:30', '09:00', '09:30', '10:00', '11:00'],
-  [moment()
-    .add(10, 'days')
-    .format('DD.MM.YYYY')]: [
-    '08:00',
-    '08:30',
-    '09:00',
-    '09:30',
-    '10:00',
-    '10:30',
-    '11:00',
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-  ],
-  [moment()
-    .add(11, 'days')
-    .format('DD.MM.YYYY')]: ['08:00', '08:30', '09:00', '09:30'],
-  [moment()
-    .add(12, 'days')
-    .format('DD.MM.YYYY')]: [
-    '08:00',
-    '08:30',
-    '09:00',
-    '09:30',
-    '10:00',
-    '11:00',
-    '12:00',
-    '13:00',
-    '13:30',
-    '14:00',
-    '15:00',
-  ],
-  [moment()
-    .add(13, 'days')
-    .format('DD.MM.YYYY')]: ['08:00', '08:30', '09:00', '09:30', '10:00', '11:00'],
-  [moment()
-    .add(18, 'days')
-    .format('DD.MM.YYYY')]: ['08:00', '08:30', '09:00', '09:30'],
-  [moment()
-    .add(20, 'days')
-    .format('DD.MM.YYYY')]: [
-    '08:00',
-    '08:30',
-    '09:00',
-    '09:30',
-    '10:00',
-    '11:00',
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-  ],
-  [moment()
-    .add(21, 'days')
-    .format('DD.MM.YYYY')]: [
-    '08:00',
-    '08:30',
-    '09:00',
-    '09:30',
-    '10:00',
-    '10:30',
-    '11:00',
-    '12:00',
-    '13:00',
-    '13:30',
-    '14:00',
-    '15:00',
-  ],
-  [moment()
-    .add(31, 'days')
-    .format('DD.MM.YYYY')]: [
-    '08:00',
-    '08:30',
-    '09:00',
-    '09:30',
-    '10:00',
-    '11:00',
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-  ],
-};
 
 const initialState = {};
 
@@ -213,7 +80,7 @@ const NumPadDemo = () => {
               <Grid item sm xs={12}>
                 <NumPad.Number
                   onChange={value => dispatch({ type: 'any.number', value })}
-                  position="startBottomLeft"
+                  position="flex-end"
                 >
                   <Grid container alignItems="center">
                     <Grid item xs>

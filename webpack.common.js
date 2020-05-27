@@ -1,16 +1,16 @@
 const webpack = require('webpack');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './lib/index',
   output: {
-    filename: '[name].bundle.js',    
+    filename: '[name].bundle.js',
     path: `${__dirname}/dist`,
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
-    }
+      chunks: 'all',
+    },
   },
   mode: 'development',
   resolve: {
@@ -44,8 +44,46 @@ module.exports = {
       { test: /node_modules\/unicode-properties.*\.json$/, use: 'json-loader' },
     ],
   },
-  plugins: [
-    new CleanWebpackPlugin(),    
+  externals: [
+    {
+      react: {
+        root: 'React',
+        commonjs2: 'react',
+        commonjs: 'react',
+        amd: 'react',
+      },
+      'react-dom': {
+        root: 'ReactDOM',
+        commonjs2: 'react-dom',
+        commonjs: 'react-dom',
+        amd: 'react-dom',
+      },
+      '@material-ui/core': {
+        root: 'MaterialuiCore',
+        commonjs2: '@material-ui/core',
+        commonjs: '@material-ui/core',
+        amd: '@material-ui/core',
+      },
+      '@material-ui/core/styles': {
+        root: 'MaterialuiStyles',
+        commonjs2: '@material-ui/styles',
+        commonjs: '@material-ui/styles',
+        amd: '@material-ui/styles',
+      },
+      '@material-ui/styles': {
+        root: 'MaterialuiStyles',
+        commonjs2: '@material-ui/styles',
+        commonjs: '@material-ui/styles',
+        amd: '@material-ui/styles',
+      },
+      '@material-ui/icons': {
+        root: 'MaterialuiIcon',
+        commonjs2: '@material-ui/icons',
+        commonjs: '@material-ui/icons',
+        amd: '@material-ui/icons',
+      },
+    },
   ],
+  plugins: [new CleanWebpackPlugin()],
   devtool: 'source-map',
 };

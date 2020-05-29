@@ -4,13 +4,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: './lib/index',
   output: {
-    filename: '[name].bundle.js',
+    filename: 'react-numpad.js',
     path: `${__dirname}/dist`,
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
+    libraryTarget: 'umd',
   },
   mode: 'development',
   resolve: {
@@ -63,18 +59,6 @@ module.exports = {
         commonjs2: '@material-ui/core',
         commonjs: '@material-ui/core',
         amd: '@material-ui/core',
-      },
-      '@material-ui/core/styles': {
-        root: 'MaterialuiStyles',
-        commonjs2: '@material-ui/styles',
-        commonjs: '@material-ui/styles',
-        amd: '@material-ui/styles',
-      },
-      '@material-ui/styles': {
-        root: 'MaterialuiStyles',
-        commonjs2: '@material-ui/styles',
-        commonjs: '@material-ui/styles',
-        amd: '@material-ui/styles',
       },
       '@material-ui/icons': {
         root: 'MaterialuiIcon',

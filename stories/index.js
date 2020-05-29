@@ -8,7 +8,7 @@ import { mount, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { expect } from 'chai';
 import styled from 'styled-components';
-import { Button } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import NumPad from '../lib';
 import Demo from './Demo';
 import Modal from './DemoModal';
@@ -35,7 +35,7 @@ const CustomInput = ({ value, ...props }) => {
   );
 };
 
-const oddValidator = value =>
+const oddValidator = (value) =>
   parseInt(value, 10) > 0 && parseInt(value, 10) % 2 !== 0 && parseFloat(value) % 1 === 0;
 
 function StateValueTestComponent({ value }) {
@@ -47,7 +47,7 @@ function StateValueTestComponent({ value }) {
 
   return (
     <NumPad.Number
-      onChange={v => {
+      onChange={(v) => {
         setValue(v);
       }}
       position="center"
@@ -96,7 +96,7 @@ storiesOf('Number', module)
         <DisplayContainer>
           <div>
             <NumPad.Number
-              onChange={newVal => setValue(newVal)}
+              onChange={(newVal) => setValue(newVal)}
               position="startBottomRight"
               label="Number"
               value={value}
@@ -105,7 +105,7 @@ storiesOf('Number', module)
             />
           </div>
           <NumPad.Number
-            onChange={newVal => setValue(newVal)}
+            onChange={(newVal) => setValue(newVal)}
             position="startBottomLeft"
             label="Number"
             value={value}
@@ -233,7 +233,7 @@ storiesOf('Date Time Editor', module)
       return (
         <NumPad.DateTime
           dateFormat={formatString}
-          onChange={newValue => {
+          onChange={(newValue) => {
             setValue(newValue);
           }}
           position="startBottomLeft"
@@ -253,7 +253,7 @@ storiesOf('Date Time Editor', module)
         <NumPad.DateTime
           dateFormat="DD-MM-YYYY HH:mm"
           placeholder="DD-MM-YYYY HH : mm"
-          onChange={newValue => {
+          onChange={(newValue) => {
             setValue(newValue);
           }}
           position="startBottomLeft"
@@ -284,7 +284,7 @@ storiesOf('Calendar Editor', module)
       return (
         <NumPad.Calendar
           dateFormat="DD MMMM YYYY"
-          onChange={newVal => {
+          onChange={(newVal) => {
             setValue(newVal);
           }}
           locale="it"
@@ -311,7 +311,7 @@ storiesOf('Calendar Editor', module)
       return (
         <NumPad.Calendar
           dateFormat="DD-MM-YYYY"
-          onChange={newVal => setValue(newVal)}
+          onChange={(newVal) => setValue(newVal)}
           position="startBottomLeft"
           value={value}
           placeholder="DD-MM-YYYY"

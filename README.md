@@ -260,4 +260,4 @@ Support this project with your organization. Your logo will show up here with a 
 
 ## License
 
-MIT Licensed. Copyright (c) Pietro Ghezzi 2017-2019.
+MIT Licensed.

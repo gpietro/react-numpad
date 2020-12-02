@@ -99,6 +99,7 @@ const NumPadDemo = () => {
                   negative={false}
                   position="startTopLeft"
                   placeholder="Positive"
+                  value={state.positiveNumber}
                 >
                   <TextField label="Positive number" value={state.positiveNumber} />
                 </NumPad.Number>
@@ -196,12 +197,8 @@ const NumPadDemo = () => {
                   onChange={value => dispatch({ type: 'markers.calendar', value })}
                   dateFormat="DD.MM.YYYY"
                   markers={[
-                    moment()
-                      .subtract(4, 'days')
-                      .format('DD.MM.YYYY'),
-                    moment()
-                      .add(1, 'days')
-                      .format('DD.MM.YYYY'),
+                    moment().subtract(4, 'days').format('DD.MM.YYYY'),
+                    moment().add(1, 'days').format('DD.MM.YYYY'),
                   ]}
                   position="startTopLeft"
                 >

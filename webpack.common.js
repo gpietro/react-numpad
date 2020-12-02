@@ -68,6 +68,6 @@ module.exports = {
       },
     },
   ],
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [new CleanWebpackPlugin(), new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)],
   devtool: 'source-map',
 };

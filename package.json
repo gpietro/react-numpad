@@ -1,114 +1,67 @@
 {
-  "name": "react-numpad",
-  "version": "5.1.2",
-  "description": "Numpad react component, as number input or time input",
-  "homepage": "https://gpietro.github.io/react-numpad-demo/",
-  "main": "dist/react-numpad.js",
-  "types": "./index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gpietro/react-numpad"
-  },
-  "scripts": {
-    "build": "webpack --config webpack.prod.js",
-    "build:watch": "babel lib -w --ignore **/__tests__/*.js -d build",
-    "lint": "eslint lib/** --fix; exit 0",
-    "lint:watch": "esw -w lib/**",
-    "prepublish": "npm run build",
-    "storybook": "start-storybook -p 6006 -c .storybook",
-    "test": "jest --verbose false",
-    "test:watch": "jest --watch"
-  },
-  "lint-staged": {
-    "*.{js,json,css,md}": [
-      "prettier",
-      "git add"
-    ]
-  },
-  "author": "Pietro Ghezzi",
-  "license": "ISC",
-  "files": [
-    "dist"
-  ],
-  "devDependencies": {
-    "@babel/cli": "^7.10.0",
-    "@babel/core": "^7.10.0",
-    "@babel/plugin-transform-regenerator": "^7.10.1",
-    "@babel/preset-env": "^7.10.0",
-    "@babel/preset-react": "^7.10.0",
-    "@material-ui/core": "^4.9.14",
-    "@material-ui/icons": "^4.9.1",
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-knobs": "^5.3.19",
-    "@storybook/addon-links": "^5.3.19",
-    "@storybook/react": "^5.3.19",
-    "@testing-library/dom": "^7.5.8",
-    "@testing-library/jest-dom": "^5.8.0",
-    "@testing-library/react": "^10.0.4",
-    "babel-core": "^7.0.0-bridge.0",
-    "babel-eslint": "^10.1.0",
-    "babel-jest": "^26.0.1",
-    "babel-loader": "^8.1.0",
-    "chai": "^4.2.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^3.5.3",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "eslint": "^7.1.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.3",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4.0.4",
-    "eslint-watch": "^6.0.1",
-    "file-loader": "^6.0.0",
-    "husky": "^4.2.5",
-    "jest": "^26.0.1",
-    "jest-styled-components": "^7.0.2",
-    "lint-staged": "^10.2.6",
-    "node-sass": "^4.14.1",
-    "polished": "^3.6.3",
-    "prettier": "^2.0.5",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-test-renderer": "^16.13.1",
-    "sass-loader": "^8.0.2",
-    "sinon": "^9.0.2",
-    "sinon-sandbox": "^2.0.6",
-    "storybook-addon-specifications": "^2.1.5",
-    "style-loader": "^1.2.1",
-    "url-loader": "^4.1.0",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-merge": "^4.2.2"
-  },
-  "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "@material-ui/core": "^4.9.14",
-    "@material-ui/icons": "^4.9.1"
-  },
-  "dependencies": {
-    "color": "^3.1.2",
-    "lodash.chunk": "^4.2.0",
-    "lodash.isequal": "^4.5.0",
-    "moment": "^2.26.0",
-    "prop-types": "^15.7.2",
-    "react-portal": "^4.2.1",
-    "react-swipeable": "^5.5.1",
-    "styled-components": "^4.3.2",
-    "use-onclickoutside": "^0.3.1"
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  }
+	"name": "react-numpad",
+	"version": "5.1.2",
+	"description": "Numpad react component, as number input or time input",
+	"homepage": "https://gpietro.github.io/react-numpad-demo/",
+	"main": "dist/react-numpad.js",
+	"types": "./index.d.ts",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gpietro/react-numpad"
+	},
+	"scripts": {
+		"build": "vite build",
+		"lint": "biome lint .",
+		"format": "biome format --write .",
+		"check": "biome check --apply .",
+		"storybook": "storybook dev -p 6006",
+		"build-storybook": "storybook build",
+		"test": "jest --verbose false",
+		"test:watch": "jest --watch"
+	},
+	"author": "Pietro Ghezzi",
+	"license": "ISC",
+	"files": ["dist"],
+	"devDependencies": {
+		"@biomejs/biome": "^1.2.2",
+		"@storybook/addon-essentials": "^7.0.0",
+		"@storybook/addon-interactions": "^7.0.0",
+		"@storybook/addon-links": "^7.0.0",
+		"@storybook/react": "^7.0.0",
+		"@storybook/react-vite": "^7.0.0",
+		"@storybook/testing-library": "^0.0.14-next.2",
+		"@testing-library/dom": "^9.3.1",
+		"@testing-library/jest-dom": "^5.16.5",
+		"@testing-library/react": "^14.0.0",
+		"@types/color": "^4.2.0",
+		"@types/react-portal": "^4.0.7",
+		"@types/styled-components": "^5.1.34",
+		"@vitejs/plugin-react": "^4.0.0",
+		"autoprefixer": "^10.4.14",
+		"chai": "^4.3.7",
+		"postcss": "^8.4.24",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-test-renderer": "^18.2.0",
+		"sinon": "^15.1.0",
+		"sinon-sandbox": "^2.0.6",
+		"storybook": "^7.0.0",
+		"tailwindcss": "^3.3.2",
+		"vite": "^4.3.9",
+		"vitest": "^3.2.4"
+	},
+	"peerDependencies": {
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"dependencies": {
+		"color": "^4.2.3",
+		"lodash.chunk": "^4.2.0",
+		"lodash.isequal": "^4.5.0",
+		"moment": "^2.29.4",
+		"prop-types": "^15.8.1",
+		"react-portal": "^4.2.2",
+		"react-swipeable": "^7.0.1",
+		"use-onclickoutside": "^0.4.1"
+	}
 }

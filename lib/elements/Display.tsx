@@ -16,12 +16,12 @@ const DisplayWrapper: FC<DisplayWrapperProps> = ({
   const backspaceLongPress = useLongPress(longPressBackspace, 1000);
 
   return (
-    <div className="flex p-1 items-center border-none">
+    <div className="flex items-center p-1 bg-popover text-popover-foreground border-b border-border">
       <div className="flex-grow">
         <input
           value={value}
           readOnly
-          className="w-full bg-transparent text-xl outline-none border-none cursor-not-allowed rounded-none"
+          className="w-full bg-transparent text-xl outline-none border-0 cursor-not-allowed rounded-none"
         />
       </div>
       <Button
@@ -29,7 +29,7 @@ const DisplayWrapper: FC<DisplayWrapperProps> = ({
         {...backspaceLongPress}
         onClick={backspace}
         variant="ghost"
-        className="text-gray-800 h-8 w-8 p-0">
+        className="text-muted-foreground h-8 w-8 p-0">
         <span>&larr;</span>
       </Button>
     </div>

@@ -133,9 +133,9 @@ const KeyPad: FC<KeyPadProps> = forwardRef<HTMLDivElement, KeyPadProps>(
 
     return (
       <div
-        className={`flex flex-col transition-all duration-500 ease-in-out bg-gray-200 ${contentClasses}`}
+        className={`flex flex-col transition-all duration-500 ease-in-out bg-card text-card-foreground border border-border ${contentClasses}`}
         ref={ref}>
-        <div className="flex justify-between p-1 items-center text-white bg-gray-800 select-none">
+        <div className="flex justify-between p-1 items-center bg-primary text-primary-foreground select-none">
           <button type="button" onClick={cancel}>
             <span>&times;</span>
           </button>
@@ -154,7 +154,7 @@ const KeyPad: FC<KeyPadProps> = forwardRef<HTMLDivElement, KeyPadProps>(
           backspace={() => keyboard.virtualInteraction("Backspace")}
           longPressBackspace={() => setInputValue("")}
         />
-        <div className="flex flex-wrap flex-grow bg-gray-400">
+        <div className="flex flex-wrap flex-grow bg-muted">
           {keypadKeys.map((key) => (
             <Button
               key={`button-${key}`}

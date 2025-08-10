@@ -208,10 +208,9 @@ git clone git@github.com:gpietro/react-numpad.git
 cd react-numpad/
 npm install
 npm start
-npm run storybook
 ```
 
-Visit localhost:6006 to see the NumPad components available so far.
+ 
 
 ### Build
 

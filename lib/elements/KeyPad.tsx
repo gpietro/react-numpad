@@ -59,25 +59,31 @@ const KeyPad: FC<KeyPadProps> = forwardRef<HTMLDivElement, KeyPadProps>(
     const computeNextKey = useCallback(
       (newValue: string, key: string) => {
         let computedValue: string | undefined;
-        if (keyValid(inputValue, key)) {
-          if (key === "-") {
-            computedValue =
-              inputValue.charAt(0) === "-"
-                ? inputValue.substr(1)
-                : `-${inputValue}`;
-          } else if (key === ".") {
+        if (key === "-") {
+          if (inputValue.charAt(0) === "-") {
+            computedValue = inputValue.substr(1);
+          } else {
+            const candidate = `-${inputValue}`;
+            if (validation(candidate)) {
+              computedValue = candidate;
+            }
+          }
+        } else if (keyValid(inputValue, key)) {
+          if (key === ".") {
             const leadingZero = ["", "-"].includes(inputValue);
             computedValue = `${inputValue}${leadingZero ? "0" : ""}${key}`;
           } else {
             computedValue = newValue;
           }
+        }
+        if (computedValue !== undefined) {
           setInputValue(computedValue);
           if (sync) {
             update(computedValue);
           }
         }
       },
-      [inputValue, keyValid, sync, update]
+      [inputValue, keyValid, sync, update, validation]
     );
 
     useOnClickOutside(ref as React.RefObject<HTMLElement>, () => {
@@ -93,8 +99,15 @@ const KeyPad: FC<KeyPadProps> = forwardRef<HTMLDivElement, KeyPadProps>(
       setInputValue(value.toString());
     }, [value]);
 
+    const [lastProcessedEvent, setLastProcessedEvent] =
+      useState<KeyboardEvent | null>(null);
+
     useEffect(() => {
-      if (keyboard.keyDownEvent) {
+      if (
+        keyboard.keyDownEvent &&
+        keyboard.keyDownEvent !== lastProcessedEvent
+      ) {
+        setLastProcessedEvent(keyboard.keyDownEvent);
         /** useKeyBaordInput set null when initializing the initialValue to avoid this computation before validation  */
         if (
           ["Enter", "Tab"].includes(keyboard.keyDownEvent.key) &&
@@ -110,16 +123,22 @@ const KeyPad: FC<KeyPadProps> = forwardRef<HTMLDivElement, KeyPadProps>(
             setInputValue(keyboard.value);
           }
         } else {
-          computeNextKey(keyboard.value, keyboard.keyDownEvent.key);
+          // For non-digit keys like "-" and ".", use inputValue since keyboard.value won't be updated
+          const valueToUse = /^[0-9]$/.test(keyboard.keyDownEvent.key)
+            ? keyboard.value
+            : inputValue;
+          computeNextKey(valueToUse, keyboard.keyDownEvent.key);
         }
       }
     }, [
       keyboard.value,
       keyboard.keyDownEvent,
+      lastProcessedEvent,
       confirm,
       cancel,
       validation,
       computeNextKey,
+      inputValue,
     ]);
 
     const onButtonClick = useCallback(

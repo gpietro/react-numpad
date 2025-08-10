@@ -72,6 +72,43 @@ const NumberInput: FC<NumberInputProps> = ({
   const combinedValidator = (value: string) =>
     baseValidator(value) && (keyValidator ? keyValidator(value) : true);
 
+  // When deciding whether a single key press should be enabled, don't require the
+  // custom validator to already pass on the partial value. Instead, allow the key if
+  // the resulting partial value is numeric-valid AND it either:
+  //  - already satisfies the custom validator, or
+  //  - could satisfy it after appending up to a few more digits.
+  // This fixes cases like `value > 12 && value < 45`, where no single digit would pass
+  // immediately and previously all keys were disabled.
+  const couldBecomeValid = (partial: string, maxDepth = 3): boolean => {
+    if (!keyValidator) return false;
+    if (decimal === false && partial.includes(".")) return false;
+    if (negative === false && partial.startsWith("-")) return false;
+    // If already valid, we're good
+    if (combinedValidator(partial)) return true;
+    // If partial isn't even base-valid, no point extending
+    if (!baseValidator(partial)) return false;
+
+    // Breadth-limited search: try appending up to `maxDepth` digits to see if the
+    // value can become valid. Keep it cheap to avoid perf issues.
+    const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+
+    const stack: Array<{ v: string; d: number }> = [{ v: partial, d: 0 }];
+    while (stack.length) {
+      const popped = stack.pop();
+      if (!popped) break;
+      const { v, d } = popped;
+      if (d >= maxDepth) continue;
+      for (const dig of digits) {
+        const candidate = v + dig;
+        // Must remain base-valid as we build up
+        if (!baseValidator(candidate)) continue;
+        if (keyValidator(candidate)) return true;
+        stack.push({ v: candidate, d: d + 1 });
+      }
+    }
+    return false;
+  };
+
   // Match KeyPad signature: (value, key)
   const keyValid = (value: string, key: string) => {
     if (key === "-") {
@@ -79,8 +116,12 @@ const NumberInput: FC<NumberInputProps> = ({
       return value.charAt(0) === "-" || combinedValidator(key + value);
     }
     // For ".", probe with a trailing digit to test decimal allowance
-    const probe = key === "." ? `${value + key}1` : value + key;
-    return combinedValidator(probe);
+    const probeRaw = value + key;
+    const probe = key === "." ? `${probeRaw}1` : probeRaw;
+    const allowLookahead = value.length === 0 || value === "-";
+    return (
+      combinedValidator(probe) || (allowLookahead && couldBecomeValid(probeRaw))
+    );
   };
 
   const displayRule = (value: string) =>

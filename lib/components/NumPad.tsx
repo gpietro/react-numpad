@@ -47,7 +47,7 @@ const NumPad: FC<NumPadProps> = ({
   const [value, setValue] = useState<string>(formatInputValue(valueFromProps));
   const [preValue, setPreValue] = useState<string | number | undefined>();
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLButtonElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

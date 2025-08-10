@@ -24,6 +24,7 @@ function App() {
           />
         </div>
         <div>
+          <div>Accept number between 12 and 45</div>
           <NumPad.Number
             onChange={setValue}
             inline
@@ -31,7 +32,19 @@ function App() {
             value={value}
             negative={false}
             decimal={false}
-            keyValidator={(value) => Number(value) < 45}
+            keyValidator={(value) => Number(value) > 12 && Number(value) < 45}
+          />
+        </div>
+        <div>
+          <div>Accept number between 12 and 45</div>
+          <NumPad.Number
+            onChange={setValue}
+            inline
+            label="Inline"
+            value={value}
+            negative
+            decimal
+            // keyValidator={(value) => Number(value) < 45}
           />
         </div>
       </div>

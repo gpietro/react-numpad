@@ -6,7 +6,7 @@ import NumPad from "../index";
 afterEach(cleanup);
 
 test("'-' and '.' remain disabled when negative/decimal are false, even with custom keyValidator", async () => {
-  const { getByText, getByTestId } = render(
+  const { getByText } = render(
     <NumPad.Number
       inline
       negative={false}
@@ -20,9 +20,7 @@ test("'-' and '.' remain disabled when negative/decimal are false, even with cus
     />
   );
 
-  await waitFor(() => {
-    fireEvent.click(getByTestId("input-field"));
-  });
+  // Inline mode renders the keypad immediately; no need to click the trigger.
 
   const minusBtn = getByText("-") as HTMLButtonElement;
   const dotBtn = getByText(".") as HTMLButtonElement;

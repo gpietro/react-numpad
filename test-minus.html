@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Minus Button</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #root {
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Test Minus Button Functionality</h1>
+    <p>Click the input field below and then test the minus button:</p>
+    <div id="root"></div>
+
+    <script type="module">
+      import { createRoot } from "https://esm.sh/react-dom@18/client";
+      import React from "https://esm.sh/react@18";
+      import NumPad from "./lib/index.js";
+
+      function TestApp() {
+        const [value, setValue] = React.useState("");
+
+        return React.createElement(
+          "div",
+          {},
+          React.createElement("h3", {}, "Current value: " + value),
+          React.createElement(NumPad.Number, {
+            onChange: setValue,
+            value: value,
+          })
+        );
+      }
+
+      const root = createRoot(document.getElementById("root"));
+      root.render(React.createElement(TestApp));
+    </script>
+  </body>
+</html>

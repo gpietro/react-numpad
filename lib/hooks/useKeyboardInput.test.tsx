@@ -24,6 +24,7 @@ test("number", async () => {
   expect(display.value).toBe("13");
 
   fireEvent.keyDown(container, { key: "-" });
+  // Keyboard '-' now works to toggle sign
   expect(display.value).toBe("-13");
 
   fireEvent.keyDown(container, { key: "2" });
@@ -57,6 +58,7 @@ test("decimal with negative", async () => {
   expect(display.value).toBe("0.3");
 
   fireEvent.keyDown(container, { key: "-" });
+  // Keyboard '-' now works to toggle sign
   expect(display.value).toBe("-0.3");
 
   fireEvent.keyDown(container, { key: "1" });
@@ -92,6 +94,7 @@ test("oddValidator", async () => {
   expect(display.value).toBe("13");
 
   fireEvent.keyDown(container, { key: "-" });
+  // Keyboard '-' now works to toggle sign
   expect(display.value).toBe("-13");
 
   fireEvent.keyDown(container, { key: "-" });
@@ -215,6 +218,7 @@ test("minus sign", async () => {
   const display = getByRole("textbox") as HTMLInputElement;
 
   fireEvent.keyDown(container, { key: "-" });
+  // Keyboard '-' now works to add minus sign when empty
   expect(display.value).toBe("-");
 
   fireEvent.keyDown(container, { key: "-" });

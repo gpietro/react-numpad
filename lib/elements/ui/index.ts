@@ -1,3 +1,2 @@
-import NButton from "./NButton";
-
-export default NButton;
+export { default as Button, buttonVariants } from "./Button";
+export { default } from "./Button";

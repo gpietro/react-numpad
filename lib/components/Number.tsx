@@ -52,6 +52,7 @@ interface NumberInputProps {
   value?: string | number;
   position?: string;
   label?: string;
+  onClickOutside?: "accept" | "cancel";
 }
 
 const NumberInput: FC<NumberInputProps> = ({
@@ -62,6 +63,7 @@ const NumberInput: FC<NumberInputProps> = ({
   negative = true,
   onChange,
   position = "center",
+  onClickOutside = "cancel",
   ...props
 }) => {
   // Always enforce built-in numeric rules; apply custom keyValidator as an additional constraint (AND)
@@ -153,7 +155,8 @@ const NumberInput: FC<NumberInputProps> = ({
       customInput={children as React.ReactElement}
       onChange={onChange}
       displayRule={displayRule}
-      position={position}>
+      position={position}
+      onClickOutside={onClickOutside}>
       <KeyPad
         {...props}
         validation={validation}

@@ -148,7 +148,7 @@ const KeyPad: FC<KeyPadProps> = forwardRef<HTMLDivElement, KeyPadProps>(
     );
 
     const contentClasses =
-      position === "fullscreen" ? "w-screen h-screen text-2xl" : "w-64 h-80";
+      position === "fullscreen" ? "w-screen h-screen text-2xl" : "w-64";
 
     return (
       <div

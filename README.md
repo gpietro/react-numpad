@@ -1,4 +1,8 @@
-![Logo of the project](https://raw.githubusercontent.com/gpietro/react-numpad/master/logo.png)
+![Logo of the project](https://raw.githubuser| `sync`        | `boolean`            | false        | if true, callbacks calls while typing if the input is valid                                                                        |
+| `inline`      | `boolean`            | false        | show the component inline always visible without input field.                                                                      |
+| `onClickOutside` | `"accept"` or `"cancel"` | `"cancel"` | behavior when clicking outside the numpad. `"accept"` saves current value, `"cancel"` resets to original value                  |
+| `keyValidator` | `function` |         | Validates the enabled keys while typing. **Only for Number**  |
+| `displayRule`           | `function` |         | Format the output value                  |ent.com/gpietro/react-numpad/master/logo.png)
 
 # React numpad
 

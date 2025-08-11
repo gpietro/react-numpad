@@ -24,9 +24,21 @@ function App() {
         <div>
           <NumPad.Number
             onChange={setValue}
-            label="Basic"
+            label="Basic (Cancel on outside click)"
             position="center"
             value={value}
+            onClickOutside="cancel"
+          />
+        </div>
+        <div>
+          <div>Accept on outside click</div>
+          <NumPad.Number
+            onChange={setValue}
+            label="Accept on outside click"
+            value={value}
+            negative={false}
+            decimal={false}
+            onClickOutside="accept"
           />
         </div>
         <div>

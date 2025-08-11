@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import NumPad from "../lib";
 import "../lib/index.css";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 function App() {
   const [value, setValue] = useState<string | number>("");
@@ -14,6 +16,10 @@ function App() {
         padding: 24,
       }}>
       <h1 style={{ fontSize: 24, marginBottom: 16 }}>React Numpad Demo</h1>
+      <Input type="email" placeholder="Email" />
+      <br />
+      <Button>Button</Button>
+
       <div style={{ display: "flex", gap: 24, alignItems: "flex-start" }}>
         <div>
           <NumPad.Number

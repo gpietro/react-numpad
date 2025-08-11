@@ -1,3 +1,4 @@
+import { Input } from "@/components/ui/input";
 import type { ReactElement } from "react";
 import React, { forwardRef, useRef } from "react";
 
@@ -53,7 +54,7 @@ const InputField = forwardRef<HTMLButtonElement, InputFieldProps>(
               )
             )
           ) : (
-            <input
+            <Input
               id={label}
               style={{ outline: "none" }}
               ref={input}

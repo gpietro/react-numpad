@@ -1,6 +1,6 @@
 import React, { type FC } from "react";
-import { Button } from "./ui";
 import useLongPress from "../hooks/useLongPress";
+import { Button } from "@/components/ui/button";
 
 interface DisplayWrapperProps {
   value: string;

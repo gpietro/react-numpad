@@ -25,7 +25,7 @@
   ],
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@radix-ui/react-slot": "1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
     "@testing-library/dom": "^9.3.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.3.1",
@@ -51,17 +51,18 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.1.14",
     "class-variance-authority": "0.7.0",
     "clsx": "2.1.1",
-    "lucide-react": "^0.453.0",
-    "tailwind-merge": "2.5.2",
     "color": "^4.2.3",
     "lodash.chunk": "^4.2.0",
     "lodash.isequal": "^4.5.0",
+    "lucide-react": "^0.453.0",
     "moment": "^2.29.4",
     "prop-types": "^15.8.1",
     "react-portal": "^4.2.2",
     "react-swipeable": "^7.0.1",
+    "tailwind-merge": "2.5.2",
     "use-onclickoutside": "^0.4.1"
   },
   "vitest": {

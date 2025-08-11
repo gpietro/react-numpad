@@ -1,5 +1,5 @@
+import { Button } from "@/components/ui/button";
 import React, { memo, type FC } from "react";
-import { Button } from "./ui";
 
 interface ButtonWrapperProps {
   value: string | number;

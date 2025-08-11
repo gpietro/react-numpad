@@ -34,7 +34,7 @@ const InputField = forwardRef<HTMLButtonElement, InputFieldProps>(
           tabIndex={0}
           ref={ref}
           onClick={onShowKeyPad}
-          onKeyPress={onShowKeyPad}
+          onKeyDown={onShowKeyPad}
           data-testid="input-field">
           {customInput ? (
             React.Children.map(customInput, (child: ReactElement) =>
@@ -62,7 +62,7 @@ const InputField = forwardRef<HTMLButtonElement, InputFieldProps>(
               value={inputValue}
               disabled={disabled}
               onClick={onShowKeyPad}
-              onKeyPress={onShowKeyPad}
+              onKeyDown={onShowKeyPad}
               tabIndex={-1}
               readOnly
               aria-hidden

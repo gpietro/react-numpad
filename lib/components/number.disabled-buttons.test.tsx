@@ -36,3 +36,20 @@ test("'-' and '.' remain disabled when negative/decimal are false, even with cus
   expect(minusBtn.disabled).toBe(true);
   expect(dotBtn.disabled).toBe(true);
 });
+
+test("'0' should be disabled when keyValidator requires value > 12", async () => {
+  const { getByText } = render(
+    <NumPad.Number
+      inline
+      negative={false}
+      decimal={false}
+      keyValidator={(value) => Number(value) > 12 && Number(value) < 45}
+      onChange={() => {}}
+    />
+  );
+
+  const zeroBtn = getByText("0") as HTMLButtonElement;
+
+  // '0' should be disabled initially since 0 is not > 12
+  expect(zeroBtn.disabled).toBe(true);
+});

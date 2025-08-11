@@ -90,6 +90,13 @@ const NumberInput: FC<NumberInputProps> = ({
     // If partial isn't even base-valid, no point extending
     if (!baseValidator(partial)) return false;
 
+    // If the partial value is "0" and decimals are not allowed,
+    // it can't become a valid multi-digit number because the leading zero will be stripped.
+    // So, it can only be valid if "0" itself is valid, which was already checked and failed.
+    if (partial === "0" && decimal === false) {
+      return false;
+    }
+
     // Breadth-limited search: try appending up to `maxDepth` digits to see if the
     // value can become valid. Keep it cheap to avoid perf issues.
     const digits = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -121,6 +128,14 @@ const NumberInput: FC<NumberInputProps> = ({
     const probeRaw = value + key;
     const probe = key === "." ? `${probeRaw}1` : probeRaw;
     const allowLookahead = value.length === 0 || value === "-";
+
+    if (allowLookahead && key === "0" && keyValidator) {
+      // Because of the leading-zero stripping, a leading "0" can never help
+      // form a multi-digit number. It's only useful if "0" itself is a valid value.
+      // So, we don't need to look ahead with `couldBecomeValid`.
+      return keyValidator(probeRaw); // probeRaw is "0" or "-0"
+    }
+
     return (
       combinedValidator(probe) || (allowLookahead && couldBecomeValid(probeRaw))
     );

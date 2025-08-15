@@ -1,53 +1,46 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useMemo } from "react";
+import { useUnit } from "effector-react";
+import {
+  $keyboardLastEvent,
+  $keyboardValue,
+  keyboardKeyDown,
+  setKeyboardInitialValue,
+  setKeyboardValidKeys,
+} from "../model/keyboard.model";
 
 export default function useKeyboardInput(
   initialValue: string,
   validKeys: string[] = []
 ) {
-  const [value, setValue] = useState(initialValue);
-  const refValue = useRef(initialValue);
-  const refValidKeys = useRef(validKeys);
-  const [keyDownEvent, setKeyDownEvent] = useState<KeyboardEvent | null>(null);
+  const [value, keyDownEvent, emitKey, setInit, setValid] = useUnit([
+    $keyboardValue,
+    $keyboardLastEvent,
+    keyboardKeyDown,
+    setKeyboardInitialValue,
+    setKeyboardValidKeys,
+  ]);
+
+  // Sync initial value and valid keys with the Effector model
+  useEffect(() => {
+    setInit(initialValue);
+  }, [initialValue, setInit]);
 
   useEffect(() => {
-    setKeyDownEvent(
-      null
-    ); /** Necessary to avoid computation of useEffect on initalValue change when event is old --> see test of '-' sign */
-    setValue(initialValue);
-  }, [initialValue]);
+    setValid(validKeys);
+  }, [validKeys, setValid]);
 
+  // Wire document keydown to effector event
   useEffect(() => {
-    refValue.current = value;
-  }, [value]);
+    const handler = (event: KeyboardEvent) =>
+      emitKey({ key: event.key, ctrlKey: event.ctrlKey, altKey: event.altKey });
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [emitKey]);
 
-  useEffect(() => {
-    refValidKeys.current = validKeys;
-  }, [validKeys]);
-
-  const keyDownHandler = useCallback((event: KeyboardEvent) => {
-    const { key } = event;
-    setKeyDownEvent(event);
-    if (key === "Backspace") {
-      setValue(refValue.current.slice(0, -1));
-    } else if (refValidKeys.current.length > 0) {
-      // Only append numeric digit keys via keyboard input.
-      // Non-digit keys (e.g., '-', '.', Enter, etc.) are handled by higher-level logic (KeyPad.computeNextKey).
-      if (refValidKeys.current.includes(key) && /^[0-9]$/.test(key)) {
-        setValue(refValue.current + key);
-      }
-    }
-  }, []);
-
-  const virtualInteraction = (key: string) => {
-    keyDownHandler(new KeyboardEvent("keydown", { key }));
-  };
-  useEffect(() => {
-    document.addEventListener("keydown", keyDownHandler);
-
-    return function cleanup() {
-      document.removeEventListener("keydown", keyDownHandler);
-    };
-  }, [keyDownHandler]);
+  const virtualInteraction = useMemo(
+    () => (key: string) => emitKey({ key }),
+    [emitKey]
+  );
 
   return { value, keyDownEvent, virtualInteraction };
 }

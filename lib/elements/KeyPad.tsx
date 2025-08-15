@@ -2,8 +2,16 @@ import type React from "react";
 import { type FC, forwardRef, useCallback, useEffect, useState } from "react";
 import useOnClickOutside from "use-onclickoutside";
 
-import useKeyboardInput from "../hooks/useKeyboardInput";
-import Display from "./Display";
+import { useUnit } from "effector-react";
+import {
+  $keyboardLastEvent,
+  $keyboardValue,
+  keyboardKeyDown,
+  setKeyboardInitialValue,
+  setKeyboardValidKeys,
+} from "../model/keyboard.model";
+import type { KeyboardEvt } from "../model/keyboard.model";
+import Display from "./DisplayWrapper";
 import Button from "./KeypadButton";
 
 interface KeyPadProps {
@@ -51,10 +59,13 @@ const KeyPad: FC<KeyPadProps> = forwardRef<HTMLDivElement, KeyPadProps>(
     ];
     const keyboardKeys = [...Array(10).keys()].map((v) => v.toString());
     const [inputValue, setInputValue] = useState(value.toString());
-    const keyboard = useKeyboardInput(
-      inputValue,
-      keyboardKeys.filter((key) => keyValid(inputValue, key))
-    );
+    const [kbValue, kbLastEvent, emitKey, setInit, setValid] = useUnit([
+      $keyboardValue,
+      $keyboardLastEvent,
+      keyboardKeyDown,
+      setKeyboardInitialValue,
+      setKeyboardValidKeys,
+    ]);
 
     const computeNextKey = useCallback(
       (newValue: string, key: string) => {
@@ -99,40 +110,56 @@ const KeyPad: FC<KeyPadProps> = forwardRef<HTMLDivElement, KeyPadProps>(
       setInputValue(value.toString());
     }, [value]);
 
-    const [lastProcessedEvent, setLastProcessedEvent] =
-      useState<KeyboardEvent | null>(null);
+    // Keep Effector keyboard model in sync with local input state and valid keys
+    useEffect(() => {
+      setInit(inputValue);
+    }, [inputValue, setInit]);
 
     useEffect(() => {
-      if (
-        keyboard.keyDownEvent &&
-        keyboard.keyDownEvent !== lastProcessedEvent
-      ) {
-        setLastProcessedEvent(keyboard.keyDownEvent);
-        /** useKeyBaordInput set null when initializing the initialValue to avoid this computation before validation  */
-        if (
-          ["Enter", "Tab"].includes(keyboard.keyDownEvent.key) &&
-          validation(keyboard.value)
-        ) {
-          confirm(keyboard.value);
-        } else if (["Escape"].includes(keyboard.keyDownEvent.key)) {
+      const valid = keyboardKeys.filter((key) => keyValid(inputValue, key));
+      setValid(valid);
+    }, [inputValue, keyValid, setValid, keyboardKeys]);
+
+    // Wire document keydown to effector model
+    useEffect(() => {
+      const handler = (event: KeyboardEvent) =>
+        emitKey({
+          key: event.key,
+          ctrlKey: event.ctrlKey,
+          altKey: event.altKey,
+        });
+      document.addEventListener("keydown", handler);
+      return () => document.removeEventListener("keydown", handler);
+    }, [emitKey]);
+
+    const [lastProcessedEvent, setLastProcessedEvent] =
+      useState<KeyboardEvt | null>(null);
+
+    useEffect(() => {
+      if (kbLastEvent && kbLastEvent !== lastProcessedEvent) {
+        setLastProcessedEvent(kbLastEvent);
+        // setKeyboardInitialValue resets last event to null when inputValue changes
+        if (["Enter", "Tab"].includes(kbLastEvent.key) && validation(kbValue)) {
+          confirm(kbValue);
+        } else if (["Escape"].includes(kbLastEvent.key)) {
           cancel();
-        } else if (["Backspace"].includes(keyboard.keyDownEvent.key)) {
-          if (keyboard.keyDownEvent.ctrlKey || keyboard.keyDownEvent.altKey) {
+        } else if (["Backspace"].includes(kbLastEvent.key)) {
+          if (kbLastEvent.ctrlKey || kbLastEvent.altKey) {
             setInputValue("");
           } else {
-            setInputValue(keyboard.value);
+            setInputValue(kbValue);
           }
         } else {
           // For non-digit keys like "-" and ".", use inputValue since keyboard.value won't be updated
-          const valueToUse = /^[0-9]$/.test(keyboard.keyDownEvent.key)
-            ? keyboard.value
+          const valueToUse = /^[0-9]$/.test(kbLastEvent.key)
+            ? kbValue
             : inputValue;
-          computeNextKey(valueToUse, keyboard.keyDownEvent.key);
+          computeNextKey(valueToUse, kbLastEvent.key);
         }
       }
     }, [
-      keyboard.value,
-      keyboard.keyDownEvent,
+      kbValue,
+      kbLastEvent,
       lastProcessedEvent,
       confirm,
       cancel,
@@ -142,9 +169,8 @@ const KeyPad: FC<KeyPadProps> = forwardRef<HTMLDivElement, KeyPadProps>(
     ]);
 
     const onButtonClick = useCallback(
-      (clickedKey: string | number) =>
-        keyboard.virtualInteraction(clickedKey.toString()),
-      [keyboard]
+      (clickedKey: string | number) => emitKey({ key: clickedKey.toString() }),
+      [emitKey]
     );
 
     const contentClasses =
@@ -170,7 +196,7 @@ const KeyPad: FC<KeyPadProps> = forwardRef<HTMLDivElement, KeyPadProps>(
         </div>
         <Display
           value={displayRule(inputValue)}
-          backspace={() => keyboard.virtualInteraction("Backspace")}
+          backspace={() => emitKey({ key: "Backspace" })}
           longPressBackspace={() => setInputValue("")}
         />
         <div className="flex flex-wrap flex-grow bg-muted">

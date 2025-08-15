@@ -1,4 +1,4 @@
-import Display from "./Display";
+import Display from "./DisplayWrapper";
 import InputField from "./InputField";
 import KeyPad from "./KeyPad";
 import Wrapper from "./Wrapper";

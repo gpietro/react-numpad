@@ -29,6 +29,7 @@ const keypadKeysDefault = [
 export type NumPadProps = {
   keypadKeys?: string[];
   onChange?: (value: string) => void;
+  onCancel?: () => void;
   focus?: boolean;
   children?: React.ReactNode;
 };
@@ -36,6 +37,7 @@ export type NumPadProps = {
 export const InlineNumpad = ({
   keypadKeys = keypadKeysDefault,
   onChange = () => {},
+  onCancel,
   focus = true,
   children,
 }: NumPadProps) => {
@@ -58,6 +60,7 @@ export const InlineNumpad = ({
   const handleOnCancel = () => {
     cancel();
     onChange(initialValue);
+    onCancel?.();
   };
 
   // Handle keyboard events only when the display input has focus

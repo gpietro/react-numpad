@@ -1,29 +1,29 @@
-import React, { useEffect, useRef } from "react";
-import { useUnit } from "effector-react";
-import { Display, type DisplayRef } from "./display";
-import { Header } from "./header";
-import { Keypad } from "./keypad";
+import { useUnit } from 'effector-react';
+import React, { useEffect, useRef } from 'react';
 import {
-  pressKeyEvent,
-  backspaceEvent,
   $display,
   $initialValue,
+  backspaceEvent,
   cancelEvent,
-} from "../../models/numpad";
+  pressKeyEvent,
+} from '../../models/numpad';
+import { Display, type DisplayRef } from './display';
+import { Header } from './header';
+import { Keypad } from './keypad';
 
 const keypadKeysDefault = [
-  "7",
-  "8",
-  "9",
-  "4",
-  "5",
-  "6",
-  "1",
-  "2",
-  "3",
-  "-",
-  "0",
-  ".",
+  '7',
+  '8',
+  '9',
+  '4',
+  '5',
+  '6',
+  '1',
+  '2',
+  '3',
+  '-',
+  '0',
+  '.',
 ];
 
 export type NumPadProps = {
@@ -37,7 +37,7 @@ export const InlineNumpad = ({
   keypadKeys = keypadKeysDefault,
   onChange = () => {},
   focus = true,
-  children
+  children,
 }: NumPadProps) => {
   const displayRef = useRef<DisplayRef>(null);
   const [pressKey, backspace] = useUnit([pressKeyEvent, backspaceEvent]);
@@ -64,10 +64,12 @@ export const InlineNumpad = ({
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     const { key } = event;
 
-    if (key === "Backspace") {
+    if (key === 'Backspace') {
       event.preventDefault();
       backspace();
-    } else if (key === "Enter") {
+    } else if (key === 'Escape') {
+      handleOnCancel();
+    } else if (key === 'Enter') {
       event.preventDefault();
       onChange(displayValue);
     } else if (keypadKeys.includes(key)) {
@@ -80,7 +82,7 @@ export const InlineNumpad = ({
   const handleNumPadClick = (event: React.MouseEvent) => {
     // Only focus if we're not clicking on an interactive element
     const target = event.target as HTMLElement;
-    if (!target.closest("button, input")) {
+    if (!target.closest('button, input')) {
       displayRef.current?.focus();
     }
   };
@@ -89,7 +91,7 @@ export const InlineNumpad = ({
   const handleContainerKeyDown = (event: React.KeyboardEvent) => {
     // Forward keyboard events to the display input
     const { key } = event;
-    if (keypadKeys.includes(key) || key === "Backspace") {
+    if (keypadKeys.includes(key) || key === 'Backspace') {
       displayRef.current?.focus();
       // Let the event bubble to the display input
     }
@@ -103,21 +105,22 @@ export const InlineNumpad = ({
 
   return (
     <>
-    {React  .isValidElement(children) ? children : null}
-    <div
-      className="max-w-xs bg-slate-200"
-      onClick={handleNumPadClick}
-      onKeyDown={handleContainerKeyDown}
-      // biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation>
-      tabIndex={0}>
-      <Header
-        label="Calculator"
-        onConfirm={handleOnChange}
-        onCancel={handleOnCancel}
+      {React.isValidElement(children) ? children : null}
+      <div
+        className="max-w-xs bg-slate-200"
+        onClick={handleNumPadClick}
+        onKeyDown={handleContainerKeyDown}
+        // biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation>
+        tabIndex={0}
+      >
+        <Header
+          label="Calculator"
+          onCancel={handleOnCancel}
+          onConfirm={handleOnChange}
         />
-      <Display ref={displayRef} onKeyDown={handleKeyDown} />
-      <Keypad keypadKeys={keypadKeys} onKeyPress={handleKeypadPress} />
-    </div>
-        </>
+        <Display onKeyDown={handleKeyDown} ref={displayRef} />
+        <Keypad keypadKeys={keypadKeys} onKeyPress={handleKeypadPress} />
+      </div>
+    </>
   );
 };

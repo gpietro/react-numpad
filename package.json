@@ -30,6 +30,8 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.3.1",
     "@types/color": "^4.2.0",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^4.7.0",
     "autoprefixer": "^10.4.21",
     "chai": "^4.5.0",
@@ -45,7 +47,7 @@
     "tailwindcss": "^3.4.17",
     "tailwindcss-animate": "^1.0.7",
     "ultracite": "5.1.5",
-    "vite": "^4.5.14",
+    "vite": "^7.1.2",
     "vitest": "^3.2.4"
   },
   "peerDependencies": {

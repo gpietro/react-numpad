@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useUnit } from "effector-react";
 import { Display, type DisplayRef } from "./display";
 import { Header } from "./header";
@@ -30,12 +30,14 @@ export type NumPadProps = {
   keypadKeys?: string[];
   onChange?: (value: string) => void;
   focus?: boolean;
+  children?: React.ReactNode;
 };
 
 export const InlineNumpad = ({
   keypadKeys = keypadKeysDefault,
   onChange = () => {},
   focus = true,
+  children
 }: NumPadProps) => {
   const displayRef = useRef<DisplayRef>(null);
   const [pressKey, backspace] = useUnit([pressKeyEvent, backspaceEvent]);
@@ -100,6 +102,8 @@ export const InlineNumpad = ({
   };
 
   return (
+    <>
+    {React  .isValidElement(children) ? children : null}
     <div
       className="max-w-xs bg-slate-200"
       onClick={handleNumPadClick}
@@ -110,9 +114,10 @@ export const InlineNumpad = ({
         label="Calculator"
         onConfirm={handleOnChange}
         onCancel={handleOnCancel}
-      />
+        />
       <Display ref={displayRef} onKeyDown={handleKeyDown} />
       <Keypad keypadKeys={keypadKeys} onKeyPress={handleKeypadPress} />
     </div>
+        </>
   );
 };

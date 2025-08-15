@@ -8,17 +8,18 @@ import type { NumPadProps } from "./inline-numpad";
 
 export type NumpadProps = {
   inline?: boolean;
-  children?: React.ReactNode;
+  children?: React.ReactElement;
 } & NumPadProps;
 
 export const Numpad = ({ inline = false, children, ...props }: NumpadProps) => {
   const scope = useRef(fork());
 
-  const isInline = inline || !children;
+  const isInline = inline;
+
   return (
     <Provider value={scope.current}>
       {isInline ? (
-        <InlineNumpad {...props} />
+        <InlineNumpad {...props}>{children}</InlineNumpad>
       ) : (
         <PopoverNumpad {...props}>{children}</PopoverNumpad>
       )}

@@ -7,7 +7,7 @@ import {
   useEffect,
   useCallback,
 } from "react";
-import useLongPress from "../../lib/hooks/useLongPress";
+import useLongPress from "../../hooks/useLongPress";
 import { Button } from "@/components/ui/button";
 import { useUnit } from "effector-react";
 import {

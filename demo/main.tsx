@@ -1,51 +1,90 @@
 import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
-import "../lib/index.css";
+import "@/styles/index.css";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Numpad } from "@/components/numpad";
 
+const Separator = () => <div className="block w-full h-px my-2 bg-gray-200 dark:bg-gray-700" />
+
 function App() {
-  const [value, setValue] = useState<string | number>("");
+  const [value, setValue] = useState<{
+    [key: string]: string;
+    lastValue: string;
+  }>({
+    lastValue: "",
+  });
+
+  const handleChange = (key: string) => (newValue: string) => {
+    setValue((prev) => ({ ...prev, [key]: newValue, lastValue: newValue }));
+  };
 
   return (
     <div
-      className="max-w-xs border m-auto my-10"
+      className="max-w-2xl border rounded mt-4 p-4 m-auto"
       style={{
         fontFamily:
           'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"',
-        padding: 24,
       }}>
-      <h1 style={{ fontSize: 24, marginBottom: 16 }}>React Numpad Demo</h1>
+      <header className="mb-4">
+        <h1 className="text-2xl font-bold">React Numpad Demo</h1>
+      </header>
 
-      <div className="mt-6">
-        <Numpad onChange={setValue}>
-          <Button>{value || "No value"}</Button>
-        </Numpad>
-      </div>
+      <main className="flex flex-col gap-4 divide-y">
+        <div className="flex">
+          <div className="grow p-4 max-w-xs">
+            <div className="pt-4">
+              <h2 className="pb-2">Button with Numpad</h2>
+              <Numpad onChange={handleChange("numpad")}>
+                <Button>{value.numpad || "No value"}</Button>
+              </Numpad>
+            </div>
 
-      <div className="mt-6">
-        <h1>Dialog Numpad</h1>
-        <Numpad onChange={setValue} />
-      </div>
+            <div className="pt-4">
+              <h2 className="pb-2">Dialog Numpad</h2>
+              <Numpad onChange={handleChange("dialog")}>
+                <Button>{value.dialog || "No value"}</Button>
+              </Numpad>
+            </div>
 
-      <div className="mt-6">
-        <h1>Inline</h1>
-        <Numpad onChange={setValue}>
-          <Input type="text" placeholder="Enter value" />
-        </Numpad>
-      </div>
+            <div className="pt-4">
+              <h2 className="pb-2">Inline Numpad</h2>
+              <Numpad inline onChange={handleChange("inline")}>
+                <Input
+                  name="inline"
+                  className="mb-4"
+                  type="text"
+                  placeholder="Enter value"
+                  value={value.inline}
+                />
+              </Numpad>
+            </div>
 
-      <div className="mt-6">
-        <h1>Popover Numpad</h1>
-        <Numpad onChange={setValue}>
-          <Input type="text" placeholder="Open values" />
-        </Numpad>
-      </div>
+            <div className="pt-4">
+              <h2 className="pb-2">Popover Numpad</h2>
+              <Numpad onChange={handleChange("popover")}>
+                <Input
+                  type="text"
+                  placeholder="Open values"
+                  value={value.popover}
+                />
+              </Numpad>
+            </div>
+          </div>
 
-      <div className="mt-6">
-        <strong>Last value:</strong> {String(value)}
-      </div>
+          <div className="grow p-4 bg-slate-50">
+            <strong>Last value:</strong> {String(value.lastValue) ?? "No value"}
+            <Separator />
+
+            {Object.entries(value).filter(([key]) => key !== "lastValue").map(([key, val]) => (
+              <div key={key}>
+                <span className="font-medium">{key}:</span> {String(val) ?? "No value"}
+                 <Separator />
+              </div>
+            ))}
+          </div>
+        </div>
+      </main>
     </div>
   );
 }

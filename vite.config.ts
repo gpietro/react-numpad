@@ -11,7 +11,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, "lib/index.ts"),
+      entry: resolve(__dirname, "components/numpad/index.ts"),
       name: "ReactNumpad",
       // the proper extensions will be added
       fileName: "react-numpad",

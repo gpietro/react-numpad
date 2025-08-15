@@ -5,7 +5,7 @@ import { useUnit } from "effector-react";
 import { updateInitialValueEvent } from "@/models/numpad";
 
 interface PopoverNumpadProps {
-  children?: React.ReactNode;
+  children?: React.ReactElement;
   position?: string;
   onChange?: (value: string) => void;
 }
@@ -48,9 +48,7 @@ export const PopoverNumpad = ({
   return (
     <Popover open={show} onOpenChange={handleOpenChange}>
       <PopoverTrigger asChild>
-        {React.cloneElement(children as React.ReactElement, {
-          defaultValue: value,
-        })}
+        {React.isValidElement(children) ? children : null}
       </PopoverTrigger>
       <PopoverContent
         className="w-auto p-0"

@@ -1,11 +1,15 @@
 {
-	"organizeImports": {
-		"enabled": true
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true
-		}
-	}
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "extends": [
+    "ultracite"
+  ],
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json"
 }

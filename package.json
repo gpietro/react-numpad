@@ -10,13 +10,7 @@
     "url": "https://github.com/gpietro/react-numpad"
   },
   "scripts": {
-    "build": "vite build",
-    "dev": "vite --open /demo/index.html",
-    "lint": "biome lint .",
-    "format": "biome format --write .",
-    "check": "biome check --apply .",
-    "test": "vitest run --environment jsdom",
-    "test:watch": "vitest --environment jsdom"
+    "dev": "turbo dev"
   },
   "author": "Pietro Ghezzi",
   "license": "ISC",
@@ -25,56 +19,21 @@
   ],
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
-    "@radix-ui/react-slot": "^1.1.0",
-    "@testing-library/dom": "^9.3.4",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^14.3.1",
-    "@types/color": "^4.2.0",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "@vitejs/plugin-react": "^4.7.0",
-    "autoprefixer": "^10.4.21",
-    "chai": "^4.5.0",
     "husky": "^9.1.7",
-    "jsdom": "^26.1.0",
     "lint-staged": "^16.1.5",
-    "postcss": "^8.5.6",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-test-renderer": "^18.3.1",
-    "sinon": "^15.2.0",
-    "sinon-sandbox": "^2.0.6",
-    "tailwindcss": "^3.4.17",
-    "tailwindcss-animate": "^1.0.7",
-    "ultracite": "5.1.5",
-    "vite": "^7.1.2",
-    "vitest": "^3.2.4"
+    "turbo": "^2.5.6",
+    "ultracite": "5.1.5"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@radix-ui/react-popover": "^1.1.14",
-    "class-variance-authority": "0.7.0",
-    "clsx": "2.1.1",
-    "color": "^4.2.3",
-    "effector": "^23.4.2",
-    "effector-react": "^23.3.0",
-    "lodash.chunk": "^4.2.0",
-    "lodash.isequal": "^4.5.0",
-    "lucide-react": "^0.453.0",
-    "moment": "^2.29.4",
-    "prop-types": "^15.8.1",
-    "react-swipeable": "^7.0.1",
-    "tailwind-merge": "2.5.2",
-    "use-onclickoutside": "^0.4.1"
   },
   "vitest": {
     "test": {
       "environment": "jsdom"
     }
   },
+  "packageManager": "pnpm@10.0.0",
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
       "npx ultracite format",

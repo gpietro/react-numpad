@@ -6,11 +6,5 @@
       "recommended": true
     }
   },
-  "extends": ["ultracite"],
-  "lint/complexity/noExcessiveLinesPerFunction": [
-    "error",
-    {
-      "max": 80
-    }
-  ]
+  "extends": ["ultracite"]
 }

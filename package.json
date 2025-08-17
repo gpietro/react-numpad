@@ -10,7 +10,9 @@
     "url": "https://github.com/gpietro/react-numpad"
   },
   "scripts": {
-    "dev": "turbo dev"
+    "dev": "turbo dev",
+    "format": "npx ultracite@latest format",
+    "lint": "npx ultracite@latest lint"
   },
   "author": "Pietro Ghezzi",
   "license": "ISC",
@@ -19,15 +21,14 @@
   ],
   "devDependencies": {
     "@biomejs/biome": "2.2.0",
+    "@repo/typescript-config": "workspace:*",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
     "turbo": "^2.5.6",
     "ultracite": "5.1.5"
   },
-  "peerDependencies": {
-  },
-  "dependencies": {
-  },
+  "peerDependencies": {},
+  "dependencies": {},
   "vitest": {
     "test": {
       "environment": "jsdom"

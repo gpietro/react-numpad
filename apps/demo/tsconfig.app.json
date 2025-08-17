@@ -7,22 +7,21 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
-    
-    /* Path Mapping */
+
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@repo/ui/*": ["../../packages/ui/src/*"]
+      "@repo/ui/*": ["../../packages/ui/*"],
+      "@repo/numpad/*": ["../../packages/numpad/src/*"],
+      "@oggi/numpad": ["../../packages/numpad/src/index.tsx"]
     },
 
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -30,5 +29,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"]
 }

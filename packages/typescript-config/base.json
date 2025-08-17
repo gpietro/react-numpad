@@ -4,7 +4,7 @@
     "declaration": true,
     "declarationMap": true,
     "esModuleInterop": true,
-    "incremental": false,
+    "incremental": true,
     "isolatedModules": true,
     "lib": ["es2022", "DOM", "DOM.Iterable"],
     "moduleDetection": "force",
@@ -14,6 +14,7 @@
     "strict": true,
     "target": "ES2022",
     "module": "ESNext",
-    "moduleResolution": "bundler"
+    "moduleResolution": "bundler",
+    "composite": true
   }
 }

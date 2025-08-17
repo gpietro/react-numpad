@@ -1,18 +1,16 @@
+import { Numpad } from '@oggi/numpad';
 import { Button } from '@repo/ui/components/button';
 import { Input } from '@repo/ui/components/input';
-import { useEffect, useState } from 'react';
-import { Numpad } from './components/numpad';
+import { useState } from 'react';
 
-const Separator = () => (
-  <div className="my-2 block h-px w-full bg-gray-200 dark:bg-gray-700" />
-);
+const Separator = () => <div className="bg- my-2 block h-px w-full" />;
 
 export function App() {
   const toggleTheme = () => {
     const root = window.document.documentElement;
 
-    root.classList.toggle("dark");
-    root.classList.toggle("light");
+    root.classList.toggle('dark');
+    root.classList.toggle('light');
   };
 
   const [value, setValue] = useState<{
@@ -27,7 +25,6 @@ export function App() {
   };
 
   return (
-    
     <div
       className="m-auto mt-4 max-w-2xl rounded border p-4"
       style={{
@@ -35,8 +32,11 @@ export function App() {
           'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"',
       }}
     >
-      <header className="flex justify-between mb-4">
-        <h1 className="font-bold text-2xl">React Numpad Demo </h1><Button variant="outline" onClick={toggleTheme}>Toggle theme</Button>
+      <header className="mb-4 flex justify-between">
+        <h1 className="font-bold text-2xl">React Numpad Demo </h1>
+        <Button onClick={toggleTheme} variant="outline">
+          Toggle theme
+        </Button>
       </header>
 
       <main className="flex flex-col gap-4 divide-y">
@@ -45,27 +45,25 @@ export function App() {
             <div className="pt-4">
               <h2 className="pb-2">Button with Numpad</h2>
               <Numpad onChange={handleChange('numpad')}>
-                <Button>{value.numpad || 'No value'}</Button>
+                <Button variant="secondary">
+                  {value.numpad || 'No value'}
+                </Button>
               </Numpad>
             </div>
 
             <div className="pt-4">
               <h2 className="pb-2">Dialog Numpad</h2>
               <Numpad onChange={handleChange('dialog')}>
-                <Button>{value.dialog || 'No value'}</Button>
+                <Button variant="default">{value.dialog || 'No value'}</Button>
               </Numpad>
             </div>
 
             <div className="pt-4">
               <h2 className="pb-2">Inline Numpad</h2>
               <Numpad inline onChange={handleChange('inline')}>
-                <Input
-                  className="mb-4"
-                  name="inline"
-                  placeholder="Enter value"
-                  type="text"
-                  value={value.inline}
-                />
+                <div className="mb-4">
+                  Inline value: {value.inline ?? 'No value'}
+                </div>
               </Numpad>
             </div>
 
@@ -81,7 +79,7 @@ export function App() {
             </div>
           </div>
 
-          <div className="grow  p-4">
+          <div className="grow p-4">
             <strong>Last value:</strong> {value.lastValue ?? 'No value'}
             <Separator />
             {Object.entries(value)

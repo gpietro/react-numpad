@@ -1,10 +1,20 @@
 {
-  "name": "@repo/ui",
+  "name": "@oggi/numpad",
   "version": "0.0.0",
   "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
   "files": [
     "dist"
   ],
+  "exports": {
+    "./globals.css": "./src/styles/globals.css",
+    "./postcss.config": "./postcss.config.mjs",
+    "./lib/*": "./src/lib/*.ts",
+    "./components/*": "./src/components/*.tsx",
+    "./hooks/*": "./src/hooks/*.ts"
+  },
   "license": "MIT",
   "scripts": {
     "build:styles": "tailwindcss -i ./src/styles/globals.css -o ./dist/index.css",
@@ -22,13 +32,8 @@
     "@types/react": "^19.1.0"
   },
   "dependencies": {
-    "@radix-ui/react-popover": "^1.1.14",
-    "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "0.7.0",
-    "clsx": "2.1.1",
-    "lucide-react": "0.539.0",
-    "tailwind-merge": "3.3.1",
-    "tailwindcss": "^4.1.12",
-    "tw-animate-css": "^1.3.6"
+    "@repo/ui": "workspace:*",
+    "effector": "^23.4.2",
+    "effector-react": "^23.3.0"
   }
 }

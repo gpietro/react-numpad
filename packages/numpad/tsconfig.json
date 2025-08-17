@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@repo/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@repo/ui/components/*": ["../ui/src/components/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["dist", "build", "node_modules"],
+  "references": [{ "path": "../ui" }]
+}

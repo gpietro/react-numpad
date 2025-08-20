@@ -10,13 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@oggi/numpad": "workspace:*",
     "@repo/ui": "workspace:*",
-    "add": "^2.0.6",
-    "effector": "^23.4.2",
-    "effector-react": "^23.3.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "vite-tsconfig-paths": "^5.1.4"
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@repo/tailwind-config": "workspace:*",
@@ -26,6 +23,7 @@
     "@vitejs/plugin-react": "^5.0.0",
     "globals": "^16.3.0",
     "typescript": "^5.8.3",
-    "vite": "^7.1.2"
+    "vite": "^7.1.2",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }

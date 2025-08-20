@@ -16,10 +16,7 @@
 
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@repo/ui/*": ["../../packages/ui/*"],
-      "@repo/numpad/*": ["../../packages/numpad/src/*"],
-      "@oggi/numpad": ["../../packages/numpad/src/index.tsx"]
+      "@/*": ["./src/*"]
     },
 
     "strict": true,

@@ -8,16 +8,16 @@ import React, { useRef, useState } from 'react';
 import { cancelEvent, updateInitialValueEvent } from '../models/numpad';
 import { InlineNumpad } from './inline-numpad';
 
-interface PopoverNumpadProps {
+type PopoverNumpadProps = {
   children?: React.ReactElement;
   position?: string;
   onChange?: (value: string) => void;
-}
+};
 
 export const PopoverNumpad = ({
   children,
   position = 'center',
-  onChange = () => {},
+  onChange,
 }: PopoverNumpadProps) => {
   const updateInitialValue = useUnit(updateInitialValueEvent);
   const cancel = useUnit(cancelEvent);
@@ -28,7 +28,7 @@ export const PopoverNumpad = ({
   const handleOnChange = (value: string) => {
     confirmedRef.current = true;
     setShow(false);
-    onChange(value);
+    onChange?.(value);
   };
 
   const handleOnCancel = () => {
@@ -48,14 +48,22 @@ export const PopoverNumpad = ({
   };
 
   const getSide = (position: string) => {
-    if (position === 'flex-start' || position.includes('Top')) return 'top';
-    if (position === 'flex-end' || position.includes('Bottom')) return 'bottom';
+    if (position === 'flex-start' || position.includes('Top')) {
+      return 'top';
+    }
+    if (position === 'flex-end' || position.includes('Bottom')) {
+      return 'bottom';
+    }
     return 'bottom'; // default for center
   };
 
   const getAlign = (position: string) => {
-    if (position.includes('Left')) return 'start';
-    if (position.includes('Right')) return 'end';
+    if (position.includes('Left')) {
+      return 'start';
+    }
+    if (position.includes('Right')) {
+      return 'end';
+    }
     return 'center'; // default for center, flex-start, flex-end
   };
 

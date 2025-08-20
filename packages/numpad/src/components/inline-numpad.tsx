@@ -1,12 +1,12 @@
-import { useUnit } from 'effector-react';
-import React, { useEffect, useRef } from 'react';
 import {
   $display,
   $initialValue,
   backspaceEvent,
   cancelEvent,
   pressKeyEvent,
-} from '../models/numpad';
+} from '@oggi/numpad/models/numpad';
+import { useUnit } from 'effector-react';
+import React, { useEffect, useRef } from 'react';
 import { Display, type DisplayRef } from './display';
 import { Header } from './header';
 import { Keypad } from './keypad';
@@ -36,7 +36,7 @@ export type NumPadProps = {
 
 export const InlineNumpad = ({
   keypadKeys = keypadKeysDefault,
-  onChange = () => {},
+  onChange,
   onCancel,
   focus = true,
   children,
@@ -54,12 +54,12 @@ export const InlineNumpad = ({
   }, [focus]);
 
   const handleOnChange = () => {
-    onChange(displayValue);
+    onChange?.(displayValue);
   };
 
   const handleOnCancel = () => {
     cancel();
-    onChange(initialValue);
+    onChange?.(initialValue);
     onCancel?.();
   };
 
@@ -74,7 +74,7 @@ export const InlineNumpad = ({
       handleOnCancel();
     } else if (key === 'Enter') {
       event.preventDefault();
-      onChange(displayValue);
+      onChange?.(displayValue);
     } else if (keypadKeys.includes(key)) {
       event.preventDefault();
       pressKey(key);
@@ -101,7 +101,7 @@ export const InlineNumpad = ({
   };
 
   // Handle keypad button presses - ensure display stays focused
-  const handleKeypadPress = (key: string) => {
+  const handleKeypadPress = () => {
     // Keep the display focused when using keypad buttons
     displayRef.current?.focus();
   };
@@ -109,10 +109,12 @@ export const InlineNumpad = ({
   return (
     <>
       {React.isValidElement(children) ? children : null}
+      {/** biome-ignore lint/a11y/noStaticElementInteractions: <explanation> */}
       <div
         className="max-w-xs border border-gray-200 dark:border-gray-700"
         onClick={handleNumPadClick}
         onKeyDown={handleContainerKeyDown}
+        role="presentation"
         // biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation>
         tabIndex={0}
       >

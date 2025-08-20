@@ -1,27 +1,22 @@
 {
   "name": "@oggi/numpad",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
-  "sideEffects": [
-    "**/*.css"
-  ],
   "files": [
     "dist"
   ],
   "exports": {
-    "./globals.css": "./src/styles/globals.css",
-    "./postcss.config": "./postcss.config.mjs",
-    "./lib/*": "./src/lib/*.ts",
-    "./components/*": "./src/components/*.tsx",
-    "./hooks/*": "./src/hooks/*.ts"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": "./dist/*"
   },
   "license": "MIT",
   "scripts": {
-    "build:styles": "tailwindcss -i ./src/styles/globals.css -o ./dist/index.css",
-    "build:components": "tsc",
+    "build": "tsc",
     "check-types": "tsc --noEmit",
-    "dev:styles": "tailwindcss -i ./src/styles/globals.css -o ./dist/index.css --watch",
-    "dev:components": "tsc --watch"
+    "dev": "tsc --watch"
   },
   "peerDependencies": {
     "react": "^19"
@@ -29,7 +24,8 @@
   "devDependencies": {
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
-    "@types/react": "^19.1.0"
+    "@types/react": "^19.1.0",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "@repo/ui": "workspace:*",

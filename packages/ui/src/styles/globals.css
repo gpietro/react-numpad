@@ -1,14 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@source "../../../apps/**/*.{ts,tsx}";
-@source "../../numpad/**/*.{ts,tsx}";
+@source "../../../../apps/demo/src/**/*.{ts,tsx}";
+@source "../../../numpad/src/**/*.{ts,tsx}";
 @source "../**/*.{ts,tsx}";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
+  --background: oklch(0.7 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);

@@ -1,6 +1,6 @@
+import { pressKeyEvent } from '@oggi/numpad/models/numpad';
 import { Button } from '@repo/ui/components/button';
 import { useUnit } from 'effector-react';
-import { pressKeyEvent } from '@/models/numpad';
 
 type KeypadProps = {
   keypadKeys: string[];

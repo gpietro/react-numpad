@@ -1,9 +1,15 @@
 import { Numpad } from '@oggi/numpad';
 import { Button } from '@repo/ui/components/button';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@repo/ui/components/card';
 import { Input } from '@repo/ui/components/input';
+import { Separator } from '@repo/ui/components/separator';
 import { useState } from 'react';
-
-const Separator = () => <div className="bg- my-2 block h-px w-full" />;
 
 export function App() {
   const toggleTheme = () => {
@@ -26,7 +32,7 @@ export function App() {
 
   return (
     <div
-      className="m-auto mt-4 max-w-2xl rounded border p-4"
+      className="m-auto max-w-2xl rounded border p-4"
       style={{
         fontFamily:
           'system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"',
@@ -41,42 +47,64 @@ export function App() {
 
       <main className="flex flex-col gap-4 divide-y">
         <div className="flex">
-          <div className="max-w-xs grow p-4">
-            <div className="pt-4">
-              <h2 className="pb-2">Button with Numpad</h2>
-              <Numpad onChange={handleChange('numpad')}>
-                <Button variant="secondary">
-                  {value.numpad || 'No value'}
-                </Button>
-              </Numpad>
-            </div>
+          <div className="flex max-w-xs flex-col gap-2">
+            <Card>
+              <CardHeader>
+                <CardTitle>Numpad with Button</CardTitle>
+                <CardDescription>Card Description</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Numpad onChange={handleChange('numpad')}>
+                  <Button variant="secondary">
+                    {value.numpad || 'No value'}
+                  </Button>
+                </Numpad>
+              </CardContent>
+            </Card>
 
-            <div className="pt-4">
-              <h2 className="pb-2">Dialog Numpad</h2>
-              <Numpad onChange={handleChange('dialog')}>
-                <Button variant="default">{value.dialog || 'No value'}</Button>
-              </Numpad>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Dialog Numpad</CardTitle>
+                <CardDescription>Card Description</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Numpad onChange={handleChange('dialog')}>
+                  <Button variant="default">
+                    {value.dialog || 'No value'}
+                  </Button>
+                </Numpad>
+              </CardContent>
+            </Card>
 
-            <div className="pt-4">
-              <h2 className="pb-2">Inline Numpad</h2>
-              <Numpad inline onChange={handleChange('inline')}>
-                <div className="mb-4">
-                  Inline value: {value.inline ?? 'No value'}
-                </div>
-              </Numpad>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Inline Numpad</CardTitle>
+                <CardDescription>Card Description</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Numpad inline onChange={handleChange('inline')}>
+                  <div className="mb-4">
+                    Inline value: {value.inline ?? 'No value'}
+                  </div>
+                </Numpad>
+              </CardContent>
+            </Card>
 
-            <div className="pt-4">
-              <h2 className="pb-2">Popover Numpad</h2>
-              <Numpad onChange={handleChange('popover')}>
-                <Input
-                  placeholder="Open values"
-                  type="text"
-                  value={value.popover}
-                />
-              </Numpad>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>Popover Numpad</CardTitle>
+                <CardDescription>Card Description</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Numpad onChange={handleChange('popover')}>
+                  <Input
+                    placeholder="Open values"
+                    type="text"
+                    value={value.popover}
+                  />
+                </Numpad>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="grow p-4">

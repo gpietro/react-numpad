@@ -1,16 +1,24 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "declaration": true,
+    "declarationMap": true,
     "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "jsx": "react-jsx",
+    "lib": ["es2023", "dom", "dom.iterable"],
     "baseUrl": ".",
-    "rootDir": "./src",
     "paths": {
-      "@/*": ["./src/*"],
-      "@repo/ui/components/*": ["../ui/src/components/*"]
+      "@oggi/numpad/*": ["src/*"],
+      "@repo/ui/*": ["../ui/dist/*"]
     }
   },
   "include": ["src"],
-  "exclude": ["dist", "build", "node_modules"],
-  "references": [{ "path": "../ui" }]
+  "exclude": ["dist", "build", "node_modules"]
 }

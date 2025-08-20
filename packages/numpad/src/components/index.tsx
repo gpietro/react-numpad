@@ -5,6 +5,8 @@ import type { NumPadProps } from './inline-numpad';
 import { InlineNumpad } from './inline-numpad';
 import { PopoverNumpad } from './popover-numpad';
 
+export type { NumPadProps } from './inline-numpad';
+
 export type NumpadProps = {
   inline?: boolean;
   children?: React.ReactElement;
@@ -25,3 +27,5 @@ export const Numpad = ({ inline = false, children, ...props }: NumpadProps) => {
     </Provider>
   );
 };
+
+export default Numpad;

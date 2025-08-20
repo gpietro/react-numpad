@@ -1,3 +1,9 @@
+import useLongPress from '@oggi/numpad/hooks/useLongPress';
+import {
+  $display,
+  backspaceEvent,
+  clearEvent,
+} from '@oggi/numpad/models/numpad';
 import { Button } from '@repo/ui/components/button';
 import { useUnit } from 'effector-react';
 import {
@@ -8,23 +14,22 @@ import {
   useRef,
   useState,
 } from 'react';
-import useLongPress from '@/hooks/useLongPress';
-import { $display, backspaceEvent, clearEvent } from '@/models/numpad';
 
-export interface DisplayRef {
+export type DisplayRef = {
   focus: () => void;
   blur: () => void;
-}
+};
 
-interface DisplayProps {
+type DisplayProps = {
+  longPressReactionMs?: number;
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
-}
+};
 
 export const Display = forwardRef<DisplayRef, DisplayProps>(
-  ({ onKeyDown }, ref) => {
+  ({ onKeyDown, longPressReactionMs = 300 }, ref) => {
     const displayValue = useUnit($display);
     const [backspace, clear] = useUnit([backspaceEvent, clearEvent]);
-    const backspaceLongPress = useLongPress(clear, 300);
+    const backspaceLongPress = useLongPress(clear, longPressReactionMs);
     const inputRef = useRef<HTMLInputElement>(null);
     const [isFocused, setIsFocused] = useState(false);
     const [cursorPosition, setCursorPosition] = useState(0);
@@ -43,7 +48,9 @@ export const Display = forwardRef<DisplayRef, DisplayProps>(
 
     // More accurate text measurement using Canvas API
     const measureTextWidth = useCallback((text: string): number => {
-      if (!inputRef.current) return 0;
+      if (!inputRef.current) {
+        return 0;
+      }
 
       if (!canvasRef.current) {
         canvasRef.current = document.createElement('canvas');
@@ -51,7 +58,9 @@ export const Display = forwardRef<DisplayRef, DisplayProps>(
 
       const canvas = canvasRef.current;
       const context = canvas.getContext('2d');
-      if (!context) return 0;
+      if (!context) {
+        return 0;
+      }
 
       const computedStyle = window.getComputedStyle(inputRef.current);
       context.font = `${computedStyle.fontWeight} ${computedStyle.fontSize} ${computedStyle.fontFamily}`;

@@ -10,6 +10,8 @@
     "url": "https://github.com/gpietro/react-numpad"
   },
   "scripts": {
+    "preview": "turbo preview",
+    "build": "turbo build",
     "dev": "turbo dev",
     "format": "npx ultracite@latest format",
     "lint": "npx ultracite@latest lint"

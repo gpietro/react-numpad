@@ -1,10 +1,4 @@
-"build:styles": "tailwindcss -i ./src/styles/globals.css -o ./dist/index.css",
-    "build:components": "tsc",
-    "check-types": "tsc --noEmit",
-    "dev:styles": "tailwindcss -i ./src/styles/globals.css -o ./dist/index.css --watch",
-    "dev:components": "tsc --watch"
-
-    {
+{
   "extends": ["//"],
   "tasks": {
     "build": {

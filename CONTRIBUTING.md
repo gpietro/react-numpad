@@ -8,8 +8,7 @@ Before you open a PR:
 * If you're planning to add or change a major feature in a PR, please ensure
 the change is aligned with the project roadmap by opening an issue first,
 especially if you're going to spend a lot of time on it.
-* In development, run `npm start` and `npm run storybook`to build (+watch) the project source, and run
-the [development server](http://localhost:6006).
+* In development, run `npm start` to build (+watch) the project source.
 * Please ensure all the examples work correctly after your change. If you're
 adding a major new use-case, add a new example demonstrating its use.
 * Please **do not** commit the build files. Make sure **only** your changes to
